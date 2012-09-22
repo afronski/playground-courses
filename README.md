@@ -5,6 +5,6 @@ Started courses:
 - Web intelligence and Big Data
 - Functional Programming Principles in Scala
 
-Next courses:
+Courses which will start in future:
 - *Compilers*
 - *Heterogeneous Parallel Programming*
