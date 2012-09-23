@@ -3,6 +3,7 @@ package recfun
 import common._
 
 object Main {
+  
   def main(args: Array[String]) {
     println("Pascal's Triangle")
 
@@ -13,9 +14,7 @@ object Main {
     }
   }
 
-  /**
-   * Exercise 1
-   */
+  
   def pascal(c: Int, r: Int): Int = {
     if (c < 0 || r < 0 || c > r)
       throw new IllegalArgumentException()
@@ -24,9 +23,7 @@ object Main {
     else pascal(c - 1, r - 1) + pascal(c, r - 1)
   }
 
-  /**
-   * Exercise 2
-   */
+
   def balance(chars: List[Char]): Boolean = {
     
     def checkChar(char: Char, balance: Int): Int =
@@ -42,10 +39,12 @@ object Main {
     balanceIter(chars, 0) == 0
   }
 
-  /**
-   * Exercise 3
-   */
-  def countChange(money: Int, coins: List[Int]): Int = {
-    0
+  def countChange(money: Int, coins: List[Int]): Int = {    
+    if (coins.isEmpty) 0
+    else if (money < 0 ) 0
+    else if (money == 0) 1
+    else {
+      countChange(money - coins.head, coins) + countChange(money, coins.tail)
+    }
   }
 }
