@@ -41,9 +41,12 @@ object Lists {
    */
   def max(xs: List[Int]): Int =
     if (xs.isEmpty)
-      Int.MinValue
-    else {
-      val tempMax = max(xs.tail)
-      if (tempMax > xs.head) tempMax else xs.head
-    }
+      throw new NoSuchElementException()
+    else 
+    	if (xs.tail.isEmpty)
+    		xs.head
+    	else {
+    		val tempMax = max(xs.tail)
+    		if (tempMax > xs.head) tempMax else xs.head
+    	}
 }
