@@ -150,36 +150,40 @@ class FunSetSuite extends FunSuite {
     assert(!exists(set, predicate6), "Test 6")
   }
 
-  test("map test") {
-    val firstSet = (x: Int) => x > 10
-    val secondSet = (x: Int) => x < 20
-
-    val result = intersect(firstSet, secondSet)
-    val modificator = (x: Int) => x + 1
-
-    assert(exists(result, x => x == 19), "Test 1 => verification")
-    assert(!exists(map(result, modificator), x => x == 19), "Test 1")
-
-    assert(!exists(result, x => x == 10), "Test 2 => verification")
-    assert(exists(map(result, modificator), x => x == 10), "Test 2")
-
-    assert(exists(map(result, modificator), x => x == 12), "Test 3")
-    assert(!exists(map(result, modificator), x => x == 100), "Test 4")
-
-    assert(!exists(map(result, modificator), x => x == -1000), "Test 5")
-    assert(!exists(map(result, modificator), x => x == 1000), "Test 6")
+  test("adding one modificator - map test") {
+    val sourceSet = (x : Int) => x == 0 || x == 2 || x == 4 || x == 1000
+    val modificator = (x : Int) => x + 1
+        
+    assert(!exists(map(sourceSet, modificator), p => p == 0), "Not possible = 0")
+    assert(exists(map(sourceSet, modificator), p => p == 1), "Possible = 1")
+    assert(!exists(map(sourceSet, modificator), p => p == 2), "Not possible = 2")
+    assert(exists(map(sourceSet, modificator), p => p == 3), "Possible = 3")
+    assert(!exists(map(sourceSet,modificator), p => p == 4), "Not possible = 4")
+    assert(exists(map(sourceSet, modificator), p => p == 5), "Possible = 5")
+    assert(!exists(map(sourceSet, modificator), p => p == 1000), "Not possible = 1000")
+    assert(!exists(map(sourceSet, modificator), p => p == 1001), "Not possible = 1001")        
   }
-
-  test("another map test") {
-    val firstSet = (x: Int) => x < 10
-    val modificator = (x: Int) => x - 1
-    val result = map(firstSet, modificator)
-
-    assert(exists(result, x => x == 0), "Zero test")
-    assert(exists(result, x => x == 9), "9 isn't present")
-    assert(exists(result, x => x == 10), "After moving by -1, 10 should be present")
-    assert(!exists(result, x => x == 100), "100 will be present")
-    assert(!exists(result, x => x == 1000), "Upper bound")
-    assert(!exists(result, x => x == 1001), "Upper bound + 1 won't be present in set anyway")
-  }
+  
+  test("subtracting one modificator - map test") {
+    val sourceSet = (x : Int) => x == 0 || x == 2 || x == 4 || x == 1000
+    val modificator = (x : Int) => x - 1
+        
+    assert(!exists(map(sourceSet, modificator), p => p == 0), "Not possible = 0")
+    assert(exists(map(sourceSet, modificator), p => p == -1), "Possible = 1")
+    assert(!exists(map(sourceSet, modificator), p => p == 2), "Not possible = 2")
+    assert(exists(map(sourceSet, modificator), p => p == 1), "Possible = 3")
+    assert(!exists(map(sourceSet,modificator), p => p == 4), "Not possible = 4")
+    assert(exists(map(sourceSet, modificator), p => p == 2), "Possible = 5")
+    assert(!exists(map(sourceSet, modificator), p => p == 1000), "Not possible = 1000")
+    assert(exists(map(sourceSet, modificator), p => p == 999), "Possible = 999")        
+  }  
+  
+  test("multiply by 2 - map test") {
+    val sourceSet = (x : Int) => x == 1 || x == 3 || x == 5 || x == 7
+    val modificator = (x : Int) => x * 2
+        
+    assert(forall(sourceSet, p => p % 2 != 0), "Odd on start")
+    assert(exists(map(sourceSet, modificator), p => p == 2), "Even after map = 2")
+    assert(forall(map(sourceSet, modificator), p => p % 2 == 0), "Even after map = all")   
+  }    
 }
