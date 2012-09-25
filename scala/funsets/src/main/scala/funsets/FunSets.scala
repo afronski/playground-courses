@@ -26,13 +26,13 @@ object FunSets {
    * Returns the union of the two given sets,
    * the sets of all elements that are in either `s` or `t`.
    */
-  def union(s: Set, t: Set): Set = (x : Int) => contains(s, x) || contains(t, x)
+  def union(s: Set, t: Set): Set = (x: Int) => contains(s, x) || contains(t, x)
 
   /**
    * Returns the intersection of the two given sets,
    * the set of all elements that are both in `s` or `t`.
    */
-  def intersect(s: Set, t: Set): Set = (x : Int) => contains(s, x) && contains(t, x)
+  def intersect(s: Set, t: Set): Set = (x: Int) => contains(s, x) && contains(t, x)
 
   /**
    * Returns the difference of the two given sets,
@@ -56,10 +56,10 @@ object FunSets {
   def forall(s: Set, p: Int => Boolean): Boolean = {
     def iter(a: Int): Boolean = {
       if (a > bound) true
-      else if (contains(s, a) && !p(a)) false 
+      else if (contains(s, a) && !p(a)) false
       else iter(a + 1)
     }
-    
+
     iter(-bound)
   }
 
@@ -70,10 +70,10 @@ object FunSets {
   def exists(s: Set, p: Int => Boolean): Boolean = {
     def iter(a: Int): Boolean = {
       if (a > bound) false
-      else if (contains(s, a) && p(a)) true 
+      else if (contains(s, a) && p(a)) true
       else iter(a + 1)
     }
-    
+
     iter(-bound)
   }
 
