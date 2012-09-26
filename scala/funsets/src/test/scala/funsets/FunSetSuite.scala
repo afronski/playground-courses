@@ -173,7 +173,7 @@ class FunSetSuite extends FunSuite {
     assert(!exists(map(sourceSet, modificator), p => p == 2), "Not possible = 2")
     assert(exists(map(sourceSet, modificator), p => p == 1), "Possible = 3")
     assert(!exists(map(sourceSet,modificator), p => p == 4), "Not possible = 4")
-    assert(exists(map(sourceSet, modificator), p => p == 2), "Possible = 5")
+    assert(exists(map(sourceSet, modificator), p => p == 3), "Possible = 3")
     assert(!exists(map(sourceSet, modificator), p => p == 1000), "Not possible = 1000")
     assert(exists(map(sourceSet, modificator), p => p == 999), "Possible = 999")        
   }  
