@@ -6,7 +6,7 @@ import TweetReader._
 class Tweet(val user: String, val text: String, val retweets: Int) {
 
   override def toString: String =
-    "User: " + user + "\n" +
+    "User: " + user + " " +
     "Text: " + text + " [" + retweets + "]"
 
 }
@@ -16,13 +16,17 @@ abstract class TweetSet {
   /** This method takes a predicate and returns a subset of all the elements
    *  in the original set for which the predicate is true.
    */
-  def filter(p: Tweet => Boolean): TweetSet = ???
+  def filter(p: Tweet => Boolean): TweetSet = this.filter0(p, new Empty)
   def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet
 
-  def union(that: TweetSet): TweetSet = ???
+  def union(that: TweetSet): TweetSet = 
+    if (!this.isEmpty) this.union0(that, new Empty)
+    else that.union0(this, new Empty)
+
+  def union0(that: TweetSet, accu: TweetSet): TweetSet
 
   // Hint: the method "remove" on TweetSet will be very useful.
-  def ascendingByRetweet: Trending = ???
+  def ascendingByRetweet: Trending = new EmptyTrending()
 
   // The following methods are provided for you, and do not have to be changed
   // -------------------------------------------------------------------------
@@ -55,7 +59,8 @@ abstract class TweetSet {
 
 class Empty extends TweetSet {
 
-  def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet = ???
+  def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet = accu
+  def union0(that: TweetSet, accu: TweetSet): TweetSet = accu
 
   // The following methods are provided for you, and do not have to be changed
   // -------------------------------------------------------------------------
@@ -66,12 +71,27 @@ class Empty extends TweetSet {
   def tail = throw new Exception("Empty.tail")
   def remove(tw: Tweet): TweetSet = this
   // -------------------------------------------------------------------------
+  
+  override def toString() = "."
 }
 
 class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
-  def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet = ???
+  def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet =     
+    left.filter0(p, right.filter0(p, if (p(elem)) accu.incl(elem) else accu))
 
+  def union0(that: TweetSet, accu: TweetSet): TweetSet = 
+    right.union0(left, 
+        left.union0(right, 
+            that.union0(left, 
+                that.union0(right, 
+                    if (!accu.contains(elem)) accu.incl(elem)
+                    else accu
+                )
+            )
+        )
+    )
+    
   // The following methods are provided for you, and do not have to be changed
   // -------------------------------------------------------------------------
   def contains(x: Tweet): Boolean =
@@ -94,6 +114,8 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
     else if (elem.text < tw.text) new NonEmpty(elem, left, right.remove(tw))
     else left.union(right)
   // -------------------------------------------------------------------------
+    
+  override def toString() = "\n{" + left + elem + right + "}" 
 }
 
 
@@ -149,4 +171,21 @@ object Main extends App {
   // Some help printing the results:
   // println("RANKED:")
   // GoogleVsApple.trending foreach println
+  
+  val set1 = new Empty
+  val set2 = set1.incl(new Tweet("a", "a body", 20))
+  val set3 = set2.incl(new Tweet("b", "b body", 20))
+  val c = new Tweet("c", "c body", 7)
+  val d = new Tweet("d", "d body", 9)
+  val set4c = set3.incl(c)
+  val set4d = set3.incl(d)
+  val set5 = set4c.incl(d)
+  
+  println(set5.filter(tw => tw.user == "a"))
+  println()
+  
+  println(set4c.union(set4d))
+  println()
+  
+  println(set1.union(set5))
 }
