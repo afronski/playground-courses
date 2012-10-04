@@ -13,9 +13,6 @@ class Tweet(val user: String, val text: String, val retweets: Int) {
 
 abstract class TweetSet {
 
-  /** This method takes a predicate and returns a subset of all the elements
-   *  in the original set for which the predicate is true.
-   */
   def filter(p: Tweet => Boolean): TweetSet = this.filter0(p, new Empty)
   def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet
 
@@ -25,8 +22,8 @@ abstract class TweetSet {
 
   def union0(that: TweetSet, accu: TweetSet): TweetSet
 
-  // Hint: the method "remove" on TweetSet will be very useful.
-  def ascendingByRetweet: Trending = new EmptyTrending()
+  def ascendingByRetweet: Trending = ascendingByRetweet0(new EmptyTrending) 
+  def ascendingByRetweet0(accu : Trending): Trending
 
   // The following methods are provided for you, and do not have to be changed
   // -------------------------------------------------------------------------
@@ -36,8 +33,6 @@ abstract class TweetSet {
   def head: Tweet
   def tail: TweetSet
 
-  /** This method takes a function and applies it to every element in the set.
-   */
   def foreach(f: Tweet => Unit): Unit = {
     if (!this.isEmpty) {
       f(this.head)
@@ -61,6 +56,7 @@ class Empty extends TweetSet {
 
   def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet = accu
   def union0(that: TweetSet, accu: TweetSet): TweetSet = accu
+  def ascendingByRetweet0(accu : Trending): Trending = accu
 
   // The following methods are provided for you, and do not have to be changed
   // -------------------------------------------------------------------------
@@ -92,6 +88,9 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
         )
     )
     
+  def ascendingByRetweet0(accum : Trending): Trending = 
+    this.remove(this.findMin).ascendingByRetweet0(accum + this.findMin)
+    
   // The following methods are provided for you, and do not have to be changed
   // -------------------------------------------------------------------------
   def contains(x: Tweet): Boolean =
@@ -118,9 +117,6 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
   override def toString() = "\n{" + left + elem + right + "}" 
 }
 
-
-/** This class provides a linear sequence of tweets.
- */
 abstract class Trending {
   def + (tw: Tweet): Trending
   def head: Tweet
@@ -136,22 +132,24 @@ abstract class Trending {
 
 class EmptyTrending extends Trending {
   def + (tw: Tweet) = new NonEmptyTrending(tw, new EmptyTrending)
+  
   def head: Tweet = throw new Exception
   def tail: Trending = throw new Exception
   def isEmpty: Boolean = true
+  
   override def toString = "EmptyTrending"
 }
 
 class NonEmptyTrending(elem: Tweet, next: Trending) extends Trending {
-  /** Appends tw to the end of this sequence.
-   */
   def + (tw: Tweet): Trending =
     new NonEmptyTrending(elem, next + tw)
+  
   def head: Tweet = elem
   def tail: Trending = next
   def isEmpty: Boolean = false
+  
   override def toString =
-    "NonEmptyTrending(" + elem.retweets + ", " + next + ")"
+    "NonEmptyTrending([" + elem.user + "] " + elem.retweets + ", " + next + ")"
 }
 
 object GoogleVsApple {
@@ -159,19 +157,15 @@ object GoogleVsApple {
   
   val apple = List("ios", "iOS", "iphone", "iPhone", "ipad", "iPad")
 
-  val googleTweets: TweetSet = ???
+  val googleTweets: TweetSet = TweetReader.allTweets.filter(tweet => google.exists(tweet.text.contains))
 
-  val appleTweets: TweetSet = ???
+  val appleTweets: TweetSet = TweetReader.allTweets.filter(tweet => apple.exists(tweet.text.contains))
 
   // Q: from both sets, what is the tweet with highest #retweets?
-  val trending: Trending = ???
+  val trending: Trending = googleTweets.union(appleTweets).ascendingByRetweet 
 }
 
-object Main extends App {
-  // Some help printing the results:
-  // println("RANKED:")
-  // GoogleVsApple.trending foreach println
-  
+object Main extends App {  
   val set1 = new Empty
   val set2 = set1.incl(new Tweet("a", "a body", 20))
   val set3 = set2.incl(new Tweet("b", "b body", 20))
@@ -188,4 +182,8 @@ object Main extends App {
   println()
   
   println(set1.union(set5))
+  println()
+  
+  println(set5.ascendingByRetweet)
+  println()
 }
