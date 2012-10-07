@@ -76,12 +76,12 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
   def filter0(p: Tweet => Boolean, accu: TweetSet): TweetSet =
     left.filter0(p, right.filter0(p, if (p(elem)) accu.incl(elem) else accu))
 
-  def union0(that: TweetSet, accu: TweetSet): TweetSet =
-    right.union0(left,
-      that.union0(left,
-        that.union0(right,
-          if (!accu.contains(elem)) accu.incl(elem)
-          else accu)))
+  def union0(that: TweetSet, accu: TweetSet): TweetSet = {
+    val unionWithElem = if (!accu.contains(elem)) accu.incl(elem) else accu
+    
+    if (that.isEmpty) left.union0(that, right.union0(that, unionWithElem))
+    else that.union0(left, that.union0(right, unionWithElem))
+  }
 
   def ascendingByRetweet0(accum: Trending): Trending = {
     val min = this.findMin
@@ -160,5 +160,5 @@ object GoogleVsApple {
 }
 
 object Main extends App {
-  GoogleVsApple.googleTweets foreach println
+  GoogleVsApple.trending foreach println
 }
