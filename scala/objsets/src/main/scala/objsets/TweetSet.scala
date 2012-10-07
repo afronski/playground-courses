@@ -78,7 +78,7 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
   def union0(that: TweetSet, accu: TweetSet): TweetSet = {
     val unionWithElem = if (!accu.contains(elem)) accu.incl(elem) else accu
-    
+
     if (that.isEmpty) left.union0(that, right.union0(that, unionWithElem))
     else that.union0(left, that.union0(right, unionWithElem))
   }
