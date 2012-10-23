@@ -6,8 +6,6 @@ trait List[T] {
 	def tail: List[T]
 }
 
-// Implementation of traits.
-
 class Cons[T](val head: T, val tail: List[T]) extends List[T] {
   def isEmpty: Boolean = false
 }
