@@ -117,7 +117,7 @@ object Huffman {
     if (trees.length < 2) trees
     else {
       val (firstTwo, rest) = trees splitAt 2
-      makeCodeTree(firstTwo(0), firstTwo(1)) :: rest
+      (makeCodeTree(firstTwo(0), firstTwo(1)) :: rest).sortBy(element => weight(element))
     }
   }
 
@@ -217,8 +217,8 @@ object Huffman {
 	  def traverseTree(tree: CodeTree, ch: Char, bits: List[Bit]): (List[Bit], CodeTree) = tree match {
 	    case Leaf(_, _) => (bits, tree)
 	    case Fork(left, right, chars, _) => 
-	      if (hasCharacter(left, ch)) traverseTree(left, ch, 0 :: bits)
-	      else traverseTree(right, ch, 1 :: bits)
+	      if (hasCharacter(left, ch)) traverseTree(left, ch, bits ::: List(0))
+	      else traverseTree(right, ch, bits ::: List(1))
 	  }
 
 	  (traverseTree(tree, char, List())._1, restOfChars)
@@ -252,7 +252,7 @@ object Huffman {
     def subConvert(subTree: CodeTree, bits: List[Bit]): CodeTable = subTree match {
       case Leaf(c, _) => List((c, bits))
       case Fork(left, right, _, _) =>
-        mergeCodeTables(subConvert(left, 0 :: bits), subConvert(right, 1 :: bits))
+        mergeCodeTables(subConvert(left, bits ::: List(0)), subConvert(right, bits ::: List(1)))
     }
     
     tree match {
@@ -266,7 +266,7 @@ object Huffman {
    * use it in the `convert` method above, this merge method might also do some transformations
    * on the two parameter code tables.
    */
-  def mergeCodeTables(a: CodeTable, b: CodeTable): CodeTable = a ++ b
+  def mergeCodeTables(a: CodeTable, b: CodeTable): CodeTable = a ::: b
 
   /**
    * This function encodes `text` according to the code tree `tree`.
@@ -275,6 +275,6 @@ object Huffman {
    * and then uses it to perform the actual encoding.
    */
   def quickEncode(tree: CodeTree)(text: List[Char]): List[Bit] = {    
-    (text map (char => codeBits(convert(tree))(char))).foldLeft(List[Bit]())(_ ++ _)
+    (text map (char => codeBits(convert(tree))(char))).foldLeft(List[Bit]())(_ ::: _)
   }
 }

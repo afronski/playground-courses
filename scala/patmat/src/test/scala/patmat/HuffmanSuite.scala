@@ -53,15 +53,33 @@ class HuffmanSuite extends FunSuite {
     }
   }
   
-  test("convert to Code Table") {
+  test("convert to Code Table - t1") {
     new TestTrees {
       assert(convert(t1) === List(('a', List(0)), ('b', List(1))))
     }
   }  
   
+  test("convert to Code Table - t2") {
+    new TestTrees {
+      assert(convert(t2) === List(('a', List(0, 0)), ('b', List(0, 1)), ('d', List(1))))
+    }
+  }   
+  
   test("decode and encode a very short text should be identity - Code Table") {
     new TestTrees {
       assert(decode(t1, quickEncode(t1)("ab".toList)) === "ab".toList)
+    }
+  }
+
+  
+  test("create tree, decode and encode a text") {
+    new TestTrees {
+      val list = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.".toList
+      val tree = createCodeTree(list)
+      
+      assert(!(encode(tree)(list).length == 0), "Encoded bit string should non empty")
+      assert(decode(tree, encode(tree)(list)) === list)
+      assert(decode(tree, quickEncode(tree)(list)) === list)
     }
   }
 }
