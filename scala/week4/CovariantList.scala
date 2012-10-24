@@ -1,11 +1,11 @@
 package week4
 
 trait CovariantList[+T] {
-	def isEmpty: Boolean
-	def head: T
-	def tail: CovariantList[T]
-	
-	def prepend[U >: T] (elem: U) : CovariantList[U] = new CovariantCons(elem, this)
+    def isEmpty: Boolean
+    def head: T
+    def tail: CovariantList[T]
+    
+    def prepend[U >: T] (elem: U) : CovariantList[U] = new CovariantCons(elem, this)
 }
 
 class CovariantCons[T](val head: T, val tail: CovariantList[T]) extends CovariantList[T] {
