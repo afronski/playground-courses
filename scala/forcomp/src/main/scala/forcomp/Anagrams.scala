@@ -25,20 +25,19 @@ object Anagrams {
     dictionaryByOccurrences(wordOccurrences(word))
 
   def combinations(occurrences: Occurrences): List[Occurrences] = {
-    def pack(xs: List[Char]): List[List[Char]] = xs match {
-      case Nil => Nil
-      case x :: xs1 => {
-        val (first, rest) = xs span (y => y == x)
-        first :: pack(rest)
-      }
-    }
+    val (chars, frequencies) = (occurrences map { case (char, frequency) =>
+      ((for (i <- 1 to frequency) yield char) mkString, frequency) } unzip)
 
-    val (chars, frequencies) = (occurrences map { case (char, frequency) => ((for (i <- 1 to frequency) yield char) mkString, frequency) } unzip)
-    List() :: ((for (i <- 1 to frequencies.sum) yield chars.mkString.combinations(i).toList) flatMap (element => element) map (string => pack(string.toList) map (ys => (ys.head, ys.length)))).toList
+    List() :: ((for (i <- 1 to frequencies.sum) yield chars.mkString.combinations(i).toList) flatMap (identity) map (string =>
+      (string.toList groupBy (identity)).values.toList.sortBy(list =>
+        list.head) map (ys =>
+          (ys.head, ys.length)))).toList
   }
 
   def subtract(x: Occurrences, y: Occurrences): Occurrences =
-    y.foldLeft(x.toMap)((a, b) => a.updated(b._1, a.getOrElse(b._1, 0) - b._2)).toList filter (pair => pair._2 > 0) sortBy (pair => pair._1)
+    y.foldLeft(x.toMap)((a, b) =>
+      a.updated(b._1, a.getOrElse(b._1, 0) - b._2)).toList filter (pair =>
+        pair._2 > 0) sortBy (pair => pair._1)
 
   def sentenceAnagrams(sentence: Sentence): List[Sentence] = {
     def innerSentenceAnagrams(occurrences: Occurrences): List[Sentence] = {
@@ -52,5 +51,4 @@ object Anagrams {
 
     innerSentenceAnagrams(sentenceOccurrences(sentence))
   } 
-
 }
