@@ -1,0 +1,7 @@
+[rowsAmount, colsAmount] = size(data);
+
+for i = 1:rowsAmount
+    for j = 3:colsAmount
+        p = polyfit(data(x, j), data(x, 1), 1);
+    end
+end
