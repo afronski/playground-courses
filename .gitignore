@@ -2,7 +2,7 @@ __pycache__/
 *.pyc
 output/
 datasets*/
-
+*.ogg
 .cache
 .classpath
 .project
