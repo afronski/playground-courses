@@ -6,4 +6,5 @@ Coursera
 - Functional Programming Principles in Scala
 
 ### Started courses: ###
-- Algorithms 
+- Algorithms
+- HTML5 (*Udacity*) 
