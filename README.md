@@ -1,10 +1,10 @@
-Coursera
+Courses
 ========
 
 ### Finished: ###
-- Web intelligence and Big Data
-- Functional Programming Principles in Scala
+- Web intelligence and Big Data (_Coursera_)
+- Functional Programming Principles in Scala (_Coursera_)
 
 ### Started courses: ###
-- Algorithms
-- HTML5 (*Udacity*) 
+- Algorithms (_Coursera_)
+- HTML5 (_Udacity_) 
