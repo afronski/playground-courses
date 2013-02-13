@@ -7,4 +7,4 @@ Courses
 
 ### Started courses: ###
 - Algorithms (Coursera)
-- HTML5 Games Development (Udacity) 
+- HTML5 Game Development (Udacity) 
