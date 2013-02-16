@@ -1,5 +1,5 @@
 public class QuickFindUF {
-    private int[] id;
+    public int[] id;
     private int count;
 
     // Instantiate N isolated components 0 through N-1.
@@ -54,9 +54,15 @@ public class QuickFindUF {
             }
             
             uf.union(p, q);
-            StdOut.println(p + " " + q);
+            
+            StdOut.println(uf.count() + " components");        
+            
+            for (int i = 0; i < N; i++) {
+                StdOut.print(uf.id[i] + " ");
+            }
+            StdOut.println();
         }
         
-        StdOut.println(uf.count() + " components");
+
     }
 }
