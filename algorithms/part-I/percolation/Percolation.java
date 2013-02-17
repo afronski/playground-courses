@@ -3,7 +3,7 @@ public class Percolation {
     
     private int gridSize;
     private WeightedQuickUnionUF uf;
-    private WeightedQuickUnionUF uf_full;
+    private WeightedQuickUnionUF ufFull;
     
     private boolean[] opened;
     private int END;
@@ -12,7 +12,7 @@ public class Percolation {
     public Percolation(int N) {
         gridSize = N;
         uf = new WeightedQuickUnionUF(gridSize * gridSize + 2);
-        uf_full = new WeightedQuickUnionUF(gridSize * gridSize + 1);
+        ufFull = new WeightedQuickUnionUF(gridSize * gridSize + 1);
         
         opened = new boolean[N * N + 1]; 
         END = N * N + 1;
@@ -57,7 +57,7 @@ public class Percolation {
         // Virtual top.
         if (i == 1) {
             uf.union(START, xyTo1D(i, j));
-            uf_full.union(START, xyTo1D(i, j));
+            ufFull.union(START, xyTo1D(i, j));
         }
         
         // Virtual bottom.
@@ -68,7 +68,7 @@ public class Percolation {
     
     private void union(int from, int to) {
         uf.union(from, to);
-        uf_full.union(from, to);
+        ufFull.union(from, to);
     }
     
     // Open site (row i, column j) if it is not already.
@@ -108,7 +108,7 @@ public class Percolation {
     // Is site (row i, column j) full?
     public boolean isFull(int i, int j) {
         validateIndices(i, j);
-        return isOpen(i, j) && uf_full.connected(START, xyTo1D(i, j));
+        return isOpen(i, j) && ufFull.connected(START, xyTo1D(i, j));
     }
     
     // Does the system percolate?
