@@ -1,22 +1,21 @@
 public class Percolation {
+    private static final int START = 0;    
+    
     private int gridSize;
     private WeightedQuickUnionUF uf;
-    private boolean[] opened;
+    private WeightedQuickUnionUF uf_full;
     
-    private static final int START = 0;
+    private boolean[] opened;
     private int END;
     
     // Create N-by-N grid, with all sites blocked.
     public Percolation(int N) {
         gridSize = N;
         uf = new WeightedQuickUnionUF(gridSize * gridSize + 2);
+        uf_full = new WeightedQuickUnionUF(gridSize * gridSize + 1);
+        
         opened = new boolean[N * N + 1]; 
         END = N * N + 1;
-       
-        for(int i = 1; i <= gridSize; ++i) { 
-            uf.union(START, xyTo1D(1, i));
-            uf.union(END, xyTo1D(gridSize, i));
-        }
     }
     
     // Private helpers.
@@ -52,7 +51,25 @@ public class Percolation {
         }
         
         return opened[xyTo1D(i, j)];
-    }        
+    }
+    
+    private void handleVirtualNodes(int i, int j) {
+        // Virtual top.
+        if (i == 1) {
+            uf.union(START, xyTo1D(i, j));
+            uf_full.union(START, xyTo1D(i, j));
+        }
+        
+        // Virtual bottom.
+        if (i == gridSize) {
+            uf.union(END, xyTo1D(i, j));
+        }
+    }
+    
+    private void union(int from, int to) {
+        uf.union(from, to);
+        uf_full.union(from, to);
+    }
     
     // Open site (row i, column j) if it is not already.
     public void open(int i, int j) {
@@ -62,30 +79,36 @@ public class Percolation {
             int index = xyTo1D(i, j);
             
             opened[index] = true;
+            handleVirtualNodes(i, j);            
             
             if (isOpenSafe(i + 1, j)) { 
-                uf.union(index, xyTo1D(i + 1, j));
+                union(index, xyTo1D(i + 1, j));
             }
+            
             if (isOpenSafe(i - 1, j)) { 
-                uf.union(index, xyTo1D(i - 1, j));
+                union(index, xyTo1D(i - 1, j));
             }
+            
             if (isOpenSafe(i, j + 1)) { 
-                uf.union(index, xyTo1D(i, j + 1));
+                union(index, xyTo1D(i, j + 1));
             }
+            
             if (isOpenSafe(i, j - 1)) { 
-                uf.union(index, xyTo1D(i, j - 1));
+                union(index, xyTo1D(i, j - 1));
             }
         }
     }
     
     // Is site (row i, column j) open?
     public boolean isOpen(int i, int j) {
+        validateIndices(i, j);
         return opened[xyTo1D(i, j)];
     }
     
     // Is site (row i, column j) full?
     public boolean isFull(int i, int j) {
-        return isOpen(i, j) && uf.connected(START, xyTo1D(i, j));
+        validateIndices(i, j);
+        return isOpen(i, j) && uf_full.connected(START, xyTo1D(i, j));
     }
     
     // Does the system percolate?

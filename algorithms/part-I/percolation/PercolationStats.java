@@ -14,7 +14,7 @@ public class PercolationStats {
        long currentTime = System.currentTimeMillis();
        java.util.Random r = new java.util.Random(currentTime);
        
-       for(int s = 0; s < T; ++s) {
+       for (int s = 0; s < T; ++s) {
            Percolation simulation = new Percolation(N);
            double threshold = 0.0;
            
@@ -29,7 +29,7 @@ public class PercolationStats {
                
            } while(!simulation.percolates());
 
-           stats[s] = threshold / (double)(N * N);
+           stats[s] = threshold / (double) (N * N);
        }
    }
    
@@ -38,7 +38,7 @@ public class PercolationStats {
    {
        double sum = 0.0;
        
-       for(int i = 0; i < numberOfSimulations; ++i) {
+       for (int i = 0; i < numberOfSimulations; ++i) {
            sum += stats[i];
        }
        
@@ -51,7 +51,7 @@ public class PercolationStats {
        double mean = mean();
        double stddev = 0.0;
        
-       for(int i = 0; i < numberOfSimulations; ++i) {
+       for (int i = 0; i < numberOfSimulations; ++i) {
            stddev += (stats[i] - mean) * (stats[i] - mean);
        }
        
@@ -74,7 +74,7 @@ public class PercolationStats {
    public static void main(String[] args)
    {
        if (args.length < 2) {
-           throw new java.lang.IllegalArgumentException("Too small amount of arguments (N and T are required)");
+           throw new java.lang.IllegalArgumentException("Too small amount of args");
        }
        
        int N = 0;
@@ -83,14 +83,15 @@ public class PercolationStats {
        try {
            N = Integer.parseInt(args[0]);
            T = Integer.parseInt(args[1]);
-       } catch(java.lang.NumberFormatException nfe) {
-           throw new java.lang.IllegalArgumentException("N or T have invalid values");
+       } catch (java.lang.NumberFormatException nfe) {
+           throw new java.lang.IllegalArgumentException("N or T have invalid val");
        }
        
        PercolationStats stats = new PercolationStats(N, T);
        
        StdOut.println("mean                    = " + stats.mean());
        StdOut.println("stddev                  = " + stats.stddev());
-       StdOut.println("95% confidence interval = " + stats.confidenceLo() + ", " + stats.confidenceHi());
+       StdOut.println("95% confidence interval = " + stats.confidenceLo() + ", " 
+                                                   + stats.confidenceHi());
    }
 }
