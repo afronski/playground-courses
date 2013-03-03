@@ -51,7 +51,7 @@ public class Fast {
 
         ArrayList<Result> list = new ArrayList<Result>();
 
-        for (int index = 2; index < ordered.length; ++index) {
+        for (int index = 1; index < ordered.length; ++index) {
             slopePrevious = origin.slopeTo(ordered[index - 1]);
             slopeCurrent = origin.slopeTo(ordered[index]);
 
