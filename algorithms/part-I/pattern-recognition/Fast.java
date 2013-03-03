@@ -43,7 +43,10 @@ public class Fast {
                         less = sortedBySlope[start - 1].slopeTo(reference);
 
                         if (less == slope) {
-                            --start;
+                            if (sortedBySlope[start - 1]
+                                    .compareTo(sortedBySlope[start]) < 0) {
+                                --start;
+                            }
                         }
                     } else {
                         less = Double.POSITIVE_INFINITY;
@@ -53,7 +56,10 @@ public class Fast {
                         greater = sortedBySlope[end + 1].slopeTo(reference);
 
                         if (greater == slope) {
-                            ++end;
+                            if (sortedBySlope[end]
+                                    .compareTo(sortedBySlope[end + 1]) < 0) {
+                                ++end;
+                            }
                         }
                     } else {
                         greater = Double.NEGATIVE_INFINITY;
@@ -106,53 +112,33 @@ public class Fast {
             Arrays.sort(slopes[i], referencePoint.SLOPE_ORDER);
         }
 
-        double lastSlope = -1.0;
-        Point lastPoint = new Point(-1, -1);
-        Point lastEndPoint = new Point(-1, -1);
+        Result last = new Result(-1, -1);
 
         for (int i = 0; i < N - 2; ++i) {
             for (int j = i + 1; j < N - 1; ++j) {
                 double slope = points[i].slopeTo(points[j]);
 
-                if (lastSlope != slope
-                    || (lastSlope == slope && lastPoint.compareTo(points[i]) != 0)) {
-                    Result indices = binarySearchBySlope(slopes[i],
-                                                         points[i],
-                                                         slope);
+                Result indices = binarySearchBySlope(slopes[i], points[i], slope);
 
-
+                if (indices.start != last.start && indices.end != last.end) {
                     if (indices.end - indices.start >= 2) {
-                        boolean validCombination = true;
-                        Point endPoint = slopes[i][indices.getEnd()];
+                        int start = indices.getStart();
+                        int end = indices.getEnd();
 
-                        if (lastSlope == slope
-                            && lastEndPoint.compareTo(endPoint) == 0) {
+                        if (points[i].compareTo(slopes[i][start]) >= 0) {
                             continue;
                         }
 
-                        for (int k = indices.getStart();
-                                 k <= indices.getEnd(); ++k) {
-                            if (points[i].compareTo(slopes[i][k]) >= 0) {
-                                validCombination = false;
-                            }
+                        StdOut.print(points[i]);
+
+                        for (int k = start; k <= end; ++k) {
+                            StdOut.print(" -> " + slopes[i][k]);
                         }
 
-                        if (validCombination) {
-                            StdOut.print(points[i]);
+                        StdOut.println();
 
-                            for (int k = indices.getStart();
-                                     k <= indices.getEnd(); ++k) {
-                                StdOut.print(" -> " + slopes[i][k]);
-                            }
-
-                            StdOut.println();
-
-                            points[i].drawTo(endPoint);
-
-                            lastSlope = slope;
-                            lastPoint = points[i];
-                            lastEndPoint = endPoint;
-                        }
+                        points[i].drawTo(slopes[i][end]);
+                        last = indices;
                     }
                 }
             }
