@@ -1,13 +1,79 @@
 import java.util.Arrays;
 
 public class Fast {
-    private static void swap(Point[] array, int from, int to) {
-        Point temp = array[from];
-        array[from] = array[to];
-        array[to] = temp;
+    private static class Result {
+        private final int start;
+        private final int end;
+
+        public Result(int s, int e) {
+            start = s;
+            end = e;
+        }
+
+        public int getStart() {
+            return start;
+        }
+
+        public int getEnd() {
+            return end;
+        }
     }
 
-    public static void main(String[] args) {
+    private static Result binarySearchBySlope(Point[] sortedBySlope, Point reference, double slope) {
+        int left = 0,
+            right = sortedBySlope.length - 1,
+            start = 0,
+            end = 0;
+
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            double referenceSlope = sortedBySlope[middle].slopeTo(reference);
+
+            if (referenceSlope == slope) {
+                start = middle;
+                end = middle;
+
+                while (true) {
+                    double less = Double.POSITIVE_INFINITY,
+                            greater = Double.NEGATIVE_INFINITY;
+
+                    if (start - 1 > 0) {
+                        less = sortedBySlope[start - 1].slopeTo(reference);
+
+                        if (less == slope) {
+                            --start;
+                        }
+                    } else {
+                        less = Double.POSITIVE_INFINITY;
+                    }
+
+                    if (end  + 1 < sortedBySlope.length) {
+                        greater = sortedBySlope[end + 1].slopeTo(reference);
+
+                        if (greater == slope) {
+                            ++end;
+                        }
+                    } else {
+                        greater = Double.NEGATIVE_INFINITY;
+                    }
+
+                    if (greater != slope && less != slope) {
+                        break;
+                    }
+                }
+            }
+
+            if (referenceSlope < slope) {
+                left = middle + 1;
+            } else {
+                right = middle - 1;
+            }
+        }
+
+        return new Result(start, end);
+    }
+
+    public static void main(String[] args) throws Exception {
         String filename = args[0];
         In in = new In(filename);
 
@@ -27,60 +93,61 @@ public class Fast {
             points[i].draw();
         }
 
+        Arrays.sort(points);
+
+        Point[][] slopes = new Point[N][N];
+
         for (int i = 0; i < N; ++i) {
-            Arrays.sort(points);
+            Point referencePoint = points[i];
 
-            Point p = points[i];
+            System.arraycopy(points, 0, slopes[i], 0, N);
+            Arrays.sort(slopes[i], referencePoint.SLOPE_ORDER);
+        }
 
-            swap(points, 0, i);
+        double lastSlope = -1.0;
+        Point lastPoint = new Point(-1, -1);
+        Point lastEndPoint = new Point(-1, -1);
 
-            Arrays.sort(points, 1, N, p.SLOPE_ORDER);
+        for (int i = 0; i < N - 2; ++i) {
+            for (int j = i + 1; j < N - 1; ++j) {
+                double slope = points[i].slopeTo(points[j]);
 
-            for (int k = 1; k < N; ++k) {
-                Point[] collinear = new Point[N];
-                Point q = points[k];
-                double slope = p.slopeTo(q);
+                if (lastSlope != slope || (lastSlope == slope && lastPoint.compareTo(points[i]) != 0)) {
+                    Result indices = binarySearchBySlope(slopes[i], points[i], slope);
 
-                int collinearSize = 2;
-                collinear[0] = p;
-                collinear[1] = q;
 
-                for (int j = k + 1; j < N; ++j) {
-                    if (slope == p.slopeTo(points[j])) {
-                        collinear[collinearSize] = points[j];
-                        ++collinearSize;
-                    }
-                }
+                    if (indices.end - indices.start >= 2) {
+                        boolean validCombination = true;
 
-                if (collinearSize >= 4) {
-                    boolean duplicate = false;
-
-                    for (int j = 0; j < collinearSize; ++j) {
-                        if (collinear[j].compareTo(p) < 0) {
-                            duplicate = true;
-                            break;
+                        if (lastSlope == slope && lastEndPoint.compareTo(slopes[i][indices.getEnd()]) == 0) {
+                            continue;
                         }
-                    }
 
-                    if (!duplicate) {
-                        String representation = new String();
-                        for (int j = 0; j < collinearSize; ++j) {
-                            representation += collinear[j].toString();
-
-                            if (j != (collinearSize - 1)) {
-                                representation += " -> ";
+                        for (int k = indices.getStart(); k <= indices.getEnd(); ++k) {
+                            if (points[i].compareTo(slopes[i][k]) >= 0) {
+                                validCombination = false;
                             }
                         }
 
-                        StdOut.println(representation);
-                        p.drawTo(collinear[collinearSize - 1]);
+                        if (validCombination) {
+                            StdOut.print(points[i]);
+
+                            for (int k = indices.getStart(); k <= indices.getEnd(); ++k) {
+                                StdOut.print(" -> " + slopes[i][k]);
+                            }
+
+                            StdOut.println();
+
+                            points[i].drawTo(slopes[i][indices.getEnd()]);
+
+                            lastSlope = slope;
+                            lastPoint = points[i];
+                            lastEndPoint = slopes[i][indices.getEnd()];
+                        }
                     }
                 }
             }
-
-            swap(points, i, 0);
         }
-
 
         StdDraw.show(0);
     }
