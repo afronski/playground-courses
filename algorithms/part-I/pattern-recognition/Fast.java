@@ -1,13 +1,17 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Fast {
-    private static class Result {
+    private class Result {
         private final int start;
         private final int end;
+        private final double slope;
 
-        public Result(int s, int e) {
+        public Result(int s, int e, double sl) {
             start = s;
             end = e;
+            slope = sl;
         }
 
         public int getStart() {
@@ -17,71 +21,110 @@ public class Fast {
         public int getEnd() {
             return end;
         }
+
+        public double getSlope() {
+            return slope;
+        }
     }
 
-    private static Result binarySearchBySlope(Point[] sortedBySlope,
-                                                Point reference,
-                                                double slope) {
-        int left = 0,
-            right = sortedBySlope.length - 1,
-            start = 0,
-            end = 0;
+    private final int threshold = 3;
+    private final HashMap<Point, ArrayList<Double>> explored =
+                   new HashMap<Point, ArrayList<Double>>();
 
-        while (left <= right) {
-            int middle = (left + right) / 2;
-            double referenceSlope = sortedBySlope[middle].slopeTo(reference);
+    private static void printSegment(Point[] segment) {
+        StdOut.print(segment[0]);
 
-            if (referenceSlope == slope) {
-                start = middle;
-                end = middle;
+        for (int i = 1; i < segment.length; ++i) {
+            StdOut.print(" -> " + segment[i]);
+        }
 
-                while (true) {
-                    double less = Double.POSITIVE_INFINITY,
-                            greater = Double.NEGATIVE_INFINITY;
+        StdOut.println();
+    }
 
-                    if (start - 1 > 0) {
-                        less = sortedBySlope[start - 1].slopeTo(reference);
+    private static void drawSegment(Point[] segment) {
+        segment[0].drawTo(segment[segment.length - 1]);
+    }
 
-                        if (less == slope) {
-                            if (sortedBySlope[start - 1]
-                                    .compareTo(sortedBySlope[start]) < 0) {
-                                --start;
-                            }
-                        }
-                    } else {
-                        less = Double.POSITIVE_INFINITY;
-                    }
+    private ArrayList<Result> getSegments(Point origin, Point[] ordered) {
+        int start = 0, end = 0;
+        double slopePrevious = 0.0, slopeCurrent = 0.0;
 
-                    if (end  + 1 < sortedBySlope.length) {
-                        greater = sortedBySlope[end + 1].slopeTo(reference);
+        ArrayList<Result> list = new ArrayList<Result>();
 
-                        if (greater == slope) {
-                            if (sortedBySlope[end]
-                                    .compareTo(sortedBySlope[end + 1]) < 0) {
-                                ++end;
-                            }
-                        }
-                    } else {
-                        greater = Double.NEGATIVE_INFINITY;
-                    }
+        for (int index = 2; index < ordered.length; ++index) {
+            slopePrevious = origin.slopeTo(ordered[index - 1]);
+            slopeCurrent = origin.slopeTo(ordered[index]);
 
-                    if (greater != slope && less != slope) {
-                        break;
-                    }
-                }
-            }
-
-            if (referenceSlope < slope) {
-                left = middle + 1;
+            if (slopePrevious == slopeCurrent) {
+                end = index;
             } else {
-                right = middle - 1;
+                if ((end - start + 1) >= threshold) {
+                    list.add(new Result(start, end, slopePrevious));
+                }
+
+                start = index;
+                end = index;
             }
         }
 
-        return new Result(start, end);
+        if ((end - start + 1) >= threshold) {
+            list.add(new Result(start, end, slopePrevious));
+        }
+
+        return list;
     }
 
-    public static void main(String[] args) throws Exception {
+    private void printSegments(Point origin, Point[] ordered) {
+        ArrayList<Result> results = this.getSegments(origin, ordered);
+
+        for (Result result: results) {
+            int length = result.getEnd() - result.getStart() + 1;
+            Point[] segment = new Point[length + 1];
+
+            for (int index = result.getStart();
+                     index <= result.getEnd();
+                     ++index) {
+                segment[index - result.getStart()] = ordered[index];
+            }
+
+            segment[segment.length - 1] = origin;
+
+            Arrays.sort(segment);
+            Point lastPoint = segment[segment.length - 1];
+
+            boolean beginExplored = this.explored.containsKey(segment[0])
+                     && this.explored.get(segment[0]).contains(result.getSlope());
+            boolean endExplored = this.explored.containsKey(lastPoint)
+                     && this.explored.get(lastPoint).contains(result.getSlope());
+
+            if (beginExplored || endExplored) {
+                continue;
+            }
+
+            ArrayList<Double> slopes = new ArrayList<Double>();
+            if (this.explored.containsKey(segment[0])) {
+                slopes = this.explored.get(segment[0]);
+            }
+
+            slopes.add(result.getSlope());
+            this.explored.put(segment[0], slopes);
+
+            slopes = new ArrayList<Double>();
+            if (this.explored.containsKey(lastPoint)) {
+                slopes = this.explored.get(lastPoint);
+            }
+
+            slopes.add(result.getSlope());
+            this.explored.put(lastPoint, slopes);
+
+            drawSegment(segment);
+            printSegment(segment);
+        }
+    }
+
+    public static void main(String[] args) {
+        Fast method = new Fast();
+
         String filename = args[0];
         In in = new In(filename);
 
@@ -103,45 +146,14 @@ public class Fast {
 
         Arrays.sort(points);
 
-        Point[][] slopes = new Point[N][N];
-
         for (int i = 0; i < N; ++i) {
             Point referencePoint = points[i];
+            Point[] slopes = new Point[N];
 
-            System.arraycopy(points, 0, slopes[i], 0, N);
-            Arrays.sort(slopes[i], referencePoint.SLOPE_ORDER);
-        }
+            System.arraycopy(points, 0, slopes, 0, N);
+            Arrays.sort(slopes, referencePoint.SLOPE_ORDER);
 
-        Result last = new Result(-1, -1);
-
-        for (int i = 0; i < N - 2; ++i) {
-            for (int j = i + 1; j < N - 1; ++j) {
-                double slope = points[i].slopeTo(points[j]);
-
-                Result indices = binarySearchBySlope(slopes[i], points[i], slope);
-
-                if (indices.start != last.start && indices.end != last.end) {
-                    if (indices.end - indices.start >= 2) {
-                        int start = indices.getStart();
-                        int end = indices.getEnd();
-
-                        if (points[i].compareTo(slopes[i][start]) >= 0) {
-                            continue;
-                        }
-
-                        StdOut.print(points[i]);
-
-                        for (int k = start; k <= end; ++k) {
-                            StdOut.print(" -> " + slopes[i][k]);
-                        }
-
-                        StdOut.println();
-
-                        points[i].drawTo(slopes[i][end]);
-                        last = indices;
-                    }
-                }
-            }
+            method.printSegments(referencePoint, slopes);
         }
 
         StdDraw.show(0);

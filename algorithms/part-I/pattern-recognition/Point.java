@@ -8,15 +8,15 @@ public class Point implements Comparable<Point> {
             double slopeA = slopeTo(a);
             double slopeB = slopeTo(b);
 
-            if (slopeA == slopeB) {
-                return 0;
+            if (slopeA > slopeB) {
+                return 1;
             }
 
             if (slopeA < slopeB) {
                 return -1;
             }
 
-            return 1;
+            return 0;
         }
     }
 
@@ -41,22 +41,19 @@ public class Point implements Comparable<Point> {
 
     // Slope between this point and that point.
     public double slopeTo(Point that) {
-        double a = that.y - this.y;
-        double b = that.x - this.x;
-
-        if (a == 0 && b == 0) {
+        if (this.x == that.x && this.y == that.y) {
             return Double.NEGATIVE_INFINITY;
         }
 
-        if (a == 0) {
-            return a;
-        }
-
-        if (b == 0) {
+        if (this.x == that.x) {
             return Double.POSITIVE_INFINITY;
         }
 
-        return a / b;
+        if (this.y == that.y) {
+            return 0;
+        }
+
+        return (1.0 * that.y - this.y) / (1.0 * that.x - this.x);
     }
 
     // Is this point lexicographically smaller than that one?
@@ -65,17 +62,23 @@ public class Point implements Comparable<Point> {
     public int compareTo(Point that) {
         if (this.y > that.y) {
             return 1;
-        } else {
-            if (this.y == that.y) {
-                if (this.x > that.x) {
-                    return 1;
-                } else if (this.x == that.x) {
-                    return 0;
-                }
+        }
+
+        if (this.y < that.y) {
+            return -1;
+        }
+
+        if (this.y == that.y) {
+            if (this.x < that.x) {
+                return -1;
+            }
+
+            if (this.x > that.x) {
+                return 1;
             }
         }
 
-        return -1;
+        return 0;
     }
 
     @Override
