@@ -19,7 +19,9 @@ public class Fast {
         }
     }
 
-    private static Result binarySearchBySlope(Point[] sortedBySlope, Point reference, double slope) {
+    private static Result binarySearchBySlope(Point[] sortedBySlope,
+                                                Point reference,
+                                                double slope) {
         int left = 0,
             right = sortedBySlope.length - 1,
             start = 0,
@@ -112,18 +114,24 @@ public class Fast {
             for (int j = i + 1; j < N - 1; ++j) {
                 double slope = points[i].slopeTo(points[j]);
 
-                if (lastSlope != slope || (lastSlope == slope && lastPoint.compareTo(points[i]) != 0)) {
-                    Result indices = binarySearchBySlope(slopes[i], points[i], slope);
+                if (lastSlope != slope
+                    || (lastSlope == slope && lastPoint.compareTo(points[i]) != 0)) {
+                    Result indices = binarySearchBySlope(slopes[i],
+                                                         points[i],
+                                                         slope);
 
 
                     if (indices.end - indices.start >= 2) {
                         boolean validCombination = true;
+                        Point endPoint = slopes[i][indices.getEnd()];
 
-                        if (lastSlope == slope && lastEndPoint.compareTo(slopes[i][indices.getEnd()]) == 0) {
+                        if (lastSlope == slope
+                            && lastEndPoint.compareTo(endPoint) == 0) {
                             continue;
                         }
 
-                        for (int k = indices.getStart(); k <= indices.getEnd(); ++k) {
+                        for (int k = indices.getStart();
+                                 k <= indices.getEnd(); ++k) {
                             if (points[i].compareTo(slopes[i][k]) >= 0) {
                                 validCombination = false;
                             }
@@ -132,17 +140,18 @@ public class Fast {
                         if (validCombination) {
                             StdOut.print(points[i]);
 
-                            for (int k = indices.getStart(); k <= indices.getEnd(); ++k) {
+                            for (int k = indices.getStart();
+                                     k <= indices.getEnd(); ++k) {
                                 StdOut.print(" -> " + slopes[i][k]);
                             }
 
                             StdOut.println();
 
-                            points[i].drawTo(slopes[i][indices.getEnd()]);
+                            points[i].drawTo(endPoint);
 
                             lastSlope = slope;
                             lastPoint = points[i];
-                            lastEndPoint = slopes[i][indices.getEnd()];
+                            lastEndPoint = endPoint;
                         }
                     }
                 }
