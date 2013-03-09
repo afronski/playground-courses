@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Board {
-    private final short board [][];
+    private final short[][] board;
     private final int N;
     private int manhattan = -1;
 
@@ -152,7 +152,7 @@ public class Board {
     }
 
     private short[][] copyFromInts(int[][] input) {
-        short output[][] = new short [N][N];
+        short[][] output = new short [N][N];
 
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < N; ++j) {
@@ -164,7 +164,7 @@ public class Board {
     }
 
     private short[][] copy(short[][] input) {
-        short output[][] = new short [N][N];
+        short[][] output = new short [N][N];
 
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < N; ++j) {
