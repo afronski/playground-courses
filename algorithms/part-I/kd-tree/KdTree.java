@@ -245,10 +245,12 @@ public class KdTree {
                            Node node,
                            boolean vertical) {
 
+    Point2D result = closest;
+
     if (!node.point.equals(closest)
      && point.distanceSquaredTo(node.point)
         < point.distanceSquaredTo(closest)) {
-      closest = node.point;
+      result = node.point;
     }
 
     if (node.leftBottom != null && node.rightTop != null) {
@@ -256,40 +258,40 @@ public class KdTree {
         if (point.x() < node.point.x()) {
           if (node.leftBottom.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.leftBottom, !vertical);
+            result = nearest(point, closest, node.leftBottom, !vertical);
           }
           if (node.rightTop.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.rightTop, !vertical);
+            result = nearest(point, closest, node.rightTop, !vertical);
           }
         } else {
           if (node.rightTop.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.rightTop, !vertical);
+            result = nearest(point, closest, node.rightTop, !vertical);
           }
           if (node.leftBottom.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.leftBottom, !vertical);
+            result = nearest(point, closest, node.leftBottom, !vertical);
           }
         }
       } else {
         if (point.y() < node.point.y()) {
           if (node.leftBottom.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.leftBottom, !vertical);
+            result = nearest(point, closest, node.leftBottom, !vertical);
           }
           if (node.rightTop.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.rightTop, !vertical);
+            result = nearest(point, closest, node.rightTop, !vertical);
           }
         } else {
           if (node.rightTop.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.rightTop, !vertical);
+            result = nearest(point, closest, node.rightTop, !vertical);
           }
           if (node.leftBottom.rectangle.distanceSquaredTo(point)
               < point.distanceSquaredTo(closest)) {
-            closest = nearest(point, closest, node.leftBottom, !vertical);
+            result = nearest(point, closest, node.leftBottom, !vertical);
           }
         }
       }
@@ -297,16 +299,16 @@ public class KdTree {
       if (node.leftBottom != null
        && node.leftBottom.rectangle.distanceSquaredTo(point)
           < point.distanceSquaredTo(closest)) {
-        closest = nearest(point, closest, node.leftBottom, !vertical);
+        result = nearest(point, closest, node.leftBottom, !vertical);
       }
 
       if (node.rightTop != null
        && node.rightTop.rectangle.distanceSquaredTo(point)
           < point.distanceSquaredTo(closest)) {
-        closest = nearest(point, closest, node.rightTop, !vertical);
+        result = nearest(point, closest, node.rightTop, !vertical);
       }
     }
 
-    return closest;
+    return result;
   }
 }
