@@ -83,11 +83,13 @@ public class MaxPQ<Key extends Comparable<Key>> {
     }
 
     public static void main(String[] args) {
-        MaxPQ<Integer> pq = new MaxPQ<Integer>(10);
+        MaxPQ<Integer> pq = new MaxPQ<Integer>(12);
 
-        pq.setHeap(new Integer [] { 0, 56, 88, 66, 31, 19, 58, 45, 59, 23, 65 });
+        pq.setHeap(new Integer [] { 88, 83, 69, 60, 72, 28, 58, 27, 40, 54 });
 
-        pq.heapSortFirstPass();
+        pq.insert(82);
+        pq.insert(67);
+        pq.insert(23);
 
         pq.print();
     }

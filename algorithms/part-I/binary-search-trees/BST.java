@@ -169,8 +169,8 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     public static void main(String[] args) {
-        BST<Integer, Integer> bst = BST.fromArray(new Integer[] { 28, 20, 97, 16, 79, 70, 86, 50, 94, 48 });
+        BST<Integer, Integer> bst = BST.fromArray(new Integer[] { 59, 69, 37, 46, 51, 44, 23, 82, 93, 11 });
 
-        bst.get(77);
+        bst.level_order_keys(5);
     }
 }

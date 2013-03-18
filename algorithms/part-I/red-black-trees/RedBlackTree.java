@@ -701,15 +701,15 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
 
   public static void main(String[] args) {
     RedBlackTree<Integer, Integer> st = new RedBlackTree<Integer, Integer>();
+    Integer[] array = new Integer[] { 76, 66, 90, 35, 69, 80, 98, 33, 42, 21 };
 
-    for (int i = 0; !StdIn.isEmpty(); i++) {
-      Integer key = StdIn.readInt();
-      st.put(key, i);
+    for (int i = 0; i < array.length; i++) {
+      st.put(array[i], i);
     }
 
-    st.put(12, 0);
-    st.put(51, 0);
-    st.put(83, 0);
+    st.put(93, 0);
+    st.put(60, 0);
+    st.put(14, 0);
 
     st.levelOrderTraversal();
 
