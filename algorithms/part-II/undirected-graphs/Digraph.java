@@ -20,6 +20,18 @@ public class Digraph {
     return adjacent[v];
   }
 
+  public Digraph reverse() {
+    Digraph R = new Digraph(V);
+
+    for (int v = 0; v < V; ++v) {
+      for (int w : adj(v)) {
+        R.addEdge(w, v);
+      }
+    }
+
+    return R;
+  }
+
   public int V() {
     return V;
   }
