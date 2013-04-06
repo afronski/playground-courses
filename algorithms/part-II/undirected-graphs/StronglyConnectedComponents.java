@@ -40,4 +40,41 @@ public class StronglyConnectedComponents {
       }
     }
   }
+
+  public static void main(String[] args) {
+    Digraph G = new Digraph(10);
+
+    G.addEdge('A', 'B');
+    G.addEdge('A', 'F');
+
+    G.addEdge('B', 'C');
+    G.addEdge('B', 'G');
+
+    G.addEdge('C', 'D');
+
+    G.addEdge('D', 'I');
+    G.addEdge('D', 'J');
+
+    G.addEdge('E', 'D');
+
+    G.addEdge('F', 'G');
+
+    G.addEdge('G', 'A');
+    G.addEdge('G', 'C');
+    G.addEdge('G', 'H');
+
+    G.addEdge('H', 'C');
+    G.addEdge('H', 'I');
+
+    G.addEdge('I', 'C');
+
+    G.addEdge('J', 'I');
+    G.addEdge('J', 'E');
+
+    StronglyConnectedComponents components = new StronglyConnectedComponents(G);
+
+    for (int v = 0; v < 10; ++v) {
+      StdOut.print(components.id[v] + " ");
+    }
+  }
 }

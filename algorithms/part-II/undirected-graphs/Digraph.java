@@ -1,19 +1,25 @@
+import java.util.ArrayList;
+
 public class Digraph {
   private final int V;
-  private final Bag<Integer>[] adjacent;
+  private final ArrayList<Integer>[] adjacent;
 
   @SuppressWarnings("unchecked")
   public Digraph(int V) {
     this.V = V;
-    this.adjacent = new Bag[V];
+    this.adjacent = new ArrayList[V];
 
     for (int v = 0; v < this.V; ++v) {
-      adjacent[v] = new Bag<Integer>();
+      adjacent[v] = new ArrayList<Integer>();
     }
   }
 
   public void addEdge(int v, int w) {
     adjacent[v].add(w);
+  }
+
+  public void addEdge(char v, char w) {
+    adjacent[v - 'A'].add(w - 'A');
   }
 
   public Iterable<Integer> adj(int v) {

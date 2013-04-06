@@ -28,4 +28,33 @@ public class DepthFirstOrder {
   public Iterable<Integer> order() {
     return reversePostOrder;
   }
+
+  public static void main(String[] args) {
+    Digraph G = new Digraph(8);
+
+    G.addEdge('A', 'E');
+
+    G.addEdge('B', 'E');
+    G.addEdge('B', 'A');
+    G.addEdge('B', 'C');
+
+    G.addEdge('C', 'D');
+    G.addEdge('C', 'G');
+
+    G.addEdge('F', 'B');
+    G.addEdge('F', 'E');
+    G.addEdge('F', 'C');
+    G.addEdge('F', 'G');
+
+    G.addEdge('G', 'D');
+    G.addEdge('G', 'H');
+
+    G.addEdge('H', 'D');
+
+    DepthFirstOrder dfo = new DepthFirstOrder(G);
+
+    for (int v : dfo.order()) {
+      StdOut.print((char)(v + 'A') + " ");
+    }
+  }
 }

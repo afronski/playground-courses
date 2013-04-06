@@ -41,6 +41,7 @@ public class DirectedBreadthFirstPaths {
 
     while (!queue.isEmpty()) {
       int v = queue.dequeue();
+      StdOut.print((char)(v + 'A') + " ");
 
       for (int w : G.adj(v)) {
         if (!marked[w]) {
@@ -101,5 +102,31 @@ public class DirectedBreadthFirstPaths {
 
     path.push(x);
     return path;
+  }
+
+  public static void main(String[] args) {
+    Digraph G = new Digraph(8);
+
+    G.addEdge('A', 'E');
+    G.addEdge('A', 'B');
+
+    G.addEdge('B', 'C');
+
+    G.addEdge('C', 'D');
+
+    G.addEdge('D', 'H');
+
+    G.addEdge('E', 'F');
+
+    G.addEdge('F', 'C');
+    G.addEdge('F', 'B');
+    G.addEdge('F', 'A');
+    G.addEdge('F', 'G');
+
+    G.addEdge('G', 'H');
+    G.addEdge('G', 'D');
+    G.addEdge('G', 'C');
+
+    DirectedBreadthFirstPaths bfs = new DirectedBreadthFirstPaths(G, 0);
   }
 }
