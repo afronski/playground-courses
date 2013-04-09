@@ -1,39 +1,49 @@
 public class SAP {
-  private final Digraph g;
-  private final CachingBFS.CachedArrays vcache;
-  private final CachingBFS.CachedArrays wcache;
+  private final Digraph digraph;
+
+  private final CachingBFS.CachedArrays vCache;
+  private final CachingBFS.CachedArrays wCache;
 
   public SAP(Digraph G) {
-    g = new Digraph(G);
-    vcache = new CachingBFS.CachedArrays(g.V());
-    wcache = new CachingBFS.CachedArrays(g.V());
+    digraph = new Digraph(G);
+
+    vCache = new CachingBFS.CachedArrays(digraph.V());
+    wCache = new CachingBFS.CachedArrays(digraph.V());
   }
 
-  private int min(CachingBFS pv, CachingBFS pw) {
-    int min, dist;
-    min = -1;
-    CachingBFS.CachedArrays[] its = {vcache, wcache};
-    for (Iterable<Integer> it : its) {
-      for (int node : it) {
-        if (pv.hasPathTo(node) && pw.hasPathTo(node)) {
-          dist = pv.distTo(node) + pw.distTo(node);
-          if (min < 0 || dist < min)
+  private int min(CachingBFS lengthsForV, CachingBFS lengthsForW) {
+    int min = -1,
+        dist;
+
+    CachingBFS.CachedArrays[] caches = { vCache, wCache };
+
+    for (Iterable<Integer> nodes : caches) {
+      for (int node : nodes) {
+        if (lengthsForV.hasPathTo(node) && lengthsForW.hasPathTo(node)) {
+          dist = lengthsForV.distTo(node) + lengthsForW.distTo(node);
+
+          if (min < 0 || dist < min) {
             min = dist;
+          }
         }
       }
     }
+
     return min;
   }
 
-  private int argmin(CachingBFS pv, CachingBFS pw) {
-    int min, dist, argmin;
-    argmin = -1;
-    min = -1;
-    CachingBFS.CachedArrays[] its = {vcache, wcache};
-    for (Iterable<Integer> it : its) {
-      for (int node : it) {
-        if (pv.hasPathTo(node) && pw.hasPathTo(node)) {
-          dist = pv.distTo(node) + pw.distTo(node);
+  private int argmin(CachingBFS lengthsForV, CachingBFS lengthsForW) {
+    int min = -1,
+        argmin = -1,
+        dist;
+
+    CachingBFS.CachedArrays[] caches = { vCache, wCache };
+
+    for (Iterable<Integer> nodes : caches) {
+      for (int node : nodes) {
+        if (lengthsForV.hasPathTo(node) && lengthsForW.hasPathTo(node)) {
+          dist = lengthsForV.distTo(node) + lengthsForW.distTo(node);
+
           if (min < 0 || dist < min) {
             min = dist;
             argmin = node;
@@ -41,38 +51,43 @@ public class SAP {
         }
       }
     }
+
     return argmin;
   }
 
   public int length(int v, int w) {
-    return min(new CachingBFS(g, v, vcache), new CachingBFS(g, w, wcache));
+    return min(new CachingBFS(digraph, v, vCache),
+               new CachingBFS(digraph, w, wCache));
   }
 
   public int ancestor(int v, int w) {
-    CachingBFS pv = new CachingBFS(g, v, vcache);
-    CachingBFS pw = new CachingBFS(g, w, wcache);
-    return argmin(pv, pw);
+    return argmin(new CachingBFS(digraph, v, vCache),
+                  new CachingBFS(digraph, w, wCache));
   }
 
   public int length(Iterable<Integer> v, Iterable<Integer> w) {
-    return min(new CachingBFS(g, v, vcache), new CachingBFS(g, w, wcache));
+    return min(new CachingBFS(digraph, v, vCache),
+               new CachingBFS(digraph, w, wCache));
   }
 
   public int ancestor(Iterable<Integer> v, Iterable<Integer> w) {
-    CachingBFS pv = new CachingBFS(g, v, vcache);
-    CachingBFS pw = new CachingBFS(g, w, wcache);
-    return argmin(pv, pw);
+    return argmin(new CachingBFS(digraph, v, vCache),
+                  new CachingBFS(digraph, w, wCache));
   }
 
   public static void main(String[] args) {
     In in = new In(args[0]);
+
     Digraph G = new Digraph(in);
     SAP sap = new SAP(G);
+
     while (!StdIn.isEmpty()) {
       int v = StdIn.readInt();
       int w = StdIn.readInt();
+
       int length   = sap.length(v, w);
       int ancestor = sap.ancestor(v, w);
+
       StdOut.printf("length = %d, ancestor = %d\n", length, ancestor);
     }
   }

@@ -2,132 +2,154 @@ import java.util.Iterator;
 
 class CachingBFS {
   private static final int INFINITY = Integer.MAX_VALUE;
-  private boolean[] marked;
+
+  private boolean[] isMarked;
   private int[] edgeTo;
-  private int[] distTo;
+  private int[] distanceTo;
+
   private final CachedArrays cachedArrays;
 
   public static class CachedArrays implements Iterable<Integer> {
-    private final boolean[] marked;
-    private final int[] distTo;
+    private final boolean[] isMarked;
+    private final int[] distanceTo;
     private final int[] edgeTo;
+
     private final Queue<Integer> changed;
 
     public CachedArrays(int size) {
-      marked = new boolean[size];
-      distTo = new int[size];
+      isMarked = new boolean[size];
+      distanceTo = new int[size];
       edgeTo = new int[size];
-      for (int v = 0; v < size; v++)
-        distTo[v] = INFINITY;
+
+      for (int v = 0; v < size; v++) {
+        distanceTo[v] = INFINITY;
+      }
+
       changed = new Queue<Integer>();
     }
 
     @Override
-    public Iterator<Integer> iterator() { return changed.iterator(); }
+    public Iterator<Integer> iterator() {
+      return changed.iterator();
+    }
 
     public void clear() {
-      int i;
       while (!changed.isEmpty()) {
-        i = changed.dequeue();
-        marked[i] = false;
-        distTo[i] = INFINITY;
-        edgeTo[i] = 0;
+        int v = changed.dequeue();
+
+        isMarked[v] = false;
+        distanceTo[v] = INFINITY;
+        edgeTo[v] = 0;
       }
     }
 
-    public int size() { return marked.length; }
+    public int size() {
+      return isMarked.length;
+    }
 
-    public void markChanged(int index) { changed.enqueue(index); }
+    public void markChanged(int index) {
+      changed.enqueue(index);
+    }
 
-    public boolean[] marked() { return marked; }
-    public int[] distTo() { return distTo; }
-    public int[] edgeTo() { return edgeTo; }
+    public boolean[] marked() {
+      return isMarked;
+    }
+
+    public int[] distTo() {
+      return distanceTo;
+    }
+
+    public int[] edgeTo() {
+      return edgeTo;
+    }
   }
 
+  public CachingBFS(Digraph G, int start, CachedArrays cache) {
+    cachedArrays = instantiate(cache, G.V());
 
-  public CachingBFS(Digraph G, int s, CachedArrays c) {
-    cachedArrays = instantiate(c, G.V());
-    bfs(G, s);
+    bfs(G, start);
   }
 
-  public CachingBFS(Digraph G, Iterable<Integer> sources, CachedArrays c) {
-    cachedArrays = instantiate(c, G.V());
+  public CachingBFS(Digraph G, Iterable<Integer> sources, CachedArrays cache) {
+    cachedArrays = instantiate(cache, G.V());
+
     bfs(G, sources);
   }
 
-  private CachedArrays instantiate(CachedArrays c, int size) {
-    CachedArrays cc;
+  private CachedArrays instantiate(CachedArrays cache, int size) {
+    CachedArrays created;
 
-    if (c == null) {
-      cc = new CachedArrays(size);
+    if (cache == null) {
+      created = new CachedArrays(size);
     } else {
-      c.clear();
-      cc = c;
+      cache.clear();
+      created = cache;
     }
 
-    marked = cc.marked();
-    distTo = cc.distTo();
-    edgeTo = cc.edgeTo();
+    isMarked = created.marked();
+    distanceTo = created.distTo();
+    edgeTo = created.edgeTo();
 
-    return cc;
+    return created;
   }
 
-  private void bfs(Digraph G, int s) {
-    Queue<Integer> q = new Queue<Integer>();
+  private void bfs(Digraph G, int start) {
+    Queue<Integer> queue = new Queue<Integer>();
 
-    marked[s] = true;
-    distTo[s] = 0;
+    isMarked[start] = true;
+    distanceTo[start] = 0;
 
-    cachedArrays.markChanged(s);
-    q.enqueue(s);
+    cachedArrays.markChanged(start);
+    queue.enqueue(start);
 
-    while (!q.isEmpty()) {
-      int v = q.dequeue();
+    while (!queue.isEmpty()) {
+      int v = queue.dequeue();
 
       for (int w : G.adj(v)) {
-        if (!marked[w]) {
+        if (!isMarked[w]) {
           edgeTo[w] = v;
-          distTo[w] = distTo[v] + 1;
-          marked[w] = true;
+          distanceTo[w] = distanceTo[v] + 1;
+          isMarked[w] = true;
 
           cachedArrays.markChanged(w);
-          q.enqueue(w);
+          queue.enqueue(w);
         }
       }
     }
   }
 
   private void bfs(Digraph G, Iterable<Integer> sources) {
-    Queue<Integer> q = new Queue<Integer>();
+    Queue<Integer> queue = new Queue<Integer>();
 
-    for (int s : sources) {
-      marked[s] = true;
-      distTo[s] = 0;
-      q.enqueue(s);
-      cachedArrays.markChanged(s);
+    for (int source : sources) {
+      isMarked[source] = true;
+      distanceTo[source] = 0;
+
+      queue.enqueue(source);
+      cachedArrays.markChanged(source);
     }
 
-    while (!q.isEmpty()) {
-      int v = q.dequeue();
+    while (!queue.isEmpty()) {
+      int v = queue.dequeue();
 
       for (int w : G.adj(v)) {
-        if (!marked[w]) {
+        if (!isMarked[w]) {
           edgeTo[w] = v;
-          distTo[w] = distTo[v] + 1;
-          marked[w] = true;
+          distanceTo[w] = distanceTo[v] + 1;
+          isMarked[w] = true;
 
           cachedArrays.markChanged(w);
-          q.enqueue(w);
+          queue.enqueue(w);
         }
       }
     }
   }
 
   public int distTo(int v) {
-    return distTo[v];
+    return distanceTo[v];
   }
 
   public boolean hasPathTo(int v) {
-    return marked[v];
+    return isMarked[v];
   }
 }
