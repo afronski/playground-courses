@@ -12,6 +12,7 @@ public class KruskalMST {
 
     while(!queue.isEmpty() && spanningTree.size() < G.V() - 1) {
       Edge edge = queue.delMin();
+
       int v = edge.either(),
           w = edge.other(v);
 
