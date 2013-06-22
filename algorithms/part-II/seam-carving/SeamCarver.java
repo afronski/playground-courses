@@ -2,7 +2,7 @@ import java.awt.Color;
 
 public class SeamCarver {
   private static final double BORDER_ENERGY = 195075.0;
-  private final Picture picture;
+  private Picture picture;
 
   public SeamCarver(Picture picture) {
     this.picture = new Picture(picture);
@@ -85,9 +85,33 @@ public class SeamCarver {
 
   public void removeHorizontalSeam(int[] seam) {
     validateSeam(seam.length, width());
+
+    Picture resized = new Picture(width(), height() - 1);
+
+    for (int x = 0; x < resized.width(); ++x) {
+      boolean cut = false;
+
+      for (int y = 0; y < resized.height(); ++y) {
+
+      }
+    }
+
+    picture = resized;
   }
 
   public void removeVerticalSeam(int[] seam) {
     validateSeam(seam.length, height());
+
+    Picture resized = new Picture(width() - 1, height());
+
+    for (int y = 0; y < resized.height(); ++y) {
+      boolean cut = false;
+
+      for (int x = 0; x < resized.width(); ++x) {
+
+      }
+    }
+
+    picture = resized;
   }
 }
