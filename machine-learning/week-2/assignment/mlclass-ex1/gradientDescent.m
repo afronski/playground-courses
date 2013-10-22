@@ -15,7 +15,7 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
       %       of the cost function (computeCost) and gradient here.
       %
 
-      theta = theta - (alpha/m) * (X' * (X * theta - y));
+      theta = theta - (alpha / m) * (X' * (X * theta - y));
 
       % Save the cost J in every iteration
       J_history(iter) = computeCost(X, y, theta);
