@@ -1,0 +1,30 @@
+function [ J, gradients ] = costFunctionReg(theta, X, y, lambda)
+  % COSTFUNCTIONREG Compute cost and gradient for logistic regression with regularization
+  %   J = COSTFUNCTIONREG(theta, X, y, lambda) computes the cost of using
+  %   theta as the parameter for regularized logistic regression and the
+  %   gradient of the cost w.r.t. to the parameters.
+
+  % Initialize some useful values.
+  m = length(y);
+
+  % You need to return the following variables correctly.
+  J = 0;
+  gradients = zeros(size(theta));
+
+  % Instructions: Compute the cost of a particular choice of theta.
+  %               You should set J to the cost.
+  %               Compute the partial derivatives and set gradients to the partial
+  %               derivatives of the cost w.r.t. each parameter in theta
+
+  regularized = ones(1, size(theta)(1));
+  regularized(1,1) = 0;
+
+  regularizedMatrix = eye(size(theta)(1));
+  regularizedMatrix(1, 1) = 0;
+
+  regularizedJ = (lambda / (2 * m) * (regularized * theta .^ 2));
+  J = (1 / m) * ((-y' * log(sigmoid(X * theta))) - ((1 - y)' * log(1 - sigmoid(X * theta)))) + regularizedJ;
+
+  regularizedGradients = (lambda * theta' * regularizedMatrix);
+  gradients = (1 / m) * ((sigmoid(X * theta) - y)' * X + regularizedGradients);
+end
