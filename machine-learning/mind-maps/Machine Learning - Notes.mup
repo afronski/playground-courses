@@ -118,7 +118,7 @@
               "id": 27,
               "ideas": {
                 "1": {
-                  "title": "SAMPLE: Tumor classification (malignant or benign) based on patient features (like tumor size etc.)",
+                  "title": "SAMPLE: Tumor classification (malignant or benign) based on patient features (like tumor size etc.).",
                   "id": 28,
                   "attr": {
                     "style": {
@@ -167,8 +167,7 @@
           "attr": {
             "style": {
               "background": "#FFA07A"
-            },
-            "collapsed": true
+            }
           }
         },
         "4": {
@@ -596,7 +595,7 @@
       },
       "ideas": {
         "1": {
-          "title": "TYPE: ",
+          "title": "TYPE: Regression",
           "attr": {
             "style": {
               "background": "#FFD700"
@@ -610,9 +609,26 @@
           "attr": {
             "style": {
               "background": "#FFA07A"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Continuous valued output.",
+              "id": 165,
+              "ideas": {
+                "1": {
+                  "title": "SAMPLE: prediction of housing price.",
+                  "id": 166,
+                  "attr": {
+                    "style": {
+                      "background": "#008000"
+                    }
+                  }
+                }
+              }
             }
           },
-          "ideas": {},
           "id": 110
         },
         "3": {
@@ -620,92 +636,40 @@
           "attr": {
             "style": {
               "background": "#ADD8E6"
-            }
-          },
-          "ideas": {},
-          "id": 111
-        },
-        "4": {
-          "title": "MATH",
-          "attr": {
-            "style": {
-              "background": "#9370DB"
-            }
-          },
-          "ideas": {},
-          "id": 112
-        },
-        "5": {
-          "title": "COST FUNCTION",
-          "attr": {
-            "style": {
-              "background": ""
-            }
-          },
-          "ideas": {},
-          "id": 113
-        },
-        "6": {
-          "title": "TEMPLATE",
-          "attr": {
-            "style": {
-              "background": ""
             },
             "collapsed": true
           },
           "ideas": {
             "1": {
-              "title": "TYPE: ",
+              "title": "Univariant (One Variable)",
+              "id": 168,
+              "ideas": {},
               "attr": {
                 "style": {
-                  "background": "#FFD700"
+                  "background": "#EEE8AA"
                 }
-              },
-              "ideas": {},
-              "id": 115
+              }
             },
             "2": {
-              "title": "APPLICATION",
+              "title": "Multivariant (Multiple Variables)",
+              "id": 170,
               "attr": {
                 "style": {
-                  "background": "#FFA07A"
+                  "background": "#FFEFD5"
                 }
-              },
-              "ideas": {},
-              "id": 116
+              }
             },
             "3": {
-              "title": "REPRESENTATION",
+              "title": "Details are in attached URL.https://github.com/afronski/e-learning/tree/master/machine-learning/week-2/assignment/mlclass-ex1",
+              "id": 171,
               "attr": {
                 "style": {
-                  "background": "#ADD8E6"
+                  "background": "#8FBC8F"
                 }
-              },
-              "ideas": {},
-              "id": 117
-            },
-            "4": {
-              "title": "MATH",
-              "attr": {
-                "style": {
-                  "background": "#9370DB"
-                }
-              },
-              "ideas": {},
-              "id": 118
-            },
-            "5": {
-              "title": "COST FUNCTION",
-              "attr": {
-                "style": {
-                  "background": "#FFFFFF"
-                }
-              },
-              "ideas": {},
-              "id": 119
+              }
             }
           },
-          "id": 114
+          "id": 111
         }
       },
       "id": 108
@@ -879,78 +843,6 @@
           },
           "ideas": {},
           "id": 40
-        },
-        "8": {
-          "title": "COST FUNCTION",
-          "attr": {
-            "style": {
-              "background": ""
-            }
-          },
-          "ideas": {},
-          "id": 59
-        },
-        "9": {
-          "title": "TEMPLATE",
-          "attr": {
-            "style": {
-              "background": ""
-            },
-            "collapsed": true
-          },
-          "ideas": {
-            "1": {
-              "title": "TYPE: ",
-              "attr": {
-                "style": {
-                  "background": "#FFD700"
-                }
-              },
-              "ideas": {},
-              "id": 97
-            },
-            "2": {
-              "title": "APPLICATION",
-              "attr": {
-                "style": {
-                  "background": "#FFA07A"
-                }
-              },
-              "ideas": {},
-              "id": 98
-            },
-            "3": {
-              "title": "REPRESENTATION",
-              "attr": {
-                "style": {
-                  "background": "#ADD8E6"
-                }
-              },
-              "ideas": {},
-              "id": 99
-            },
-            "4": {
-              "title": "MATH",
-              "attr": {
-                "style": {
-                  "background": "#9370DB"
-                }
-              },
-              "ideas": {},
-              "id": 100
-            },
-            "5": {
-              "title": "COST FUNCTION",
-              "attr": {
-                "style": {
-                  "background": "#FFFFFF"
-                }
-              },
-              "ideas": {},
-              "id": 101
-            }
-          },
-          "id": 96
         }
       },
       "attr": {
