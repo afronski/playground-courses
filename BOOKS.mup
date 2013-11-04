@@ -1,0 +1,30 @@
+{
+  "title": "BOOKS",
+  "id": 1,
+  "formatVersion": 2,
+  "attr": {
+    "style": {
+      "background": "#000000"
+    }
+  },
+  "ideas": {
+    "1": {
+      "title": "Learn You Some Erlang For Great Good",
+      "id": 2,
+      "attr": {
+        "style": {
+          "background": "#ADD8E6"
+        }
+      }
+    },
+    "-1": {
+      "title": "Scala in Depth",
+      "id": 3,
+      "attr": {
+        "style": {
+          "background": "#ADD8E6"
+        }
+      }
+    }
+  }
+}
