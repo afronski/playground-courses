@@ -18,6 +18,148 @@
           "attr": {
             "style": {
               "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Real-Time components are crucial for modern applications.",
+              "id": 4,
+              "ideas": {
+                "1": {
+                  "title": "Knowing reactive programming in such systems is an essential and desired skill.",
+                  "id": 7,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "collapsed": true,
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            },
+            "2": {
+              "title": "Reactive Programming is built on top functional programming.",
+              "id": 9
+            }
+          }
+        },
+        "2": {
+          "title": "What?",
+          "id": 11,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "10 years ago we had 10 server nodes, nowadays we have 1000 nodes. Data volume moved from GBs to TBs and is going to PBs.",
+              "id": 12
+            },
+            "2": {
+              "title": "Previously: Managed servers and containers.",
+              "id": 14,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                }
+              },
+              "ideas": {}
+            },
+            "3": {
+              "title": "Now: Reactive Applications.",
+              "id": 16,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Event-Driven",
+                  "id": 17,
+                  "ideas": {
+                    "1": {
+                      "title": "React to events",
+                      "id": 22,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Scalable",
+                  "id": 18,
+                  "ideas": {
+                    "1": {
+                      "title": "React to load",
+                      "id": 23,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Resilient",
+                  "id": 19,
+                  "ideas": {
+                    "1": {
+                      "title": "React to failures",
+                      "id": 24,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Responsive",
+                  "id": 20,
+                  "ideas": {
+                    "1": {
+                      "title": "React to users",
+                      "id": 25,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "REACTIVE - readily responsive to stimulus.",
+              "id": 21,
+              "attr": {
+                "style": {
+                  "background": "#800080"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Many smaller components, asynchronously reacting to the events.",
+                  "id": 26
+                }
+              }
             }
           }
         }
@@ -25,8 +167,19 @@
       "attr": {
         "style": {
           "background": "#ADD8E6"
+        },
+        "collapsed": true
+      }
+    },
+    "-1": {
+      "title": "FUNCTIONAL PROGRAMMING",
+      "id": 28,
+      "attr": {
+        "style": {
+          "background": "#FFFFFF"
         }
       }
     }
-  }
+  },
+  "links": []
 }
