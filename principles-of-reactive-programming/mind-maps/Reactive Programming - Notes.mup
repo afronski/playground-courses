@@ -1,5 +1,32 @@
 {
-  "title": "Press Space or double-click to edit",
+  "title": "REACTIVE PROGRAMMING",
   "id": 1,
-  "formatVersion": 2
+  "formatVersion": 2,
+  "attr": {
+    "style": {
+      "background": "#FFFFFF"
+    }
+  },
+  "ideas": {
+    "1": {
+      "title": "INTRODUCTION",
+      "id": 2,
+      "ideas": {
+        "1": {
+          "title": "Why?",
+          "id": 3,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#ADD8E6"
+        }
+      }
+    }
+  }
 }
