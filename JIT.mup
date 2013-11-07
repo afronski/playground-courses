@@ -1,5 +1,22 @@
 {
-  "title": "Press Space or double-click to edit",
+  "title": "Compilers",
   "id": 1,
-  "formatVersion": 2
+  "formatVersion": 2,
+  "ideas": {
+    "1": {
+      "title": "JIT",
+      "id": 2,
+      "attr": {
+        "style": {
+          "background": "#FFFFFF"
+        }
+      },
+      "ideas": {}
+    }
+  },
+  "attr": {
+    "style": {
+      "background": "#000000"
+    }
+  }
 }
