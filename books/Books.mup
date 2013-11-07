@@ -379,6 +379,120 @@
               }
             }
           }
+        },
+        "5": {
+          "title": "Erlang",
+          "id": 56,
+          "ideas": {
+            "1": {
+              "title": "Tools",
+              "id": 45,
+              "ideas": {
+                "1": {
+                  "title": "Services",
+                  "id": 49,
+                  "ideas": {
+                    "1": {
+                      "title": "RabbitMQ",
+                      "id": 46,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Very nice simulator (Node.js based).",
+                          "id": 51,
+                          "attr": {
+                            "style": {
+                              "background": "#FAFAD2"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Riak",
+                      "id": 54,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Developer Tools",
+                  "id": 50,
+                  "ideas": {
+                    "1": {
+                      "title": "Rebar",
+                      "id": 47,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Emacs",
+                      "id": 48,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Libraries",
+                  "id": 53,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "WebMachine",
+                      "id": 55,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFFFF"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFFFFF"
+                },
+                "collapsed": true
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FFDAB9"
+            },
+            "collapsed": true
+          }
         }
       }
     },
