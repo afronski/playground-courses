@@ -9,14 +9,249 @@
       "attr": {
         "style": {
           "background": "#FFFFFF"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Just-In-Time Compilation",
+          "id": 4,
+          "ideas": {
+            "1": {
+              "title": "Right before executing interpreter's / compiler's output.",
+              "id": 5,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          }
+        },
+        "2": {
+          "title": "IR",
+          "id": 8,
+          "ideas": {
+            "1": {
+              "title": "Intermediate Representation",
+              "id": 9,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "2": {
+              "title": "It's helping compiler developers  \"seeing\" some stuff, optimizing patterns before generating the final machine or byte code.",
+              "id": 10
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          }
+        },
+        "3": {
+          "title": "Memory Allocation",
+          "id": 11,
+          "ideas": {
+            "1": {
+              "title": "Code",
+              "id": 21,
+              "ideas": {
+                "1": {
+                  "title": "For every AST node?",
+                  "id": 12,
+                  "ideas": {
+                    "1": {
+                      "title": "Not a good idea - with big code's size result may become too big to be fit entirely into the CPU's cache, causing potential performance problems to the whole system.",
+                      "id": 13,
+                      "attr": {
+                        "style": {
+                          "background": "#F08080"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "There is a better approach.",
+                      "id": 15,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        }
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Stubs (V8 terminology) - shared procedures, code blocks. They could be lazily compiled (if not used) etc.",
+                          "id": 16,
+                          "attr": {
+                            "style": {
+                              "background": "#E6E6FA"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "Heap",
+              "id": 23,
+              "attr": {
+                "style": {
+                  "background": "#9370DB"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Place for creating and storing objects (usually to big for CPU registers).",
+                  "id": 24,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Live objects and their references create a directed graph, starting in a ROOT (e.g. global variables and pointers on stack).",
+                      "id": 26,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFFFF"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "Garbage Collectors",
+              "id": 27,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "4": {
+              "title": "Fixed-page Bump Allocation",
+              "id": 28,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "1. Take the memory chunk of fixed size (a page).",
+                  "id": 29,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "2. Give away consequent slices of it as a return value  of allocation procedure.",
+                  "id": 30,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "3. When running low on memory, perform the GC and free all unused space.",
+                  "id": 31,
+                  "ideas": {
+                    "1": {
+                      "title": "For live objects you can compact them or move to the new memory chunk.",
+                      "id": 32,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          }
+        },
+        "4": {
+          "title": "Spilling - process of saving / restoring registers to/from memory.",
+          "id": 33,
+          "attr": {
+            "style": {
+              "background": "#E0FFFF"
+            }
+          }
+        }
+      }
+    },
+    "0.5": {
+      "title": "AST",
+      "id": 6,
+      "ideas": {
+        "1": {
+          "title": "Abstract Syntax Tree",
+          "id": 7,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            }
+          }
         }
       },
-      "ideas": {}
+      "attr": {
+        "style": {
+          "background": "#FFFFFF"
+        },
+        "collapsed": true
+      }
     }
   },
   "attr": {
     "style": {
       "background": "#000000"
-    }
+    },
+    "collapsed": true
   }
 }
