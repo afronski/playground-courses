@@ -197,7 +197,8 @@
               "attr": {
                 "style": {
                   "background": "#F08080"
-                }
+                },
+                "collapsed": true
               },
               "ideas": {
                 "1": {
@@ -238,6 +239,64 @@
                 "collapsed": true,
                 "style": {
                   "background": "#E0E0E0"
+                }
+              }
+            },
+            "3": {
+              "title": "Functions and State",
+              "id": 97,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "When there are no side-effects concept of time is not important.",
+                  "id": 98,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "An object has a state if its behavior is influenced by its history.",
+                  "id": 99,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "In purely functional environment without side-effects you can assume that assignments have referential transparency.",
+                  "id": 101,
+                  "ideas": {
+                    "1": {
+                      "title": "With side-effects it's not true.",
+                      "id": 102,
+                      "attr": {
+                        "style": {
+                          "background": "#F08080"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Operational Equivalence is a property of \"being the same\" in terms of comparison the mutable objects.",
+                      "id": 103,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
                 }
               }
             }
