@@ -590,7 +590,8 @@
       "attr": {
         "style": {
           "background": "#808080"
-        }
+        },
+        "collapsed": true
       },
       "ideas": {
         "1": {
@@ -598,9 +599,20 @@
           "attr": {
             "style": {
               "background": "#FFD700"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "SAMPLE: XOR / XNOR",
+              "id": 216,
+              "attr": {
+                "style": {
+                  "background": "#008000"
+                }
+              }
             }
           },
-          "ideas": {},
           "id": 173
         },
         "2": {
@@ -647,7 +659,8 @@
           "attr": {
             "style": {
               "background": "#ADD8E6"
-            }
+            },
+            "collapsed": true
           },
           "ideas": {
             "1": {
@@ -702,6 +715,15 @@
                           "background": "#90EE90"
                         }
                       }
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Remember about bias (node which contains +1).",
+                  "id": 217,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
                     }
                   }
                 }
@@ -790,9 +812,52 @@
           "attr": {
             "style": {
               "background": "#9370DB"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Forward Propagation",
+              "id": 210,
+              "attr": {
+                "style": {
+                  "background": "#F08080"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Process of computing activations from the input to the output.",
+                  "id": 211,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Without input layer, it's just a simple logistic regression.",
+                  "id": 212,
+                  "ideas": {
+                    "1": {
+                      "title": "Rather using features it uses activation values from hidden layers, which depends from input layer.",
+                      "id": 213,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
             }
           },
-          "ideas": {},
           "id": 176
         },
         "5": {
@@ -851,6 +916,39 @@
           "attr": {
             "style": {
               "background": "#FFD700"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Extension of One-vs-All method.",
+              "id": 218,
+              "attr": {
+                "style": {
+                  "background": "#FFB6C1"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Multiple nodes in output layer.",
+                  "id": 219,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "h_Theta(x) is an vector which returns a 1 on position which is recognized as a class for the input features.",
+                  "id": 222,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
             }
           }
         }
