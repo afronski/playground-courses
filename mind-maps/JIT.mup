@@ -223,6 +223,67 @@
               "background": "#E0FFFF"
             }
           }
+        },
+        "5": {
+          "title": "Numbers",
+          "id": 34,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "We have to support both, integers and doubles, being  aware of performance and accuracy.",
+              "id": 35,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "SMI - Small Integer",
+              "id": 36,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "3": {
+              "title": "How to differ numbers from pointers (heap objects) ?",
+              "id": 37,
+              "attr": {
+                "style": {
+                  "background": "#FFF0F5"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "There is a method called Tagging.",
+                  "id": 38,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "On the least significant bit of the 64 bit register we put 0 for SMI and 1 for pointers.",
+                      "id": 39,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
