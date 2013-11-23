@@ -38,16 +38,19 @@ object Lists {
    * @return The largest element in `xs`
    * @throws java.util.NoSuchElementException if `xs` is an empty list
    */
-  def max(xs: List[Int]): Int = {
-    def maxInner(rest: List[Int], max: Int): Int = rest match {
-      case Nil => max
-      case head :: tail => if (head > max) {
-        maxInner(tail, head)
-      } else {
-        maxInner(tail, max)
+  def max(xs: List[Int]): Int = xs match {
+    case list if list.isEmpty => throw new NoSuchElementException()
+    case list => {
+      def maxInner(rest: List[Int], max: Int): Int = rest match {
+        case Nil => max
+        case head :: tail => if (head > max) {
+          maxInner(tail, head)
+        } else {
+          maxInner(tail, max)
+        }
       }
-    }
 
-    maxInner(xs, Int.MinValue)
+      maxInner(list, Int.MinValue)
+    }
   }
 }
