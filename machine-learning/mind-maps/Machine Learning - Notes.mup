@@ -910,6 +910,199 @@
             "collapsed": true
           }
         },
+        "6": {
+          "title": "COST FUNCTION",
+          "id": 223,
+          "attr": {
+            "style": {
+              "background": "#D3D3D3"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "We need to use One-vs-All method for classes amount: k >= 3",
+              "id": 224,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "3": {
+              "title": "For gradient we need to compute J(Theta) and partial derivatives for i, j, l",
+              "id": 228,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "title": "BACKPROPAGATION ALGORITHM",
+          "id": 226,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "In order to compute gradient for Neural Network we need to calculate errors for each node in each layer.",
+              "id": 229,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "We're creating error for node 'j' in layer 'l', which stands for: delta_j^(4) = a_j^(4) - y_j (4th layer, l = 4)",
+                  "id": 230,
+                  "ideas": {
+                    "2": {
+                      "title": "There is no delta^(1) because first layer represents input so there is no error for gathering data from the input sources.",
+                      "id": 232,
+                      "attr": {
+                        "style": {
+                          "background": "#FFB6C1"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "We're starting from output to the input (in backward direction).",
+                  "id": 231,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "For bias nodes ('j' = 0) we're removing regularization parameter.",
+                  "id": 235,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "INTUITION",
+              "id": 236,
+              "attr": {
+                "style": {
+                  "background": "#8A2BE2"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "In forward propagation we're passing input data x^(i) and for each layer we're calculating z^(l)_(j) and then applying sigmoid function to get a^(l)_(j) (an activation function for this node). Then we're propagating values to the output. ",
+                  "id": 238,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "z^(l)_(j) = Sum over all input signals times weight for each signal.",
+                      "id": 239,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Backpropagation is very similar case but calculations are flowing from right to the left (not from left to right as in forward propagation example).",
+                  "id": 240,
+                  "attr": {
+                    "style": {
+                      "background": "#FFF0F5"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "delta^(l)_(j) = Sum over all output error signals (or output signal for last layer) times weight for each signal.",
+                      "id": 241,
+                      "attr": {
+                        "style": {
+                          "background": "#FFF0F5"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "Random initialization is important!",
+              "id": 251,
+              "ideas": {
+                "1": {
+                  "title": "Backpropagation won't work if you set initial value for elements in theta vector to 0.",
+                  "id": 252,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA07A"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "- M < Theta^(l)_ij < M",
+                  "id": 253,
+                  "attr": {
+                    "style": {
+                      "background": "#FFF0F5"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Where: M is a edge value for random values range.",
+                      "id": 254,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        }
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Symmetry Breaking",
+                  "id": 255,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFB6C1"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        },
         "0.5": {
           "title": "TYPE: Multiclass Classification",
           "id": 188,
@@ -954,6 +1147,76 @@
         }
       },
       "id": 172
+    },
+    "22": {
+      "title": "GRADIENT CHECKING",
+      "id": 243,
+      "attr": {
+        "style": {
+          "background": "#90EE90"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Way of veryfing complex gradient computation models.",
+          "id": 244,
+          "attr": {
+            "style": {
+              "background": "#FFF0F5"
+            }
+          }
+        },
+        "2": {
+          "title": "We're trying to estimate gradient value by calculating two points around actual gradient value (epsilon is radius for margin range) and by using slope of created line we can estimate value of calculated gradient.",
+          "id": 245,
+          "attr": {
+            "style": {
+              "background": "#7CFC00"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "epsilon = 10^(-4)",
+              "id": 246,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                }
+              }
+            },
+            "2": {
+              "title": "d / dTheta J(Theta) ~= (J(Theta + epsilon) - J(Theta - epsilon)) / (2 * epsilon)",
+              "id": 248,
+              "attr": {
+                "style": {
+                  "background": "#F08080"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "REMEMBER: Turn it off before you'll use for learning your complex gradient optimization computation model.",
+          "id": 249,
+          "attr": {
+            "style": {
+              "background": "#FF0000"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "It will be slow as hell.",
+              "id": 250,
+              "attr": {
+                "style": {
+                  "background": "#FFA07A"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "0.625": {
       "title": "LINEAR REGRESSION",
