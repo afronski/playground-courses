@@ -171,6 +171,181 @@
         "collapsed": true
       }
     },
+    "2": {
+      "title": "Monads and Effects",
+      "id": 104,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Effects",
+          "id": 105,
+          "ideas": {
+            "1": {
+              "title": "Synchronous",
+              "id": 106,
+              "ideas": {
+                "1": {
+                  "title": "SINGLE: T / Try[T]",
+                  "id": 107,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "MANY: Iterable[T]",
+                  "id": 108,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "Asynchronous",
+              "id": 109,
+              "ideas": {
+                "1": {
+                  "title": "SINGLE: Future[T]",
+                  "id": 110,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "MANY: Observable[T]",
+                  "id": 112,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
+          }
+        },
+        "2": {
+          "title": "Latency is also an Effect.",
+          "id": 114,
+          "attr": {
+            "style": {
+              "background": "#00BFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Future[T] is a monad which handles exceptions and latency.",
+              "id": 115,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "Combinators for Futures",
+          "id": 116,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Future is a standard Monad.",
+              "id": 117,
+              "attr": {
+                "style": {
+                  "background": "#FFF0F5"
+                }
+              }
+            },
+            "2": {
+              "title": "Awaitable is base trait for Future in Scala standard library.",
+              "id": 118,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "It is used to \"go out\" from Monad (e.g. result() return T from Future[T], which block execution context). ",
+                  "id": 119,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "Async - Await combinators are for managing imperative flow with mutable state in asynchronous environment. ",
+              "id": 120,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "12": {
+      "title": "Promises",
+      "id": 121,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "It contains Future[T] and having two methods: complete and tryComplete (returns False when Future is already completed).",
+          "id": 122,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            }
+          }
+        }
+      }
+    },
     "-1": {
       "title": "FUNCTIONAL PROGRAMMING",
       "id": 28,
