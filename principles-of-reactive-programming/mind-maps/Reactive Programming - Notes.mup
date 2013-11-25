@@ -346,6 +346,401 @@
         }
       }
     },
+    "22": {
+      "title": "Observables",
+      "id": 123,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "It's a combination of multiple asynchronous effects.",
+          "id": 124,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            }
+          }
+        },
+        "2": {
+          "title": "Power of Expressiveness",
+          "id": 128,
+          "ideas": {
+            "1": {
+              "title": "Iterable[T] / Iterator[T] traits are equal to one composition Try[Option[T]] and three traits Observable[T], Observer[T] and Subscription[T].",
+              "id": 129,
+              "attr": {
+                "style": {
+                  "background": "#F0F8FF"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#F0F8FF"
+            },
+            "collapsed": true
+          }
+        },
+        "3": {
+          "title": "flatMap is working as asynchronous 'map and merge' algorithm (merging collection, without preserving order).",
+          "id": 130,
+          "attr": {
+            "style": {
+              "background": "#F5F5DC"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "With all consequences of merging - like merging streams with 'terminators' pushed at different time (it will close merged stream).",
+              "id": 131,
+              "attr": {
+                "style": {
+                  "background": "#F5F5DC"
+                }
+              }
+            },
+            "2": {
+              "title": "concat performs buffering and preserves order, but still - with infinite streams you will ran out of memory.",
+              "id": 132,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "groupBy is a kind of routing (grouping by certain condition).",
+          "id": 133,
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
+            }
+          }
+        }
+      }
+    },
+    "32": {
+      "title": "Subscriptions",
+      "id": 134,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Unsubscription != Cancellacion",
+          "id": 135,
+          "ideas": {
+            "1": {
+              "title": "Difference between Cold and Hot observers.",
+              "id": 136,
+              "ideas": {
+                "1": {
+                  "title": "Hot Observable - events are generating without consumers.",
+                  "id": 137,
+                  "attr": {
+                    "style": {
+                      "background": "#FF8C00"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Cold Observable - subscription enables events generation.",
+                  "id": 138,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FFA07A"
+            }
+          }
+        }
+      }
+    },
+    "52": {
+      "title": "Reactive Extensions Streams",
+      "id": 140,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Observable.create - base building block for each Rx Operator. ",
+          "id": 141,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            }
+          }
+        },
+        "2": {
+          "title": "OPERATORS",
+          "id": 143,
+          "ideas": {
+            "1": {
+              "title": "startWith(...)",
+              "id": 144,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "filter(...)",
+              "id": 146,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "3": {
+              "title": "map(...)",
+              "id": 147,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "4": {
+              "title": "Conversion from Observable[T] to Future[T].",
+              "id": 148,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Subjects are for observables the same that promises are for futures.",
+                  "id": 149,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "It makes cold observables hot.",
+                      "id": 150,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Subjects are like channels.",
+                      "id": 151,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "ReplaySubject - replay all previous notifications to the newly connected subscribers.",
+                  "id": 152,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Default one is a PublishSubject (sends current value).",
+                  "id": 153,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "BehaviorSubject always caches latest value (newly connected subscriber will receive only last value).",
+                  "id": 154,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  },
+                  "ideas": {}
+                },
+                "5": {
+                  "title": "AsyncSubject caches final value (similar to the ReplaySubject).",
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  },
+                  "id": 155,
+                  "ideas": {}
+                }
+              }
+            },
+            "5": {
+              "title": "Conversion from Future[T] to Observable[T].",
+              "id": 158,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Created with use of AsyncSubject (behavior similar to the Promise[T]).",
+                  "id": 159,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "title": "Observable.toBlockingObservable(...)",
+              "id": 162,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Rest of operators are non-blocking.",
+                  "id": 163,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "7": {
+              "title": "reduce(...)",
+              "id": 165,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "0.5": {
+              "title": "never(...)",
+              "id": 145,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#ADD8E6"
+            }
+          }
+        },
+        "3": {
+          "title": "Instead of Try[T] observables have Notification[T] (three callbacks: onNext, onError, onCompleted).",
+          "id": 160,
+          "ideas": {
+            "1": {
+              "title": "materialize(...)",
+              "id": 161,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          }
+        }
+      }
+    },
+    "62": {
+      "title": "Schedulers",
+      "id": 139,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Moving from Iterable[T] to Observable[T] requires introducing concurrency (producer should have its own thread).",
+          "id": 166,
+          "attr": {
+            "style": {
+              "background": "#ADD8E6"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "That's the reason of Schedulers existence.",
+              "id": 167,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "Don't reimplement Observer[T] and Observable[T] and always use Observable[T].create method.",
+          "id": 168,
+          "attr": {
+            "style": {
+              "background": "#FFA07A"
+            }
+          }
+        }
+      }
+    },
     "-1": {
       "title": "FUNCTIONAL PROGRAMMING",
       "id": 28,
@@ -811,6 +1206,36 @@
                   "background": "#FFF0F5"
                 }
               }
+            }
+          }
+        }
+      }
+    },
+    "19.5": {
+      "title": "Duality",
+      "id": 126,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Future[T] and Try[T] are dual.",
+          "id": 125,
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
+            }
+          }
+        },
+        "2": {
+          "title": "Iterable[T] and Observable[T] are dual.",
+          "id": 127,
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
             }
           }
         }
