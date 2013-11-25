@@ -1475,15 +1475,6 @@
             }
           }
         },
-        "7": {
-          "title": "For high bias will help getting additional features, adding new polynomial features and decreasing lambda.",
-          "id": 283,
-          "attr": {
-            "style": {
-              "background": "#E6E6FA"
-            }
-          }
-        },
         "8": {
           "title": "Smaller neural networks are more prone to underfitting.",
           "id": 285,
@@ -1534,6 +1525,15 @@
               }
             }
           }
+        },
+        "5.5": {
+          "title": "For high bias will help getting additional features, adding new polynomial features and decreasing lambda.",
+          "id": 283,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            }
+          }
         }
       }
     },
@@ -1543,6 +1543,200 @@
       "attr": {
         "style": {
           "background": "#008000"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "PRIORITIES",
+          "id": 290,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "It's hard to guess which features and options are good - moreover, fixiation on one thing and gut feeling it's not a good way for spending time and resources.",
+              "id": 291,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "ERROR ANALYSIS",
+          "id": 293,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Manual examination the examles that your algorithm made errors on.",
+              "id": 296,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Counting and providing categories are helpful.",
+              "id": 297,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "3": {
+              "title": "Single Row / Single Number Evaluation Metric",
+              "id": 298,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "SKEWED CLASSES",
+          "id": 299,
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Ratio negative to positive examples is very high (one class is a major in our datasets).",
+              "id": 300,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Precision / Recall are much more appropriate metrics in such case.",
+              "id": 301,
+              "attr": {
+                "style": {
+                  "background": "#8A2BE2"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "PRECISION",
+                  "id": 305,
+                  "ideas": {
+                    "1": {
+                      "title": "#True_Positives / #Predicted_Positives = #True_Positives / (#True_Positives + #False Positives)",
+                      "id": 306,
+                      "ideas": {},
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "RECALL",
+                  "id": 308,
+                  "ideas": {
+                    "1": {
+                      "title": "#True_Positives / #Actual_Positives = #True_Positives / (#True_Positives + #False_Negatives)",
+                      "id": 309,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "If we need more precision or recall we can trade one to each other.",
+          "id": 310,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "We can increase / decrease threshold for predicting 1 or 0.",
+              "id": 311,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Increasing recall increases amount of False Positives.",
+              "id": 312,
+              "attr": {
+                "style": {
+                  "background": "#FFF0F5"
+                }
+              }
+            },
+            "3": {
+              "title": "Increasing precision increases amount of False Negatives.",
+              "id": 313,
+              "attr": {
+                "style": {
+                  "background": "#FFF0F5"
+                }
+              }
+            },
+            "4": {
+              "title": "F_1 Score - for comparing precision / recall numbers.",
+              "id": 314,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          }
+        },
+        "0.5": {
+          "title": "ASAP: Quick and Dirty hacks in order to plot learning curves, test datasets etc.",
+          "id": 294,
+          "attr": {
+            "style": {
+              "background": "#F08080"
+            }
+          }
         }
       }
     },
