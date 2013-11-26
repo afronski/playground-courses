@@ -8,7 +8,876 @@
     }
   },
   "ideas": {
-    "1": {
+    "21": {
+      "title": "Test-Driven Infrastructure with Chef",
+      "id": 73,
+      "attr": {
+        "style": {
+          "background": "#ADD8E6"
+        }
+      }
+    },
+    "31": {
+      "title": "Programming Amazon EC2",
+      "id": 74,
+      "attr": {
+        "style": {
+          "background": "#ADD8E6"
+        }
+      },
+      "ideas": {}
+    },
+    "0.5": {
+      "title": "Scala in Depth",
+      "id": 3,
+      "attr": {
+        "style": {
+          "background": "#ADD8E6"
+        }
+      }
+    },
+    "0.25": {
+      "title": "Erlang Handbook",
+      "id": 72,
+      "attr": {
+        "style": {
+          "background": "#ADD8E6"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Structure",
+          "id": 76,
+          "ideas": {
+            "1": {
+              "title": "Modules",
+              "id": 77,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Modules consists of Tags and Values (some of them are predefined like \"module\" etc.).",
+                  "id": 81,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "Macros",
+              "id": 79,
+              "attr": {
+                "style": {
+                  "background": "#FFF0F5"
+                }
+              }
+            },
+            "3": {
+              "title": "Records",
+              "id": 80,
+              "attr": {
+                "style": {
+                  "background": "#FFF0F5"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "HRL files can be included via \"include\" tag inside module.",
+                  "id": 82,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          }
+        },
+        "3": {
+          "title": "Pattern Matching",
+          "id": 101,
+          "attr": {
+            "style": {
+              "background": "#FFFACD"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Variables can be bound only once.",
+              "id": 102,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "\"_\" is an alias for ignored variable.",
+              "id": 103,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "3": {
+              "title": "\"=\" is a pattern matching operator, not assignment (at first it will assign value to variable name, but with bound value it will do a pattern match between value and variable result). ",
+              "id": 104,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "4": {
+              "title": "Strings can be prefixed (also $d is a 'd' character).",
+              "id": 105,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "title": "Processes",
+          "id": 111,
+          "ideas": {
+            "1": {
+              "title": "A process corresponds to one thread of control.",
+              "id": 113,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "self/0 returns PID of the process itself.",
+              "id": 114,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "3": {
+              "title": "spawn/3 spawns new process executing passed function.",
+              "id": 115,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "spawn/4 spawns a process at another node.",
+                  "id": 116,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "Process can be associated with a name (an atom).",
+              "id": 117,
+              "attr": {
+                "style": {
+                  "background": "#00FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "register/2",
+                  "id": 118,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "registered/0",
+                  "id": 119,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "whereis/1",
+                  "id": 120,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "title": "Processes communicate by sending and receiving messages.",
+              "id": 121,
+              "ideas": {
+                "1": {
+                  "title": "Messages are sent using the send operator (!) and are received using 'receive' clause.",
+                  "id": 122,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Each process has message queue (a mailbox).",
+                  "id": 123,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                },
+                "collapsed": true
+              }
+            },
+            "6": {
+              "title": "Receive clause is also a pattern matchin clause with one additional clause called 'after' for handling timeout.",
+              "id": 124,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Two special values: infinity (equivalent to not using a timeout) and 0 (timeout will occur immediately if there is no matching message in the mailbox).",
+                  "id": 125,
+                  "attr": {
+                    "style": {
+                      "background": "#F0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "7": {
+              "title": "Process always terminate with an exit reason which may be any term.",
+              "id": 126,
+              "ideas": {
+                "1": {
+                  "title": "Three BIFs are terminating the process.",
+                  "id": 127,
+                  "ideas": {
+                    "1": {
+                      "title": "exit(Reason)",
+                      "id": 128,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "erlang:error(Reason)",
+                      "id": 129,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "erlang:error(Reason, Args)",
+                      "id": 130,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              }
+            },
+            "8": {
+              "title": "Processes can be linked to each other.",
+              "id": 131,
+              "ideas": {
+                "1": {
+                  "title": "Link is a bidirectional and there can be only one link between two processes.",
+                  "id": 132,
+                  "ideas": {
+                    "1": {
+                      "title": "link/1",
+                      "id": 133,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "spawn_link/3",
+                      "id": 134,
+                      "ideas": {
+                        "1": {
+                          "title": "Combines spawn and link as an atomic operation.",
+                          "id": 135,
+                          "attr": {
+                            "style": {
+                              "background": "#90EE90"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Exit signal will be send to all processes that are linked to.",
+                  "id": 136,
+                  "ideas": {
+                    "1": {
+                      "title": "exit/2 with PID and Reason",
+                      "id": 137,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                },
+                "collapsed": true
+              }
+            },
+            "9": {
+              "title": "Trapping Exits is a process of transforming any exit signal to the message which will be put in mailbox.",
+              "id": 138,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "process_flag(trap_exit, true)",
+                  "id": 139,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Any exit signal with reason normal is ignored by default!",
+                  "id": 140,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                }
+              }
+            },
+            "10": {
+              "title": "Monitors",
+              "id": 141,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "erlang:monitor/2, returns a reference to the monitor",
+                  "id": 143,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "You can create several monitors for two processes.",
+                      "id": 146,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Way of observing other processes from active process.",
+                  "id": 144,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "erlang:demonitor(Ref)",
+                  "id": 145,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "11": {
+              "title": "Each process has priority and dictionary.",
+              "id": 147,
+              "ideas": {
+                "1": {
+                  "title": "Priority should not be changed, a problem that requires changing processes priorities can generally be solved by another approach.",
+                  "id": 148,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "You can keep up with global variables or other values by using process dictionary.",
+                  "id": 149,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
+            },
+            "collapsed": true
+          }
+        },
+        "6": {
+          "title": "Error Handling",
+          "id": 150,
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "error",
+              "id": 151,
+              "ideas": {
+                "1": {
+                  "title": "erlang:error(Reason) or erlang:error(Reason, Args)",
+                  "id": 157,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "2": {
+              "title": "exit",
+              "id": 153,
+              "ideas": {
+                "1": {
+                  "title": "exit(Reason)",
+                  "id": 156,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "3": {
+              "title": "throw",
+              "id": 154,
+              "ideas": {
+                "1": {
+                  "title": "throw(Expr)",
+                  "id": 155,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "catch Expr (again, a pattern matching clause)",
+                      "id": 159,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "title": "Distributed Erlang",
+          "id": 160,
+          "attr": {
+            "style": {
+              "background": "#008000"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "epmd - Erlang Port Mapper Daemon",
+              "id": 161,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "All nodes are loosely connected and automatically reconnects to each other.",
+              "id": 162,
+              "ideas": {
+                "1": {
+                  "title": "You can override it by 'hidden node' mode or by providing command line option: '-connect_all false'.",
+                  "id": 163,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                },
+                "collapsed": true
+              }
+            },
+            "3": {
+              "title": "Each node has its own magic cookie, which is an atom.",
+              "id": 164,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          }
+        },
+        "1.5": {
+          "title": "Functions",
+          "id": 106,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Functions are defined as a sequence of one or more function clauses (with or without guardians).",
+              "id": 108,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "=:= and =/= behave in the same way as JS operators === and !==",
+              "id": 109,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "3": {
+              "title": "'andalso' and 'orelse' are the lazier versions of 'and' and 'or'",
+              "id": 110,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "0.5": {
+          "title": "Data Types",
+          "id": 83,
+          "attr": {
+            "style": {
+              "background": "#E0FFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Atoms",
+              "id": 84,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "2": {
+              "title": "Booleans",
+              "id": 85,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "3": {
+              "title": "Integers",
+              "id": 86,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "4": {
+              "title": "Floats",
+              "id": 87,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "5": {
+              "title": "References",
+              "id": 88,
+              "ideas": {
+                "1": {
+                  "title": "make_ref/0",
+                  "id": 89,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "This term is unique in Erlang Runtime System.",
+                  "id": 90,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              }
+            },
+            "6": {
+              "title": "Ports",
+              "id": 91,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "7": {
+              "title": "PIDs",
+              "id": 92,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "8": {
+              "title": "Funs",
+              "id": 93,
+              "ideas": {
+                "1": {
+                  "title": "Stands for Functional Object",
+                  "id": 94,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              }
+            },
+            "9": {
+              "title": "Tuples",
+              "id": 95,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "10": {
+              "title": "Records",
+              "id": 96,
+              "ideas": {
+                "1": {
+                  "title": "Often called a \"named tuple\" with named elements, called fields.",
+                  "id": 97,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              }
+            },
+            "11": {
+              "title": "Lists",
+              "id": 98,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "12": {
+              "title": "Strings",
+              "id": 99,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            },
+            "13": {
+              "title": "Binaries",
+              "id": 100,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "0.375": {
       "title": "Learn You Some Erlang For Great Good",
       "id": 2,
       "attr": {
@@ -606,15 +1475,6 @@
             },
             "collapsed": true
           }
-        }
-      }
-    },
-    "0.5": {
-      "title": "Scala in Depth",
-      "id": 3,
-      "attr": {
-        "style": {
-          "background": "#ADD8E6"
         }
       }
     }
