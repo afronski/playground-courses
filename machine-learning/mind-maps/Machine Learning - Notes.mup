@@ -501,10 +501,10 @@
             }
           },
           "attr": {
-            "collapsed": true,
             "style": {
               "background": "#E0E0E0"
-            }
+            },
+            "collapsed": true
           }
         },
         "8": {
@@ -1153,11 +1153,12 @@
       "attr": {
         "style": {
           "background": "#808080"
-        }
+        },
+        "collapsed": true
       },
       "ideas": {
         "1": {
-          "title": "TYPE: Classification problems",
+          "title": "TYPE: Classification",
           "attr": {
             "style": {
               "background": "#FFD700"
@@ -1181,7 +1182,8 @@
               "attr": {
                 "style": {
                   "background": "#FAFAD2"
-                }
+                },
+                "collapsed": true
               },
               "ideas": {
                 "1": {
@@ -1270,7 +1272,8 @@
           "attr": {
             "style": {
               "background": "#90EE90"
-            }
+            },
+            "collapsed": true
           },
           "ideas": {
             "1": {
@@ -1279,7 +1282,8 @@
               "attr": {
                 "style": {
                   "background": "#E0FFFF"
-                }
+                },
+                "collapsed": true
               },
               "ideas": {
                 "1": {
@@ -1297,9 +1301,29 @@
                   "attr": {
                     "style": {
                       "background": "#FDF5E6"
-                    }
+                    },
+                    "collapsed": true
                   },
-                  "ideas": {}
+                  "ideas": {
+                    "1": {
+                      "title": "Landmarks are features calculated from training set (with length: m + 1).",
+                      "id": 333,
+                      "attr": {
+                        "style": {
+                          "background": "#FDF5E6"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "In order to run efficiently we are minimizing something similar instead of the pure Theta norm (sum over j Theta^2_j).",
+                      "id": 334,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             },
@@ -1309,7 +1333,8 @@
               "attr": {
                 "style": {
                   "background": "#FAFAD2"
-                }
+                },
+                "collapsed": true
               },
               "ideas": {
                 "1": {
@@ -1320,6 +1345,273 @@
                       "background": "#FFB6C1"
                     }
                   }
+                }
+              }
+            },
+            "3": {
+              "title": "Why not use Kernels in other learning algorithms?",
+              "id": 335,
+              "ideas": {
+                "1": {
+                  "title": "Because optimization tricks does not generalize well for other algorithms (e.g. logistic regression) which will result in slow algorithm.",
+                  "id": 336,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#F08080"
+                },
+                "collapsed": true
+              }
+            },
+            "4": {
+              "title": "How to choose value of 'C' properly?",
+              "id": 337,
+              "ideas": {
+                "1": {
+                  "title": "Large C - lower bias, higher variance",
+                  "id": 338,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Small C - higher bias, low variance",
+                  "id": 339,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFA07A"
+                },
+                "collapsed": true
+              }
+            },
+            "5": {
+              "title": "How to choose sigma^2 for Gaussian Kernel?",
+              "id": 340,
+              "ideas": {
+                "1": {
+                  "title": "Large value - higher bias, lower variance.",
+                  "id": 341,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Small value - lower bias, higher variance.",
+                  "id": 342,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFA07A"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        },
+        "6": {
+          "title": "USAGE",
+          "id": 343,
+          "attr": {
+            "style": {
+              "background": "#008000"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "liblinear, libsvm ...",
+              "id": 344,
+              "ideas": {
+                "1": {
+                  "title": "Use existing packages!",
+                  "id": 345,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "INPUT: choice of parameter C, choice of kernel.",
+                  "id": 346,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              }
+            },
+            "3": {
+              "title": "Off-the-shelf Kernels",
+              "id": 348,
+              "ideas": {
+                "1": {
+                  "title": "Polynomial kernel",
+                  "id": 349,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "String kernel",
+                  "id": 353,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Chi-square kernel",
+                  "id": 354,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Histogram intersection kernel",
+                  "id": 355,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "0.5": {
+                  "title": "MUST satisfy Mercer's Theorem in order to converge and make sure SVM packages' optimizations will run correctly.",
+                  "id": 351,
+                  "attr": {
+                    "style": {
+                      "background": "#FF0000"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              }
+            },
+            "4": {
+              "title": "Multi-class classification",
+              "id": 356,
+              "ideas": {
+                "1": {
+                  "title": "Most packages uses one-vs-all method, with training K SVMs.",
+                  "id": 357,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              }
+            },
+            "5": {
+              "title": "When to use logistic regression and when SVM?",
+              "id": 358,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "If amount of features (\"n\") is large relatively to traning set (m) - n = 10 000, m = 10 ... 1 000 - use logistic regression or SVM with linear kernel (\"no kernel\").",
+                  "id": 359,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "If \"n\" is small, \"m\" is medium (n = 1 ... 1 000, m = 10 ... 10 000) use SVM with Gaussian Kernel.",
+                  "id": 360,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "If \"n\" is small, \"m\" is large (n = 1 .. 1 000, m >= 50 000) - Create / Add more features, then use logistic regression and SVM with linear kernel.",
+                  "id": 361,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Difference between logistic regression and SVM without kernel - implementation details, output classification performance should be similar.",
+                  "id": 362,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Neural Networks likely to work well for most of these settings, but may be slower to train.",
+                  "id": 363,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                }
+              }
+            },
+            "0.5": {
+              "title": "Perform feature scaling BEFORE using Gaussian Kernel!",
+              "id": 347,
+              "attr": {
+                "style": {
+                  "background": "#FF0000"
                 }
               }
             }
