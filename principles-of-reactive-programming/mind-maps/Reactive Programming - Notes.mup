@@ -741,6 +741,289 @@
         }
       }
     },
+    "72": {
+      "title": "Actors",
+      "id": 169,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "3": {
+          "title": "Genesis",
+          "id": 174,
+          "attr": {
+            "style": {
+              "background": "#F08080"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Actors were introduced in 2006 in standard Scala library.",
+              "id": 172,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "In 2009 Akka framework was introduced, which is based on actors.",
+              "id": 173,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "title": "Model",
+          "id": 178,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Object with an identity.",
+              "id": 179,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "2": {
+              "title": "Object which has behavior.",
+              "id": 180,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "3": {
+              "title": "Only interacts with asynchronous message passing.",
+              "id": 181,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        },
+        "6.5": {
+          "title": "Concepts",
+          "id": 190,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "ActorRef is a PID from Erlang.",
+              "id": 182,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "ActorContext is way of providing \"asynchronous tail recursion\" and replacing (or stacking) behaviors.",
+              "id": 183,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "3": {
+              "title": "There is no notion of global synchronization or method calling.",
+              "id": 184,
+              "ideas": {
+                "1": {
+                  "title": "Everything goes with message-passing.",
+                  "id": 185,
+                  "ideas": {
+                    "1": {
+                      "title": "It's a primitive one-way communication.",
+                      "id": 186,
+                      "ideas": {},
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "On the inside, actor is effectively single threaded.",
+                      "id": 187,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "Blocking is represented by enqueuing messages for later execution.",
+                  "id": 189,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFB6C1"
+                },
+                "collapsed": true
+              }
+            },
+            "4": {
+              "title": "It is good to have messages defined per Actor trait (it separates them and decouple).",
+              "id": 192,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "5": {
+              "title": "Message Delivery Guarantees",
+              "id": 193,
+              "ideas": {
+                "1": {
+                  "title": "at-most-once",
+                  "id": 194,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "at-least-once",
+                  "id": 195,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "exactly-once",
+                  "id": 196,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "In Akka there is a \"light\" guarantee according to order of delivered messages between pair of actors (order on sender side will be the same as order on the receiver side).",
+                  "id": 197,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFEBCD"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        },
+        "4.5": {
+          "title": "Introduction",
+          "id": 191,
+          "attr": {
+            "style": {
+              "background": "#FFF0F5"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Difference between Actors and Threads",
+              "id": 175,
+              "ideas": {
+                "1": {
+                  "title": "Threads operate on common task, so there is a need for synchronization.",
+                  "id": 176,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Actors can work distributedly in whole environment.",
+                  "id": 177,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        },
+        "7.5": {
+          "title": "Designing an Actor System",
+          "id": 198,
+          "attr": {
+            "style": {
+              "background": "#E0FFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "\"Visualize a room full of people\".",
+              "id": 199,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "-1": {
       "title": "FUNCTIONAL PROGRAMMING",
       "id": 28,
