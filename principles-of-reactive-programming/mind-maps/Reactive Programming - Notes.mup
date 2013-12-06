@@ -1019,6 +1019,72 @@
                   "background": "#ADD8E6"
                 }
               }
+            },
+            "2": {
+              "title": "Don't collect the actor state from asynchronous parts of code.",
+              "id": 200,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "0.5": {
+              "title": "Reactive application needs to be non-blocking and event-driven from top to bottom.",
+              "id": 202,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        },
+        "8.5": {
+          "title": "Testing an Actor System",
+          "id": 201,
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Tests can only verify externally observable effects.",
+              "id": 203,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                }
+              }
+            },
+            "2": {
+              "title": "Akka - TestKit",
+              "id": 205,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                }
+              }
+            },
+            "3": {
+              "title": "Replace dependencies with well known design patterns and good practices of software engineering.",
+              "id": 206,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                }
+              }
+            },
+            "4": {
+              "title": "\"Reverse Onion Testing\"",
+              "id": 207,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                }
+              }
             }
           }
         }
