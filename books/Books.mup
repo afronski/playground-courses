@@ -28,6 +28,61 @@
               "attr": {
                 "style": {
                   "background": "#6495ED"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "RESOURCE",
+                  "id": 188,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Represents a way of creating physical thing in the system (a resource called 'User' creates user account in the OS).",
+                      "id": 190,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "PROVIDER",
+                  "id": 189,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Is an abstraction of providing certain resource.",
+                      "id": 191,
+                      "ideas": {
+                        "1": {
+                          "title": "For installing abstraction we have got a 'package' provider which has different implementation on each operating system. ",
+                          "id": 192,
+                          "attr": {
+                            "style": {
+                              "background": "#E0FFFF"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             },
@@ -89,6 +144,40 @@
                   "attr": {
                     "style": {
                       "background": "#FAFAD2"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "It's a simple way of applying and testing single recipes in isolation.",
+                      "id": 178,
+                      "ideas": {
+                        "1": {
+                          "title": "But, there are some constraints - there is no way of providing templates etc.",
+                          "id": 179,
+                          "attr": {
+                            "style": {
+                              "background": "#F08080"
+                            }
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "That's why wee need chef-solo tool.",
+                              "id": 187,
+                              "attr": {
+                                "style": {
+                                  "background": "#E0FFFF"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
                     }
                   }
                 },
@@ -107,7 +196,8 @@
                   "attr": {
                     "style": {
                       "background": "#FAFAD2"
-                    }
+                    },
+                    "collapsed": true
                   },
                   "ideas": {
                     "1": {
@@ -127,6 +217,56 @@
                   "background": "#6495ED"
                 },
                 "collapsed": true
+              }
+            },
+            "4": {
+              "title": "Concepts",
+              "id": 180,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "IDEMPOTENCE",
+                  "id": 181,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": " Is the property of certain operations in mathematics and computer science, that can be applied multiple times without changing the result beyond the initial application.",
+                      "id": 183,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Recipes have to be idempotent - in other words applying the same recipe twice should yield the same result as applying it once.",
+                      "id": 184,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Also concept of differential application for recipes is important (like only proceed with reconfiguration if the settings file is changed, without reinstallation).",
+                      "id": 185,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },
