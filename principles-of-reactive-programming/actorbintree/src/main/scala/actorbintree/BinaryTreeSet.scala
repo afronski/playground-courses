@@ -1,9 +1,7 @@
-/**
- * Copyright (C) 2009-2013 Typesafe Inc. <http://www.typesafe.com>
- */
 package actorbintree
 
 import akka.actor._
+
 import scala.collection.immutable.Queue
 
 object BinaryTreeSet {
@@ -43,12 +41,11 @@ object BinaryTreeSet {
     * `result` is true if and only if the element is present in the tree.
     */
   case class ContainsResult(id: Int, result: Boolean) extends OperationReply
-  
+
   /** Message to signal successful completion of an insert or remove operation. */
   case class OperationFinished(id: Int) extends OperationReply
 
 }
-
 
 class BinaryTreeSet extends Actor {
   import BinaryTreeSet._
