@@ -1,14 +1,21 @@
 package nodescala
 
 import com.sun.net.httpserver._
+
 import scala.concurrent._
 import scala.concurrent.duration._
+import scala.util.{ Try, Success, Failure }
+
 import ExecutionContext.Implicits.global
+
 import scala.async.Async.{async, await}
 import scala.collection._
 import scala.collection.JavaConversions._
+
 import java.util.concurrent.{Executor, ThreadPoolExecutor, TimeUnit, LinkedBlockingQueue}
+
 import com.sun.net.httpserver.{HttpExchange, HttpHandler, HttpServer}
+
 import java.net.InetSocketAddress
 
 /** Contains utilities common to the NodeScala© framework.
@@ -29,7 +36,13 @@ trait NodeScala {
    *  @param token        the cancellation token for
    *  @param body         the response to write back
    */
-  private def respond(exchange: Exchange, token: CancellationToken, response: Response): Unit = ???
+  private def respond(exchange: Exchange, token: CancellationToken, response: Response): Unit =  {
+    while(token.nonCancelled && response.hasNext) {
+      exchange.write(response.next)
+    }
+
+    exchange.close()
+  }
 
   /** A server:
    *  1) creates and starts an http listener
@@ -41,10 +54,24 @@ trait NodeScala {
    *  @param handler        a function mapping a request to a response
    *  @return               a subscription that can stop the server and all its asynchronous operations *entirely*.
    */
-  def start(relativePath: String)(handler: Request => Response): Subscription = ???
+  def start(relativePath: String)(handler: Request => Response): Subscription = {
+    val listener = createListener(relativePath)
+    val subscription = listener.start
 
+    val loopSubscription = Future.run() { token =>
+      Future {
+        while (token.nonCancelled) {
+          listener.nextRequest.onComplete {
+            case Success((request, exchange)) => respond(exchange, token, handler(request))
+            case Failure(error) => println(error)
+          }
+        }
+      }
+    }
+
+    Subscription(subscription, loopSubscription)
+  }
 }
-
 
 object NodeScala {
 
@@ -60,7 +87,7 @@ object NodeScala {
 
   /** Used to write the response to the request.
    */
-  trait Exchange { 
+  trait Exchange {
     /** Writes to the output stream of the exchange.
      */
     def write(s: String): Unit
@@ -71,7 +98,6 @@ object NodeScala {
     def close(): Unit
 
     def request: Request
-
   }
 
   object Exchange {
@@ -111,7 +137,16 @@ object NodeScala {
      *  @param relativePath    the relative path on which we want to listen to requests
      *  @return                the promise holding the pair of a request and an exchange object
      */
-    def nextRequest(): Future[(Request, Exchange)] = ???
+    def nextRequest(): Future[(Request, Exchange)] = {
+      val requestPromise = Promise[(Request, Exchange)]()
+
+      this.createContext((exchange: Exchange) => {
+        requestPromise.complete(Try((exchange.request, exchange)))
+        this.removeContext
+      })
+
+      requestPromise.future
+    }
   }
 
   object Listener {
