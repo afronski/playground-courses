@@ -1090,6 +1090,500 @@
         }
       }
     },
+    "82": {
+      "title": "Supervision",
+      "id": 208,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Concept gathered from Erlang, based on OTP supervision trees.",
+          "id": 209,
+          "attr": {
+            "style": {
+              "background": "#FFDAB9"
+            }
+          },
+          "ideas": {}
+        },
+        "2": {
+          "title": "Exception and error should be also a message sent to the owner of process - a supervision.",
+          "id": 210,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            }
+          }
+        },
+        "3": {
+          "title": "Resilience is a way of getting out from dysfunctional state.",
+          "id": 211,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            }
+          }
+        },
+        "4": {
+          "title": "Strategies",
+          "id": 212,
+          "attr": {
+            "style": {
+              "background": "#FFDAB9"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "OneForOneStrategy",
+              "id": 213,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Each supervisor deals with one actor in isolation.",
+                  "id": 214,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "AllForOneStrategy",
+              "id": 216,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "One supervisor deals with all children.",
+                  "id": 218,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "0.5": {
+              "title": "You can configure each for number of restarts and time window.",
+              "id": 220,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "title": "Lifecycle",
+          "id": 221,
+          "attr": {
+            "style": {
+              "background": "#FFDAB9"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "START",
+              "id": 223,
+              "attr": {
+                "style": {
+                  "background": "#F0F8FF"
+                }
+              }
+            },
+            "2": {
+              "title": "preStart",
+              "id": 224,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                }
+              }
+            },
+            "3": {
+              "title": "Fail",
+              "id": 226,
+              "attr": {
+                "style": {
+                  "background": "#B22222"
+                }
+              }
+            },
+            "4": {
+              "title": "preRestart",
+              "id": 227,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                }
+              }
+            },
+            "5": {
+              "title": "RESTART",
+              "id": 228,
+              "attr": {
+                "style": {
+                  "background": "#F0F8FF"
+                }
+              }
+            },
+            "6": {
+              "title": "postRestart",
+              "id": 230,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                }
+              }
+            },
+            "7": {
+              "title": "STOP",
+              "id": 231,
+              "attr": {
+                "style": {
+                  "background": "#F0F8FF"
+                }
+              }
+            },
+            "8": {
+              "title": "postStop",
+              "id": 232,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                }
+              }
+            },
+            "1.5": {
+              "title": "Instantiation",
+              "id": 225,
+              "ideas": {},
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "title": "Monitoring",
+          "id": 234,
+          "ideas": {
+            "1": {
+              "title": "DeathWatch",
+              "id": 235,
+              "ideas": {
+                "1": {
+                  "title": "Way of watching the state of actor and it provides way of determining if the actor stops listening or just die.",
+                  "id": 236,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#EEE8AA"
+                }
+              }
+            },
+            "2": {
+              "title": "Similar to the Links in Erlang / OTP.",
+              "id": 238,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#EEE8AA"
+            },
+            "collapsed": true
+          }
+        },
+        "17": {
+          "title": "Error Kernel",
+          "id": 233,
+          "attr": {
+            "style": {
+              "background": "#6495ED"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Keep important data near to root, delegate risk to the leaves.",
+              "id": 239,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Avoid restarting actors with important step.",
+              "id": 240,
+              "attr": {
+                "style": {
+                  "background": "#D3D3D3"
+                }
+              }
+            },
+            "3": {
+              "title": "Interjection - an Event Stream broadcasting mechanism",
+              "id": 241,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Broadcasting messages for any kind of actor in the system.",
+                  "id": 242,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "92": {
+      "title": "Persisting Actor State",
+      "id": 243,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Changes vs. Current State",
+          "id": 245,
+          "ideas": {
+            "1": {
+              "title": "Current State is smaller and faster.",
+              "id": 246,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Changes have more benefits when we have to audit, replay state, going back in time etc.",
+              "id": 247,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Snapshots are helpful if we need constant time and all changes.",
+                  "id": 249,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#6495ED"
+            },
+            "collapsed": true
+          }
+        },
+        "2": {
+          "title": "Command Sourcing",
+          "id": 250,
+          "ideas": {
+            "1": {
+              "title": "Persist command before processing it, persist acknowledgement when processed.",
+              "id": 252,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Retrying and sending again everything when restoring.",
+                  "id": 255,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "It will happen in future.",
+              "id": 257,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#EEE8AA"
+            },
+            "collapsed": true
+          }
+        },
+        "3": {
+          "title": "Event Sourcing",
+          "id": 253,
+          "attr": {
+            "style": {
+              "background": "#EEE8AA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Generate \"change requests\" instead of modifying actual state and then persist, and apply them.",
+              "id": 254,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Replaying is lightweight. Changing state, getting to the last state and then processing messages as usual.",
+                  "id": 259,
+                  "attr": {
+                    "style": {
+                      "background": "#FFB6C1"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "It has happen in past.",
+              "id": 256,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "3": {
+              "title": "Applying state after persisting leaves actor in stale state.",
+              "id": 261,
+              "ideas": {
+                "1": {
+                  "title": "How to avoid that?",
+                  "id": 262,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Apply state in the same message processing method, and after persisting push signal to the client.",
+                      "id": 263,
+                      "attr": {
+                        "style": {
+                          "background": "#6495ED"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Or buffer all messages when processing (lower throughput and bigger latency, but more stable).",
+                  "id": 265,
+                  "attr": {
+                    "style": {
+                      "background": "#008080"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFB6C1"
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "What with External Effects?",
+          "id": 267,
+          "ideas": {
+            "1": {
+              "title": "Perform them before persisting if you need to have at-least-once semantics. ",
+              "id": 269,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Perform them after persisting if you need to have at-most-once semantics.",
+              "id": 270,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          }
+        }
+      }
+    },
     "-1": {
       "title": "FUNCTIONAL PROGRAMMING",
       "id": 28,
