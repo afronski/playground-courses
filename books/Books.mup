@@ -59,7 +59,8 @@
                   "attr": {
                     "style": {
                       "background": "#90EE90"
-                    }
+                    },
+                    "collapsed": true
                   },
                   "ideas": {
                     "1": {
@@ -82,6 +83,60 @@
                         }
                       }
                     }
+                  }
+                },
+                "3": {
+                  "title": "COOKBOOK",
+                  "id": 194,
+                  "ideas": {
+                    "2": {
+                      "title": "Contains...",
+                      "id": 196,
+                      "ideas": {
+                        "1": {
+                          "title": "RECIPES",
+                          "id": 195,
+                          "attr": {
+                            "style": {
+                              "background": "#6495ED"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "A repeatable description how to achieve certain thing.",
+                              "id": 198,
+                              "attr": {
+                                "style": {
+                                  "background": "#90EE90"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#EEE8AA"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "3": {
+                      "title": "Can be created by tool called 'knife' and can be managed by this tool.",
+                      "id": 197,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    },
+                    "collapsed": true
                   }
                 }
               }
@@ -126,6 +181,29 @@
                   "attr": {
                     "style": {
                       "background": "#FAFAD2"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "chef-apply is useful, but it can't provide files, templates etc.",
+                      "id": 199,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      },
+                      "ideas": {}
+                    },
+                    "2": {
+                      "title": "You can configure that tool via solo.rb file where you can define path and setting for each element in Chef framework.",
+                      "id": 201,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      },
+                      "ideas": {}
                     }
                   }
                 },
@@ -136,7 +214,8 @@
                     "style": {
                       "background": "#FAFAD2"
                     }
-                  }
+                  },
+                  "ideas": {}
                 },
                 "4": {
                   "title": "chef-apply",
@@ -187,6 +266,27 @@
                   "attr": {
                     "style": {
                       "background": "#FAFAD2"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "knife cookbook site ...",
+                      "id": 203,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "knife cookbook create -o ...",
+                      "id": 204,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
                     }
                   }
                 },
@@ -268,13 +368,53 @@
                   }
                 }
               }
+            },
+            "5": {
+              "title": "Anatomy",
+              "id": 205,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Two phases of Chef run.",
+                  "id": 206,
+                  "ideas": {
+                    "1": {
+                      "title": "Compilation and preparing ordered list of recipes.",
+                      "id": 207,
+                      "attr": {
+                        "style": {
+                          "background": "#F08080"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Stepping prepared list sequentially and invoking actions.",
+                      "id": 208,
+                      "attr": {
+                        "style": {
+                          "background": "#F08080"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
             }
           },
           "attr": {
             "style": {
               "background": "#E6E6FA"
-            },
-            "collapsed": true
+            }
           }
         }
       }
@@ -1740,5 +1880,27 @@
         }
       }
     }
-  }
+  },
+  "links": [
+    {
+      "ideaIdFrom": 204,
+      "ideaIdTo": 201,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": 203,
+      "ideaIdTo": 201,
+      "attr": {
+        "style": {
+          "color": "#FF0000",
+          "lineStyle": "dashed"
+        }
+      }
+    }
+  ]
 }
