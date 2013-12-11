@@ -2212,6 +2212,267 @@
         }
       }
     },
+    "52": {
+      "title": "CLUSTERING",
+      "attr": {
+        "style": {
+          "background": "#808080"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "TYPE: Unsupervised Learning.",
+          "attr": {
+            "style": {
+              "background": "#FFD700"
+            }
+          },
+          "ideas": {},
+          "id": 372
+        },
+        "3": {
+          "title": "ALGORITHMS",
+          "attr": {
+            "style": {
+              "background": "#ADD8E6"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "K-Means",
+              "id": 377,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "The most popular and mostly used clustering algorithm.",
+                  "id": 378,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "K-Means can be used for non-separated clusters.",
+                      "id": 385,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2.5": {
+                  "title": "Overview",
+                  "id": 383,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFAF0"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Randomly initialize clustering centroids.",
+                      "id": 382,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Then perform two steps as many times as you can (iteratively).",
+                          "id": 379,
+                          "ideas": {
+                            "1": {
+                              "title": "Move centroids step.",
+                              "id": 380,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFB6C1"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "Cluster assignment step.",
+                              "id": 381,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFB6C1"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFB6C1"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "1.75": {
+                  "title": "For cluster without points you can eliminate it or again, randomly initialize.",
+                  "id": 384,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "3.5": {
+                  "title": "Optimization Objective",
+                  "id": 386,
+                  "attr": {
+                    "style": {
+                      "background": "#6495ED"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Cost = Distortion",
+                      "id": 388,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Optimizing cost J for when assigning clusters to the set elements.",
+                      "id": 390,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
+                    }
+                  }
+                },
+                "0.5": {
+                  "title": "Initialization",
+                  "id": 391,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "K < m (number of training examples)",
+                      "id": 392,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Get randomly K training examples and set micro_1, ... , micro_k to these K examples.",
+                          "id": 393,
+                          "attr": {
+                            "style": {
+                              "background": "#E0FFFF"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "By unfortunate initialization it can drop fall into local optima.",
+                      "id": 394,
+                      "attr": {
+                        "style": {
+                          "background": "#F08080"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Using K-Means with N random initialisations, for each calculating all assignments will increase  quality of clustering.",
+                      "id": 395,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        }
+                      }
+                    }
+                  }
+                },
+                "4.5": {
+                  "title": "How to choose K ?",
+                  "id": 396,
+                  "attr": {
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "It's a difficult process for automatic calculating K.",
+                      "id": 398,
+                      "attr": {
+                        "style": {
+                          "background": "#F0E68C"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Elbow Method",
+                      "id": 399,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Plotting chart of cost function 'J' from 'K' and detecting \"elbow\" in the curve and this can be optimal value for K.",
+                          "id": 400,
+                          "attr": {
+                            "style": {
+                              "background": "#ADD8E6"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "It can provide ambiguities.",
+                          "id": 401,
+                          "attr": {
+                            "style": {
+                              "background": "#F08080"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "id": 374
+        }
+      },
+      "id": 371
+    },
     "0.625": {
       "title": "LINEAR REGRESSION",
       "attr": {
@@ -2363,12 +2624,29 @@
                       "background": "#EEE8AA"
                     }
                   }
+                },
+                "2": {
+                  "title": "Clusters are only one pattern which appear in data.",
+                  "id": 370,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "Set elements don't have any \"labels\".",
+              "id": 369,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
                 }
               }
             }
           },
           "attr": {
-            "collapsed": true,
             "style": {
               "background": "#E0E0E0"
             }
