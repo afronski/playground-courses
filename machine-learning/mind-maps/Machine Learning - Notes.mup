@@ -2231,7 +2231,298 @@
           "ideas": {},
           "id": 372
         },
-        "3": {
+        "4": {
+          "title": "Dimensionality Reduction",
+          "id": 402,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "2": {
+              "title": "OVERVIEW",
+              "id": 410,
+              "ideas": {
+                "1": {
+                  "title": "This problem occurs with features which are highly correlated (e.g. two dimensions presented in different units).",
+                  "id": 404,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Reducing feature set in order to have minimal set of features which will apply with better or at least the same performance to our date.",
+                  "id": 403,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                },
+                "collapsed": true
+              }
+            },
+            "4": {
+              "title": "MOTIVATION",
+              "id": 406,
+              "ideas": {
+                "1": {
+                  "title": "EXAMPLE: By reducing 2D data to 1D we will achieve high level of compression.",
+                  "id": 405,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "EXAMPLE: Visualizing things is hard in dimensions number higher than 3.",
+                  "id": 407,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#9370DB"
+                },
+                "collapsed": true
+              }
+            },
+            "5": {
+              "title": "SOLUTIONS",
+              "id": 408,
+              "attr": {
+                "style": {
+                  "background": "#FFEBCD"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Principal Component Analysis (PCA)",
+                  "id": 409,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "3": {
+                      "title": "PROBLEM OVERVIEW",
+                      "id": 418,
+                      "attr": {
+                        "style": {
+                          "background": "#ADD8E6"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "In other words - it minimizes the projection error.",
+                          "id": 417,
+                          "attr": {
+                            "style": {
+                              "background": "#ADD8E6"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "It tries to find lower dimensional structure (plane, line etc.) which have pretty low value for distance of all element from it (in other words - sum of squares is minimal for such representation).",
+                          "id": 416,
+                          "attr": {
+                            "style": {
+                              "background": "#FAFAD2"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "ALGORITHM",
+                      "id": 420,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "PREPROCESSING",
+                          "id": 421,
+                          "attr": {
+                            "style": {
+                              "background": "#ADD8E6"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "Perform mean normalization, sometimes feature scaling.",
+                              "id": 429,
+                              "attr": {
+                                "style": {
+                                  "background": "#E0FFFF"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Compute covariance matrix (Sigma).",
+                          "id": 423,
+                          "attr": {
+                            "style": {
+                              "background": "#F08080"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "Sigma = (1 / m) * X' * X;",
+                              "id": 431,
+                              "attr": {
+                                "style": {
+                                  "background": "#E0FFFF"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "Compute eigenvectors of matrix Sigma.",
+                          "id": 424,
+                          "attr": {
+                            "style": {
+                              "background": "#F08080"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "[ U, S, V ] = svd (Sigma);",
+                              "id": 425,
+                              "ideas": {
+                                "1": {
+                                  "title": "Singular Value Decomposition",
+                                  "id": 426,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#ADD8E6"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#E0FFFF"
+                                },
+                                "collapsed": true
+                              }
+                            },
+                            "2": {
+                              "title": "From U matrix we get first 'k' columns which are representing vectors 'u_i'.",
+                              "id": 428,
+                              "attr": {
+                                "style": {
+                                  "background": "#E0FFFF"
+                                },
+                                "collapsed": true
+                              },
+                              "ideas": {
+                                "1": {
+                                  "title": "Prepare 'Z' matrix, called also 'U_reduced' with dimensions 'n x k' ",
+                                  "id": 430,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#E0FFFF"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "4": {
+                          "title": "Ureduce = U(:, 1:k);",
+                          "id": 432,
+                          "attr": {
+                            "style": {
+                              "background": "#E0FFFF"
+                            }
+                          }
+                        },
+                        "5": {
+                          "title": "z = Ureduce' * x;",
+                          "id": 433,
+                          "attr": {
+                            "style": {
+                              "background": "#E0FFFF"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "5": {
+                      "title": "CHOOSING THE NUMBER OF PRINCIPAL COMPONENTS",
+                      "id": 434,
+                      "attr": {
+                        "style": {
+                          "background": "#F0E68C"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Choose 'k' to be smallest value so that 99% of variance is retained (it equals to 0.01 = 1%).",
+                          "id": 435,
+                          "attr": {
+                            "style": {
+                              "background": "#D3D3D3"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "By using Singular Value Decomposition you will receive diagonal matrix 'S' from which you will easily compute 'k'.",
+                          "id": 436,
+                          "attr": {
+                            "style": {
+                              "background": "#90EE90"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "1.5": {
+                      "title": "PCA is not a linear regression!",
+                      "id": 419,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "14": {
           "title": "ALGORITHMS",
           "attr": {
             "style": {
