@@ -3,8 +3,11 @@ package search
 
 import org.json4s._
 import scala.concurrent.{ ExecutionContext, Future, Promise }
+
 import ExecutionContext.Implicits.global
+
 import scala.language.postfixOps
+
 import scala.collection._
 import scala.collection.JavaConverters._
 import scala.util.Try
@@ -16,10 +19,12 @@ import ObservableEx._
 
 import dispatch._
 import org.json4s.native._
+
 import retrofit.http.{GET, Query}
 import retrofit.Callback
 import retrofit.client.Response
 import retrofit.{RetrofitError, Callback, RestAdapter}
+
 import com.google.gson.annotations.SerializedName
 
 object Search {
@@ -102,7 +107,7 @@ object Search {
       service.suggestions(term, cb)
       val result = await { f }
       val arraylist = result(1).asInstanceOf[java.util.List[String]]
-      
+
       arraylist.asScala.toList
     }
   }
@@ -119,6 +124,4 @@ object Search {
   def wikipediaSuggestion(term: String): Future[List[String]] = wikipediaSuggestionRetrofit(term)
 
   def wikipediaPage(term: String): Future[String] = wikipediaPageRetrofit(term)
-
 }
-
