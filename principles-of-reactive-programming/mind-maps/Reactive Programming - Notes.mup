@@ -1584,6 +1584,862 @@
         }
       }
     },
+    "102": {
+      "title": "Distribution",
+      "id": 271,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "The Impact of Network Communication",
+          "id": 272,
+          "ideas": {
+            "1": {
+              "title": "Data shared by value only",
+              "id": 273,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                }
+              }
+            },
+            "2": {
+              "title": "Lower bandwidth",
+              "id": 274,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                }
+              }
+            },
+            "3": {
+              "title": "Higher latency",
+              "id": 275,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                }
+              }
+            },
+            "4": {
+              "title": "Partial failure",
+              "id": 276,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                }
+              }
+            },
+            "5": {
+              "title": "Data corruption",
+              "id": 277,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0FFFF"
+            },
+            "collapsed": true
+          }
+        },
+        "2": {
+          "title": "Actor are \"location transparent\". ",
+          "id": 278,
+          "attr": {
+            "style": {
+              "background": "#E0FFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Every actor has a name in namespace of the parent.",
+              "id": 279,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "2": {
+              "title": "Action names form URI's path elements.",
+              "id": 280,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "ActorPath is the full name, whether the actor exists or not.",
+                  "id": 281,
+                  "ideas": {
+                    "1": {
+                      "title": "ActorRef points to an actor which was started - an \"incarnation\".",
+                      "id": 282,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    },
+                    "collapsed": true
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "ActorPath can be relative, can use broadcasting, can use look-up from parent, root.",
+              "id": 283,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "Cluster",
+          "id": 284,
+          "attr": {
+            "style": {
+              "background": "#E0FFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "A set of nodes (actor systems) about which  all members are in agreement.",
+              "id": 285,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "They will collaborate on a common task.",
+                  "id": 286,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Information is spread using a gossip protocol.",
+                  "id": 287,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "A single node can declare itself a cluster or join a cluster (to any member or to existing cluster).",
+              "id": 288,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "3": {
+              "title": "From 'Cluster' point of view node unreachable for one other node in unreachable for all.",
+              "id": 289,
+              "ideas": {
+                "1": {
+                  "title": "Every node is monitored using heartbeats from several others.",
+                  "id": 290,
+                  "attr": {
+                    "style": {
+                      "background": "#FFDAB9"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "REMEMBER: Cluster is a group of nodes in agreement (consensus).",
+                  "id": 291,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFF0F5"
+                },
+                "collapsed": true
+              }
+            },
+            "4": {
+              "title": "Actors on nodes which are removed from the cluster must be dead.",
+              "id": 295,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "Once 'Terminated' was delivered the actor cannot come back!",
+          "id": 292,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Delivery of 'Terminate' is guaranteed.",
+              "id": 293,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "112": {
+      "title": "Eventual Consistency",
+      "id": 296,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Strong consistency is easy to achieve in local system.",
+          "id": 297,
+          "attr": {
+            "style": {
+              "background": "#ADD8E6"
+            }
+          }
+        },
+        "2": {
+          "title": "Weak consistency means that certain conditions are not met, it will take some time.",
+          "id": 298,
+          "ideas": {
+            "1": {
+              "title": "There is a 'inconsistency window'.",
+              "id": 299,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "2": {
+              "title": "Eventual consistency is a stronger version of weak consistency.",
+              "id": 300,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "\"At last things will be consistent\"",
+                  "id": 301,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Everything depends on protocol, but nodes will agree somehow about consistent state.",
+                  "id": 303,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#ADD8E6"
+            },
+            "collapsed": true
+          }
+        },
+        "3": {
+          "title": "Island of Consistency is a concept which will actors form.",
+          "id": 304,
+          "ideas": {
+            "1": {
+              "title": "Collaborating actors can at most be eventually consistent.",
+              "id": 305,
+              "attr": {
+                "style": {
+                  "background": "#FF0000"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          }
+        },
+        "4": {
+          "title": "Conflicts",
+          "id": 306,
+          "ideas": {
+            "1": {
+              "title": "Can always be resolved locally.",
+              "id": 307,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "2": {
+              "title": "Resolution is commutative.",
+              "id": 308,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "3": {
+              "title": "Cluster conflict resolution will be convergent if and only when state machine of it can be represented as a DAG.",
+              "id": 309,
+              "attr": {
+                "style": {
+                  "background": "#9ACD32"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          }
+        }
+      }
+    },
+    "122": {
+      "title": "Actor Composition",
+      "id": 310,
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Customer pattern",
+          "id": 312,
+          "ideas": {
+            "1": {
+              "title": "Request - Response",
+              "id": 313,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Allows to dynamic composition of actor systems.",
+              "id": 314,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          }
+        },
+        "2": {
+          "title": "Interceptors",
+          "id": 315,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "One-way proxy which does not keep state.",
+              "id": 316,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "Ask pattern",
+          "id": 317,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Models just one question and just one answer to that.",
+              "id": 319,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "It returns a Future.",
+              "id": 320,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "Result aggregation",
+          "id": 321,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Posts couple questions with Ask pattern and receive answers asynchronously.",
+              "id": 322,
+              "ideas": {
+                "1": {
+                  "title": "It sends back the result when all answers will be collected.",
+                  "id": 323,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "title": "Risk delegation",
+          "id": 324,
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Create subordinate to perform dangerous task.",
+              "id": 325,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Ephemeral actor shuts down after each task.",
+              "id": 326,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "132": {
+      "title": "Scalability and Responsiveness",
+      "id": 327,
+      "ideas": {
+        "1": {
+          "title": "Stateless replicas can run concurrently.",
+          "id": 330,
+          "attr": {
+            "style": {
+              "background": "#9ACD32"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "One actor can process one message at a time, but you can spawn many actors.",
+              "id": 331,
+              "attr": {
+                "style": {
+                  "background": "#9ACD32"
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "Routing Messages",
+          "id": 332,
+          "ideas": {
+            "1": {
+              "title": "Stateful",
+              "id": 333,
+              "ideas": {
+                "1": {
+                  "title": "Round-Robin",
+                  "id": 334,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Smallest Queue",
+                  "id": 335,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Adaptive",
+                  "id": 336,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "Stateless",
+              "id": 338,
+              "ideas": {
+                "1": {
+                  "title": "Random",
+                  "id": 339,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Consistent Hashing",
+                  "id": 340,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "In terms of replication of stateful actors, we have to deal with the problem of node failures.",
+                      "id": 341,
+                      "ideas": {
+                        "1": {
+                          "title": "Event Sourcing will ease resurrecting such actor, by replaying state and restoring actor to the previous state.",
+                          "id": 342,
+                          "attr": {
+                            "style": {
+                              "background": "#90EE90"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "It requires intelligent router which buffers the messages and resend them when something went wrong.",
+                          "id": 343,
+                          "attr": {
+                            "style": {
+                              "background": "#90EE90"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#9ACD32"
+            },
+            "collapsed": true
+          }
+        },
+        "3": {
+          "title": "Responsiveness requires resilience and availability.",
+          "id": 344,
+          "attr": {
+            "style": {
+              "background": "#9ACD32"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Exploit Parallelism",
+              "id": 345,
+              "ideas": {
+                "1": {
+                  "title": "Performing queries sequentially adds up latency.",
+                  "id": 346,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Performing queries in parallel reduces latency.",
+                  "id": 347,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "Avoid dependency of processing cost on load",
+              "id": 348,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "3": {
+              "title": "Circuit Breaker pattern",
+              "id": 349,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Maximum Failures",
+                  "id": 350,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Call Timeout",
+                  "id": 351,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Reset Timeout",
+                  "id": 352,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "It separates components from influencing on each other.",
+                  "id": 354,
+                  "ideas": {
+                    "1": {
+                      "title": "Failing element should not not influence on rest of system which is healthy and e.g. add latency.",
+                      "id": 355,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "Bulkheading",
+              "id": 356,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Separate computing intensive part from client-facing parts.",
+                  "id": 358,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "title": "Handling Failures",
+              "id": 359,
+              "ideas": {
+                "1": {
+                  "title": "Immediate fail-over",
+                  "id": 360,
+                  "ideas": {
+                    "1": {
+                      "title": "Requires the backup to be readily available. ",
+                      "id": 361,
+                      "attr": {
+                        "style": {
+                          "background": "#9ACD32"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Instant fail-over",
+                  "id": 362,
+                  "ideas": {
+                    "1": {
+                      "title": "It is possible only in active-active configuration.",
+                      "id": 363,
+                      "attr": {
+                        "style": {
+                          "background": "#9ACD32"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#FFDAB9"
+        },
+        "collapsed": true
+      }
+    },
     "-1": {
       "title": "FUNCTIONAL PROGRAMMING",
       "id": 28,
