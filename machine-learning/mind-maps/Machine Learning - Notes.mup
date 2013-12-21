@@ -3163,7 +3163,8 @@
           "attr": {
             "style": {
               "background": "#90EE90"
-            }
+            },
+            "collapsed": true
           },
           "ideas": {
             "1": {
@@ -3239,6 +3240,282 @@
                       "width": 243,
                       "height": 455,
                       "position": "top"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "Automatically captures correlations between values, but is more computationally expensive.",
+              "id": 495,
+              "ideas": {
+                "1": {
+                  "title": "Also m > n, or else covariance matrix will be non-invertible.",
+                  "id": 496,
+                  "attr": {
+                    "style": {
+                      "background": "#FF0000"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FF0000"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "72": {
+      "title": "RECOMMENDER SYSTEMS",
+      "id": 497,
+      "attr": {
+        "style": {
+          "background": "#808080"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "DEFINITION",
+          "id": 498,
+          "attr": {
+            "style": {
+              "background": "#FAFAD2"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Algorithm which will try to predict what is interesting for the user.",
+              "id": 500,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Ratings are represented by two matrices: one with 0 / 1 information about is actual rating exist and second with actual rating or undefined value where rating is not available yet.",
+              "id": 501,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "Content Based Recommendations",
+          "id": 502,
+          "attr": {
+            "style": {
+              "background": "#ADD8E6"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "You can use standard linear regression for each user.",
+              "id": 503,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "2": {
+              "title": "We assumed that we have features associated with content of our recommendation system topic.",
+              "id": 504,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "Collaborative Filtering",
+          "id": 505,
+          "attr": {
+            "style": {
+              "background": "#ADD8E6"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "This algorithm has ability to \"learn\" features from data.",
+              "id": 506,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "By getting initial value of Theta vector, and user ratings we can infer actual values inside feature set.",
+              "id": 507,
+              "attr": {
+                "style": {
+                  "background": "#F08080"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "How to get initial value? E.g.: by asking user which movies likes the most.",
+                  "id": 508,
+                  "attr": {
+                    "style": {
+                      "background": "#E0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "ALGORITHM",
+              "id": 509,
+              "attr": {
+                "style": {
+                  "background": "#FFDAB9"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "1. Initialize x^(1), ..., x^(n_m), Theta^(1), ..., Theta^(n_m) to small random values.",
+                  "id": 510,
+                  "attr": {
+                    "style": {
+                      "background": "#FFDAB9"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "For breaking the symmetry problem (like in the neural network examples).",
+                      "id": 513,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "2. Minimize J(...) using gradient descent or any other advanced optimization algorithm.",
+                  "id": 511,
+                  "attr": {
+                    "style": {
+                      "background": "#FFDAB9"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "3. For a user with parameters Theta and a movie with features 'x' predict a rating from Theta_j^T * x^(i). ",
+                  "id": 512,
+                  "attr": {
+                    "style": {
+                      "background": "#FFDAB9"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "IMPLEMENTATION DETAIL: Mean normalization.",
+                  "id": 518,
+                  "attr": {
+                    "style": {
+                      "background": "#9370DB"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "It fixes problems with 'undefined' values for all element ratings.",
+                      "id": 519,
+                      "attr": {
+                        "style": {
+                          "background": "#E0FFFF"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "First you should calculate vector with mean rating value for all elements. ",
+                      "id": 520,
+                      "attr": {
+                        "style": {
+                          "background": "#FFDAB9"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Then you have to subtract  from 'Y' matrix a created vector.",
+                      "id": 521,
+                      "attr": {
+                        "style": {
+                          "background": "#FFDAB9"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "From these values you can learn Theta^(j) and x^(i).",
+                          "id": 523,
+                          "attr": {
+                            "style": {
+                              "background": "#FFDAB9"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "And for user without any recommendation we can predict that user will rate element with value associated to micro_i (mean rating for i-th element). ",
+                      "id": 522,
+                      "attr": {
+                        "style": {
+                          "background": "#FFDAB9"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "Vectorized implementation for this algorithm uses 'Low Rank Matrix Factorization'.",
+              "id": 514,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                }
+              }
+            },
+            "5": {
+              "title": "By using feature vectors calculated by this algorithm we can calculate similarity between two elements.",
+              "id": 516,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "It does not mirror the overall taste, but correlated ratings for these elements.",
+                  "id": 517,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
                     }
                   }
                 }
