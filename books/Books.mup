@@ -14,7 +14,8 @@
       "attr": {
         "style": {
           "background": "#ADD8E6"
-        }
+        },
+        "collapsed": true
       },
       "ideas": {
         "1": {
@@ -703,7 +704,8 @@
           "attr": {
             "style": {
               "background": "#E6E6FA"
-            }
+            },
+            "collapsed": true
           }
         }
       }
