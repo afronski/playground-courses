@@ -3886,6 +3886,57 @@
               }
             }
           }
+        },
+        "6": {
+          "title": "ONLINE LEARNING",
+          "id": 537,
+          "attr": {
+            "style": {
+              "background": "#00FFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "We just adding new examples as they come.",
+              "id": 538,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            },
+            "2": {
+              "title": "Optimized for continuous data streams.",
+              "id": 539,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "title": "MAP REDUCE",
+          "id": 540,
+          "attr": {
+            "style": {
+              "background": "#00FFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Batch gradient descent can be easily optimized by Map-Reduce process.",
+              "id": 541,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
         }
       },
       "attr": {
