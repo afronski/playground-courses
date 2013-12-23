@@ -8,6 +8,7 @@ import org.scalatest.matchers.ShouldMatchers
 
 import scala.util.Random
 import scala.concurrent.duration._
+import scala.language.postfixOps
 
 import org.scalatest.FunSuite
 
