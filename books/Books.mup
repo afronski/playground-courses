@@ -502,6 +502,57 @@
                       }
                     }
                   }
+                },
+                "2": {
+                  "title": "LWRP",
+                  "id": 241,
+                  "ideas": {
+                    "1": {
+                      "title": "Lightweight Resource Provider",
+                      "id": 242,
+                      "ideas": {},
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Part of a cookbook that is used to extend the chef-client in a way that allows custom actions to be defined, and then used in recipes in much the same way as any platform resource.",
+                      "id": 244,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Lightweight resource which defines set of actions and attributes.",
+                          "id": 246,
+                          "attr": {
+                            "style": {
+                              "background": "#90EE90"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Lightweight provider which tells how handle each action, what to do if certain conditions are met and so on.",
+                          "id": 248,
+                          "attr": {
+                            "style": {
+                              "background": "#90EE90"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    },
+                    "collapsed": true
+                  }
                 }
               }
             },
@@ -511,7 +562,8 @@
               "attr": {
                 "style": {
                   "background": "#6495ED"
-                }
+                },
+                "collapsed": true
               },
               "ideas": {
                 "1": {
@@ -706,6 +758,27 @@
               "background": "#E6E6FA"
             },
             "collapsed": true
+          }
+        },
+        "2": {
+          "title": "Vagrant",
+          "id": 249,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Is a tool for managing, creating and bootstrapping virtual machines on various environments.",
+              "id": 250,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
           }
         }
       }
