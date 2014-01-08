@@ -1,10 +1,9 @@
 package kvstore
 
-import akka.actor.{Props, Actor}
-
+import java.util.concurrent.atomic.AtomicInteger
 import scala.util.Random
 
-import java.util.concurrent.atomic.AtomicInteger
+import akka.actor.{ Props, Actor }
 
 object Persistence {
   case class Persist(key: String, valueOption: Option[String], id: Long)
@@ -20,12 +19,11 @@ class Persistence(flaky: Boolean) extends Actor {
   import Persistence._
 
   def receive = {
-    case Persist(key, _, id) => {
+    case Persist(key, _, id) =>
       if (!flaky || Random.nextBoolean()) {
         sender ! Persisted(key, id)
       } else {
         throw new PersistenceException()
       }
-    }
   }
 }

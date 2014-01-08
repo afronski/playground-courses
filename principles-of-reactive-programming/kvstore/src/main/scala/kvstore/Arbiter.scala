@@ -1,8 +1,8 @@
 package kvstore
 
-import akka.actor.{ActorRef, Actor}
-
 import scala.collection.immutable
+
+import akka.actor.{ActorRef, Actor}
 
 object Arbiter {
   case object Join
@@ -20,16 +20,16 @@ class Arbiter extends Actor {
   var replicas = Set.empty[ActorRef]
 
   def receive = {
-    case Join => {
-        if (leader.isEmpty) {
-          leader = Some(sender)
+    case Join =>
+      if (leader.isEmpty) {
+        leader = Some(sender)
+        replicas += sender
 
-          replicas += sender
-          sender ! JoinedPrimary
-        } else {
-          replicas += sender
-          sender ! JoinedSecondary
-        }
+        sender ! JoinedPrimary
+      } else {
+        replicas += sender
+
+        sender ! JoinedSecondary
       }
 
       leader foreach (_ ! Replicas(replicas))
