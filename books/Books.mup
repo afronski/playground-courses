@@ -446,6 +446,27 @@
                       }
                     }
                   }
+                },
+                "7": {
+                  "title": "chef-zero",
+                  "id": 266,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFFE0"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "In-memory, lightweight version of Chef Server.",
+                      "id": 267,
+                      "attr": {
+                        "style": {
+                          "background": "#90EE90"
+                        }
+                      }
+                    }
+                  }
                 }
               },
               "attr": {
@@ -751,6 +772,118 @@
                   }
                 }
               }
+            },
+            "6": {
+              "title": "Workflow",
+              "id": 251,
+              "attr": {
+                "style": {
+                  "background": "#99cc00"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Write Acceptance test",
+                  "id": 252,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Converge",
+                  "id": 253,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Write integration test",
+                  "id": 254,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Run integration test",
+                  "id": 255,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Write unit test",
+                  "id": 256,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "6": {
+                  "title": "Run unit test",
+                  "id": 257,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "7": {
+                  "title": "Write infrastructure code",
+                  "id": 258,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "8": {
+                  "title": "Run integration test",
+                  "id": 259,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "9": {
+                  "title": "Converge",
+                  "id": 261,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "10": {
+                  "title": "Victory!",
+                  "id": 262,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                },
+                "7.5": {
+                  "title": "Run unit test",
+                  "id": 260,
+                  "attr": {
+                    "style": {
+                      "background": "#99cc00"
+                    }
+                  }
+                }
+              }
             }
           },
           "attr": {
@@ -779,6 +912,427 @@
                 }
               }
             }
+          }
+        },
+        "3": {
+          "title": "Berkshelf",
+          "id": 263,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Dependency management system for Chef.",
+              "id": 264,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "\"Bundler for cookbooks\"",
+                  "id": 265,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "Berksfile and Berksfile.lock",
+              "id": 268,
+              "attr": {
+                "style": {
+                  "background": "#ADD8E6"
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "Test Kitchen",
+          "id": 269,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Framework for verifying and agreeing about state of the nodes.",
+              "id": 270,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "Test Kitchen is based on Thor.",
+              "id": 273,
+              "attr": {
+                "style": {
+                  "background": "#E0FFFF"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Tasks are available as a command line scripts or as a continuous delivery jobs.",
+                  "id": 274,
+                  "attr": {
+                    "style": {
+                      "background": "#ADD8E6"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "Definitions",
+              "id": 275,
+              "attr": {
+                "style": {
+                  "background": "#6495ED"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Instance",
+                  "id": 276,
+                  "ideas": {
+                    "1": {
+                      "title": "Instances are composed from platform and suite.",
+                      "id": 279,
+                      "attr": {
+                        "style": {
+                          "background": "#FAFAD2"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Platform",
+                      "id": 277,
+                      "ideas": {
+                        "1": {
+                          "title": "Combination of operating system, version, Chef version, architecture and name.",
+                          "id": 280,
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#ADFF2F"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "3": {
+                      "title": "Suites",
+                      "id": 278,
+                      "attr": {
+                        "style": {
+                          "background": "#ADFF2F"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "It's a run list with optional attributes.",
+                          "id": 281,
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#ADFF2F"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Drivers",
+                  "id": 282,
+                  "attr": {
+                    "style": {
+                      "background": "#ADFF2F"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "By default kitchen uses Vagrant but can be used with cloud providers as well. ",
+                      "id": 283,
+                      "attr": {
+                        "style": {
+                          "background": "#ADFF2F"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "title": "Thor",
+          "id": 271,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Task runner, similar to the Rake.",
+              "id": 272,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "6": {
+          "title": "Cucumber",
+          "id": 284,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "BDD testing framework.",
+              "id": 286,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "title": "Leibniz",
+          "id": 285,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Integration layer between Cucumber and Test Kitchen.",
+              "id": 287,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "8": {
+          "title": "Serverspec",
+          "id": 288,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "It tests your servers' actual state through SSH access, so you don't need to install any agent software on your servers.",
+              "id": 291,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "9": {
+          "title": "Bats",
+          "id": 289,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "It's a Bash testing framework.",
+              "id": 290,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "10": {
+          "title": "Minitest Handler",
+          "id": 292,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Tool for integration testing, not so popular today.",
+              "id": 293,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "11": {
+          "title": "Chefspec",
+          "id": 294,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Tool for lightweight and purest unit-testing for Chef.",
+              "id": 295,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          }
+        },
+        "12": {
+          "title": "Static Analysis and Linting Tools",
+          "id": 297,
+          "ideas": {
+            "1": {
+              "title": "Foodcritic",
+              "id": 298,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "SCA for recipes but without syntax validation.",
+                  "id": 303,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "Knife Cookbook Test",
+              "id": 299,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Built-in knife option for validating syntax.",
+                  "id": 304,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "Tailor",
+              "id": 300,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Tests cookbooks according to the Ruby syntax standards (linter).",
+                  "id": 305,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "Strainer",
+              "id": 301,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Tool for collecting all of tools from above into one single command.",
+                  "id": 306,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
           }
         }
       }
