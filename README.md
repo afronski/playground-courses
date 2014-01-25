@@ -10,6 +10,7 @@ Courses
 - Principles of Reactive Programming (Coursera)
 
 ### Pending:
-- Pattern-Oriented Software Architectures for Concurrent and Networked Mobile Devices (Coursera)
+- R Programming (Coursera)
+- Pattern-Oriented Software Architectures (Coursera)
 - Compilers (Coursera)
 - Algorithms, part II (Coursera)
