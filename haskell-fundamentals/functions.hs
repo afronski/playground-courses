@@ -1,10 +1,8 @@
 -- Raising a number to power of 2.
-
 square x = x * x
 
 -- Returning description of passed number
 -- in terms of signess.
-
 positiveOrNegative x =
   if x >= 0
     then "Positive"
@@ -13,7 +11,7 @@ positiveOrNegative x =
 sqrt3 = sqrt 3
 square2 = square 2
 
--- Recursion.
+-- Recursion samples.
 
 pow2 n =
   if n == 0
