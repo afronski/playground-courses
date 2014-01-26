@@ -1343,9 +1343,325 @@
       "attr": {
         "style": {
           "background": "#ADD8E6"
-        }
+        },
+        "collapsed": true
       },
-      "ideas": {}
+      "ideas": {
+        "1": {
+          "title": "HISTORY",
+          "id": 307,
+          "ideas": {
+            "1": {
+              "title": "Amazon released first feature in 2004 - Simple Queue Service.",
+              "id": 308,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            },
+            "2": {
+              "title": "S3, SQS - this big infrastructure released outside was the side-effect of  resolving Amazon Shop scaling problems.",
+              "id": 309,
+              "attr": {
+                "style": {
+                  "background": "#90EE90"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#90EE90"
+            },
+            "collapsed": true
+          }
+        },
+        "2": {
+          "title": "SERVICES",
+          "id": 310,
+          "attr": {
+            "style": {
+              "background": "#E6E6FA"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "SQS",
+              "id": 311,
+              "ideas": {
+                "1": {
+                  "title": "Simple Queue Service",
+                  "id": 319,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "S3",
+              "id": 312,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Simple Storage Service",
+                  "id": 320,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "EC2",
+              "id": 313,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Elastic Compute Cloud",
+                  "id": 321,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "RDS",
+              "id": 314,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Highly available and scalable MySQL hosting.",
+                  "id": 322,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Relational Database Server",
+                  "id": 323,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "title": "CloudFront",
+              "id": 315,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "CDN (Content Delivery Network) built upon S3.",
+                  "id": 329,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "title": "CloudWatch",
+              "id": 316,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Monitoring service for rest of services.",
+                  "id": 328,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "7": {
+              "title": "ELB",
+              "id": 317,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Elastic Load Balancing",
+                  "id": 327,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "8": {
+              "title": "SimpleDB",
+              "id": 318,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "I/O optimized key-value storage.",
+                  "id": 326,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "9": {
+              "title": "DynamoDB",
+              "id": 324,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Fully managed NoSQL database.",
+                  "id": 325,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "10": {
+              "title": "Auto Scaling",
+              "id": 330,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Service which monitors traffic on your servers / services and adjust used resources properly.",
+                  "id": 331,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "You Built It, You Run It",
+          "id": 332,
+          "attr": {
+            "style": {
+              "background": "#FFFF00"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Werner Vogels, Amazon CTO ",
+              "id": 333,
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "SDK",
+          "id": 334,
+          "ideas": {
+            "1": {
+              "title": "Everything what you can do from AWS Console is available from command line as well.",
+              "id": 335,
+              "ideas": {
+                "1": {
+                  "title": "You only need to generate X.509 certificates and SSH key pairs.",
+                  "id": 336,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#F08080"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#F08080"
+            },
+            "collapsed": true
+          }
+        }
+      }
     },
     "0.5": {
       "title": "Scala in Depth",
