@@ -1628,6 +1628,38 @@
               }
             }
           }
+        },
+        "4": {
+          "title": "SDK",
+          "id": 334,
+          "ideas": {
+            "1": {
+              "title": "Everything what you can do from AWS Console is available from command line as well.",
+              "id": 335,
+              "ideas": {
+                "1": {
+                  "title": "You only need to generate X.509 certificates and SSH key pairs.",
+                  "id": 336,
+                  "attr": {
+                    "style": {
+                      "background": "#F08080"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#F08080"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#F08080"
+            },
+            "collapsed": true
+          }
         }
       }
     },
