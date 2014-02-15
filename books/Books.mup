@@ -1343,7 +1343,8 @@
       "attr": {
         "style": {
           "background": "#ADD8E6"
-        }
+        },
+        "collapsed": true
       },
       "ideas": {
         "1": {
@@ -1396,6 +1397,63 @@
                   "attr": {
                     "style": {
                       "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Distributed queue system that enables web service applications to quickly and reliably queue messages that one component in the application generates to be consumed by another component.",
+                  "id": 360,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "It is a temporary repository for messages that are awaiting processing.",
+                  "id": 361,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Use cases",
+                  "id": 362,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Offloading image processing",
+                      "id": 363,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "PDF processing",
+                      "id": 364,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Risk delegation and communication with workers for background jobs",
+                      "id": 365,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
                     }
                   }
                 }
@@ -1684,6 +1742,120 @@
                       "background": "#E6E6FA"
                     }
                   }
+                },
+                "2": {
+                  "title": "A highly available, scalable and flexible nonrelational data store that offloads the work of database administration.",
+                  "id": 366,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Domains are used to store related items.",
+                  "id": 367,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Items are collection of attributes, item can have 256 attributes, domain a billion items (summary - up to 10 GB).",
+                      "id": 368,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Indexes are implicit.",
+                  "id": 369,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Consistent read",
+                  "id": 370,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                },
+                "6": {
+                  "title": "Conditional put/delete",
+                  "id": 371,
+                  "attr": {
+                    "style": {
+                      "background": "#90EE90"
+                    }
+                  }
+                },
+                "7": {
+                  "title": "Use cases",
+                  "id": 372,
+                  "attr": {
+                    "style": {
+                      "background": "#9400D3"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Loosely coupled systems",
+                      "id": 373,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Fast clients",
+                      "id": 374,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Large, linear datasets",
+                      "id": 375,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Hyperpersonal",
+                      "id": 376,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    },
+                    "5": {
+                      "title": "Scale",
+                      "id": 377,
+                      "attr": {
+                        "style": {
+                          "background": "#E6E6FA"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             },
@@ -1772,6 +1944,93 @@
                   "attr": {
                     "style": {
                       "background": "#E6E6FA"
+                    }
+                  }
+                }
+              }
+            },
+            "12": {
+              "title": "SNS",
+              "id": 378,
+              "attr": {
+                "style": {
+                  "background": "#E6E6FA"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Notifications service, which requires subscribers and their confirmation.",
+                  "id": 379,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Push model.",
+                  "id": 380,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Topics are conduits for sending (publishing) and receiving messages, or events.",
+                  "id": 381,
+                  "attr": {
+                    "style": {
+                      "background": "#E6E6FA"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Supported endpoints",
+                  "id": 382,
+                  "attr": {
+                    "style": {
+                      "background": "#008080"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "HTTP/HTTPS",
+                      "id": 383,
+                      "attr": {
+                        "style": {
+                          "background": "#008080"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Email",
+                      "id": 384,
+                      "attr": {
+                        "style": {
+                          "background": "#008080"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "SQS",
+                      "id": 385,
+                      "attr": {
+                        "style": {
+                          "background": "#008080"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "SMS (USA only)",
+                      "id": 386,
+                      "attr": {
+                        "style": {
+                          "background": "#008080"
+                        }
+                      }
                     }
                   }
                 }
