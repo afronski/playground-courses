@@ -1343,7 +1343,8 @@
       "attr": {
         "style": {
           "background": "#ADD8E6"
-        }
+        },
+        "collapsed": true
       },
       "ideas": {
         "1": {
