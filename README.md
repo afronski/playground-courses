@@ -9,8 +9,8 @@ Courses
 - Machine Learning (Coursera)
 - Principles of Reactive Programming (Coursera)
 
+### In progress:
+- Algorithms, part II (Coursera)
+
 ### Pending:
 - R Programming (Coursera)
-- Pattern-Oriented Software Architectures (Coursera)
-- Compilers (Coursera)
-- Algorithms, part II (Coursera)
