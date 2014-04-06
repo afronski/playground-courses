@@ -1,12 +1,12 @@
 import java.awt.Color;
 
 public class SeamCarver {
+  private static final int BORDERENERGY = 195075;
+  private static final double EPS = 1e-12;
+
   private Picture picture;
 
   private double[][] distance;
-
-  private static final int BORDERENERGY = 195075;
-  private static final double EPS = 1e-12;
 
   public SeamCarver(Picture picture) {
     this.picture = picture;
@@ -28,16 +28,19 @@ public class SeamCarver {
     return 1.0 * value * value;
   }
 
-  private double min(double x, double y, double z){
-    double tmp = x > y ? y : x;
-    return tmp > z ? z : tmp;
+  private double min(double x, double y) {
+    if (x > y) {
+      return y;
+    } else {
+      return x;
+    }
   }
 
-  private double min(double x, double y){
-    return x > y ? y : x;
+  private double min(double x, double y, double z) {
+    return min(z, min(x, y));
   }
 
-  private boolean equal(double x, double y){
+  private boolean equal(double x, double y) {
     return Math.abs(x - y) < EPS;
   }
 
@@ -68,17 +71,17 @@ public class SeamCarver {
 
     distance = new double[height()][width()];
 
-    for(int i = 0;i < height();i++) {
+    for (int i = 0; i < height(); i++) {
       distance[i][0] = 0.0;
     }
 
-    for(int i = 1; i < width() - 1; ++i) {
-      for(int j = 1; j < height() - 1; ++j) {
+    for (int i = 1; i < width() - 1; ++i) {
+      for (int j = 1; j < height() - 1; ++j) {
         if (j == 1 && j == height() - 2) {
-          distance[j][i] = distance[j][i - 1] + energy(i,j);
-        } else if(j == 1) {
+          distance[j][i] = distance[j][i - 1] + energy(i, j);
+        } else if (j == 1) {
           distance[j][i] = min(distance[j][i - 1], distance[j + 1][i - 1]) + energy(i, j);
-        } else if(j == height() - 2) {
+        } else if (j == height() - 2) {
           distance[j][i] = min(distance[j - 1][i - 1], distance[j][i - 1]) + energy(i, j);
         } else {
           distance[j][i] = min(distance[j - 1][i - 1], distance[j][i - 1], distance[j + 1][i - 1]) + energy(i, j);
@@ -89,7 +92,7 @@ public class SeamCarver {
     double minimalDistance = Double.MAX_VALUE;
     int index = 0;
 
-    for(int i = 1; i < height() - 1; ++i) {
+    for (int i = 1; i < height() - 1; ++i) {
       distance[i][width() - 1] = distance[i][width() - 2] + BORDERENERGY;
 
       if (distance[i][width() - 1] < minimalDistance) {
@@ -98,19 +101,19 @@ public class SeamCarver {
       }
     }
 
-    for(int i = width() - 1; i >= 1; --i) {
-      for(int j = 1; j <= height() - 2; ++j) {
+    for (int i = width() - 1; i >= 1; --i) {
+      for (int j = 1; j <= height() - 2; ++j) {
         if (equal(minimalDistance, distance[j - 1][i]) && Math.abs(index - j + 1) <= 1) {
           result[i] = j - 1;
           minimalDistance -= energy(i, j - 1);
           index = j - 1;
           break;
-        } else if (equal(minimalDistance,distance[j][i]) && Math.abs(index - j) <= 1) {
+        } else if (equal(minimalDistance, distance[j][i]) && Math.abs(index - j) <= 1) {
           result[i] = j;
           minimalDistance -= energy(i, j);
           index = j;
           break;
-        } else if (equal(minimalDistance,distance[j + 1][i])  && Math.abs(index - j - 1) <= 1) {
+        } else if (equal(minimalDistance, distance[j + 1][i])  && Math.abs(index - j - 1) <= 1) {
           result[i] = j + 1;
           minimalDistance -= energy(i, j + 1);
           index = j + 1;
@@ -129,14 +132,14 @@ public class SeamCarver {
     int[] result = new int[height()];
     distance = new double[height()][width()];
 
-    for(int i = 0; i < width(); ++i) {
+    for (int i = 0; i < width(); ++i) {
       distance[0][i] = 0.0;
     }
 
-    for(int i = 1; i < height() - 1; ++i) {
-      for(int j = 1; j < width() - 1; ++j) {
+    for (int i = 1; i < height() - 1; ++i) {
+      for (int j = 1; j < width() - 1; ++j) {
         if (j == 1 && j == width() - 2) {
-          distance[i][j] = distance[i - 1][j] + energy(j,i);
+          distance[i][j] = distance[i - 1][j] + energy(j, i);
         } else if (j == 1) {
           distance[i][j] = min(distance[i - 1][j], distance[i - 1][j + 1]) + energy(j, i);
         } else if (j == width() - 2) {
@@ -150,7 +153,7 @@ public class SeamCarver {
     double minimalDistance = Double.MAX_VALUE;
     int index = 0;
 
-    for(int i = 1; i < width() - 1; ++i) {
+    for (int i = 1; i < width() - 1; ++i) {
       distance[height() - 1][i] = distance[height() - 2][i] + BORDERENERGY;
 
       if (distance[height() - 1][i] < minimalDistance) {
@@ -159,8 +162,8 @@ public class SeamCarver {
       }
     }
 
-    for(int i = height() - 1; i >= 1; --i) {
-      for(int j = 1; j <= width() - 2; ++j) {
+    for (int i = height() - 1; i >= 1; --i) {
+      for (int j = 1; j <= width() - 2; ++j) {
         if (equal(minimalDistance, distance[i][j - 1]) && Math.abs(index - j + 1) <= 1) {
           result[i] = j - 1;
           minimalDistance -= energy(j - 1, i);
@@ -194,16 +197,16 @@ public class SeamCarver {
     Picture modified = new Picture(width(), height() - 1);
     int old = seam[0];
 
-    for(int i = 0; i < seam.length; ++i) {
+    for (int i = 0; i < seam.length; ++i) {
       if (Math.abs(seam[i] - old) > 1) {
         throw new IllegalArgumentException();
       }
 
-      for(int j = 0; j < seam[i]; ++j) {
+      for (int j = 0; j < seam[i]; ++j) {
         modified.set(i, j, picture.get(i, j));
       }
 
-      for(int j = seam[i]; j < height() - 1; ++j) {
+      for (int j = seam[i]; j < height() - 1; ++j) {
         modified.set(i, j, picture.get(i, j + 1));
       }
 
@@ -221,16 +224,16 @@ public class SeamCarver {
     Picture modified = new Picture(width() - 1, height());
     int old = seam[0];
 
-    for(int i = 0; i < seam.length; ++i) {
+    for (int i = 0; i < seam.length; ++i) {
       if (Math.abs(seam[i] - old) > 1) {
         throw new IllegalArgumentException();
       }
 
-      for(int j = 0; j < seam[i]; ++j) {
+      for (int j = 0; j < seam[i]; ++j) {
         modified.set(j, i, picture.get(j, i));
       }
 
-      for(int j = seam[i]; j < width() - 1; ++j) {
+      for (int j = seam[i]; j < width() - 1; ++j) {
         modified.set(j, i, picture.get(j + 1, i));
       }
 

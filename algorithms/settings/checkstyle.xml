@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+
+<module name="Checker">
+
+
+    <!-- Checks that property files contain the same keys. -->
+    <module name="Translation"/>
+
+    <!-- Checks that no tab characters in the source code. -->
+    <!-- Reports only first instance. -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="false"/>
+    </module>
+
+
+    <!-- Checks that no file is more than 1500 lines long. -->
+    <module name="FileLength">
+      <property name="max" value="1500"/>
+    </module>
+
+
+
+
+<!-- =========================================================================== -->
+<!-- =========================================================================== -->
+<!--                   TREEWALKER BEGINS HERE                                    -->
+<!-- =========================================================================== -->
+<!-- =========================================================================== -->
+
+    <module name="TreeWalker">
+
+        <!-- =========================================================================== -->
+        <!-- Check for annotations                                                       -->
+        <!-- http://checkstyle.sourceforge.net/config_annotation.html                    -->
+        <!-- =========================================================================== -->
+        <module name="SuppressWarnings">
+           <property name="format"
+               value="^unchecked$|^unused$"/>
+           <property name="tokens"
+              value="
+              CLASS_DEF,INTERFACE_DEF,ENUM_DEF,
+              ANNOTATION_DEF,ANNOTATION_FIELD_DEF,
+              ENUM_CONSTANT_DEF,METHOD_DEF,CTOR_DEF,
+              PARAMETER_DEF,VARIABLE_DEF
+          "/>
+        </module>
+
+        <!-- =========================================================================== -->
+        <!-- Block checks                                                                -->
+        <!-- http://checkstyle.sourceforge.net/config_blocks.html                        -->
+        <!-- =========================================================================== -->
+        <module name="EmptyBlock">
+            <property name="option" value="text"/>
+        </module>
+        <module name="AvoidNestedBlocks"/>
+
+
+        <!-- =========================================================================== -->
+        <!-- Class design                                                                -->
+        <!-- http://checkstyle.sourceforge.net/config_design.html                        -->
+        <!-- =========================================================================== -->
+        <!-- SPECIAL HACK FOR NON-STATIC PUBIC FINAL VARIABLE -->
+        <module name="VisibilityModifier">
+            <property name="publicMemberPattern" value="^SLOPE_ORDER$"/>
+        </module>
+        <!-- <module name="FinalClass"/> -->
+        <module name="InterfaceIsType"/>
+        <module name="MutableException"/>
+
+
+        <!-- =========================================================================== -->
+        <!-- Coding violations                                                           -->
+        <!-- http://checkstyle.sourceforge.net/config_coding.html                        -->
+        <!-- =========================================================================== -->
+        <module name="AvoidInlineConditionals"/>
+        <module name="CovariantEquals"/>
+<!--    <module name="DoubleCheckedLocking"/>  NO LONGER AVAILABLE IN CHECKSTYLE 5.6 -->
+        <module name="EmptyStatement"/>
+<!--        <module name="EqualsHashCode"/> -->
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" value="true"/>
+        </module>
+        <module name="IllegalInstantiation"/>
+        <module name="InnerAssignment"/>
+<!--
+        <module name="MagicNumber">
+            <property name="tokens" value="NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG"/>
+            <property name="ignoreNumbers" value="-1, 0, 0.5, 1, 2"/>
+        </module>
+-->
+        <module name="MissingSwitchDefault"/>
+        <module name="ModifiedControlVariable"/>
+        <module name="RedundantThrows"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="StringLiteralEquality"/>
+        <module name="NestedForDepth">
+            <property name="max" value="4"/>
+        </module>
+        <module name="NestedIfDepth">
+            <property name="max" value="3"/>
+        </module>
+        <module name="NestedTryDepth">
+            <property name="max" value="1"/>
+        </module>
+        <module name="NoClone"/>
+        <module name="NoFinalizer"/>
+        <module name="SuperClone"/>
+        <module name="SuperFinalize"/>
+        <module name="JUnitTestCase"/>
+
+        <!-- Avoid masking of OutOfMemoryError or NullPointerExceptionError -->
+        <module name="IllegalCatch"/>
+
+        <!-- Don't allow variables to be declared of wrapper types -->
+        <module name="IllegalType">
+            <property name="illegalClassNames" value="java.lang.Boolean, java.lang.Integer, java.lang.Double, java.lang.Float, java.lang.Character, java.lang.Long, java.lang.Short, java.lang.Byte, java.lang.Class"/>
+        </module>
+
+        <module name="DeclarationOrder"/>
+        <module name="ParameterAssignment"/>
+        <module name="DefaultComesLast"/>
+        <module name="FallThrough">
+           <property name="reliefPattern" value="continue in next case"/>
+        </module>
+        <module name="OneStatementPerLine"/>
+
+
+
+        <!-- =========================================================================== -->
+        <!-- Duplicate code                                                              -->
+        <!-- http://checkstyle.sourceforge.net/config_duplicates.html                    -->
+        <!-- =========================================================================== -->
+
+
+        <!-- =========================================================================== -->
+        <!-- Headers                                                                     -->
+        <!-- http://checkstyle.sourceforge.net/config_header.html                        -->
+        <!-- =========================================================================== -->
+
+
+        <!-- =========================================================================== -->
+        <!-- Imports                                                                     -->
+        <!-- http://checkstyle.sourceforge.net/config_imports.html                       -->
+        <!-- =========================================================================== -->
+        <module name="AvoidStarImport"/>
+        <module name="AvoidStaticImport"/>
+
+        <!-- Disallow java.io and other packages that COS 126 students should not use -->
+        <!--
+        <module name="IllegalImport">
+            <property name="illegalPkgs" value="java.io, java.sql, sun, java.net, java.security, javax, java.applet, java.beans, java.nio, java.rmi, java.text, java.lang.reflect, java.lang.instrument"/>
+        </module>
+        -->
+
+        <module name="RedundantImport"/>
+        <module name="UnusedImports"/>
+
+
+        <!-- =========================================================================== -->
+        <!-- Javadoc comments                                                            -->
+        <!-- http://checkstyle.sourceforge.net/config_javadoc.html                       -->
+        <!-- =========================================================================== -->
+
+
+        <!-- =========================================================================== -->
+        <!-- Metrics                                                                     -->
+        <!-- http://checkstyle.sourceforge.net/config_metrics.html                       -->
+        <!-- =========================================================================== -->
+
+
+        <!-- =========================================================================== -->
+        <!-- Miscellaneous checks                                                        -->
+        <!-- http://checkstyle.sourceforge.net/config_misc.html                          -->
+        <!-- =========================================================================== -->
+        <module name="TodoComment"/>
+        <module name="UpperEll"/>
+        <module name="ArrayTypeStyle"/>
+        <module name="OuterTypeFilename"/>
+
+
+        <!-- =========================================================================== -->
+        <!-- Modifiers                                                                   -->
+        <!-- http://checkstyle.sourceforge.net/config_modifier.html                      -->
+        <!-- =========================================================================== -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+
+        <!-- =========================================================================== -->
+        <!-- Naming conventions                                                          -->
+        <!-- http://checkstyle.sourceforge.net/config_naming.html                        -->
+        <!-- =========================================================================== -->
+
+        <!-- MODIFIED TO ALLOW SINGLE LETTER UPPERCASE NAMES     -->
+        <!-- MODIFIED TO ALLOW FINAL VARIABLES TO BE ALL UPPER-CASE -->
+        <!-- Disallow underscore characters -->
+        <module name="ConstantName"/>
+        <module name="LocalFinalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$|^[A-Z][A-Z_0-9]*$"/>
+        </module>
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$|^[A-Z][A-Z_0-9]*$"/>
+        </module>
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$|^[A-Z][A-Z_0-9]*$"/>
+        </module>
+
+       <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$|^[A-Z][A-Z_0-9]*$"/>
+        </module>
+
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+        </module>
+        <module name="PackageName"/>
+        <module name="ParameterName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$|^[A-Z]$"/>
+        </module>
+        <module name="StaticVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$|^[A-Z][A-Z_0-9]*$"/>
+        </module>
+        <module name="TypeName"/>
+
+
+        <!-- =========================================================================== -->
+        <!-- Regexp                                                                      -->
+        <!-- http://checkstyle.sourceforge.net/config_regexp.html                        -->
+        <!-- =========================================================================== -->
+
+        <!-- Checks for calls to System.exit(). -->
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="System\.exit"/>
+            <property name="ignoreComments" value="true"/>
+            <property name="message" value="Not permitted to call System.exit()"/>
+        </module>
+
+        <!-- Checks for calls to Math.pow(). -->
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="Math\.pow\([^,]*, 2\)"/>
+            <property name="ignoreComments" value="true"/>
+            <property name="message" value="Use x*x instead of Math.pow(x, 2)"/>
+        </module>
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="Math\.pow\([^,]*, 3\)"/>
+            <property name="ignoreComments" value="true"/>
+            <property name="message" value="Use x*x*x instead of Math.pow(x, 3)"/>
+        </module>
+
+
+        <!-- =========================================================================== -->
+        <!-- Size violations                                                             -->
+        <!-- http://checkstyle.sourceforge.net/config_sizes.html                         -->
+        <!-- =========================================================================== -->
+
+        <!-- Check that length of line is at most 85 characters. -->
+        <module name="LineLength">
+            <property name="max" value="85"/>
+        </module>
+
+        <module name="MethodLength"/>
+        <module name="AnonInnerLength"/>
+        <module name="ParameterNumber"/>
+        <module name="OuterTypeNumber"/>
+        <module name="MethodCount"/>
+
+
+        <!-- =========================================================================== -->
+        <!-- Whitespace                                                                  -->
+        <!-- http://checkstyle.sourceforge.net/config_whitespace.html                    -->
+        <!-- =========================================================================== -->
+        <module name="GenericWhitespace"/>
+        <module name="EmptyForInitializerPad"/>
+        <module name="EmptyForIteratorPad"/>
+        <module name="MethodParamPad"/>
+        <module name="NoWhitespaceAfter">
+           <property name="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS, UNARY_PLUS"/>
+         </module>
+        <module name="NoWhitespaceBefore"/>
+        <module name="OperatorWrap"/>
+        <module name="ParenPad"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhitespaceAfter"/>
+        <module name="WhitespaceAround">
+           <!-- removed PLUS, MINUS, STAR, DIV -->
+           <!-- removed GENERIC_START, GENERIC_END -->
+           <property name="tokens"
+            value="ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR,
+                   BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON,  DIV_ASSIGN,
+                   EQUAL, GE, GT, LAND, LCURLY, LE, LITERAL_ASSERT,
+                   LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY,
+                   LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SYNCHRONIZED,
+                   LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS_ASSIGN, MOD,
+                   MOD_ASSIGN, NOT_EQUAL, PLUS_ASSIGN, QUESTION, RCURLY,
+                   SL, SLIST, SL_ASSIGN, SR, SR_ASSIGN, STAR_ASSIGN,
+                   TYPE_EXTENSION_AND, WILDCARD_TYPE"/>
+        </module>
+
+
+
+    </module>
+
+</module>

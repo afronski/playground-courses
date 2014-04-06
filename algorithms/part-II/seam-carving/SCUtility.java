@@ -87,7 +87,7 @@ public class SCUtility {
         overlaid.set(i, seamIndices[i], new Color(255, 0, 0));
       }
     } else {
-      for (int j= 0; j < height; ++j) {
+      for (int j = 0; j < height; ++j) {
         overlaid.set(seamIndices[j], j, new Color(255, 0, 0));
       }
     }
