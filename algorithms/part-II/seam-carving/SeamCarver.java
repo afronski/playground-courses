@@ -1,7 +1,7 @@
 import java.awt.Color;
 
 public class SeamCarver {
-  private static final int BORDERENERGY = 195075;
+  private static final double BORDERENERGY = 195075.0;
   private static final double EPS = 1e-12;
 
   private Picture picture;
@@ -241,5 +241,18 @@ public class SeamCarver {
     }
 
     picture = modified;
+  }
+
+  public static void main(String[] args) {
+    Picture picture = new Picture("3x7.png");
+    SeamCarver carver = new SeamCarver(picture);
+
+    for (int x = 0; x < carver.height(); ++x) {
+      for (int y = 0; y < carver.width(); ++y) {
+        System.out.print(carver.distance[x][y] + " ");
+      }
+
+      System.out.println();
+    }
   }
 }
