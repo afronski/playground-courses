@@ -11,6 +11,4 @@ Courses
 
 ### In progress:
 - Algorithms, part II (Coursera)
-
-### Pending:
 - R Programming (Coursera)
