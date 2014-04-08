@@ -8,7 +8,3 @@ Courses
 - HTML5 Game Development (Udacity)
 - Machine Learning (Coursera)
 - Principles of Reactive Programming (Coursera)
-
-### In progress:
-- Algorithms, part II (Coursera)
-- R Programming (Coursera)
