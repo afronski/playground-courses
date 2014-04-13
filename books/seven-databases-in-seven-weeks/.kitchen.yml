@@ -1,0 +1,38 @@
+---
+driver:
+  name: vagrant
+  vagrantfile_erb: Vagrantfile.erb
+
+  customize:
+    memory: 4096
+    cpuexecutioncap: 90
+    cpus: 2
+
+  vm_hostname: 'seven-databases'
+
+  network:
+    - [ 'private_network', { ip: '192.168.56.99' } ]
+
+provisioner:
+  name: chef_solo
+
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+  - name: debian
+    driver:
+      box: opscode-debian-7.4.0
+      box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-7.4_chef-provisionerless.box
+
+suites:
+  - name: seven-databases
+    run_list:
+      - 'recipe[postgresql::server]'
+      - 'recipe[mongodb::default]'
+      - 'recipe[hbase::default]'
+      - 'recipe[riak::default]'
+    attributes:
+      postgresql:
+        password:
+          postgres: postgresql123

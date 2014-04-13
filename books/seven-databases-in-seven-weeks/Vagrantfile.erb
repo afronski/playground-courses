@@ -1,0 +1,58 @@
+Vagrant.require_plugin 'vagrant-cachier'
+Vagrant.require_plugin 'vagrant-omnibus'
+Vagrant.require_plugin 'vagrant-hostsupdater'
+Vagrant.require_plugin 'vagrant-vbguest'
+
+Vagrant.configure('2') do |config|
+  config.vm.box = '<%= config[:box] %>'
+  config.vm.box_url = '<%= config[:box_url] %>'
+
+  config.vm.hostname = '<%= config[:vm_hostname] %>'
+
+  ENV['OMNIBUS_INSTALL_URL'] = 'https://gist.github.com/hectcastro/6443633/raw/install.sh'
+
+  config.omnibus.chef_version = '11.10.4'
+  config.cache.auto_detect = true
+
+<% if config[:guest] %>
+  config.vm.guest = <%= config[:guest] %>
+<% end %>
+<% if config[:username] %>
+  config.ssh.username = '<%= config[:username] %>'
+<% end %>
+<% if config[:ssh_key] %>
+  config.ssh.private_key_path = '<%= config[:ssh_key] %>'
+<% end %>
+
+<% Array(config[:network]).each do |opts| %>
+  config.vm.network(:<%= opts[0] %>, <%= opts[1..-1].join(', ') %>)
+<% end %>
+
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+<% config[:synced_folders].each do |source, destination, options|
+     proper_source = source.gsub('%{instance_name}', instance.name)
+     proper_destination = destination.gsub('%{instance_name}', instance.name)
+     opt = (options.nil? ? '' : ", #{options}")
+%>
+  config.vm.synced_folder '<%= proper_source %>', '<%= proper_destination %>'<%= opt %>
+<% end %>
+
+  config.vm.provider :<%= config[:provider] %> do |provider|
+<% config[:customize].each do |key, value| %>
+  <% case config[:provider]
+     when 'virtualbox' %>
+    provider.customize ['modifyvm', :id, '--<%= key %>', '<%= value %>']
+  <% when 'rackspace' %>
+    provider.<%= key %> = '<%= value%>'
+  <% when /^vmware_/ %>
+    <% if key == :memory %>
+      <% unless config[:customize].include?(:memsize) %>
+    provider.vmx['memsize'] = '<%= value %>'
+      <% end %>
+    <% else %>
+    provider.vmx['<%= key %>'] = '<%= value %>'
+    <% end %>
+  <% end %>
+<% end %>
+  end
+end

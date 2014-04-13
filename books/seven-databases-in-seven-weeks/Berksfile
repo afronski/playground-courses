@@ -1,0 +1,9 @@
+site :opscode
+
+cookbook 'java'
+cookbook 'runit'
+
+cookbook 'mongodb'
+cookbook 'postgresql'
+cookbook 'riak', path: './cookbooks/riak'
+cookbook 'hbase', path: './cookbooks/hbase'
