@@ -54,7 +54,7 @@ template '/opt/hbase/conf/hbase-site.xml' do
 end
 
 execute 'start-hbase' do
-	command 'nohup ./bin/start-hbase.sh &'
+	command './bin/start-hbase.sh'
 	cwd '/opt/hbase'
 
 	user 'vagrant'
