@@ -31,6 +31,7 @@ suites:
       - 'recipe[postgresql::server]'
       - 'recipe[mongodb::default]'
       - 'recipe[couchdb::default]'
+      - 'recipe[neo4j::tarball]'
       - 'recipe[hbase::default]'
       - 'recipe[riak::default]'
     attributes:
