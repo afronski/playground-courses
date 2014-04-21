@@ -5,6 +5,7 @@ cookbook 'runit'
 
 cookbook 'mongodb'
 cookbook 'couchdb'
+cookbook 'redisio'
 cookbook 'postgresql'
 cookbook 'riak', path: './cookbooks/riak'
 cookbook 'hbase', path: './cookbooks/hbase'
