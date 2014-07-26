@@ -32,7 +32,7 @@ wag_tail() ->
         bark()
     end.
 
-sit() ->    
+sit() ->
     io:format("Dog is sitting. Good boy!~n"),
     receive
         squirrel -> bark();
