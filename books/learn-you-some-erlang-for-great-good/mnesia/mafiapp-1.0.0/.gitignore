@@ -1,1 +1,3 @@
-logs/ebin/*.beamtest/*.beam
+ebin/*.beam
+test/*.beam
+logs/
