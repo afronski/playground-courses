@@ -15,4 +15,4 @@ Courses
   - Move old notes to org-mode. 
 - Private notes (private git submodule).
 - Moving out book samples from here (only notes there).
-- Change name to playground-notes.
+- Change name to *playground-notes*.
