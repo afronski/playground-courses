@@ -1,5 +1,0 @@
-# Lock files.
-*.lock
-
-# Kitchen sink.
-.kitchen/
