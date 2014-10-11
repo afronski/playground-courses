@@ -1,0 +1,6 @@
+# LaTeX output:
+*.pdf
+*.dvi
+*.tex
+*.aux
+*.log
