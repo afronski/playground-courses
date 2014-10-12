@@ -8,3 +8,7 @@
 - HTML5 Game Development (Udacity)
 - Machine Learning (Coursera)
 - Principles of Reactive Programming (Coursera)
+
+### Started Courses:
+
+- Introduction to Functional Programming (edX)

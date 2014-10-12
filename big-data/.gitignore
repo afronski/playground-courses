@@ -1,3 +1,6 @@
-output/
-datasets/
-*.pyc
+# Datasets and generated stuff:
+*/output/
+*/datasets/
+
+# Binaries:
+*/*.pyc

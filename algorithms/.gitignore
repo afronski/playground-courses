@@ -1,0 +1,10 @@
+# Binaries:
+**/*.class
+**/*.jar
+**/target/
+**/*.png
+
+# Settings:
+**/.classpath
+**/.project
+**/.settings/
