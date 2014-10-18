@@ -1,0 +1,45 @@
+* Introduction to Functional Programming - Week 0
+
+** Definitions
+
+Functional Programming is a language which uses expressions 
+over statements to communicate intent and evaluate program. 
+Statements are a very imperative way of defining 'how' to 
+do it, where with use of expressions we can easily declare
+'what' to do it.
+
+** Types of Functional Programming Languages
+
+- Lazy Functional Programming Language - e.g. Haskell.
+- Strict Functional Programming Language.
+
+** History of Programming Languages
+
+*** 1930      - Alonzo Church, Lambda Calculus
+*** 1950      - James McCarthy, Lisp
+*** 1970      - Robin Milner, ML
+
+ML was the first programming language with a 'type inference' 
+mechanism.
+
+*** 1970-1980 - David Turner, SASL -> KRC -> Miranda
+*** 1987      - Haskell, design by comitee
+*** 2003      - Comitee published a Haskell98 standard
+
+* Introduction to Functional Programming - Week 1
+
+** Getting Started
+
+*** Haskell Platform (http://www.haskell.org/platform)
+**** Glasgow Haskell Platform (GHC and GHCi REPL)
+*** Prelude is a basic, standard library for Haskell
+**** Operations on lists are not the O(1)
+***** Indexing, length etc. 
+*** Coding Standards
+**** Variables and Functions must start from lower case letter
+**** But you can use single quotes in names.
+**** By convention variable names which ends on 's' like 'xs' are lists.
+**** Double or more 's' at the end means that there are more lists nested.
+**** Haskell is whitespace significant (Layout Rule)
+***** Used instead explicit groupping. 
+*** There is a JVM version of Haskell called 'Ferge'
