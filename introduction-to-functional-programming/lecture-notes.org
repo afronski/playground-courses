@@ -43,3 +43,89 @@ mechanism.
 **** Haskell is whitespace significant (Layout Rule)
 ***** Used instead explicit groupping. 
 *** There is a JVM version of Haskell called 'Ferge'
+* Introduction to Functional Programming - Week 2
+** Naming
+
+'Haskell' is named after Haskell C. Curry, which invents
+the mechanism of 'Currying'.
+
+** Curried Functions
+
+All functions in Haskell are defined in curried form, 
+as a function with on argument which returns a function 
+with one argument.
+
+Currying is right-associative.
+
+** Partial Application
+
+Partial Application is a process of creating new function,
+with predefined argument from curried form. By 'applying' 
+we are calling function invocation.
+** Polymorphic Functions
+
+'Polymorphic function' ("of many forms") is a generic function,
+which contains one or more type variable. By convention type variables
+are usually named 'a', 'b' and 'c'.
+
+You can overload polymorphic function by specifying one or more class
+constraints. It is more than a restriction not overloading, but it is 
+used in the same way as overloading in imperative languages.
+
+** What is a 'Prelude'?
+
+Standard 'Prelude' is a standard library for Haskell, included by default
+to the script and 'GHCi' also.
+* Introduction to Functional Programming - Week 3
+** Conditional Expressions
+
+Haskell has only conditional expressions (there are no statements),
+and they should always have 'else' clauses.
+
+** Guarded Equations
+
+Guards are really helpful concepts in conditionals, especially in
+pattern matching (also called 'guarded equations').
+
+** Pattern Matching
+
+Speaking of pattern matching, you can define multihead functions (like
+in Erlang) which have different implementations for each specified 
+function head.
+
+Unbounded variables is marked as underscore (_).
+
+Patterns are evaluated in order and only shared variable from
+match clauses can be a unbound underscore placeholder.
+
+When there is no match in written patterns compiler will raise an error.
+** Lambdas
+
+Lambda Calculus was invented in 1930 by Alonzo Church. Almost any modern
+programming language has lambdas in the specification.
+
+Lambdas in Haskell are not binding the higher scopes, as it usually happens
+in the rest of languages (so actually it is the closest implementation
+of lambda calculus, because in other languages lambdas should be named 
+rather as 'closures' than lambdas from the original calculus).
+
+It is useful to denote via 'lambda' that a function explicitly returns 
+a new function. Lambda expression is anonymous, which is actually the 
+benefit e.g. regarding mapping, filtering and using higher order functions
+and transformers.
+
+** Sections
+
+You can partially apply any function on both sides - from left and right 
+by using sections, like presented below:
+
+> 1 + 2 
+3
+
+> (1+) 2
+3
+
+> (+2) 1
+3
+
+This kind of partial application is called a 'sectioning'.
