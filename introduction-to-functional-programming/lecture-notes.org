@@ -23,7 +23,7 @@ ML was the first programming language with a 'type inference'
 mechanism.
 
 *** 1970-1980 - David Turner, SASL -> KRC -> Miranda
-*** 1987      - Haskell, design by comitee
+*** 1987      - Haskell, design by committee
 *** 2003      - Comitee published a Haskell98 standard
 
 * Introduction to Functional Programming - Week 1
