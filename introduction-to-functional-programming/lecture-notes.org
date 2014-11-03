@@ -129,3 +129,19 @@ by using sections, like presented below:
 3
 
 This kind of partial application is called a 'sectioning'.
+* Introduction to Functional Programming - Week 4
+** List Comprehensions
+
+They have origins in math. Mathematicians use 'set comprehensions', however it is 
+hard to implement identity recognition on top of functions, so instead they have
+taken the concept, simplified it and mapped over the lists.
+
+List Comprehension is built from generators (1 or more) and building clause (it
+can also have one or more filters, in Haskell called 'guards'). 
+
+Generator can depend on the variables introduced by earlier generators.
+
+In Haskell strings are the syntactic sugar over a list of characters (it is created 
+as an alias - type synonym with a 'type' keyword).
+
+* Introduction to Functional Programming - Week 5
