@@ -145,3 +145,13 @@ In Haskell strings are the syntactic sugar over a list of characters (it is crea
 as an alias - type synonym with a 'type' keyword).
 
 * Introduction to Functional Programming - Week 5
+
+** Recursive Functions
+
+Tail Call Elimination (tail call recursion) - important way of handling control 
+structures.
+
+There is no explicit benefit and guideline for creating only recursive or 
+non-recursive functions (it depends on the context and attitude).
+
+Other benefit - Induction can be used to determine properties of functions.
