@@ -1,0 +1,46 @@
+* How to learn?
+
+** Origin of this chapter
+
+*** Ruby Rouges (131)
+** NOPS Trick
+
+*** Notice It
+*** Own It 
+*** Push Into It
+*** Stay With It
+** Theory of 10000 hours
+** Programming Experts
+
+*** Origin of Intuition
+
+Mostly it is a consequence of trying one rule in many, various contexts until you will 
+run out of ideas how to apply it. And both responses will be available - success and 
+failure. The most beneficial are failures, because you are learning then what 
+went wrong and how to avoid it or how to properly apply the rule in other contexts.
+
+*** Practice makes Permanent
+
+When you are trying to do one thing, and you are practicing it many times, 
+how do you know that you are doing it properly? And how do you know that the 
+learnt behaviours are correct and wired properly in your head. If you do it wrong, 
+by practicing you can make it only permanent - not perfect.
+
+*** Talent is not enough, Grit is necessary
+
+Discipline, grit, Pomodoro - call it whatever you want to. 
+Try, try, try and do not give up.
+
+** Books
+
+*** Mind Hacks
+
+http://shop.oreilly.com/product/9780596007799.do
+
+*** The 5 Elements of Effective Thinking
+
+http://www.amazon.com/gp/product/0691156662/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691156662&linkCode=as2&tag=chamaxwoo-20
+
+*** Mastery
+
+http://www.amazon.com/gp/product/014312417X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=014312417X&linkCode=as2&tag=chamaxwoo-20
