@@ -44,3 +44,13 @@ http://www.amazon.com/gp/product/0691156662/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&c
 *** Mastery
 
 http://www.amazon.com/gp/product/014312417X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=014312417X&linkCode=as2&tag=chamaxwoo-20
+
+** How to read a book?
+
+*** Use a information retrieval bias
+
+Informations that are desperately searched, are treated as more valuable than these ones which are available and searched without hesitation.
+You can trick it by preparing questions when you are reading what topics should be covered after you have read the book. Answers should be provided as a direct feedback and result of reading a book.
+
+** Shallow/Deep Learning
+** The Making of an Expert
