@@ -9,7 +9,6 @@
 *** Own It 
 *** Push Into It
 *** Stay With It
-** Theory of 10000 hours
 ** Programming Experts
 
 *** Origin of Intuition
@@ -44,3 +43,47 @@ http://www.amazon.com/gp/product/0691156662/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&c
 *** Mastery
 
 http://www.amazon.com/gp/product/014312417X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=014312417X&linkCode=as2&tag=chamaxwoo-20
+** How to start?
+
+*** 10000 hours myth
+
+10 000 hours is necessary to be an EXPERT in certain field, not to learn something. 
+This amount is equal to 5 years of full-time job.
+
+*** First 20 hours
+
+The first 20 hours of knowing something (from the ground zero) are most crucial. 
+After that, with deliberate and organized practice without procrastination - just 
+honest 20 hours - you can say that you are reasonable good at something.
+
+*** Talent is 'bullshit'
+
+Talent is not a necessity to be proficient at something. Moreover it is also not 
+necessary for the expertise in any field. Deliberate practice, exercises, passion 
+and determination will make you a better expert, than just pure talent.
+
+**** Types
+
+***** Drills
+
+Fast, narrow, oriented on feedback exercises.
+
+***** Imitation
+
+Following and shadowing better than us, masters.
+
+***** Simulation
+
+Sparrings and trainings - in IT it can be a hackaton, playground - safe place for 
+testing ideas without stakes.
+
+***** Case Studies
+
+Studying previous, historical knowledge - tracking and understanding masters, 
+analyzing, learning and inference from knowledge left by better ones.
+
+***** Direct Exercises
+
+Deliberate practice, focused on doing stuff, moving it to the subconciousnes, 
+muscle memory. It is similar to the musician traning in closed room, without 
+audience in order to feel and track the rythm, being familiar with it.
