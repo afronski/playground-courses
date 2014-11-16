@@ -12,3 +12,4 @@
 ### Started Courses:
 
 - Introduction to Functional Programming (edX)
+- Solving Complex Problems (edX)
