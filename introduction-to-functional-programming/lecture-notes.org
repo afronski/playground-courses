@@ -240,3 +240,13 @@ transformed with use of other monads (writer, reader etc.).
 * Introduction to Functional Programming - Week 8
 
 ** Interactive Programs
+
+If you program does not communicate with external world, does not use I/O in order
+to communicate with the rest of the world, it may not exist at all.
+
+By introducing *I/O monad* in Haskell we are introducing notion of statements and 
+imperative way of handling side effects. E.g. the most imperative type is a I/O unit 
+which is defined as *IO ()*.
+
+The most important is balance between pure and impure code. Good analogy is: 
+"An Island of Purity in the sea of impurity".
