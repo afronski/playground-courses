@@ -220,6 +220,23 @@ mul x y = \s z -> x (y s) z
 * Introduction to Functional Programming - Week 7
 
 ** Functional Parsers and Monads
+
+Parser is a program is a program that analyses a piece of text to determine its
+syntactic structure.
+
+  type Input = String
+  type RestOfInput = String
+  type Parser = Input -> (Tree, RestOfInput)
+
+Only if grammar is non-ambiguous and it has only one output representation.
+Or more general:
+
+  type Parser a = String -> [ (a, String) ]
+
+Singleton list is a list only with one element. Parser in this case has the exact 
+same properties as monads, so it can be sequenced (with 'do' notation) and 
+transformed with use of other monads (writer, reader etc.).
+
 * Introduction to Functional Programming - Week 8
 
 ** Interactive Programs
