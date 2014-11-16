@@ -155,3 +155,71 @@ There is no explicit benefit and guideline for creating only recursive or
 non-recursive functions (it depends on the context and attitude).
 
 Other benefit - Induction can be used to determine properties of functions.
+* Introduction to Functional Programming - Week 6
+
+** Higher-Order Functions
+
+Function is called higher-order function if it takes a function as an argument
+or returns a function as a result. It is useful to wrap common programming idioms,
+DSL can be defined in terms of collection of higher-order functions, and last but
+not least we can reason about programs composed from higher-order functions because
+they have algebraic properties. 
+
+Simple examples: map, fold, filter etc.
+
+Fold are special family of higher order functions, which uses function 'f' as a
+generalization of list concatenation. Fold family is a homomorphism over list. 
+It respects the structure of the list, but it replaces empty list with a passed 
+initial value called 'v'
+
+f []       = v
+f (x : xs) = x @ f xs
+
+Where '@' operator is a replacement for cons operator. E.g. 'sum', 'product', 'and' etc.
+are using simgeneralization's, very similar to the fold generalization. 
+
+Functions which are defined in term of foldr can be proved using algebraic 
+properties of it, such as fusion and banana split rule.
+
+Function composition in Haskell is represented by '.' operator:
+
+(.)  :: (b -> c) -> (a -> b) -> (a -> c)
+f . g = \x -> f (g x)
+
+** Church Numerals
+
+General representation of number, by means of functions and function definition.
+
+type Church = (a -> a) -> a -> a
+
+It takes a function (*successor function*) and neutral element (e.g. a zero number)
+and it returns the Church representation of this number. So in general, it is 'n' 
+times applied a *successor function* over a *zero number*.
+
+Example:
+
+two = \s z -> s (s z)
+two = \s z -> (s . s) z
+two = \s   -> s . s           
+
+In the last step, removing 'z' is an operation from lambda calculus 
+called an *eta reduction*.
+
+Conversion from Church notation to Integer:
+
+c2i x = x (+ 1) 0
+
+Regarding the representation, we have to define separately all operations like 
+addition, subtraction etc. in order to manipulate Church numerals properly e.g.:
+
+add x y = \s z -> x s (y s z)
+
+mul x y = \s z -> x (y s) z
+        = \s z -> x . y
+
+* Introduction to Functional Programming - Week 7
+
+** Functional Parsers and Monads
+* Introduction to Functional Programming - Week 8
+
+** Interactive Programs
