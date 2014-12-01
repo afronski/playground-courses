@@ -1,0 +1,136 @@
+* Erlang Handbook
+
+** Data Types
+*** Atoms
+*** Booleans
+*** Integers
+*** Floats
+*** References
+
+Created by 'make_ref/0'.
+
+In simple words - it is a unique reference across Erlang Runtime System.
+
+*** Ports
+*** PIDs
+*** Funs
+
+Funs stands for Functional Object, first-class citizen in type system.
+
+*** Records
+
+Often called a "named tuple" with named elements, called fields.
+
+*** Lists
+*** Strings
+
+Characters can be prepared with dollar sign (like $d is a 'd' in C).
+
+*** Binaries
+** Structure
+
+*** Modules
+
+Modules consists of Tags and Values (some of them are predefined like "module" etc.).
+
+*** Macros
+*** Records
+
+HRL files can be included via "include" tag inside module.
+
+** Functions
+
+Functions are defined as a sequence of one or more function clauses (with or without
+guardians). 
+
+Similarities - operators '=:=' and '=/=' behaves in the same way as JS operators: 
+'===' and '!=='. 
+
+Regarding differences, 'andalso' and 'orelse' are the lazier versions of 'and'
+and 'or'.
+
+** Pattern Matching
+
+Variables can be bound only once. You can use an unbound name "_" for ignored 
+variables. You can create names with underscore which will be ignored in expressions.
+
+Regarding pattern matching, "=" is a pattern matching operator, not an assignment
+(at first it will bind the value to variable name, but because bound variables 
+cannot be changed, so in the second time it will perform a pattern matching between 
+value and bounded variable value).
+
+** Processes
+
+Single process corresponds to the single thread of control. Each process has PID, 
+'self/0' returns PID of the process itself. How to create new one? With 'spawn/3', 
+it creates new process executing passed function. If you would like to spawn new 
+process on different node, you should use 'spawn/4' method.
+
+Each process can be associated with a name (an atom). We can register them with
+'register/2', check if it is registered with 'registered/0' and check on which node
+it is running 'whereis/1'.
+
+Processes communicate by sending and receiving messages. Messages are sent with use
+of the send operator (!, *bang*) and are received using 'receive' clause. Each process
+has a message queue (called a mailbox).
+
+Receive clause is also a pattern matching clause with one additional subclause called
+'after' for handling timeouts. There are two special values for timeout - atom 
+'infinity' (equivalent to not using a timeout) and number '0' which means that
+timeout occur immediately if there is no matching message in the mailbox.
+
+Each process, always terminates with an exit reason which may be any term. There are
+three BIFs (*Built-In Functions*) are terminating the process.
+
+- exit(Reason)
+- erlang:error(Reason)
+- erlang:error(Reason, Args)
+
+You can trap almost any exit reason, which converts exit signal to the message which 
+will and in the mailbox. Method is called 'process_flag(trap_exit, true)' - any exit
+signal with reason normal is ignored by default.
+
+Each process has relative, regarding VM priorities, priority level. If priority should
+be changed we are doing something wrong, basically there are always ways to handle it
+in different way. 
+
+Moreover each process has directory, which contains global variables or other values
+stored there.
+
+*** Links
+
+Links are bidirectional connections and there can be only one link between one pair
+of processes. It is created by 'link/1' or 'spawn_link/3' (it combines spawning a 
+new process and linking as an atomic operation).
+
+Exit signal will be send to all processes that are linked to. It can be done 'exit/2'
+with PID and Reason.
+
+*** Monitors
+
+Way of observing other processes from an active process, it is not bidirectional. 
+Monitor can be created by 'erlang:monitor/2' returns a reference to the monitor,
+you can create several monitors for two processes. Destroying monitor is performed
+by another BIF 'erlang:demonitor/1'. As with the links (but only in one direction)
+exit signal will be send to the process which creates the monitor.
+
+** Error Handling
+
+*** error(Reason) 
+*** error(Reason, Args)
+*** exit(Reason)
+*** throw(Expr)
+*** catch(Expr)
+
+** Distributed Erlang
+*** epmd
+
+It is an Erlang Port Mapper Daemon.
+
+*** Distribution
+
+All nodes are loosely connected and automatically reconnects to each other.
+You can override it by 'hiding' the node or providing command line option:
+'-connect_all false'.
+
+Each node has its own magic cookie, which is an atom.
