@@ -8,3 +8,15 @@ My comment: so try to not put rubbish into it.
 wetware - (etymology) *wet* + *software*; humorous analogy to the
 software and hardware, but applied to the biological areas. It is
 a reference to the water found in living creatures.
+
+** Context
+
+Context is the most important thing when learning, talking, applying
+newly learned stuff. In other words context is a 'king' and should
+taken into consideration always.
+
+The key information about context is related with the paths in the
+brains activated by certain actions - typing notes on the computer
+and in the notebook with pen and paper have the same output. 
+However the way and creative process is very different between 
+these two approaches.
