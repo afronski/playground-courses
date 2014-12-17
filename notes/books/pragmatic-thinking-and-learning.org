@@ -39,8 +39,45 @@ as they experts really are (*unconscious activities*).
 *** Novice
 
 - Needs direct and explicit recipes.
+- Rules and Commands are key to manage and starting the work.
 - You can't define something explicitly with infinite recursion.
 - Directions have to well defined, values have to be exact.
 - Analogy: *Call Center workers*.
 
 *** Advanced Beginner
+
+- Some rules can be bound, some changed.
+- But still have problems with troubleshooting.
+- Needs answers fast, problems cause frustration.
+
+*** Competent
+
+- At first glance he is a solid, good worker.
+- Experienced enough to solve standard problems.
+- Don't afraid to troubleshoot, patiently strive to final answer.
+- Delivers solutions, tested and solid.
+- Reflection isn't standard thing.
+- But it seems that some thoughts are appearing.
+
+*** Proficient
+
+- Efficient worker, solving complex problems related with domain.
+- Experience starts to being his huge strength.
+- Reflections, thoughts are on daily basis.
+- It is a highest possible level for 98% of population.
+- Competent, solid, skilled and mindful person.
+- Sometimes appearing blinks of intuition.
+- Sometimes using an analogies to describe things.
+
+*** Expert
+
+- Guru, authority in certain domain.
+- Intuition is a key, they can't describe why something is good / bad.
+- 'It just seems wrong' - expert's description of 'Why?'.
+- Frustrated with many questions asked by novices and beginners.
+- Sometimes they can describe how to do something.
+- Things which looks like a magic can't be explained to the rest of the world.
+- Operating with analogy and anecdotes.
+- They are valid and appropriate for expert to explain some things.
+
+* Kruger-Dunning Effect
