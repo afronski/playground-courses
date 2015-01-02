@@ -88,6 +88,48 @@ as they experts really are (*unconscious activities*).
 - Exploiting advanced beginners and building false-positive self-esteem.
 - The main problem is that Agile Development works well for mixed teams.
   - Not in the teams which is built from novices only.
+  - Agile needs auto-reflection and self-guidance.
+    - These are available only on the higher levels of Dreyfus scale.
+- The main visualization of slowness of rules, is the 'work-to-rule'.
+  - The main objective of this strike is following the rules to the level of absurd.
+- Many people disqualify intuition as a non-scientific method.
+  - Experts are using it properly, guides are necessary for beginners.
+- Dreyfus skills distribution is not equal to the normal distribution.
+  - Most of people are in the advanced beginner level.
+  - Experts and Proficient people are the minor.
+- "You should know what you don't know".
+- Experts != Teachers.
+  - In other words it is a different skill in which expert can be novice or advanced beginner.
+
+** Evolution from beginner to an expert
+
+- Evolution from the rules to the creative, intuition.
+- Change in perception for observing problems.
+  - Beginners see list of equal steps composed into problem.
+  - Experts see different elements as more important than the others.
+    - They're focused on more important things, rest is a trained, semi-automatic skill.
+- Change in engagement - beginners are passive observers, doers only.
+  - Experts are immersed into the problem, they're engaged improvisers.
+- The main tools of experts are intuition and pattern matching.
+- The easiest way to learn from experts is to mimic them.
+  - R&D - Rip off and Duplicate
+- Also getting responsibility for your decisions is important.
+  - Following orders blindly do not create self-guidance in your attitude.
+- Very interesting concept is related with "Shu Ha Ri"
+  - Shu - Copy, imitate.
+  - Ha  - Reflect, guide, learn.
+  - Ri  - Transcend, improve, improvise.
+- There are no substitutes for experience.
+  - But the most important thing in the process is neither position or experience.
+  - Value which you can introduce matters the most.
+- Evolution should be performed in safe environment, with solid "timing".
+- And most important - Expertise is not permanent - keep practicing to remain an expert.
+- Individuals > Herd.
+  - Individuals are responsible, creative and critique about others.
+  - Herd is oriented around formal rules, group responsibilities. They're "monkeys".
+- Talking about something all the time makes it irrelevant.
+- And the most important thing - Dreyfus is only a model, "one side does not fit all".
+  - Model is a tool, not a mirror.
 
 * Kruger-Dunning Effect
 
