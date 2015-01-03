@@ -1,0 +1,233 @@
+* Test-Drivent Infrastructure with Chef
+
+** Chef
+
+*** Framework
+
+**** Resource
+
+Represents a way of creating physical thing in the system (a resource
+called 'User' creates user account in the OS).
+
+**** Provider
+
+Is an abstraction of providing certain resource. For installing abstraction
+we have got a 'package' provider which has different implementation on
+each operating system.
+
+**** Cookbook
+
+Can be created by tool called 'knife' and can be managed by this tool.
+
+It is composed from:
+
+***** Recipes
+
+A repeatable description how to achieve certain thing.
+
+**** Role
+
+Role is a type of machine. For a host XYZ which is a MySQL server slave,
+role can be defined as a 'mysql_slave'.
+
+Role ingredients:
+- Run list.
+- Attributes.
+
+**** Node
+
+It's a physical, existing and well defined machine (like hostname
+XYZ is a MySQL Server slave).
+
+*** API
+*** Tools
+
+**** `ohai`
+
+Collecting huge amount of information about details and whole operating system.
+
+**** `chef-solo`
+
+You can configure that tool via solo.rb file where you can define path
+and setting for each element in Chef framework.
+
+`chef-apply` is useful, but it can't provide files, templates etc.
+
+It requires to maintaining and spreading cookbooks to each used node.
+Chef client-server architecture removes this obstacle by introducing central
+repository for cookbooks and recipes. Hosted Chef provided by Opscode goes
+even further - it provides full-blown and maintained version of Chef Server
+instead of creating the own one.
+
+**** `chef-client`
+
+Difference between chef-solo and chef-client are substantial. Architecture
+client-server enforces on us being responsible for hosted chef-server or
+buying it from external provider as a service.
+
+**** `chef-apply`
+
+It's a simple way of applying and testing single recipes in isolation. But,
+there are some constraints - there is no way of providing templates etc.
+
+That's why wee need chef-solo tool.
+
+**** `knife`
+
+- knife cookbook site ...
+- knife cookbook create -o ...
+
+**** `chef-shell`
+
+REPL with all abilities of main chef.
+
+**** `chef-zero`
+
+In-memory, lightweight version of Chef Server.
+
+*** Concepts
+
+**** Idempotent
+
+Is the property of certain operations in mathematics and computer science,
+that can be applied multiple times without changing the result beyond the
+initial application.
+
+Recipes have to be idempotent - in other words applying the same recipe
+twice should yield the same result as applying it once.
+
+Also concept of differential application for recipes is important (like
+only proceed with reconfiguration if the settings file is changed, without
+re-installation).
+
+**** LWRP (Lightweight Resource Provider)
+
+Part of a cookbook that is used to extend the chef-client in a way that
+allows custom actions to be defined, and then used in recipes in much the
+same way as any platform resource.
+
+Lightweight resource which defines set of actions and attributes.
+
+Lightweight provider which tells how handle each action, what to do if
+certain conditions are met and so on.
+
+*** Anatomy
+
+Two phases of Chef run:
+- Compilation and preparing ordered list of recipes.
+- Stepping prepared list sequentially and invoking actions.
+
+Developing infrastructure:
+- Declare policy using resources.
+- Collect resources into recipes.
+- Package recipes and supporting code into cookbooks.
+- Apply recipes from cookbook to nodes.
+- Run 'Chef' to configure nodes.
+
+Chef Client run:
+- Build node.
+- Authenticate.
+- Synchronize Cookbooks.
+- Load Cookbooks.
+- Converge.
+- Success?
+  - Yes:
+    - Save Node.
+    - Run Notification Handlers.
+  - No:
+    - Throw an exception.
+
+*** Workflow
+**** Write Acceptance Test
+**** Converge
+**** Write Integration Test
+**** Run Integration Test
+**** Write Unit Test
+**** Run Unit Test
+**** Write Infrastructure Code
+**** Run Unit Test
+**** Run Integration Test
+**** Converge
+**** Victory!
+
+** Vagrant
+
+Is a tool for managing, creating and bootstrapping virtual machines on various environments.
+
+** Berkshelf
+
+Dependency management system for Chef. It's a "bundler for cookbooks".
+It uses two files: *Berksfile* and *Berksfile.lock*.
+
+** Test Kitchen
+
+Framework for verifying and agreeing about state of the nodes.
+
+Test Kitchen is based on Thor. Tasks are available as a command line scripts
+or as a continuous delivery jobs.
+
+Structure:
+
+*** Definitions
+**** Instance
+
+Instances are composed from platform and suite.
+
+***** Platform
+
+Combination of operating system, version, Chef version, architecture and name.
+
+***** Suites
+
+It's a run list with optional attributes.
+
+**** Drivers
+
+By default kitchen uses Vagrant but can be used with cloud providers as well.
+
+** Thor
+
+Task runner, similar to the Rake.
+
+** Cucumber
+
+It's a *BDD* testing framework.
+
+** Leibnitz
+
+Integration layer between Cucumber and Test Kitchen.
+
+** Serverspec
+
+It tests your servers' actual state through SSH access, so you don't need to
+install any agent software on your servers.
+
+** Bats
+
+Bash testing framework.
+
+** Minitest Handler
+
+Tool for integration testing, not so popular today.
+
+** Chefspec
+
+Tool for lightweight and purest unit-testing for Chef.
+
+** Static Analysis and Linting Tools
+
+*** Foodcritic
+
+SCA for recipes but without syntax validation.
+
+*** Knife Cookbook Test
+
+Built-in knife option for validating syntax.
+
+*** Tailor
+
+Tests cookbooks according to the Ruby syntax standards (linter).
+
+*** Strainer
+
+Tool for collecting all of tools from above into one single command.
