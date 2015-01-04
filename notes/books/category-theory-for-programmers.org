@@ -1,0 +1,9 @@
+* Category Theory for Programmers
+
+** Definitions
+
+*** Category
+
+A category consists of objects and arrows (morphisms). Arrows can be composed,
+and the composition is associative. Every object has an identity arrow that serves
+as a unit under composition.
