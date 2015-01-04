@@ -40,3 +40,28 @@ is much more harder.
 
 The breakthrough came from category theory. Eugenio Moggi discovered that
 any computational effect can be mapped to monads.
+
+*** Monoid
+
+A monoid is defined as a set with a binary operation. All that’s required
+from this operation is that it’s associative, and that there is one special
+element that behaves like a unit with respect to it.
+
+In Haskell we would define a Monoid like this:
+
+class Monoid m where
+  mempty  :: m
+  mappend :: m -> m -> m
+
+You have to make sure that two properties are enforced - a neutrality of
+`mempty` element and that `mappend` is associative. Commutativity is not
+part of the definition so thanks to that a `String` or `Array` can be a
+Monoid.
+
+*** Kleisli Categories
+
+Kleisli category has, as objects, the types of the underlying programming
+language. Morphisms from type A to type B are functions that go from A to
+a type derived from B using the particular embellishment. Each Kleisli
+category defines its own way of composing such morphisms, as well as the
+identity morphisms with respect to that composition.
