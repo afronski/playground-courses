@@ -1,0 +1,14 @@
+* Architecture
+
+** Observations
+
+- Good architecture screams out from your project from the top-level directory structure.
+  - But if it will be coupled with technology it will expose not the intent.
+    - Instead it will expose e.g. delivery mechanism (MVC, Web).
+    - Or it will glorify the plugins, a detail (like used database).
+- Good architecture maximizes number of decisions which you should not make.
+- Good architecture manifests itself and communicate clearly about the intent.
+- Interactors, Entities, Boundary - three important concepts in Object Oriented design.
+  - They're not a replacements for MVVM, MVP, MVC.
+  - They're a complementary design for the core business value structure of your application.
+  - They're the definition of the domain of your problem.

@@ -1,0 +1,45 @@
+* Event Sourcing
+
+** Idea
+
+- Event definition.
+  - Is a thing which happened in the past.
+  - Described and named with use of past tense.
+- Series of events applied on object represent its state.
+- There is no delete / update operation in terms of previous state.
+- We create a new event with information about deletion.
+- Then applying an event on the object modifies its state.
+- In that case - by removing / updating elements.
+
+** Event Store
+
+- Amazing implementation, with support for billions events.
+- Event Store have only one internal index.
+  - There is one index, with cached midpoints in the memory.
+  - They are supporting `log(N)` even for several billions of events.
+- Page: http://geteventstore.com
+  - In other words event and collection of events are immutable.
+- Read model in Event Store supports mechanism of Temporal Queries.
+  - I would like to find all users in Twitter stream which used word
+    'happy' +/- 3 minutes after and before they have used word
+    'Starbucks' and +/- minutes after and before word 'coffee'.
+  - This is a common mechanism in stream databases.
+- In event stream we are left folding following, partitioned across
+  channels, events in order to perform such query.
+- But it is possible to build custom indexes which will index past
+  and all live messages.
+  - In other words - by creating an index, you create a new stream
+    with elements which are interesting for you in that case.
+- Event Store have ability to create continuous map-reduce,
+  partitioning and projection queries out-of-the box.
+  - You can create temporal, correlation queries, mappings, repartitioning
+    in order to query more effectively, even complex event processing
+    is not a big deal for it.
+- It can pass a state between stream events (classic left-fold operation)
+  and it can pass difference between previous and actual state
+  across the event stream.
+- How to deal with change of events format?
+  - Serialization semantics provide strong and weak semantic
+    for all kind of serialization.
+  - In this case weak serialization provides only the benefits.
+  - Details in the book Development of Component-based Information Systems.
