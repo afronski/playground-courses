@@ -7,3 +7,36 @@
 A category consists of objects and arrows (morphisms). Arrows can be composed,
 and the composition is associative. Every object has an identity arrow that serves
 as a unit under composition.
+
+*** Bottom as a representation of non-terminating computation
+
+We can't just ban non-terminating functions because distinguishing between
+terminating and non-terminating functions is undecidable - the famous halting
+problem.
+
+That's why computer scientists came up with an idea, to extend every type
+by one more special value called the bottom (denoted by _|_ in Haskell).
+
+This *value* corresponds to a non-terminating computation. In practice, when
+proving correctness of the program, it is easier to drop out Bottom and
+treat all functions as always terminating.
+
+*** Denotational Semantics
+
+Testing is a poor substitution of proof.
+
+Consider following Haskell program, which calculates factorial:
+
+fact n = product [1..n]
+
+It has straightforward definition, which is nice and clean, almost equal
+with the math book. In denotational semantics every programing construct
+is given its mathematical interpretation. With that, if you want to prove
+a property of a program, you just prove a mathematical theorem.
+
+However considering more pragmatic and actual problems (which are more
+related with programming than with math) usage of *denotational semantics*
+is much more harder.
+
+The breakthrough came from category theory. Eugenio Moggi discovered that
+any computational effect can be mapped to monads.
