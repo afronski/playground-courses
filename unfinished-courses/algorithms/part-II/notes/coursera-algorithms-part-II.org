@@ -1,0 +1,70 @@
+* Coursera - Algorithms (part II)
+
+** Undirected Graphs
+
+- Path - set of edges between vertices `s` and `t`.
+- Cycle - set of edges which starts and ends in the same vertex.
+- Hamiltonian Cycle - all vertices visited exactly once.
+- Euler Cycle - all edges visited exactly once.
+- Representations:
+  - Adjacency Matrix.
+    - Bigger memory usage `O(V ^ 2)`, but `O(1)` for determining is
+      there a path between `s` and `t`.
+  - Adjacency Lists.
+    - Fewer memory usage `O(V + E)`, but slower for dense graphs and
+      determining path availability.
+- Algorithms:
+  - `DFS` - Depth First Search.
+    - Maze exploration algorithm.
+    - Go at first deeper.
+    - `DFS` is often a solution for graph problems like:
+      - graph bipartition,
+      - find a cycle in graph,
+      - and others.
+  - `BFS` - Breadth First Search.
+    - Shortest path algorithm.
+    - Go at first wider.
+  - `BFS` / `DFS` generalization:
+    - Visit all vertex which are unvisited with use of:
+      - For `BFS` - `FIFO`.
+      - For `DFS` - `LIFO`.
+  - Connected Components.
+    - Answering in O(1) is s connected with `t`.
+    - Union-Find based algorithm is available, but it is too slow.
+    - Main algorithm is based on DFS and array of visited vertices,
+      but instead color we will store the number of connected component.
+
+** Directed Graphs
+
+- Edge has a direction.
+- Directed graph can be undirected but it has 2 times more edges.
+- Topological Sort.
+- Digraph Search.
+- Strong Components.
+- Directed path between vertex `s` from one component to the `t` in different
+  component.
+
+* MST (Minimal Spanning Trees)
+
+- Models of Nature.
+- It is a acyclic (directed or not) graph that have all vertices connected with
+  edges set that have the smallest weight sum.
+- For not connected graphs - we are computing a Minimum Spanning Forest
+  - It is a `MST` for each component.
+- Greedy Algorithm
+  - Assumptions:
+    - All edges are distinct.
+    - Graph is connected.
+    - `MST` exist and it is unique across the graph.
+    - It uses a cut property which indicates that minimum edge
+      for the any cut of graph will be in `MST`.
+- Kruskal's Algorithm
+  - Sorting edges and look up in ascending order.
+  - Add edge to the Tree unless doing so would create a cycle.
+  - It is a special case of Greedy `MST` algorithm.
+- Prim's Algorithm
+  - Start from vertex zero and greedily add minimum weight edge to
+    the tree which has exactly one endpoint in it.
+  - Repeat until you have got `V - 1` edges.
+    - Lazy implementation with priority queue (`O(E log E)`).
+    - Eager implementation uses vertices, not edges (`O(E log V)`).
