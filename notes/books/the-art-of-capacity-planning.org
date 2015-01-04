@@ -1,0 +1,80 @@
+* The Art of Capacity Planning
+
+There is a difference between capacity and performance. Performance is about
+improving existing system in order to satisfy requirements and user needs
+regarding e.g. responsiveness or availability.
+
+Capacity is about planning upfront and preparing whole infrastructure and
+architecture for high load and enhancements in future. It is a detailed plan
+for extending future versions of software.
+
+** What is the most important thing about capacity planning?
+
+- Measurements and feedback.
+- Well defined requirements regarding users / calls / requests / availability.
+- Without requirements we cannot even start, because we have no knowledge
+  how to estimate hardware, design whole system and architecture.
+
+*** Measurements
+
+**** Tools
+
+- rrdtool (http://oss.oetiker.ch/rrdtool)
+  - Round Robin Database is an Open Source industry standard, high
+    performance data logging and graphing system for time series data.
+- Ganglia (http://ganglia.sourceforge.net)
+  - It is a scalable distributed monitoring system for high-performance
+    computing systems such as clusters and Grids.
+
+*** Values
+
+Without measuring values in our system we are blind, we cannot properly estimate
+and plan anything, because we do not know what to expect.
+
+Sources:
+- Measure server's primary functions and hardware level metrics as well.
+- Measuring them on longer periods helps detecting anomalies in the system.
+- Database Systems:
+  - Slave Lag Time
+  - Number of SELECT / DELETE / UPDATE operations per second / minute.
+  - Disk I/O - Read, Write, Wait.
+- Web Servers:
+  - CPU (utilization and usage).
+  - Amount of Active Workers (Apache etc.).
+  - Requests per second / minute.
+  - Served responses per second / minute.
+  - Response Time.
+- Cache Servers:
+  - Disk I / O - Read, Write, Wait.
+  - Cache Hits, Cache Misses.
+  - LRU Age and Trends.
+
+Metrics and Setup depends on working set size and frequency of data change.
+
+*** Predictions
+
+Giving all gathered metrics, a continuously growing set of them we can predict
+when our resources need to be expanded and analyse it deeply with a little of
+math, statistics, intuition, historic data and common sense.
+
+Most of the work to do is to transform the data, reason about the cause of
+change and preparing capacity plan.
+
+It uses curve fitting techniques with data extrapolation. More data you have,
+more accurate predictions you will receive.
+
+Forecasts are just an educated guesses, and nothing more - pick the proper
+metrics, acknowledge limits, apply math. Choosing metrics can be tricky
+due to hidden constraints.
+
+Procurement is an essential part of capacity plan, wrong and not correctly
+estimated can ruin whole phase of expanding system capacity.
+
+**** Tools
+
+- Basic things are inside Excel.
+- Regarding better tools with command line support, there is a command line
+  version of Fityk called cfityk which lets you calculate trends, coefficients
+  and more things from plain CSV data sets to the console - plotting chart from
+  the data is a piece of cake, and can be easily deployable on the any
+  kind of chart.
