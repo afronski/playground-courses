@@ -1,0 +1,77 @@
+* Discovery and Monitoring
+
+** Tools
+
+*** Riemann
+
+- Amazing tool for monitoring.
+- It allows to create streams of events which can be analyzed,
+  processed and sends them further e.g. to the graphing tools.
+- It uses S-expressions to provide configuration.
+  - Configuration is code.
+- It is written in Clojure.
+
+*** etcd
+
+- Lightweight Key-Value Store.
+- Very nice pattern for communicating and exchanging service
+  information and discovery around this store and docker containers.
+- After starting container it adds key which is port and value with
+  rest of elements describing service and replicates across rest
+  of etcd elements in the cluster.
+- There is no routing - just sending message to the port which
+  delivers specific features.
+
+*** Consul
+
+- It is a tool for monitoring, discovering and configuring
+  services between them.
+- It provides:
+  - Service Discovery mechanism.
+  - Health-Check and monitoring features.
+  - Hierarchical, Key/Value configuration store.
+  - Distribution over multiple datacenters.
+- Architecture:
+  - Each node have installed Consul Agent.
+    - It is used for monitoring and health-checking statistics.
+  - Each agent talks with Consul Servers.
+    - It is where data are stored and replicated.
+    - Servers themselves elects a leader (via RAFT protocol).
+- Components that need services and communication with other
+  components can ask Consul Server to return all services available
+  in cluster which provides certain feature.
+- People tends to build service discovery and configuration via
+  tools like `Puppet` / `Chef` - this has various pitfalls, the major
+  one is related with non-flexible configuration which can be
+  changed only after node convergence.
+- Consul is not a replacement for initial configuration and
+  initial provisioning of all machines. It is used only for
+  dynamic service discovery and monitoring.
+- Consul is powered by Serf.
+- `ZooKeeper` / `doozerd` / etc. have single point of failure,
+  strongly consistent and provides only primitive K/V stores.
+- `NagiOS` and `Sensu` have centralized (even only by message queue),
+  single point of failure architecture which is hard to scale
+  horizontally. Consul is built with idea of distribution so scaling
+  horizontally is a natural way to handle problems here.
+
+*** Serf
+
+- Serf is a service discovery and orchestration tool that
+  is decentralized, highly available, and fault tolerant.
+- It manages membership and informs when some nodes join, leaves,
+  dies in general when the membership is changing.
+- It has support for custom messages:
+  - For all of events it uses gossip based protocol.
+  - Sample events:
+    - Configuration changes.
+    - Run Chef on each node.
+- It uses infrequent UDP messages.
+- It uses gossip protocol to solve three problems:
+  - Membership.
+  - Failure detection and recovery.
+  - Custom event propagation.
+- Differences between other tools are similar like in the Consul case.
+  - Consul is more opinionated, predefined approach.
+  - Serf is much more flexible and can be easily crafted to
+    the very specific requirements.

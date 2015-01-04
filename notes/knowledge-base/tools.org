@@ -1,0 +1,21 @@
+* Tools
+
+** ZeroMQ
+
+- Connect your code in any language, on any platform.
+- Carries messages across inproc, IPC, TCP, TPIC, multicast.
+- Smart patterns like pub-sub, push-pull, and router-dealer.
+- High-speed asynchronous I/O engines, in a tiny library.
+- Backed by a large and active open source community.
+- Supports every modern language and platform.
+- Build any architecture: centralized, distributed, small, or large.
+- Free software with full commercial support.
+- There are alternatives which does not require libstdc++.
+  - nanomsg (http://nanomsg.org/documentation-zeromq.html)
+
+** Vagrant
+
+*** Tips and Tricks
+
+- Vagrant support multiple provisioning mechanism invoked for one virtual machine.
+  - So you are able to e.g. add multiple shell scripts with preserving the run order.

@@ -1,0 +1,54 @@
+* Web Servers and Proxies
+
+** nginx
+
+*** Configuration
+
+- `nginx` supports backup and primary servers chain.
+  - It helps with setting up a HA cluster.
+- After each kind of error (even a timeout) `nginx` uses
+  backup server to reissue a request.
+- You can specify on which kind of errors it should does it.
+- You can easily specify a CRL, SSL certificates.
+  - But when you want to do a more complicated certification
+    path checking, you need to manually implement if statements
+    inside configuration file in order to determine common
+    intermediate root certification authority.
+- In terms of Node.js - `nginx` can be easily used as a HTTPS
+  server in front of all node.js servers.
+  - SSL termination behind `nginx`.
+- By default `nginx` removes HTTP headers which contain
+  underscore in name.
+- By default `nginx` disable escaping of URLs automatically.
+
+** SSL, TLS, HTTPS
+
+*** Definitions
+
+**** CA (Certificate Authority)
+
+It is an entity that issues digital certificates. The digital certificate
+certifies the ownership of a public key by the named subject of the certificate.
+This allows others (relying parties) to rely upon signatures or assertions made
+by the private key that corresponds to the public key that is certified.
+
+*** Formats
+
+- *.key - file with private key for certificates.
+- *.p12 - Client certificate or container for CA certificates,
+  server certificate and private keys.
+  - PKCS12 - format with all necessary data with passphrase.
+- *.crt
+- *.pem - Privacy Enhanced Mail.
+  - Order in composed certificates in many cases matter.
+  - At first position it should be the lowest common ancestor from the chain.
+- *.pfx - Container for client certificate (private key),
+  server certificate and CA certificates.
+  - PFX - format with all necessary data with passphrase.
+
+*** Remarks
+
+Remember that many protocols (like `wss://`) verifies hostname from this one
+stored in the certificate chain.
+
+** Varnish

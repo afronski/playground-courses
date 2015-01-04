@@ -12,3 +12,88 @@
   - They're not a replacements for MVVM, MVP, MVC.
   - They're a complementary design for the core business value structure of your application.
   - They're the definition of the domain of your problem.
+
+** Deployment
+
+- `blue-green` deployment technique.
+  - Not with databases!
+  - Load balancer orchestration switch.
+- Feature Toggles:
+  - With expiration date.
+  - Readable configuration file.
+  - Document all of them.
+- Different environments:
+  - DEV
+  - CI
+  - LIVE
+- Feature Releases:
+  - *Virtual Canaries* - detecting problems on partial releases.
+- A/B Testing:
+  - FeatureBee tool
+- Monitoring is crucial.
+
+** Messaging
+
+*** Tips and Tricks
+
+- Poison Message.
+  - It is a kind of broken message, which cannot be properly processed by system.
+  - It is a representation of non-transient failure.
+  - Most of a time you would like to send these messages from queue to other queue
+    which is connected with alerting system, because poison message needs
+    operational action.
+- Retry Policy.
+  - 4 times retry policy should fix all transient failures.
+  - All transient failures can be resolved by retrying and resending messages again.
+  - However it affects your system design, because messages can be
+    delivered more than once.
+- Overhead:
+  - Infrastructural - additional resources for queues.
+  - Operational - additional people and resources for managing queues.
+- Benefits:
+  - Decoupling.
+  - Offloading heavy tasks.
+  - Persistence mechanisms
+- RPC vs. Messaging:
+  - RPC is synchronous and blocking.
+  - Messaging is asynchronous by nature.
+  - Messaging reduces temporal coupling.
+  - Summary:
+    - Messaging should be used within our systems.
+    - RPC for connections to the outside of them.
+  - Not all things are suitable to be solved with Messaging.
+    - Queries should not be solved with use of messaging.
+
+*** Protocols
+
+**** Google's Protobuf
+
+A language-neutral, platform-neutral, extensible way of serializing
+structured data for use in communications protocols, data storage,
+and more. It has available bindings for Python, Java, C++ and Node.js
+
+Protocol buffers are a flexible, efficient, automated mechanism for
+serializing structured data – think XML, but smaller, faster, and simpler.
+
+You define how you want your data to be structured once, then you can use
+special generated source code to easily write and read your structured
+data to and from a variety of data streams and using a variety of languages.
+
+You can even update your data structure without breaking deployed programs
+that are compiled against the old format. It supports versioning, optional
+parameters and various things which should be handled inside transport
+protocol.
+
+**** Google's pubsubhubbub
+
+A simple, open, server-to-server webhook-based publish / subscribe protocol
+for any web accessible resources. The protocol is decentralized and free.
+No company is at the center of this controlling it. Anybody can run a hub,
+or anybody can ping (publish) or subscribe using open hubs.
+
+Underneath it is a combination of ATOM feeds for real-time push communication.
+It introduces notion of hub which is responsible for managing subscriptions and
+updating all subscribers when something happened.
+
+**** Thrift
+**** Avro
