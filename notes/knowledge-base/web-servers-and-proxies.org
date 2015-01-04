@@ -52,3 +52,305 @@ Remember that many protocols (like `wss://`) verifies hostname from this one
 stored in the certificate chain.
 
 ** Varnish
+
+*** Definitions
+
+- `PURGE` is a way to completely clean up a cache entry.
+  - With removing it from memory.
+- It is not a safe way when back-end is not available.
+- There is a VMOD (Varnish Module) called softpurge to
+  mark this element for removing after certain TTL if back-end
+  is available to server fresh copy.
+- `BAN` is a way to mark an item for invalidation.
+  - Previously it was called a `PURGE` but between
+    version 2 and 3 they've changed name.
+- Back-end probes by default are sending GET request.
+  Whole testing process consists of four stages:
+  - `Good IPv4` which means that a connection test passes.
+  - `Good Xmit` which means that transmission was issued with success.
+  - `Good Recv` which means that the response is valid.
+  - `Happy` which means that status is equal to 200 (`HTTP` OK).
+  - There is nothing against to use any kind of HTTP request.
+  - You can specify the whole HTTP header in plain text.
+    - Remember about Connection: close header - without that
+      it won't work.
+      - Without that, Varnish will not know when connection was
+        closed and if it ends with success.
+
+*** Tips and Tricks
+
+- Varnish has ability to embed C code in the configuration.
+  - E.g. parsing dates.
+  - In version 4.0 this is disabled by default.
+- By default it accepts PURGE HTTP method as a default
+  cache invalidation mechanism.
+  - It is not default method from RFC, however specification
+    is opened to the extensions.
+- Varnish has ACL (e.g. purges) and ability to choose
+  different back-end servers.
+  - It has implemented various behaviors by default e.g. round robin.
+- If you want to distinguish response content by certain condition your
+  back-end should serve response with `Vary` `HTTP` header.
+  - You can e.g. distinguish different value for different
+    `Content-Encoding` like `deflate`, `gzip` or `none`.
+
+*** Example VCL
+
+It is an example extracted from developped `Chef` recipe:
+
+```vcl
+import std;
+
+<% @backends.each_with_index do |backend, index| %>
+  <% if backend['fallback'] %>
+backend serverFallback<%= index + 1 %> {
+    .host = "<%= backend['host'] %>";
+    .port = "<%= backend['port'] %>";
+    .probe = {
+      .url = "/<%= get_healthcheck_code(backend['app_name']) %>/status?group[]=system";
+      .interval = <%= @probe_interval_in_seconds %>s;
+      .timeout = <%= @probe_timeout_in_seconds %>s;
+      .window = <%= @probe_window %>;
+      .threshold = <%= @probe_threshold %>;
+    }
+}
+  <% else %>
+backend server<%= index + 1 %> {
+    .host = "<%= backend['host'] %>";
+    .port = "<%= backend['port'] %>";
+    .probe = {
+      .url = "/<%= get_healthcheck_code(backend['app_name']) %>/status?group[]=system";
+      .interval = <%= @probe_interval_in_seconds %>s;
+      .timeout = <%= @probe_timeout_in_seconds %>s;
+      .window = <%= @probe_window %>;
+      .threshold = <%= @probe_threshold %>;
+    }
+}
+  <% end %>
+<% end %>
+
+director merryGoRound round-robin {
+  <% @backends.each_with_index do |backend, index| %>
+    <% if !backend['fallback'] %>
+    {
+      .backend = server<%= index + 1 %>;
+    }
+    <% end %>
+  <% end %>
+}
+
+director merryGoRoundFallback round-robin {
+  <% @backends.each_with_index do |backend, index| %>
+    <% if backend['fallback'] %>
+    {
+      .backend = serverFallback<%= index + 1 %>;
+    }
+    <% end %>
+  <% end %>
+}
+
+# List of IPs allowed to clear cache.
+acl cache_clear_whitelist {
+  <% @client_ips_allowed_to_purge.each do |client_ip| %>
+    <%= client_ip %>;
+  <% end %>
+}
+
+# Handles PURGE.
+sub handle_purge {
+  if (req.request == "PURGE") {
+    purge;
+
+    error 200 "Successful purge.";
+    return(error);
+  }
+}
+
+# Handles If-Match header.
+# If it's not equal to entity tag value an error should be raised.
+sub handle_if_match {
+  if (req.http.If-Match != resp.http.ETag) {
+    set req.http.X-Action = "Restart";
+  }
+}
+
+# Handles If-Unmodified-Since header.
+# If last modification date of obtained object is after date from header an error should be raised.
+sub handle_if_unmodified_since {
+  C{
+    char *pLastModifiedHeader = VRT_GetHdr(sp, HDR_RESP, "\016Last-Modified:");
+    char *pUnmodifiedSinceHeader = VRT_GetHdr(sp, HDR_REQ, "\024If-Unmodified-Since:");
+
+    if (pLastModifiedHeader && pUnmodifiedSinceHeader) {
+        double objectLastModificationDate;
+        double headerDate;
+
+        objectLastModificationDate = TIM_parse(pLastModifiedHeader);
+        headerDate = TIM_parse(pUnmodifiedSinceHeader);
+
+        if (objectLastModificationDate > headerDate) {
+            VRT_SetHdr(sp, HDR_REQ, "\011X-Action:", "Restart", vrt_magic_string_end);
+        }
+    }
+  }C
+}
+
+# Handles If-Range header.
+# Determines whether its value is date or etag and then validate proper header.
+sub handle_if_range {
+  # In case of If-Range header presence we omit related conditional headers.
+  remove req.http.If-Unmodified-Since;
+  remove req.http.If-Match;
+
+  C{
+    char* pIfRangeHeader = VRT_GetHdr(sp, HDR_REQ, "\011if-range:");
+
+    // Try convert to a date. If it's not a date we assume it's entity tag.
+    int isDatePassed = TIM_parse(pIfRangeHeader) != 0.0;
+
+    if (isDatePassed) {
+        VRT_SetHdr(sp, HDR_REQ, "\024If-Unmodified-Since:", pIfRangeHeader, vrt_magic_string_end);
+    } else {
+        VRT_SetHdr(sp, HDR_REQ, "\011If-Match:", pIfRangeHeader, vrt_magic_string_end);
+    }
+  }C
+
+  # In the eventual next request we don't want If-Range header.
+  remove req.http.If-Range;
+
+  # We proceed to conditional headers checking.
+  if (req.http.If-Match && resp.http.ETag) {
+     call handle_if_match;
+  }
+
+  if (req.http.If-Unmodified-Since && resp.http.Last-Modified) {
+     call handle_if_unmodified_since;
+  }
+}
+
+sub vcl_recv {
+  set req.backend = merryGoRound;
+
+  if (!req.backend.healthy) {
+    set req.backend = merryGoRoundFallback;
+  }
+
+  # PURGE frees memory and removes item completely.
+  #
+  # Use with caution (it removes copy completely without
+  # checking is back-end available to get a fresh copy).
+  if (req.request == "PURGE") {
+    if (!client.ip ~ cache_clear_whitelist) {
+      error 405 "Not allowed.";
+      return(error);
+    }
+
+    return (lookup);
+  }
+
+  # BAN just invalidates the cache.
+  #
+  # In other words it marks the item as a not fresh
+  # and with next request it goes straight to the back-end.
+  if (req.request == "BAN") {
+    if (!client.ip ~ cache_clear_whitelist) {
+      error 405 "Not allowed.";
+      return(error);
+    }
+
+    std.syslog(8, "Invalidating cache for " + req.url);
+    ban("req.url ~ " + req.url);
+
+    error 200 "Resource invalidated with success.";
+    return(error);
+  }
+
+  if (req.http.X-Action == "Restart") {
+    if (req.http.X-Cause == "If-Range") {
+      std.syslog(8, "Obtaining up-to-date object due to If-Range condition.");
+
+      remove req.http.Range;
+      remove req.http.If-Unmodified-Since;
+      remove req.http.If-Match;
+
+      return(pass);
+    } else {
+      std.syslog(8, "Throwing an error - precondition failed (412).");
+
+      remove req.http.X-Action;
+      remove req.http.X-Cause;
+
+      error 412 "Precondition failed";
+      return(error);
+    }
+  }
+
+  # Caching just for the specified URLs.
+  if (req.url ~ "<%= @cached_urls %>") {
+    std.syslog(8, "Preparing lookup for " + req.url);
+
+    return(lookup);
+  }
+
+  # Rest assets will pass through without caching.
+  return(pass);
+}
+
+sub vcl_fetch {
+  if (req.url ~ "<%= @cached_urls %>") {
+    set beresp.ttl = <%= @cache_ttl_in_days %>d;
+
+    return(deliver);
+  }
+}
+
+sub vcl_hit {
+  call handle_purge;
+}
+
+sub vcl_miss {
+  call handle_purge;
+}
+
+sub vcl_deliver {
+  # Setting a header, which indicates that asset is served from cache or not.
+  if (obj.hits > 0) {
+    set resp.http.X-Varnish-Cache = "HIT";
+  } else {
+    set resp.http.X-Varnish-Cache = "MISS";
+  }
+
+  # In this subroutine we have access to cached object / response,
+  # but we can't perform all action we needed - throwing an error (412) and
+  # obtaining up-to-date object from backend (in case of If-Range header).
+  # When there turned out that such action must be performed, then
+  # we must stop current request processing and put modified request to pipeline again.
+
+  if (req.http.If-Range && req.http.Range) {
+    set req.http.X-Cause = "If-Range";
+
+    call handle_if_range;
+  } else {
+    if (req.http.If-Match && resp.http.ETag) {
+      set req.http.X-Cause = "If-Match";
+
+      call handle_if_match;
+    }
+
+
+    if (req.http.If-Unmodified-Since && resp.http.Last-Modified) {
+      set req.http.X-Cause = "If-Unmodified-Since";
+
+      call handle_if_unmodified_since;
+    }
+  }
+
+  if (req.restarts == 0 && req.http.X-Action == "Restart") {
+    std.syslog(8, "Restarting request due to " + req.http.X-Cause);
+
+    return (restart);
+  }
+
+  return (deliver);
+}
+```
