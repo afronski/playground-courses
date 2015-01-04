@@ -1,0 +1,488 @@
+* Front-Trends 2014
+
+** Day 1 - 07.05.2014
+
+*** Dancing with Robots (Julian Cheal)
+
+- Nodecopter.
+- Parot AR Drone 2.0.
+  - It is possible to fully control the drone (OpenCV).
+- Cylon.js - framework for using Node.js with different hardware.
+  - http://cylonjs.com
+- Raspberry Pi.
+- Arduino.
+- MaKey MaKey.
+- Sphero (controlled by Bluetooth).
+- Other languages (the hybrid group):
+- Gobot (Go language).
+- Gamepad API.
+  - It works with PlayStation 3 gamepad.
+- Dancer.js - Library for processing audio and connecting it with visualization.
+  - https://github.com/jsantell/dancer.js
+- There is a node.js module for DLX (exact cover solver).
+  - https://github.com/jlaire/dlx.js
+
+*** Build your own AngularJS (Tero Parviainen)
+
+- Our code vs. Their code.
+- The best way to learn a framework is to write one by yourself.
+  - You will have a deeper understanding after that.
+- Described concepts:
+  - Dependency Injection (Angular injectors).
+    - Trick with looking to the function source to extract argument names (fn.toString()).
+  - Factory.
+  - Constants.
+- http://teropa.info/build-your-own-angular
+- BTW. Light Table looks very promising.
+
+*** API Have a Dream (Jed Schmidt)
+
+- React and approach with Virtual DOM.
+- Libraries on top of it.
+  - https://github.com/swannodette/om
+- Unifying JavaScript, CSS and HTML - domo.js.
+  - http://domo-js.com
+- Like asm.js we need a asm.dom - a performant subset of DOM APIs.
+  - One weird trick - use the reference (an object), instead of literals.
+- Turn DOM tree into DOM graph - pointing to the same thing when we want to.
+  - More declarative approach.
+  - Input can be anything - not a JSON only.
+- Compiling is an activity which increase our (developers) productivity.
+- BTW. Jed coined a term "Manburger Icon".
+
+*** Supercharging Node with Kraken (Tim Messerschmidt)
+
+- Kraken came out of a technical debt which was taken at PayPal.
+  - They can't move fast enough in order to deliver prototypes.
+  - Rapid deployment and prototyping.
+- Components:
+  - Twitter Bootstrap (with LESS) - front-end.
+  - Dust - engine for client-side templates.
+  - Node.js - prototyping.
+  - Rhino (Java) - prototyping.
+  - Delorean - V8 injected into C++ stack.
+  - RequireJS - dependency resolver for client-side.
+  - Grunt - task runner.
+  - Express - scaling configuration and project structure.
+- Benefits:
+  - Faster deployment.
+  - Faster prototyping.
+  - More performance per one core.
+  - NPM used internally helps with bootstrapping an application.
+- Kappa, Adaro, Makara, Lusca - customizations and NPM modules with secret PayPal's sauce.
+  - Makara - i18n.
+  - Lusca - Security (anti-CSRF tokens, XSS prevention etc.).
+  - Adaro - Dust configured to use Makara.
+  - Kappa - NPM proxy (based on npm-delegate).
+- Bootstrapping and setup:
+  - Yeoman have Kraken generators (scaffolding).
+- They're using nconf for credentials and other environment specific settings.
+- At the beginning it is a replacement for JSP and "Java front-end frameworks".
+
+*** We're not "doing a startup" (Rachel Andrew)
+
+- This is a marathon, not a 5K.
+- Bootstrap as a opposite to startup.
+- It's about passion to do a side project and business at the same time.
+- Hints:
+  - Solve problems for your own community.
+  - The great example is to do a tool which you're already using.
+  - Time investment won't be wasted, even if the business fails.
+  - Drafts - Get shipped!
+  - Show proof-of-concept, verify your assumptions.
+  - Like Lean Startup - build a Minimum Viable Product.
+  - MVP !== Rubbish.
+  - Small product === Small problem which it solves.
+  - Feedback from people which are paying you is different than the rest of users.
+  - Social and Community based products need a huge investment upfront.
+  - Crowded market? Find a niche.
+  - Again - newly discovered concepts need an upfront investment.
+  - Finding time for side-project.
+  - There is always a time for important things.
+  - Get it, pick up, put it - all of these operations must be very quick.
+  - Side project should be a first-class citizen alongside your other work.
+  - Plan in advance what to do with time.
+  - After the launch.
+  - Manage the growth.
+  - Scale slowly, with mind.
+  - Cover and protect your core functionality.
+  - Own your data and know-how.
+  - Happy majority often remain silent.
+
+*** A Future Called Web Components (Zeno Rocha)
+
+- Most famous client-project are fated to die.
+  - Flash vs. Canvas
+  - jQuery vs. document.querySelector
+  - jQuery UI vs. HTML5 input tags
+- Most of web companies are investing time and money in components.
+- Native (Web Components).
+- New customized libraries.
+- Parts:
+  - Custom elements.
+  - Plain JavaScript API.
+  - Lifecycle API for callbacks.
+  - Shadow DOM.
+  - Full encapsulation.
+  - Scoped styles.
+  - Templates.
+- http://customelements.io
+  - Portal for aggregating web components from bower repository.
+  - It needs only a web-components keyword inside bower.json.
+- What we should use?
+  - Polymer is delivered by Google.
+  - Mozilla has x-tag.
+- http://webcomponents.org
+  - All materials related with these APIs.
+
+** Day 2 - 08.05.2014
+
+*** The Chroma Zone - Engineering Color on the Web (Lea Verou)
+
+- Introduction to the pixels, sub-pixels and screens internals.
+  - BTW. `XO-1` (screen for One Laptop Per Child project) has
+    strange sub-pixels layout.
+- Font antialiasing  property specification differ in each browser.
+- Color spaces:
+  - `RGB` is an additive color space.
+  - `CMYK` is a subtractive one.
+- Colors are introduced in `HTML` 3.2.
+  - It started with hexadecimal format and 16 useless, named colors.
+  - Then, year after, first version of `CSS`  specification appeared.
+    - We received `RGB` decimal notation.
+    - And additional named color - orange.
+  - Till `CSS` 2.1 we don't have anything more.
+  - Then, `CSS`  Color Level 3 appeared.
+    - It introduced `RGBA`.
+    - It introduced `HSL`.
+      - Hue is an angle on color wheel (color base).
+      - Saturation means how gray it is.
+      - Lightness means how close it is to black and white.
+      - It is a double cone color space.
+      - It is nice representation in terms `CSS` Filter Specification.
+    - It introduced also `HSLA`.
+      - `A` means an alpha channel.
+    - `CSS` property background-blend-mode.
+      - Support: Firefox, Safari, Chrome.
+- Relative Luminance as a metric for determine perceived distance
+  between colors.
+- Defined in `WCAG` 2.0 guideline.
+  - Color contrast definition from `WCAG` uses luminance.
+- Alpha Blending.
+  - Process of applying alpha channel to `RGB` representation.
+  - It is a specialized version of color interpolation.
+- Many `CSS` properties are using font color by default when no color is passed.
+  - `text-shadow`
+  - `box-shadow`
+  - `border`
+- There is a keyword `currentColor` which points to font color.
+  - It can be used in gradients etc.
+- `CSS` Color Level 4
+  - Gray will be a function (percentages, alpha value).
+  - 4 digits `RGBA` (like corresponding 3 digits `RGB` format).
+  - 8 digits `RGBA` hexadecmial format.
+  - `HWB` (Hue, White, Black).
+  - Functions - tint, shade etc.
+- http://myth.io
+  - Preprocessor which supports `CSS` Color Level 4 specification.
+
+*** Zone.js (Brian Ford)
+
+- Modules vs. Frameworks.
+  - New AngularJS (2.0) will be provided as ES6 modules.
+  - Transpiled to ES5.
+- Many connected parts - Zone.js is one of these parts.
+- Similar behaviors:
+  - Domains (node.js).
+    - But domains are focusing on error handling, not all
+      asynchronous operations.
+  - Async Listeners (node.js).
+    - Packaging asynchronous operations into single scope.
+- Main use cases:
+  - Debugging (stack traces in asynchronous environments).
+  - Profiling.
+  - Mocking.
+  - There is a module for node.js prepared by StrongLoop guys.
+
+*** CSS - Yawn to Yay! (Kyle Simpson)
+
+- http://youdontknowjs.com
+  - Free online books about JavaScript.
+- Constraints based programming as a way of defining layout behavior.
+- Updating CSS rules at run-time.
+- It is similar, in terms of performance, in relation
+  to updating inline styles from JavaScript.
+- Sometimes direct manipulation of innerHTML is faster, so in this case.
+- Modyfing `innerHTML` for `CSS`.
+- http://getify.github.io/grips
+  - Templating engine, tier-independent, less-logic, focused on
+    separation on concerns.
+  - It has concept of CSS Templating.
+  - Externalizing data (and variables).
+  - Hybrid,
+  - Rendereable.
+  - Generated, not authored.
+  - It opens out new possibilities like: client-side A/B testing.
+
+*** CSS as a Programming Language (Sara Vieira)
+
+- Myth looks very compliant with many CSS Level 4 specifications.
+- CSS Variables:
+  - :root scope
+  - But It also supports rule scope.
+    - Support: Firefox.
+- CSS Math:
+  - calc(...) function.
+  - Basic math support.
+  - It supports mixed units.
+    - Support: every browser
+      (every means IE version higher and equal to 9).
+- CSS Media Queries:
+  - Kind of if statement.
+    - Support: every browser
+      (every means IE version higher and equal to 9).
+- CSS Supports:
+  - Kind of if/else statements.
+  - It has logical operators.
+    - Support: Chrome, Opera, Firefox.
+- CSS Animation:
+  - Keyframes definition is a kind of function.
+    - Support: every browser
+      (every means IE version higher and equal to 10).
+- CSS Nesting:
+  - Two curly brackets syntax.
+  - Similar features like preprocessors have.
+    - Support: WIP.
+
+*** The ROI on Front-End Experimentation (Martin Ringlein)
+
+- Talk about several people, with main theme related with experimentation.
+  - Alex Giron - creator of CSS Beauty.
+    - Experiment with CSS for layout.
+  - Micheal Dick - Mobile Centric approach.
+    - Experiment with mobile in the era before iPhone.
+  - David Desandro - creator of Isotope, Masonry.
+    - Experiment with automatic layout, breaking out from the simplest grid system.
+    - Experiment with redesigned Opera logo (and browser limitations).
+  - Ian Storm - creator of segment.io.
+- A Lista Part 10k challenge.
+  - Tom Gimnatassio - one of creators of flipboard experience.
+  - Bryan Innes - creator of animated Twitter logo built from icons.
+- Place and audience for experimentation is very important.
+
+*** Slaying the dragon - Refactoring CSS for Maintainability (Alicia Liu)
+
+- Style guides will help.
+- Consistency first.
+- Naming.
+- Specific and descriptive names.
+- Higher cohesion, lower coupling by namespacing.
+- Semantic names.
+- Do not bind to visual description (e.g. red, italic, wide).
+- Composition over inheritance (extending).
+- Include mixins.
+- Prefix classes which are used only for JavaScript (e.g. js-prefix).
+- Use data attributes when you can.
+- Group stylesheets together by feature, use case, responsibility.
+- Also you can have different stylesheets for older browsers.
+- Base / Master stylesheet and include rest in it.
+- Split by components.
+- Split the responsive part as well.
+- Also separate part can be for Retina/higher DPI screens.
+- Pitfalls:
+  - Over-reliance on IDs.
+  - Generic class names.
+  - Inconsistent vendor prefixing.
+  - Unnecessarily verbositity.
+  - Unused or duplicated styles.
+  - Violated (or even no at all) coding standards.
+  - Abusing !important.
+  - Too long selector chains.
+  - Abusing inline styles.
+- Most of pitfalls from above wil be catched by CSSLint.
+
+*** Breaking News at 1000ms (Partick Hamann)
+
+- 90th percentile of 10 000 pages loads in time around 17 seconds.
+- http://httparchive.org (May 2014)
+- Users of theguardian.com expects that page will load fast.
+- Fast means loading time under 2 seconds.
+  - 1 second (1000 milliseconds) is the barrier when user do not abandon our page.
+- Set up a budget and stick to it for the all cost.
+- Just one blocking database call per HTML page - content first, content is the key.
+- Rest should be loaded with progressive enhancement.
+- We are receiving for free a resilience (what if e.g. comments are down?).
+- `CSS` is the only thing that should block your critical path.
+- JavaScript is obviously not (use async or defer attributes).
+- Dirty trick: Inline critical `CSS`.
+- Leverage the localStorage to cache `CSS`.
+- `HTTP2` is the most significant change in web technologies which is coming in the next 5 years.
+- Every feature should fail gracefully.
+  - Fonts loading.
+  - Browser support:
+    - Webkit and Blink will hang indefinitely where there is no font.
+    - IE does the best, shows content - after receiving the font it will repaint.
+    - Firefox block, but after 3 seconds it will timeout and will show the content.
+  - You can cache fonts in localStorage.
+  - Progressive Enhancement as for the rest features.
+  - `CSS` Font Loading Module Level 3
+    - Finally!
+- ServiceWorker instead AppCache.
+- Offline first approach.
+- CSS/JS should stay under 14 KB (default time to first byte window size of TCP protocol).
+- Nice tools:
+  - Ophan - for monitoring.
+  - SpeedCurve - for monitoring.
+  - Resource Timing API.
+  - Low-level timing statistics for 3rd parties.
+  - Beacon API.
+- Placeholders for progressive enhancement have links to the actual content.
+  - SEO spiders can work with that.
+  - And also most of spiders already deals with JavaScript.
+- Under 1% users of theguardian.com have disabled JavaScript.
+- Around 9% of them cannot deal with more complicated JavaScript (e.g. localStorage).
+- Technology Stack:
+  - Scala, Play framework.
+  - AMD modules (require.js).
+  - Micro libraries.
+  - SASS.
+
+*** Discussion Panel - JavaScript Frameworks - The Good, The Bad and The Beautiful
+
+- Participants:
+  - Max Ogden
+  - Brian Ford
+  - Garann Means
+  - Kyle Simpson
+- Moderator: Jed Schmidt
+
+** Day 3 - 09.05.2014
+
+*** The Mobile Development We Leave Behind (Horia Dragomir)
+
+- The Dao of Web Design.
+- Android, iPhone, Windows Phone - evolution of mobile environment.
+- Why do you need to use jQuery on mobile where browser
+  are much better, than old desktop ones?
+- Multiplication of platforms - TV, Smartphones, Phablets, Tablets.
+- New possibilities and ideas.
+  - Geolocation.
+  - Gestures.
+  - You can't predict the exact future, you are making the future.
+
+*** Pure CSS 3D Solids (Ana Tudor)
+
+- Each DOM element has separated coordinate system and origin point.
+- Tricky way of coloring polygons (triangles) by proving a
+  rhombus and 50% linear-gradient.
+- `transform-style` is by default flat (for 3D animation we need
+  to apply `preserve-3d`).
+  - `IE` does not support `preserve-3d`.
+- New units for 3D transforms:
+  - Turns.
+  - Radians.
+- http://codepen.io/thebabydino
+
+*** Mary Live Codes a JavaScript Game From Scratch (Mary Rose Cook)
+
+- Live coding session.
+- Purpose of this talk is to show that often do not need a
+  complicated frameworks to do all stuff.
+
+*** Full Stack JavaScript Applications, Reactive Way (Mariusz Nowak)
+
+- Merging server and client in one.
+- Like in the panel moving from client-server
+  architecture to distributed system.
+- Reactive is more like declarative approach.
+- Most of todays frameworks are emulating reactiveness.
+- Observer pattern.
+  - Very close approach is used in the Knockout.js (MVVM pattern).
+- https://github.com/medikoo/domjs
+  - It provides a separate DSL for defining reactive views.
+- https://github.com/medikoo/dbjs
+  - Event sourcing layer in JavaScript.
+  - The same database engine on server and client with both
+    side synchronization.
+- Generating HTML code for legacy browsers.
+- All tools are using ECMAScript 5.1 standard.
+  - It relies heavily on getters, setters, descriptors.
+
+*** Modern Image Compressors (Kornel Lesinski)
+
+- Describing JPEG compression mechanism.
+  - Image quality sets up amount of layers which are containing the details.
+  - Sweet spot is around 50-70% of quality.
+  - 100% quality increases 6 times a file size.
+- How to select proper value?
+  - By hand (or eyes).
+- JPEGmini
+- imgmin
+- MOZJPEG
+- PNG is a collection of slightly different image formats based on settings in the metadata.
+  - pngquant2 (http://pngquant.org).
+  - pngmini (http://pngmini.com).
+  - PNGoo (http://pngquant.org).
+- http://imageoptim.com
+- `HTTP` header for do not touch my images on the proxies side:
+  - Cache-Control: no-transform
+- Setting up new format on the web is hard.
+  - IE supports IETF standard - a JPEG successor format.
+  - Apple supports only JPEG-2000.
+  - Google only `WEBP`.
+    - `WEBP` uses a 8 years old codec.
+- Do not recompress lossy compressed images.
+
+*** Browserify - Using Node In Browsers (Max Ogden)
+
+- LevelDB, Browserify, npm.
+- Browserify lets use node.js module system in the browser, with dependencies.
+- Good modules:
+  - Small, do only one thing.
+  - It is not a grab bag for dependencies.
+  - Passing CI for browsers and Linux/Mac/Windows.
+    - Appveyor
+    - Travis
+    - Testling
+    - SauceLabs
+  - No complicated steps to install and use.
+  - Clear, concise readme file.
+- Minimize vendor lock-in.
+- Natural abstractions.
+  - levelup defines a interface.
+  - level-js implements storage for browsers.
+  - leveldown implements storage for LevelDB and others.
+  - Facebook fork called rocksdb.
+- `beefy` - development server for Browserify projects.
+- `watchify`, `tape`, `level-filesystem`, `brfs`.
+  - Useful dependencies for Browserify ecosystem.
+- `level-filesystem` - fake node.js fs module in the browser on top of IndexedDB.
+- http://requirebin.com
+
+*** Progressive Enhancement for JavaScript Applications (Garann Means)
+
+- Case study of Editorially.
+  - In the past (around 2003):
+    - Doing a service there is no place for broken experience.
+    - Progressive Enhancement:
+      - Usable baseline.
+      - Enhancing gradually abilities of a web application.
+      - Degradation is hard to plan and it is slow.
+    - Hope for the best, plan for the worst.
+    - Brittle expectations of our users means a worse experience.
+    - Offline first:
+      - Servers should work with text-only client.
+      - Synchronization is hard.
+      - And getting out of sync is dangerous.
+- Plan your offline storage.
+  - Save series of states when you offline (tracking user work).
+  - When offline client is on his own.
+  - Server should work and deliver main content without
+    capabilities of client.
+  - Client can continue with no connectivity with server.
+- State should be stored in multiple places.
+
+*** Patterns & Math with SASS (Gunnar Bittersmann)
+
+- Presenting flags as linear-gradient operations.
+- Samples are somewhere on the dabblet.
