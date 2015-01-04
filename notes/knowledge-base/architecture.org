@@ -32,6 +32,26 @@
   - FeatureBee tool
 - Monitoring is crucial.
 
+** CQRS (Command-Query Responsibility Segregation)
+
+It is an architectural pattern, an application of CQS (Command Query Segregation)
+on a bigger scale. In very simple words it is a way of separating reads from writes.
+
+But it is more:
+- It is a way for scaling the system horizontally.
+- It splits responsibilities.
+- It allows putting business logic in to proper places and
+  provides way for connecting it in simplest way with views.
+
+*** Task-based UI
+
+- UI is oriented to achieve certain goal and do specific tasks.
+- There is a huge distinction between:
+  - Part which is read only, view the details.
+  - Part which execute commands and mutates state of the system.
+- It is a way of dividing teams, scaling them across different responsibilities.
+- It returns back focus on *business*.
+
 ** Messaging
 
 *** Tips and Tricks
