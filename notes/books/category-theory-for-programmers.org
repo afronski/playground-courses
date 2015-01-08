@@ -65,3 +65,78 @@ language. Morphisms from type A to type B are functions that go from A to
 a type derived from B using the particular embellishment. Each Kleisli
 category defines its own way of composing such morphisms, as well as the
 identity morphisms with respect to that composition.
+
+*** Products and Coproducts
+
+Every object is defined by its relationships - with itself and with 
+the other objects. These relationships are defined by morphisms.
+
+The initial object is the object that has one and only one morphism 
+going to any object in the category. It guarantees the next best 
+thing: uniqueness up to isomorphism.
+
+Example: The initial object in a partially ordered set (often 
+called a poset) is its least element. Some posets don’t have an 
+initial object — like the set of all integers, positive and negative.
+
+The terminal object is the object with one and only one morphism 
+coming to it from any object in the category.
+
+The terminal object is unique, up to isomorphism. In the category 
+of sets, the terminal object is a singleton.
+
+You can’t help but to notice the symmetry between the way we defined 
+the initial object and the terminal object. The only difference 
+between the two was the direction of morphisms. It turns out that for 
+any category C we can define the opposite category C^op just by 
+reversing all the arrows. The opposite category automatically 
+satisfies all the requirements of a category, as long as 
+we simultaneously redefine composition.
+
+It follows then that a terminal object is the initial object in 
+the opposite category.
+
+**** Isomorphism
+
+The intuition is that isomorphic objects look the same — they have 
+the same shape. An isomorphism is an invertible morphism, or a pair 
+of morphisms, one being the inverse of the other.
+
+Morphism g is the inverse of morphism f if their composition is 
+the identity morphism:
+
+f . g = id
+g . f = id
+
+**** Products and Coproducts - Definitions
+
+Let's define a product of two objects in any category using the 
+same universal construction. Such product doesn’t always exist, 
+but when it does, it is unique up to a unique isomorphism.
+
+A product of two objects a and b is the object c equipped with 
+two projections such that for any other object c’ equipped with 
+two projections there is a unique morphism m from c’ to c 
+that factorizes those projections.
+
+A coproduct of two objects a and b is the object c equipped 
+with two injections such that for any other object c’ equipped 
+with two injections there is a unique morphism m from c to c’ 
+that factorizes those injections.
+
+In the category of sets, the coproduct is the disjoint union of 
+two sets. An element of the disjoint union of a and b is 
+either an element of a or an element of b.
+
+The canonical implementation of the coproduct is a data type 
+called Either, which is defined in the standard Prelude as:
+
+Either a b = Left a | Right b
+
+A product behaves like multiplication, with the terminal object 
+playing the role of one; whereas coproduct behaves more like 
+the sum, with the initial object playing the role of zero. In 
+particular, for finite sets, the size of the product is the 
+product of the sizes of individual sets, and the size of the 
+coproduct is the sum of the sizes.
+
