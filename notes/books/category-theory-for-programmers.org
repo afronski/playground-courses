@@ -140,3 +140,40 @@ particular, for finite sets, the size of the product is the
 product of the sizes of individual sets, and the size of the 
 coproduct is the sum of the sizes.
 
+*** Simple Algebraic Data Types
+
+A lot of mechanisms can be built with use of basic types - products and coproducts.
+This fact has important practical consequences. Many properties of data structures 
+are composable - if you know how to compare values of basic types for equality, and 
+you know how to generalize these comparisons to product / coproduct types you can 
+automate the derivation of equality operators for composite types.
+
+We have sum types with 'Void' as the neutral element, and the product types with
+the unit type, '()' as the neutral element. We'd like to think of them as 
+analogous to addition and multiplation. Using them separately can be used 
+to define a variety of useful data structures, but the real power comes
+from combining the two.
+
+Mathematicians have a name for two intertwined monoids: it’s called a semiring. 
+It’s not a full ring, because we can’t define subtraction of types.
+
+Sample translation table with some entries of interest:
+
+| Numbers   | Types                             |
+|-----------+-----------------------------------|
+| 0         | Void                              |
+| 1         | ()                                |
+| a + b     | Either a b = Left a \vert Right b |
+| a * b     | (a, b) or Pair a b = Pair a b     |
+| 2 = 1 + 1 | data Bool = True \vert False      |
+| 1 + a     | data Maybe = Nothing \vert Just a |
+
+Logical and and or also form a semiring, and it too can be mapped into type theory:
+
+| Logic          | Types                             |
+|----------------+-----------------------------------|
+| false          | Void                              |
+| true           | ()                                |
+| a \vert\vert b | Either a b = Left a \vert Right b |
+| a && b         | (a, b)                            | 
+  
