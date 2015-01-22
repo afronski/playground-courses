@@ -15,3 +15,16 @@
 - Besides that, they're a normal developers in their teams - they should balance
   and inform colleagues about changes, improvements and monitor that all tasks
   related with their area should be done in the team as well.
+- How to work with feedback meetings?
+  - Very nice presentation of Scott Berkun from Hive 2011.
+  - They're three types of bad meetings:
+    - Bloodbath - too many people, fractions, most of time spent on irrelevant arguments.
+    - Tortures - many people poking at one solution presented by one person.
+    - Dog and the Pony show - everyone accepts the solution, without even thinking about it.
+  - How to do better feedback meeting?
+    - Be proactive, start immediately, don't wait for feedback.
+    - If someone arrange the meeting, you failed.
+    - Prepare goals for meeting with context.
+    - Keep meeting small, *dinner size*.
+    - Each meeting should have facilitator.
+    - Feedback is good / bad, not a like / hate.

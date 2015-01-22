@@ -161,6 +161,16 @@ In practice you have to choose P, especially in networking environment
 (network is unreliable, there is always a chance that it will break) so
 there is only choice between CP and AP.
 
+Regarding partition tolerance - CP system provides serializability
+(linearizable), but it should have majority it forces re-election.
+However invalid algorithm used also can ruin CP features. AP systems
+simply don't care about partitions, it is a normal business even
+if the network partition happen.
+
+For example Cassandra is a Dynamo system, but it does not use Vector
+Clocks, but *LWW* (Last Write Wins). Why? Because of performance.
+You don't want to do a read before you write data.
+
 *** Consistency Models
 
 A contract between programmer and system, wherein the system guarantees
