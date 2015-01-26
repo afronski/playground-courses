@@ -182,4 +182,22 @@ type theory:
 
 *** Functors
 
-Functor is a mapping between categories.
+Functor is a mapping between categories. Given two categories, C and
+D, a functor F maps objects in C to objects in D. But a category it is
+not just objects - it's objects and morphisms that connect them. A
+functor also maps morphisms - it's a function on morphisms. It
+preserves connections.
+
+There is also composition of morphisms. If h is a composition of f and
+g:
+
+h = f . g
+
+We want its image under F to be a composition of the images of f and
+g:
+
+F h = F g . F f
+
+Functors that map this category into itself are called
+*endofunctors*. Haskell's Maybe type it's only a type constructor, but
+we can turn it into a functor.
