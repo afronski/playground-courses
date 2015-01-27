@@ -1,0 +1,15 @@
+* Psychology
+
+** Biases
+
+*** Survivorship Bias
+
+The tendency to focus on survivors instead of whatever you would call
+a non-survivor depending on the situation. So you are focused more on
+living, successes, winners than on dead, failures and losers,
+especially if the problematic part is invisible for you. Often you are
+failing to see that even some kind of information is missing.
+
+So if failures in your model are invisible for you, it is very likely
+than results of your examination will be skewed into the survivors, in
+this case successes.
