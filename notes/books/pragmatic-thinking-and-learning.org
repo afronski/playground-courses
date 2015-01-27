@@ -3,7 +3,7 @@
 Software is created in your head.
 My comment: so try to not put rubbish into it.
 
-** Wetware
+n** Wetware
 
 wetware - (etymology) *wet* + *software*; humorous analogy to the
 software and hardware, but applied to the biological areas. It is
@@ -29,10 +29,11 @@ a novice in one skill and expert in the others.
 
 ** Beginners vs. Experts
 
-Novices need context-free, exact and precise rules how and what to do it.
-From the other hand experts should have freedom, if we're applying rules
-and guidelines they are feeling constrained and they can't be effective
-as they experts really are (*unconscious activities*).
+Novices need context-free, exact and precise rules how and what to do
+it.  From the other hand experts should have freedom, if we're
+applying rules and guidelines they are feeling constrained and they
+can't be effective as they experts really are (*unconscious
+activities*).
 
 ** Levels
 
@@ -76,7 +77,8 @@ as they experts really are (*unconscious activities*).
 - 'It just seems wrong' - expert's description of 'Why?'.
 - Frustrated with many questions asked by novices and beginners.
 - Sometimes they can describe how to do something.
-- Things which looks like a magic can't be explained to the rest of the world.
+- Things which looks like a magic can't be explained to the rest of
+  the world.
 - Operating with analogy and anecdotes.
 - They are valid and appropriate for expert to explain some things.
 
@@ -91,7 +93,8 @@ as they experts really are (*unconscious activities*).
   - Agile needs auto-reflection and self-guidance.
     - These are available only on the higher levels of Dreyfus scale.
 - The main visualization of slowness of rules, is the 'work-to-rule'.
-  - The main objective of this strike is following the rules to the level of absurd.
+  - The main objective of this strike is following the rules to the
+    level of absurd.
 - Many people disqualify intuition as a non-scientific method.
   - Experts are using it properly, guides are necessary for beginners.
 - Dreyfus skills distribution is not equal to the normal distribution.
@@ -99,7 +102,8 @@ as they experts really are (*unconscious activities*).
   - Experts and Proficient people are the minor.
 - "You should know what you don't know".
 - Experts != Teachers.
-  - In other words it is a different skill in which expert can be novice or advanced beginner.
+  - In other words it is a different skill in which expert can be
+    novice or advanced beginner.
 
 ** Evolution from beginner to an expert
 
@@ -107,43 +111,87 @@ as they experts really are (*unconscious activities*).
 - Change in perception for observing problems.
   - Beginners see list of equal steps composed into problem.
   - Experts see different elements as more important than the others.
-    - They're focused on more important things, rest is a trained, semi-automatic skill.
+    - They're focused on more important things, rest is a trained,
+      semi-automatic skill.
 - Change in engagement - beginners are passive observers, doers only.
   - Experts are immersed into the problem, they're engaged improvisers.
 - The main tools of experts are intuition and pattern matching.
 - The easiest way to learn from experts is to mimic them.
   - R&D - Rip off and Duplicate
 - Also getting responsibility for your decisions is important.
-  - Following orders blindly do not create self-guidance in your attitude.
+  - Following orders blindly do not create self-guidance in your
+    attitude.
 - Very interesting concept is related with "Shu Ha Ri"
   - Shu - Copy, imitate.
   - Ha  - Reflect, guide, learn.
   - Ri  - Transcend, improve, improvise.
 - There are no substitutes for experience.
-  - But the most important thing in the process is neither position or experience.
+  - But the most important thing in the process is neither position or
+    experience.
   - Value which you can introduce matters the most.
-- Evolution should be performed in safe environment, with solid "timing".
-- And most important - Expertise is not permanent - keep practicing to remain an expert.
+- Evolution should be performed in safe environment, with solid
+  "timing".
+- And most important - Expertise is not permanent - keep practicing to
+  remain an expert.
 - Individuals > Herd.
   - Individuals are responsible, creative and critique about others.
-  - Herd is oriented around formal rules, group responsibilities. They're "monkeys".
+  - Herd is oriented around formal rules, group
+    responsibilities. They're "monkeys".
 - Talking about something all the time makes it irrelevant.
-- And the most important thing - Dreyfus is only a model, "one side does not fit all".
+- And the most important thing - Dreyfus is only a model, "one side
+  does not fit all".
   - Model is a tool, not a mirror.
 
 * Kruger-Dunning Effect
 
-It is an effect observed by two psychologists, which is based on too high and
-false self-esteem. Advanced beginners are acting like the experts, when they
-are not, because they cannot know better tools and they do not have enough
-skills in order to solve the problem differently and properly.
+It is an effect observed by two psychologists, which is based on too
+high and false self-esteem. Advanced beginners are acting like the
+experts, when they are not, because they cannot know better tools and
+they do not have enough skills in order to solve the problem
+differently and properly.
 
-They have described a case of thief, which thought that pouring lemon juice on his
-face and skin will let him be invisible for CCTV cameras. Obviously, the plan
-did not work out and he get caught. But he's an obvious observation that such
-observed effect exists.
+They have described a case of thief, which thought that pouring lemon
+juice on his face and skin will let him be invisible for CCTV
+cameras. Obviously, the plan did not work out and he get caught. But
+he's an obvious observation that such observed effect exists.
 
-That attitude is common for advanced beginners, especially in software development.
-There are plenty of people that claim that they can do everything, each time.
-However, after they reach certain level, near to the expertise, they will
-acknowledge how little they knew before.
+That attitude is common for advanced beginners, especially in software
+development.  There are plenty of people that claim that they can do
+everything, each time.  However, after they reach certain level, near
+to the expertise, they will acknowledge how little they knew before.
+
+* How does your brain work?
+
+** Two processors, one memory bus
+
+First is a linear, reliable, slow and very similar to the *von Neumann*
+architecture processor - it is responsible for analytic thinking,
+constructing proofs, logical reasoning. It processes all instructions
+sequentially step-by-step. It has also implemented an *idle loop*,
+sometimes called an internal voice. It uses also relatively small
+amount of overall brain real estate.
+
+Second is more like a DSP processor. It is designed to work with
+patterns, recognition, creativity, it works like a search engine,
+asynchronously. It can run in the background, and results can be
+delivered later even possibly days later. It does not use any verbal
+processing so the results are not verbal either.
+
+Both are sharing the bus to the memory core. Only one CPU can access
+the memory banks at a time. That means that first CPU which does
+active *busy loop* can overwhelm the second processor and starve him.
+And the other way, if the second processor needs memory for cranking
+something up, CPU is blocked.
+
+Both modes are called *R-mode* and *L-mode*. L in *L-mode* stands for
+linear, R in *R-mode* means rich, holistic and asynchronous way of
+working. *R-mode* is critical for intuition, problem solving, and
+creativity. *L-mode* gives you the power to work through the details
+and make it happen.
+
+Regarding other metaphors, memory inside our brains is similar to the
+volatile dynamic RAM, which needs to be refreshed periodically. In
+other words it means that you can lose some of your skills, memories.
+
+This is just a *metaphor*. You should not consider this as a fact and
+blindly rely on that. It is much more complicated.
