@@ -195,3 +195,29 @@ other words it means that you can lose some of your skills, memories.
 
 This is just a *metaphor*. You should not consider this as a fact and
 blindly rely on that. It is much more complicated.
+
+*** L-Mode and R-Mode
+
+Table with features comparison:
+
+|  L-Mode  |   R-Mode     |
+|----------+--------------|
+| Verbal   | Non-verbal   |
+| Analytic | Syntetic     |
+| Symbolic | Holistic     |
+| Abstract | Spatial      |
+| Temporal | Intuitive    |
+| Logical  | Concrete     |
+| Digital  | Non-rational |
+| Linear   | Non-linear   |
+
+Ideally, you should work with both hemispheres - researches done on
+topics of splitting connection between them shows that without
+connection both are not working properly. For example you should note
+everything which your right hemisphere produce, because it has
+non-verbal way of communicating results. By writing that down, you are
+memorizing the results and stimulating it to produce more frequently
+results and learning that it should communicate solutions in this
+way. Another example is related with learning you should learn by
+analysis and synthesis, in order to engage both of hemispheres
+equally.
