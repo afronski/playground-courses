@@ -171,6 +171,18 @@ For example Cassandra is a Dynamo system, but it does not use Vector
 Clocks, but *LWW* (Last Write Wins). Why? Because of performance.
 You don't want to do a read before you write data.
 
+In a very interesting way works the CockroachDB - it is a *CP* system,
+with HA availability features. It is based on Google Spanner idea (and
+publication), but it delivers not 7 nines of reliability but instead
+e.g. 5 nines and predictable consensus latency. It can guarantee
+serializability for all common cases and also linearizability.
+
+Did it break CAP Theorem? No, it is often misunderstood what is an *A*
+in CAP. It is a full 100% availability all the time, without any
+additional latency and downtime. In practice, you often don't need
+such guarantee but instead you would like to have predictable latency
+and full transactional support instead.
+
 *** Consistency Models
 
 A contract between programmer and system, wherein the system guarantees
