@@ -313,6 +313,9 @@ Because *rich mode* communicates differently (e.g. via dreams or other
 non-verbal channels) we need to adapt and use different techniques to
 enforce to appear even the non-visual solutions.
 
+Another thing is related with environment and e.g. breathing, because
+it influences thinking.
+
 **** Image Streaming
 
 It is very useful technique - after formulating problem (on the paper,
@@ -350,3 +353,36 @@ no concentration. Just let it go!
 Eventually the idea will come to you, and then you can return in front
 of your keyboard in order to try it and formalize it with *linear
 mode*.
+**** Harvesting Patterns
+
+Your *rich mode* has another function different than providing awesome
+ideas - pattern matching. For example code is such thing, which is
+sensitive to various transformation and reading it multiple times
+after writing. In order to read it properly, with actual semantics and
+meaning we are using formatting, fonts, comments in order to visually
+distinguish it and make it easier to read.
+
+Another way to harvest pattern matching mechanism is using a simple
+trick - you can use additional processing power by *reversing* the
+problem. So when you are debugging a complex problem, you should
+instead prepare 3-4 ways how to provoke that issue, in the creative
+process of creating the steps to reproduce we are doing a pattern
+match in the background, and finally maybe we *R-Mode* will provide a
+clue or even an answer to such problem.
+
+Very nice variant of that technique is one called *oblique strategies*
+which are 100 sentences prepared by famous music composers. At first
+it looks like a strange question or statement, which reconciles
+subconsciously the patterns.
+
+*** Breaking out from rut
+
+You should introduce a fun to your daily activities. Moreover, you
+should break and refresh your daily activities, consciously
+introducing changes in the daily schema. It creates new neural
+connections in the brain.
+
+Another way for breaking out from the habit is the simple play with
+neologisms - you should create new words, play with them, be a
+child. You should take an example from e.g. Shakespeare which uses the
+language very creatively (*Bran Teasers from Shakespeare*).
