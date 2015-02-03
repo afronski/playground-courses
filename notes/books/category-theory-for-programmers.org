@@ -1,6 +1,6 @@
 * Category Theory for Programmers
 
-** Definitions
+** Chapters
 
 *** Category
 
@@ -201,3 +201,19 @@ F h = F g . F f
 Functors that map this category into itself are called
 *endofunctors*. Haskell's Maybe type it's only a type constructor, but
 we can turn it into a functor.
+*** Functoriality
+
+As with the functions, you can have functors with multiple arguments -
+they are called *bifunctors*, it maps every pair of objects, one from
+category C and one from category D to an object in category E. Notice,
+that this is a mapping from a *cartesian product* of categories CxD to
+E.
+
+In such case functoriality means that bifunctors has to map morphisms
+as well. Pair of morphisms is a single morphism in the product
+category CxD.
+
+(f, g) . (f', g') = (f . f', g . g')
+
+Composition is associative and it has an identity, so it is a category
+as well.
