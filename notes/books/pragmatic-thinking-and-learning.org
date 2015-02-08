@@ -386,3 +386,77 @@ Another way for breaking out from the habit is the simple play with
 neologisms - you should create new words, play with them, be a
 child. You should take an example from e.g. Shakespeare which uses the
 language very creatively (*Bran Teasers from Shakespeare*).
+
+** Debugging Your Mind
+
+*** Cognitive Biases
+
+Your mind is highly exposed to the influence of couple dozens of
+identified and classified *cognitive biases*. They are common
+fallacies, illogical situations which compensates your abilities and
+learning process. Part of them is related with *linear mode*, part
+with self esteem, part with context and your background.
+
+Common biases:
+
+- Anchoring - to something, to some number, this anchoring fixate you
+  so hard on that value that you cannot see the context.
+- Confirmation bias - you are looking for false acceptation and
+  acceptation only.
+- Self-serving bias - *my ideas are only the good ones*.
+- Need for closure - unfamiliarity hurts, so you need to do something,
+  even false-positive to increase your awareness and
+  knowledge. Consequences? You are doing *big design upfront* instead
+  of adaptive process.
+- Fundamental attribution error - Assigning attributes based on
+  personality not by context.
+- Exposure effect - new is bad, false value of *comfort zone*.
+- False Memory - Each read from your memory is actually a destructive
+  read which needs a write after. So each read can injure the exact
+  information stored in your memory.
+- Symbolic Reduction Fallacy - too strong noise produced by *linear
+  mode* destroys the rich description of your solution, providing only
+  symbolic reasoning and representation.
+- Nominal Fallacy - Labeling, huge urge to applying well known labels
+  to new solutions and problems.
+
+Moreover there are plenty of other statements related with human mind
+e.g.: humans are poor with extrapolating future events from previous
+events - *black swan effect*. Another problem is related with
+*correlation* and *causation* (first one does not determine the
+second) or *platonic fold* (form of *symbolic reduction
+fallacy*). Also, we are often using *never* without watching the
+outliers.
+
+Other interesting biases:
+
+- Attentional Bias - The tendency of our perception to be affected by
+  our recurring thoughts.
+- Choice-supportive bias - The tendency to remember one's choices as
+  better than they actually were.
+- Clustering illusion - The tendency to overestimate the importance of
+ small runs, streaks, or clusters in large samples of random data
+ (that is, seeing phantom patterns).
+- Decoy effect - Preferences for either option A or B changes in favor
+  of option B when option C is presented, which is similar to option B
+  but in no way better.
+- IKEA effect - The tendency for people to place a disproportionately
+  high value on objects that they partially assembled themselves, such
+  as furniture from IKEA, regardless of the quality of the end result.
+- Negativity bias - Psychological phenomenon by which humans have a
+  greater recall of unpleasant memories compared with positive
+  memories.
+
+*** Generations and Context
+
+You are who you are because the context and your peers from the same
+generation, with whom your were educate.
+
+Our generation is called the *millennials* (*generation Y*). We are
+loyal, we are valuing more quality then quantity, we are efficient
+with technology use (*web was always here*), but also we are less
+entrepreneur then previous, *X*, generation. We have got huge
+self-esteem.
+
+Working with different types of people increases problems
+(e.g. *generation X* irritates pragmatism the *baby boomers*).
