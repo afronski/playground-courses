@@ -460,3 +460,67 @@ self-esteem.
 
 Working with different types of people increases problems
 (e.g. *generation X* irritates pragmatism the *baby boomers*).
+
+Values and emotions affects your decisions. This is not wrong, but it
+is a common fallacy to believe that everyone uses the same cognitive
+process and will come with the same conclusions after.
+
+*** Personalities
+
+There is a MBTI (Meyer-Briggs Type Indicator) which is based on
+C. Jung conceptions about types of people personalities. It uses 4
+different features:
+
+- Introvert vs. Extrovert
+- iNtuitive vs. Sensing
+- Thinking vs. Feeling
+- Judging vs. Perceiving
+
+The major fallacy is to think that you can change people. We are build
+in a way that various parts of our brain, which are old and very
+straightforward are hardwired to some reactions. It is called a
+*lizard logic* and it is related with survival instinct - in order
+words *fight or flight*. You can observe that e.g. on the meeting when
+people pushed to some stressful situation are defending themselves and
+trying to attack the others. Moreover, some of people are *marking
+terrain* as the alpha male used to do - that is our nature.
+
+What you should do instead, you should be aware of differences and use
+them wisely. Moreover, you should meet and talk with people that have
+the opposite personality type than yours in order to learn and observe
+how you both should cooperate. You with your personality type has
+influence to your communication and vice versa.
+
+Mine personality type (after doing test) is:
+
+INTJ
+
+- 67% more introvert than extrovert.
+- 12% more intuitive than sensing.
+- 25% more thinking than feeling.
+- 22% more judging than perceiving.
+
+**** Details of INTJ
+
+- Defined
+- From the outside looks self confident.
+- Know what they know, and they know what they don't know.
+- Perfectionist
+- Applying pragmatism to the all areas of life.
+- Independent
+- Questioning Authorities
+- Grateful and aware of individual contributions.
+- Implements critical decisions without consulting them with
+  superiors.
+- Reliable
+- Extremely Private
+- Caring and willing to spend time with small group of selected
+  people.
+- Sucks at romantic relationships, because their knowledge is hard to
+  apply in non-rational parts.
+- They have introverted intuition.
+- They have extroverted thinking.
+- They have introverted feeling.
+- They have extroverted sensing.
+
+*** "Hardware Bugs"
