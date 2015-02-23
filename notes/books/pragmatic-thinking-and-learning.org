@@ -652,5 +652,40 @@ plain and theoretical topics.
 ** Other Tricks
 
 *** Read Deliberately with SQ3R
+
+Reading is the least effective technique of learning, because of our
+natural capabilities (parts of brain responsible for talking and
+linguistic processes is smaller than rest), but you can boost it up by:
+
+- Survey - Scan the *ToC* and chapter summaries for an overview.
+- Question - Note any question that you have.
+- Read - Read in its entirety.
+- Recite - Summarize, take notes, rephrase.
+- Review - reread, expand and review notes with colleagues.
+
+Besides reading, do not forget about experimentation.
+
 *** Mind Maps
+
+Invented by *Tony Buzan*, it is a sort of two-dimensional, organic,
+and holistic outline. You should start from the center of the paper,
+draw lines from this main point to the subheadings and subtopics, on
+both sides. Play with colors, form, arrows, lines and so on. Paper has
+unlimited editing and drawing capabilities, more advanced than any
+graphic program.
+
+It is a way of making notes with *R-mode*, and you should do it
+regularly, not only with *L-mode*. You can combine previous technique
+(SQ3R) with *mind maps*. This kind of mapping is really helpful when
+you are dealing with researches and many unknowns (*exploratory mind
+maps*).
+
 *** Learn by Teaching
+
+- Do a podcast.
+- Do a screen-cast, video.
+- This kind of learning, put emphasis on multiple ways how and what
+  should I learn first about that topic.
+- *Talk to the duck* or in other words *See it. Do it. Teach it*.
+
+* Experience
