@@ -563,4 +563,20 @@ how really looks like. Expectations color your ideas.
     manage, proceed, prepare and find them.
 
 ** SMART Goals
+
+- S - Specified, exact, detailed, well-defined goals.
+- M - Measurable, small, iterative and incremental, easy to quantify.
+- A - Achievable, by me.
+- R - Relevant, for me.
+- T - Time-boxed, with deadline.
+
+In this way you are defining not only the goal, but the path to the
+goal as well. Remember about context:
+
+- Family
+- Business
+- Financial
+- Community
+- Environment
+
 ** Pragmatic Investment Plan
