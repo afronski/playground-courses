@@ -689,3 +689,29 @@ maps*).
 - *Talk to the duck* or in other words *See it. Do it. Teach it*.
 
 * Experience
+
+Experiencing new things is the most effective way to build knowledge
+and habits. But doing it in a *fun* way is a key. Play is everything,
+engagement is key to remembering, brain is build in a way that memory
+is located near the areas responsible for pleasure and pain.
+
+The same approach took the creators of LOGO programming language
+(children learn math, programming and robotics better by sensing and
+doing, and by fun) and LEGO Mindstorms. Moreover, there are no dumb or
+smart people - and you can easily see this on children, every single
+children is a perfect learner.
+
+What else can emphasis the impact is *anthropomorphism*, putting
+yourself inside the actual problem, action as a main character.
+
+In other words, you should find the problem / technology / new thing
+to learn, then play with it by trying, building on the playground and
+after that you can learn theory and blocks. In this order you will
+more effectively learn and remember.
+
+Learn from similarities, unlearn from differences. *I don't know* is a
+good start! But you have to push it through.
+
+*** Safe Environment
+
+For experimentation safe environment is a key thing.
