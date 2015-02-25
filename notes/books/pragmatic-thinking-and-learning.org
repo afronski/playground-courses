@@ -714,4 +714,39 @@ good start! But you have to push it through.
 
 *** Safe Environment
 
-For experimentation safe environment is a key thing.
+For experimentation safe environment is a key thing. The best
+environment is that one which has safety nets (easy, automated way to
+test things), time machine (you can step back in time and verify your
+assumptions and hypothesis) and it is safe, without pressure.
+
+*** Inner Game
+
+The very important concept related with learning is the *discovery*
+and *awareness* - *the inner game* (based on book *The Inner Game of
+Tennis* and then moved to the other areas e.g. Music, Skiing and so
+on).
+
+The idea is to show completely newbie how to increase *awareness* -
+instead of pumping up the theoretical knowledge, learner should focus
+on observing the master, repeating and learning by discovery.
+
+That will increase intensity, it will introduce tight, and auto aware
+feedback loop. See without judging and then act.
+
+Moreover this idea is not only fixed to the kinesthetic activities. It
+can be easily adjusted to the typical programming-related
+things. Increase awareness, listen to the inner voice of experience
+and feedback.
+
+One of the things that can kill it is **pressure**. Trying fails,
+awareness cures. You should grant permission yourself to fails. But
+trying too hard is a guarantee for failure. Deadline kills creativity,
+and moreover it can introduce a sensation called a *pressure hangover*
+which lasts two days after the deadline phase. *R-mode* it totally
+shut out, and *L-mode* handles the time critical tasks.
+
+Permission to fail eases the pressure, and helps releasing the brain,
+by involving the *R-mode* and unlocking the bus. What is even more
+important - if you give yourself permission to fail, you will end up
+with success. You will unlock the *R-mode* and it will help shut down
+the overactive *L-mode*.
