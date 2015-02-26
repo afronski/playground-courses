@@ -2,52 +2,60 @@
 
 ** Day 1
 
-*** Garrett Smith - Rediscovering a Useful Pattern Language, Lessons from Bouncy Squirrel
+*** Garrett Smith - Rediscovering a Useful Pattern Language
 
-- Timeless way of building, Christopher Alexander
-- Patterns are built by many, not few.
-  - Architecture, building, paths.
+- Programming should be a joy for you!
+- *Timeless way of building*, Christopher Alexander
+- Patterns are built by many, not by few.
+  - Urban architecture, city buildings, common paths.
+  - Emergent Architecture.
 - Pattern Language.
-- Emergent Architecture.
-- Patterns are created with certain emotion, this is the pattern context.
-- Sample patterns - REPL, Text based representation.
-  - Emotions are signals, they point to something real.
+  - Patterns are created with certain emotion, this is the pattern context.
   - Discovered, not prescribed.
   - Experimental, not theoretical.
+  - Sample patterns:
+    - *REPL*, Text based representation, Pattern matching.
+- Emotions are signals, they point to something real.
 
 *** Kevin Hammond - Megacore, Megafast, Megacool
 
-- Future: "manycores", "megacores" not "multicores".
-  - Exascale, BIG data.
-- Linking nodes into systems.
-- Heterogeneous structure, NUMA.
-  - NOT shared memory.
-- ~34 Petaflops, 3M cores.
-- Mobile phones and embedded systems as well
-  - Samsung Exynos - 8 cores.
-  - NVIDIA Tegra K1, 4 ARM cores, 192-core Kepler GPU
-- Performance tradeoffs regarding energy usage.
-- "Dark Silicon" - power cores on demand.
-- Spawning 33 M threads in 4.5s of execution.
-  - How to manage that?
-  - 20k threads, minimize overhead of creating them.
-- Building a wall - 1 worker, 4 workers
-  - Not a 4x speedup - Amdahl's Law.
-  - Real dependencies, accidental dependencies.
-  - We need better abstractions, you shouldn't think in terms of threads.
-    - No worrying on communication, dependencies, deadlocks...
+- Future: *manycores*, *megacores* not *multicores*.
+  - It is happening right now: *exascale*, *big data*.
+  - Linking multiple nodes into systems.
+  - Heterogeneous structure.
+    - Not shared memory, *NUMA*.
+    - Approx. 34 petaflops, 3 millions cores.
+- Not only PC - mobile and embedded systems as well e.g.:
+  - Samsung Exynos - *8 cores*.
+  - NVIDIA Tegra K1 - *4 ARM cores*, *192-core Kepler GPU*.
+- Performance trade-offs related with energy usage.
+  - *Dark Silicon*
+  - Power cores on demand, if not used switch them off.
+- Spawning 20k threads in 4.5s of execution.
+  - *How to manage that?*
+- Case study:
+  - Building a wall - 1 worker, 4 workers
+    - Not exactly a 4x speedup - *Amdahl's Law*.
+    - Real dependencies, accidental dependencies.
+- We need better abstractions, you shouldn't think in terms of threads.
+  - No worrying on communication, dependencies, deadlocks...
     - Ill-defined parallel domains are constraining.
   - Purity means no side-effects.
+- Models:
   - Concurrency - illusion, execution way.
     - Programming models based on concurrency are low-level.
   - Parallelism - Hardware artifact, real.
-  - Patterns of parallelism
-    - Pipelines, Map-Reduce, Task farm, Divide & Conquer, parallel
-      search, parallel completion...
-- Erlang - *skel*.
-- ParaPhrase project.
-- Rephrase project.
-- Dependent and Independent composition.
-- Stateless computation can be redone, anywhere, anytime.
+- Patterns of parallelism
+  - Pipelines, Map-Reduce, Task farm, Divide & Conquer, parallel
+    search, parallel completion...
+  - Stateless computation can be redone, anywhere, anytime.
+- Projects:
+  - https://github.com/ParaPhrase/skel
+
+*** Torben Hoffmann - Thinking like Erlanger
+*** Evelina Gobasova - Understanding Cancer Behavior with F#
+*** Justin Leitgeb - A Year of Haskell
+*** Edwin Brady - State, Communication and Side-Effects in Idris
+*** Matthias Nehlsen - Building systems in Clojure
 
 ** Day 2
