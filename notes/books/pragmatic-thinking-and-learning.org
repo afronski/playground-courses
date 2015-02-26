@@ -712,14 +712,14 @@ more effectively learn and remember.
 Learn from similarities, unlearn from differences. *I don't know* is a
 good start! But you have to push it through.
 
-*** Safe Environment
+** Safe Environment
 
 For experimentation safe environment is a key thing. The best
 environment is that one which has safety nets (easy, automated way to
 test things), time machine (you can step back in time and verify your
 assumptions and hypothesis) and it is safe, without pressure.
 
-*** Inner Game
+** Inner Game
 
 The very important concept related with learning is the *discovery*
 and *awareness* - *the inner game* (based on book *The Inner Game of
@@ -759,3 +759,5 @@ head.
 Another thing - Be and act like an expert. Even if you don't just play
 and act, prepare yourself a plan when you fail, let yourself fail, but
 the attitude and way of thinking really changes everything.
+
+* Focus
