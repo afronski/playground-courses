@@ -53,9 +53,62 @@
   - https://github.com/ParaPhrase/skel
 
 *** Torben Hoffmann - Thinking like Erlanger
+
+
+
 *** Evelina Gobasova - Understanding Cancer Behavior with F#
+
+
+
 *** Justin Leitgeb - A Year of Haskell
+
+
+
 *** Edwin Brady - State, Communication and Side-Effects in Idris
+
+- All demos are in: https://github.com/edwinb/idris-demos
+- Dependent Typing
+  - Type Driven Development ;)
+  - Using proofs in code, formalizing assumptions in type system.
+  - Treats type as a first-class value in a language.
+- In other words: specify the types, and determine the execution or
+  actions invoked further in the program flow based on a type of
+  returned value.
+- So you can define that client corresponding to the protocol sends
+  some value to the server which is a certain type - in Idris you can
+  verify, that all commands are invoked within the valid state and in
+  certain order.
+- You can define full Echo protocol inside the type system, change the
+  specification, compile it and compiler checks compliance and report
+  all invalid places, which are not spec compliant.
+  - Imagine that compiler can infer the deadlocks, logic errors in
+    protocol specifications or prevent from timing attacks and
+    introduce a notion of time to the system, and verify that all
+    time-related constraints are matched.
+
 *** Matthias Nehlsen - Building systems in Clojure
+
+- Case study and explanation about *BirdWatch*.
+  - Project which provides a real-time dashboard to the Twitter
+    hashtags, with searching capabilities.
+  - Technologies: ElasticSearch, Redis, Clojure, Twitter Streaming
+    API.
+  - It is a fun project on a side (first written in Scala, now in
+    Clojure). Front-end is written in ClojureScript and Reagent
+    (previously Om).
+- Matthias is doing transcripts for the popular talks from Clojure
+  community in the Github.
+- Also, he is writing the book about building systems in Clojure, it
+  is on LeanPub. It is also available on Github as a Markdown source.
+- Very nice libraries:
+  - Carmine - Redis library for Clojure.
+    - Ideal case study - Redis, Clojure and this library.
+  - Components from Stuart Sierra.
+    - Very nice structure for building application from scratch.
+- Nice analogies:
+  - Channels are like conveyor belts, put value on it and you
+    shouldn't care about wiring and if someone consume it, somewhere.
+- Matthias is also author of tool which visualizes messages flowing
+  through system - https://github.com/matthiasn/inspect
 
 ** Day 2
