@@ -62,7 +62,42 @@
 
 *** Justin Leitgeb - A Year of Haskell
 
-
+- 11 millions professional developers in whole world.
+  - 1000 professional Haskell developers.
+- Talk about transition from purely Ruby shop, to the Ruby company
+  that uses Haskell with 5-6 full-time Haskell developers.
+- *Freedom is another world for nothing to lose*.
+- Projects are acquiring legacy status much more easily in dynamically
+  typed languages.
+- Most of web applications are I/O bound, not the CPU bound - which is
+  not a main use case for Haskell. It is exactly the opposite, CPU
+  intensive tasks are most popular ones in the Haskell community.
+- Good things about Haskell:
+  - Stable
+  - Focused on core abstractions.
+  - Active community.
+  - Language evolve permanently.
+- Getting better:
+  - Tooling
+  - More and better libraries.
+- Bad:
+  - It is a small community, which directly matches to the smaller adoption.
+  - It is not popular in enterprise companies, because it is hard to
+    find many, good devlopers.
+- How to sell Haskell?
+  - Sell focus on increased productivity, instead safety.
+  - Not only for geniuses.
+  - Selling is a part of our job.
+  - Most clients are resisting new things or directly finishing the discussion.
+    - *Permission Denied*.
+  - Maintenance is an important thing, but most of very intelligent
+    members of community are leaving Ruby.
+  - Sell these values (it is verified by them):
+    - Commitment
+    - Scarcity
+    - Consistency
+    - Reciprocity
+    - Linking and Authority
 
 *** Edwin Brady - State, Communication and Side-Effects in Idris
 
