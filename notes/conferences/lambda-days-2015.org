@@ -54,11 +54,61 @@
 
 *** Torben Hoffmann - Thinking like Erlanger
 
-
+- Sample code: https://github.com/lehoff/egol
+- *Feedback is a breakfast of champions*.
+- Fail fast, learn quick.
+- Languages - Generic vs. Specific:
+  - Second group better fits the certain domains.
+- Two books:
+  - Robin Sharp, "Principles of Protocol Design" (Springer)
+  - C. A. R. Hoare, "Communicating Sequential Processes"
+- Golden trinity of Erlang:
+  - Fail fast.
+  - Share nothing.
+  - Failure handling.
+- Generic way of handling:
+  - Query about past state - keep history - *in-process*, ETS / DETS,
+    snapshots.
+  - Query about future state - queue the response and wait for it.
+- Protocols and MSC are going hand by hand.
+- Unique Erlang features which helps:
+  - Links
+  - Monitors
+  - Supervisors
+  - `gproc` for PUB / SUB.
 
 *** Evelina Gobasova - Understanding Cancer Behavior with F#
 
-
+- Using F# in data mining and machine learning.
+- Why not:
+  - Python?
+  - Matlab?
+  - R?
+- All are slow on huge data sets, not enough expressive, and are using
+  for fast prototyping. Moreover *R* is written for statisticians by
+  statisticians.
+- Why F#?
+  - With complicated domain (predicting and classifying breast cancer)
+    and algorithms (e.g. integrative clustering) code quality and
+    additional power features are key of success. Expressiveness is
+    also one of the most important things.
+  - Details:
+    - Types
+    - Expressiveness
+    - Pattern Matching
+    - Legibility (`a |> b`) - Data Transformations
+    - Type providers
+      - Typed access to external data sources (CSV, SQL, XLS ...).
+      - Example: CSV file and access to the `Rows` property and for
+        each row full intellisense with column name and expected type
+        of values in that column.
+      - It builds it automatically, based on exemplary data or value
+        representation. Example with sample JSON response passed as a
+        initial thing to the Typed Provider. After using it, you can
+        use auto-completion because it is resolved in compile time.
+      - Not only limited to the documents - there is an e.g. RProvider
+        which introduces whole (!) without exceptions standard library
+        of R programming language.
 
 *** Justin Leitgeb - A Year of Haskell
 
