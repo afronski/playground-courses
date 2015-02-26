@@ -197,3 +197,12 @@
   through system - https://github.com/matthiasn/inspect
 
 ** Day 2
+
+*** Kinga Panasiewicz - How computers change our brains. Can screen-time cause mental or neurological disorders?
+*** Nilanjan Raychaudhuri - You say big data, I say fast data
+*** Iurii Petrov - Implementing graph representation model for parallel and distributed systems using Erlang
+*** Rúnar Bjarnason - An invitation to functional programming
+*** Alvaro Videla - Dissecting the Rabbit: RabbitMQ Internal Architecture
+*** Alexei Sholik - Functional Survival In The World Of Concurrent I/O
+*** Michał Ślaski - Lessons from Erlang VM
+*** Luc Duponcheel - Modular program syntax and semantics in Scala
