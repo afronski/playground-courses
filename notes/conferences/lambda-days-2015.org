@@ -386,4 +386,29 @@
 
 *** Luc Duponcheel - Modular program syntax and semantics in Scala
 
--
+- Talk about 13th chapter of "Functional Programming in Scala*
+  (compatible with 15th chapter).
+- Papers by presentation author:
+  - "Composing Monads", 1993 - *modular semantics*.
+  - "Using Catamorphisms, ...", 1995 - algorithmic approach to
+    *modular syntax*.
+- "Composable application architecture with reasonably priced monads",
+  2014 (Runar Bjarnason)
+- Syntax and Semantics - this talk is roughly speaking about
+  *separation* both.
+- Interesting point of view on series of value declarations, dependent
+  (*few values in separate lines*) and independent (*one tuple*)
+  composition.
+- Associating applicative functors on the syntactical level in order
+  to separate *effects* from *side-effects*.
+  - You will end up with creating an expression even on the main
+    level.
+  - Building an executable (at the end) data structure from
+    syntactical concepts.
+    - How far we are from macros there?
+- *Natural Transformation*
+- Type system for verifying syntax and semantics, and switching it:
+  - *Testing the real code, with provided testing semantics*.
+  - *Executing the real code, with provided run semantics*.
+- You are preserving the type safety with ability to interchange
+  semantics.
