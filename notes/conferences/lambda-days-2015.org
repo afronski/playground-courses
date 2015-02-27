@@ -234,7 +234,7 @@
 
 *** Nilanjan Raychaudhuri - You say big data, I say fast data
 
-- Big data problem - it is a +100 TB data storage, only a few
+- Big data problem - it is a 100+ TB data storage, only a few
   companies in the world.
 - Problem space is wider, but amount is smaller:
   - Huge volume data streams, with which we have to perform analysis.
@@ -271,7 +271,38 @@
 
 *** Rúnar Bjarnason - An invitation to functional programming
 
--
+- Why FP?
+  - No *side-effects*.
+  - *Referential Transparency*.
+    - `f(x)` is referentially transparent if `x` is referentially
+      transparent.
+  - Total languages - *Idris*, *Coq*, *Agda*.
+- Consequences:
+  - Pure functions are easy to *isolate*, *test* and *parallelizable*.
+    - Returning records track, list of changes instead of mutating and
+      applying side-effect on methods.
+  - Increased and eased modularity.
+  - Re-usability - e.g. *monoids*.
+    - Parametricity, way of making a "generic" implementation, which
+      is truly polymorphic, unaware the exact type.
+  - Parallelizable.
+    - Presented on an example with HTML parser, and combining partial
+      results in a form of tree independently executed.
+    - Conceptual integration and Compositional reasoning.
+  - Compositionality.
+    - Functional architecture introduces constant complexity even if
+      the system grows. Because it is based on mathematics.
+- *FP is similar to LEGO, when pieces are snapped together closely and
+  easily*.
+  - We are striving to happiness, instead of dealing with sad, big
+    ball of mud.
+  - It is not all or nothing, it is about a *play*, building clean
+    things, doing enterprise software can be done like that, unless
+    you do not compare it to war and trenches.
+- Building teams - hire and infect, start with a core and build
+  outward.
+  - You can build development teams build on top of FP.
+  - Time and freedom to experiment - *safe environment*.
 
 *** Alvaro Videla - Dissecting the Rabbit: RabbitMQ Internal Architecture
 *** Alexei Sholik - Functional Survival In The World Of Concurrent I/O
