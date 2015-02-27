@@ -349,4 +349,41 @@
     support.
 
 *** Michał Ślaski - Lessons from Erlang VM
+
+- Erlang timeline:
+  - Created at 1987, Open Sources in 1998.
+  - SMP support in 2005.
+- Maintenance is a major time consuming phase during the software
+  lifetime.
+  - Example: 20 years of maintenance, 1-2 years of development.
+- Multiple, well-tested patterns (checked across of ~30 years of
+  experience) - Behaviors:
+  - Releases
+  - Application
+  - Server, FSM, Events...
+- Robustness by focusing on correct case instead of *defensive
+  programming*.
+- Systems have to be distributed (e.g. business, availability and
+  reliability reasons).
+  - Inspection both internally and remotely.
+  - Fully connected mesh in distributed Erlang VM cluster.
+  - Example of inspection tool: mazenharake/entop
+- Hot Code Loading.
+  - Live Systems - yes, but still hard thing to do (e.g. mnesia schema
+    etc.).
+  - Easier and also important - shorter development cycles.
+- Tracing in the VM (e.g. live debugging).
+  - Tools:
+    - massemanet/eper (especially RedBug).
+    - proger/eflame (blocking calls marked in blue).
+- Open source projects:
+  - RabbitMQ
+  - MongooseIM
+  - Riak
+  - CouchDB
+  - Lambda Academy (March - June, 2015)
+    - Once a month psychically, rest - on Github, remotely.
+
 *** Luc Duponcheel - Modular program syntax and semantics in Scala
+
+-
