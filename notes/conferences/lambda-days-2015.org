@@ -199,8 +199,66 @@
 ** Day 2
 
 *** Kinga Panasiewicz - How computers change our brains. Can screen-time cause mental or neurological disorders?
+
+- Brain as a most important organ, also the irreplaceable one (state
+  of today's medicine).
+- Fact: receives 25% of total body glucose utilization, 20% of oxygen
+  utilization and so on.
+- Brain disorders will be the most important cause of health injuries
+  soon (WHO).
+- Fact: ~800 billions EUR spent on brain disorders in 2010 in Europe
+  only.
+- Neuroplasticity - ability to create new nerve cells are produced in
+  adulthood.
+- Animals brains are not as plastic as the human one.
+- *Neurons that fire together are wired together*.
+- How computers and *programmer's lifestyle* affects a brain?
+  - Disorders in melatonin hormone levels.
+  - Huge amount of lights (e.g. screen light) before sleep will
+    increase the probability of having insomnia or other sleep
+    disorders.
+  - Gray matter atrophy in *internet / gaming addiction*.
+    - Similar changes are caused by mental disorders e.g.:
+      - Losing focus, Shorter attention span ...
+      - Less analytic capabilities.
+  - Neural synchrony is crucial to memory formation.
+    - Seeing and hearing - synergy is the key.
+  - Tools are affecting your learning process, attention span.
+    - Before Google you have to know where to look at!
+    - Association is a key for memorizing, and using some kind of
+      tooling will decrease that abilities.
+- *Not used or less used parts of brain cannot be allocated in the
+  different area*.
+- Environmental factors + particular set of Genes = Schizophrenia
+  (researches).
+
 *** Nilanjan Raychaudhuri - You say big data, I say fast data
+
+- Big data problem - it is a +100 TB data storage, only a few
+  companies in the world.
+- Problem space is wider, but amount is smaller:
+  - Huge volume data streams, with which we have to perform analysis.
+  - Streaming Data and Analysis of it is crucial from business
+    perspective.
+- Case Studies:
+  - Recommendation engines
+  - Analytics
+- *Hurdles*:
+  - Typical issues with Lambda Architectures.
+    - Duplication logic, parallel stacks, multiple operation teams...
+    - Latency, temporal queries...
+      - Probabilistic Data Structures.
+      - Solution - proper store e.g. EventStore, BlinkDB.
+    - Duplication and Cache Utilization.
+      - Tachyon - shared layer, memory between nodes.
+- Apache Spark as a solution for streaming data and capturing ~80% of
+  requirements pushed to tools which are inappropriately used for this
+  cases (e.g. Hadoop).
+
 *** Iurii Petrov - Implementing graph representation model for parallel and distributed systems using Erlang
+
+-
+
 *** Rúnar Bjarnason - An invitation to functional programming
 *** Alvaro Videla - Dissecting the Rabbit: RabbitMQ Internal Architecture
 *** Alexei Sholik - Functional Survival In The World Of Concurrent I/O
