@@ -257,9 +257,22 @@
 
 *** Iurii Petrov - Implementing graph representation model for parallel and distributed systems using Erlang
 
--
+- Traditional models of representing systems are based on passive
+  representations of graphs.
+- Moreover - they are *synchronous* which leads to the ineffective
+  resource usage.
+  - You can do asynchronous model from a synchronous one.
+- In Erlang we can use lightweight processes to simulate graph
+  structure, instead of passive data structure we are using an
+  adaptive mesh of processes representing graphs.
+  - Grid computing, Beowulf clusters etc.
+- Three levels of processes, which manages the state of each type of
+  layer inside process local state, ETS and DETS tables.
 
 *** Rúnar Bjarnason - An invitation to functional programming
+
+-
+
 *** Alvaro Videla - Dissecting the Rabbit: RabbitMQ Internal Architecture
 *** Alexei Sholik - Functional Survival In The World Of Concurrent I/O
 *** Michał Ślaski - Lessons from Erlang VM
