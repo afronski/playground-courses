@@ -305,6 +305,48 @@
   - Time and freedom to experiment - *safe environment*.
 
 *** Alvaro Videla - Dissecting the Rabbit: RabbitMQ Internal Architecture
+
+- *RabbitMQ* - Multi Protocol Messaging Server, Open Source, Polyglot.
+  - RabbitMQ Simulator (http://tryrabbitmq.com).
+  - Routing:
+    - *Direct* - direct connection with a queue and consumer.
+    - *Fanout* - broadcast messages to multiple queues and consumers.
+    - *Topic* - multicast, based on the pattern.
+  - Internals:
+    - *rabbitmq_client_sup.erl* - Client connection supervisor.
+    - *simple_one_for_one* - Strategy of supervisor for adding
+      children dynamically (it requires child specification).
+    - Specification is a declarative way how your application should
+      behave.
+    - *rabbitmq_channel_sup_sup.erl* - Multiple channels can be opened
+      per connection, so we need to supervise all channels.
+    - AMQP user validation - *pattern matching*.
+    - RabbitMQ does not copy message content between multiple queues,
+      it uses one place and index to track where the message went.
+    - RabbitMQ does not using Mnesia to store messages, it only
+      flushes to the disk if it has to. It uses custom backing store.
+    - *Credit flow* - pattern from preventing sending too many messages
+      from one process to the rest. Awesome!
+    - Custom behaviors - RabbitMQ creates multiple behaviors
+      e.g. *supervisor2*. It define seams (extension points) inside
+      the RabbitMQ itself.
+      - Example: multiple exchanges (e.g. *riak_exchange*) defined in plugins.
+
 *** Alexei Sholik - Functional Survival In The World Of Concurrent I/O
+
+- Reflection about I/O and ramblings how to systematize it regarding
+  concurrent and distributed systems.
+- Approaches:
+  - Basic I/O (*imperative*, looping, polling).
+  - Run loops and I/O (*run loops*, asynchronous, more structured).
+  - Asynchronous I/O with callbacks (*event loop*, callback hell).
+  - Asynchronous I/O with promises (abstraction instead callbacks).
+  - Asynchronous I/O with code rewrite (ES7, C# - *async*, *await*).
+  - Signals (*Elm*, functional reactive programming, lazy sequence).
+- Example: Sample code in Elixir which presents I/O evolution.
+  - Streams in Elixir (similar abstraction to Signals).
+  - Macros for the rescue, instead code rewrite and lack of language
+    support.
+
 *** Michał Ślaski - Lessons from Erlang VM
 *** Luc Duponcheel - Modular program syntax and semantics in Scala
