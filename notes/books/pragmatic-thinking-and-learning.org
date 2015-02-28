@@ -762,11 +762,44 @@ the attitude and way of thinking really changes everything.
 
 * Focus
 
-- Practice attention and focus
-- Meditation
-- Rule of three
-- Time for thinking, *marinade*
-- *Productive slacking*
+It is hard to focus in our times. But the very first rule related with
+focusing again, is quieting the *inner idle loop* related with very
+chatty *L-mode*. If you are not busy and unfocused you are starting to
+think about stupid things (e.g. *What should I do tomorrow on
+dinner?*). You need to silence this voice, unlock the bus for other
+parts of brain. Pay attention and train it like a muscle. Relax,
+focus, no distractions, no chatter. *Learn to pay attention*.
+
+In order to increase attention span, improve the focus, you can
+practice mindful meditation. You should do it regularly, at the same
+time, with the same amount - in quiet and peace.
+
+Allocate part of a day for that (e.g. 20 minutes), close your eyes,
+take couple of deep breaths, quiet inner thoughts, focus on the
+breathing and machinery related with it. You can start even easier by
+doing a couple deep, mindful breaths in quiet place, in your breaks,
+before meetings or so. There are apps which are helping with that -
+*Mindspace*.
+
+Sometimes it is not obvious than ideas have to ferment, percolate,
+marinade. It means that in the background some ideas are checked by
+*R-mode* in a various ways that you can't even imagine.
+
+Very good idea is to think about three ways a plan can go wrong or
+think of three different solutions to a problem (*Rule of Three*), you
+need to formalize them briefly, consciously but after they can be
+processed in the background. After a while they will appear again in
+consciousness - confirmed, tested, verified or not. Just let them grow
+and ripen. Make room for *thinking time*.
+
+Some people have problem with that, they are thinking that it is a
+procrastination. There is a slight difference between thinking time
+and procrastination - if you are stuck, and your potential solutions
+need to be rethought it is not *slacking* but *thinking* time. If you
+are avoiding work because you don't want to do it, there is more
+likely to be a diversion and procrastination. In other words - do
+nothing, deliberately, let the minds *marinate* and *stew* (*defocus
+to focus*).
 
 * Managing the Knowledge
 
@@ -792,3 +825,4 @@ external source (e.g. metrics, good patterns).
 You should know where to look, so the searching capabilities and
 structure are crucial. External support (and other visualization
 techniques) are part of your brain.
+* Context
