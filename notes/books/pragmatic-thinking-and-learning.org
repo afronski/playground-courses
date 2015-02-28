@@ -761,3 +761,34 @@ and act, prepare yourself a plan when you fail, let yourself fail, but
 the attitude and way of thinking really changes everything.
 
 * Focus
+
+- Practice attention and focus
+- Meditation
+- Rule of three
+- Time for thinking, *marinade*
+- *Productive slacking*
+
+* Managing the Knowledge
+
+Exocortex is a concept gathered from AI development teams and
+neuroscientists, which are defining an artificial and external memory
+in such way. As a programmers (and more generally - people which are
+working with expertise like knowledge level) we should train, garden
+and develop such Exocortex, because memory should be refreshed
+periodically, and *every read is a write*.
+
+Process of gathering, rephrasing and gardening knowledge is really
+helpful. At first you should have some kind of notebook, scribble book
+with you - everywhere, anytime, but after the initial *dump* you should
+rethink that, clean up and rephrase in more structured and formal way
+e.g. in the *org-mode* or Wiki.
+
+These kind of structured notes are helpful, because they are extending
+the memory, they increasing the actual capabilities by releasing the
+brain from the easily looked up or cumbersome details. You should not
+waste your cells to something which can be easily picked up from an
+external source (e.g. metrics, good patterns).
+
+You should know where to look, so the searching capabilities and
+structure are crucial. External support (and other visualization
+techniques) are part of your brain.
