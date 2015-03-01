@@ -1,0 +1,22 @@
+* Messaging
+
+** Protocols
+
+Well-defined protocols, designed as a RFC specifications, often
+oriented around brokers or point-to-point protocols (*IM-like*).
+
+*** AMQP
+*** XMPP
+*** MQTT
+
+file:mqtt.org
+
+** Internals
+
+Internal mechanisms, frameworks and guidelines how to build
+distributed systems with messaging capabilities, without any kind of
+broker (*brokerless* communication).
+
+*** ZeroMQ
+
+file:zeromq.org

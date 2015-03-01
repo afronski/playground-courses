@@ -1,0 +1,75 @@
+* MQTT
+
+** Introduction and Features
+
+- Lightweight, binary message protocol.
+  - Transport level.
+    - For slow connections.
+    - For connections with expensive bandwidth.
+  - Broker oriented.
+    - CLIENT <-> BROKER <-> CLIENT
+    - Decouple *PUB* from *SUB*.
+- Use case: *publish / subscribe*.
+- *TCP / IP* based.
+- Simple to implement on client-side.
+- It is not a queuing protocol.
+  - No queues (beside [[Sessions]]).
+- Subject based ([[Topics]]).
+- Multiple [[Quality of Service levels (*QoS*)]].
+
+** Topics
+
+This is a way of routing which client receives what.
+Example: `this\is\topic\a`.
+
+It is an UTF-8 string, case sensitive, any alphanumeric character
+beside '\' is allowed. Each broker has *SYS-topics* which reveals
+internal statistics and information.
+
+Subscription supports *wild cards*:
+
+- '+' - one level: `this\is\topic+`
+- '#' - multiple levels: `this\#`
+- '$' - topic beginning with: `$this`
+
+When designing topics structure:
+
+- Play with sane rules.
+- Clean, short topics.
+- ASCII >> UTF-8
+- Do not subscribe to `#` on the root level.
+
+** Quality of Service levels (*QoS*)
+
+Three levels
+
+- 0 - at most once (*fire and forget*).
+- 1 - at least once (*delivery guarantee*).
+  - Broker acknowledges the message.
+    - *PUBLISH*, *PUBACK*.
+- 2 - exactly once (*strict delivery guarantee*).
+  - Safest and slowest.
+  - Two way flow of acknowledgments.
+    - *PUBLISH*, *PUBREC*, *PUBREL*, *PUBCOMP*.
+
+Messages with *QoS* 1 and 2 are queued in a persistent session span
+(see in [[Sessions]]).
+
+** Sessions
+
+MQTT has a persistent session mechanism, for creating stable
+connection for client's which has worse connectivity capabilities and
+e.g. can very easily reconnect. Persistent sessions are designed to
+overcome such problems.
+
+On the broker side, we need to provide following features:
+
+- Existence of session.
+- All subscriptions should be stored.
+- Messages with *QoS* 1 or 2 unconfirmed by client.
+- New messages with *QoS* 1 or 2.
+
+But client should also store something:
+
+- All messages with *QoS* 1 or 2 unconfirmed by broker.
+- All received messages with *QoS* 2 unconfirmed by broker.

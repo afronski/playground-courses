@@ -1,0 +1,19 @@
+* Start-ups
+
+** Notes from presentations
+
+*** Start-up School 2008, David Heinemeier Hansson
+
+- You want to earn money - set a price!
+  - If people would like to pay you, you will earn.
+- Build a sustainable business.
+  - And plan to build it in the long term, for 20 next years.
+  - Do not plan for *do a thing and sell*.
+- Solve the actual, existing and valid problem.
+- Aim in the low-end, not into Top 500 Fortune companies.
+- Do something better, than the others.
+  - Copying is a good place to start.
+- Be focused, weight your time.
+  - No overtime.
+- Small, iterative steps.
+- Measure everything.

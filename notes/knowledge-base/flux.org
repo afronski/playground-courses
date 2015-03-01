@@ -1,0 +1,40 @@
+* Flux
+
+Facebook's idea and architecture of complex, front-end
+applications. It is build on top of single direction data flow, in
+other words you may say that all directions have only one arrow, in
+one direction.
+
+** Diagram
+
+#+header: :exports results
+#+BEGIN_SRC ditaa :file images/flux.png
++--------+     +------------+          +-------+      +------+
+|{io}    |     |            +--------->| STORE +----->| VIEW |
+| ACTION +---->| DISPATCHER +-----+    +-------+      +------+
++--------+     +------------+     |
+    :                             |    +-------+      +------+
++--------+                        +--->| STORE +----->| VIEW |
+|{io}    |                             +-------+      +--+---+
+| ACTION |                                               :
++---+----+                                               |
+    ^                                                    |
+    |                                                    |
+    +----------------------------------------------------+
+#+END_SRC
+
+** Structure
+
+Multiple views depends on single source of truth - *store*. Whole
+architecture uses DI (*dependency inversion*) mechanism -
+events. Dispatcher prevents cascading, it queues proceeding events, it
+is validating the flow.
+
+It is like *CQRS* for the front-end. Each *store* in flux is a list of
+events, and the actual state is gathered as a application following
+states into one data structure, representing state. It is similar to
+the event sourcing (similarities are even closer in the full stack
+Flux - the message broker acts like a *dispatcher* from this model).
+
+Obviously, the benefit is visible only with huge applications, it is
+not necessary to add overhead to the simple *SPA*.
