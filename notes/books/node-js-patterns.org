@@ -1,0 +1,3 @@
+* Node.js Patterns, Pedro Teixeira
+
+** Module Patterns
