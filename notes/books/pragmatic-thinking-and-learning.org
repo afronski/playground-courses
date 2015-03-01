@@ -826,3 +826,60 @@ You should know where to look, so the searching capabilities and
 structure are crucial. External support (and other visualization
 techniques) are part of your brain.
 * Context
+
+As a first thing, you need to be aware that all bad habits and
+previous attitude to this can be changed, but it requires time. You
+need to be focused and engaged in this process deliberately and fully
+aware. Don't afraid to fail.
+
+Avoid *context-switching* at any cost, there are two values which are
+measured in researches about that topic - *interrupt lag* and
+*resumption lag*. Both of them, summed up, are around 20-30 minutes,
+for single interruption. It means that a significant part of your day
+wasted because of that (20-40% of whole day).
+
+Plan your day and fix your desk, area around you and daily work-flow
+in order to reduce that. Less frequent checking will help in that, do
+not poll email, IM clients minute by minute. Scan your input queues
+(important notion from the *GTD* methodology) once, if something can
+be done in 2 minutes, do it and reduce the queue. Stick to the one
+queue, and one only, reduce jumping between the TODO lists.
+
+*Mask* the necessary interruptions, by introducing *do not disturb*
+signs (IM, room). Asynchronous communication is awesome, because you
+can setup your own pace and tempo for it.
+
+Work spaces and multiple monitors for the rescue - what is out of your
+sight is less distracting for you. Music also can help improving
+focus. Agree on common interruptions mechanism in your office.
+
+Prepare yourself to be interrupted, save the context (paper, TODO
+lists). Do it regularly, save the breadcrumbs which helps afterwards
+resume your context.
+
+Some interruptions are more *context-friendly* than others, e.g.:
+- Making notes.
+- Mindless walk without conversation with others.
+- Marinating (*thinking time*).
+
+* Beyond the expertise
+
+Practice make the permanent. Change is always harder than it
+looks. You have to be patient, develop your habits and work with your
+negative side.
+
+Suggestions, how to do it in the best possible way:
+  - Make a plan, and stick to it.
+  - Inaction is an enemy, not error. Don't afraid of making mistakes.
+  - New habits take time. Be patient.
+  - Belief is real.
+  - Take small, next steps. One bite at a time.
+
+Every single habit and work in that matter will be hard. There is a
+huge *inertia* in your brain.
+
+You are going into the expertise one step at a time, but remember that
+*the professional kiss of death for an expert is to act like one*. In
+the expert's mind there are only few options, in the beginners mind -
+many more. Be always a beginner, think like a child, be *hungry*,
+verify and be *foolish*.
