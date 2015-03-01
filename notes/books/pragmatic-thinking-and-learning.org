@@ -862,6 +862,14 @@ Some interruptions are more *context-friendly* than others, e.g.:
 - Mindless walk without conversation with others.
 - Marinating (*thinking time*).
 
+And one more thing - avoid the *apnea* - really short, shallow or even
+suspension of breathing. It is common when debugging, reading emails
+and so on. It enables the *lizard brain* mode, our flight or fought
+mechanisms, it is also unhealthy and influences our reactions to
+certain situations. Are you nervous? Observe yourself, watch what
+happened in stressful situations and be sure that you are not doing
+something like this.
+
 * Beyond the expertise
 
 Practice make the permanent. Change is always harder than it
