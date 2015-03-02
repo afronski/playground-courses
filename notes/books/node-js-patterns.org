@@ -1,3 +1,26 @@
 * Node.js Patterns, Pedro Teixeira
 
 ** Module Patterns
+
+- CommonJS standard.
+- Difference between `exports.foo` and `module.exports`.
+  - In first case we are extending the `module.exports`
+    object. `module` is an implicit part, however in second case if we
+    would like to override whole object, we cannot avoid that because
+    of JavaScript name resolution.
+- Requiring a module - always remember about './' in the path.
+  - In some cases lack of it will produce an error about `ENOENT`.
+- Module types:
+  - One function (`module.exports = foo;`).
+  - Singleton object.
+    - Very specific example of this is concentrated module, which
+      connects multiple modules into one.
+  - Closure-based class (starting with capital letter).
+  - Prototype-based class.
+  - Facade module.
+    - Grouping similar responsibilities under the single structure.
+- *Browserify*.
+  - Unified dependency mechanism, with bundling for Node.js and
+    Browser.
+
+** Flow Control Patterns
