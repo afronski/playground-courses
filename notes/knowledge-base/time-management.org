@@ -1,0 +1,27 @@
+* Time Management
+
+** Aims
+
+- Measurable
+- Deadline
+- Map aim to planned feature.
+  - After mapping check what is missing.
+
+** How to start?
+
+- How to eat an elephant?
+  - One piece at a time.
+  - Ideally create tasks which lasts 2 hours.
+  - At most - 1 day.
+
+** Calendar
+
+- Do not book your calendar in 100% for each day!
+  - Save your time for rests, breaks and fires.
+
+** Weekly Review
+
+- Always do weekly review.
+  - Review what happened, plan next steps.
+  - You have only 15 hours in a week which you need to assign to
+    tasks. Rest of 25 hours is free, for embracing fires.

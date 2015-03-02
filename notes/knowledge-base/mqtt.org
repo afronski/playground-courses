@@ -73,3 +73,23 @@ But client should also store something:
 
 - All messages with *QoS* 1 or 2 unconfirmed by broker.
 - All received messages with *QoS* 2 unconfirmed by broker.
+
+** Retained Messages
+
+What if client subscribes to the topic and will wait for the next
+messages couple hours, in the dark?
+
+We can avoid that by introducing immediate response, with *last known
+good value* called retained message. It is a normal message with flag
+*retained* set to *true*. Similar to the *sticky topic* at forum.
+
+Retained message can be defined per topic, but if client will
+subscribe to multiple topics via wild cards it will receive all
+retained messages for each. After subscription client will receive
+message only once. Instead of waiting couple hours for the state,
+client can immediately receive last state after connecting.
+
+When client will send the *retained* message, broker will store it and
+*QoS*. Each new message will override the last known state. If you
+want to delete it, you just send the retained message with empty
+payload.
