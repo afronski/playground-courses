@@ -45,8 +45,9 @@
     - `async.waterfall` - sequence of asynchronous operations that
       transforms the result from first one, and passes it to the
       second and so on. Error handling like in `async.series`.
-    - Collections - parallel iteration (`async.each`), with limits
-      (`async.eachLimit`),
+    - Collections
+      - Parallel iteration (`async.each`).
+      - Parallel iteration with limits (`async.eachLimit`).
       - Why use a limit?
         - Avoid overloading the recipient.
         - Avoid overloading heap allocations.
@@ -54,4 +55,21 @@
           (e.g. 10 ms for putting element to the event loop queue
           times 1000 elements in collection and of course -
           iterating is blocking as well).
-- Work Queues.
+    - Work Queues.
+      - Reducing overload of external system.
+      - To perform asynchronous work.
+      - `async.queue`.
+- Besides callbacks Node.js has also the events - `EventEmitter`.
+  - It wraps the state change notification patterns.
+  - Decouples consumers and producers (*internal pub/sub*).
+  - `require('events').EventEmitter` and always use `util.inherits`.
+  - If an error happens, and no one is subscribed on the `error`
+    event, it will be returned to the event loop, which causes
+    `uncaughtException` generation.
+  - Since `EventEmitter` is an internal events mechanism and it
+    involves no I/O operations events delivery is synchronous.
+    - So subscribe on certain events before emitting the first value.
+    - What is even more important, if one of the listeners throws rest
+      of subscribed listeners may not receive the event (it depends on
+      the internal order). That is a consequence of being synchronous
+      in events delivery mechanism.
