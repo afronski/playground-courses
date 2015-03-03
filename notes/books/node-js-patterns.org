@@ -24,3 +24,34 @@
     Browser.
 
 ** Flow Control Patterns
+
+- Asynchronous I/O built with callbacks is hard to compose.
+- Node.js uses callbacks to deal with I/O continuations on lowest
+  level:
+  - One callback (instead of *success* and *error* handler).
+  - Once called (*callback* should be called only once).
+  - Function-last (*callback* is a last argument of I/O operation).
+  - Error-first (*error* is a first argument of callback).
+    - If error occurs, *results* are *undefined*.
+    - If no error happened, *error* is *null* or *undefined*.
+- Orchestration.
+  - `npm install async`.
+  - Examples:
+    - `async.series` - invoke multiple asynchronous calls one after
+      another. Error in one function from a sequence breaks the flow,
+      and invokes the final callback.
+    - `async.parallel` - invoke multiple asynchronous calls
+      concurrently. The first erroneous call will invoke the callback.
+    - `async.waterfall` - sequence of asynchronous operations that
+      transforms the result from first one, and passes it to the
+      second and so on. Error handling like in `async.series`.
+    - Collections - parallel iteration (`async.each`), with limits
+      (`async.eachLimit`),
+      - Why use a limit?
+        - Avoid overloading the recipient.
+        - Avoid overloading heap allocations.
+        - Avoid blocking event loop for a small amount of time
+          (e.g. 10 ms for putting element to the event loop queue
+          times 1000 elements in collection and of course -
+          iterating is blocking as well).
+- Work Queues.
