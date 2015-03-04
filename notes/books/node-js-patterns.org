@@ -73,3 +73,37 @@
       of subscribed listeners may not receive the event (it depends on
       the internal order). That is a consequence of being synchronous
       in events delivery mechanism.
+- Streams as a platform primitive.
+  - Source and targets of data.
+  - `require('stream');`
+  - `objectMode` - mode which handles data which are not a strings or
+    buffers. By default disabled in the prototypes.
+  - Types of streams:
+    - Readable - `EventEmitter` is a special kind of *readable stream*.
+      - `stream.Readable` prototype.
+      - Pull stream - like e.g. drinking straw.
+        - You can achieve it by calling `read()` at your own pace. It
+          is necessary to justify properly the `highWaterMark` option
+          at the beginning.
+      - Push stream - like e.g. water tap.
+        - Standard way of handling streams in that way is to *listen*
+          on data event.
+    - Writable
+      - `stream.Writable` prototype.
+      - You can push data into it via `stream.write(chunk);'.
+    - Transform
+      - `stream.Transform` prototype.
+      - Stream which transforms all chunks that are flowing through.
+  - Streams can be composed with `pipe()`.
+    - `readable.pipe(writable);`
+    - Flow control for free.
+  - Streams polymorphism.
+    - Feature detection (checking in the stream method implementation
+      if certain properties are available and deciding on an action
+      inside stream implementation).
+    - Pipe overloading (each prototype can override the pipe method,
+      and then do their stuff and forward call to the
+      `Stream.prototype.pipe`).
+    - Both mechanisms can be found in *mikeal/request* module.
+
+** Configuration Patterns
