@@ -107,3 +107,17 @@
     - Both mechanisms can be found in *mikeal/request* module.
 
 ** Configuration Patterns
+
+- Singleton configuration module.
+  - Directory or single file with values exported as an object.
+- Environment variables.
+- Cascading configuration.
+  - Module: *konphyg*.
+  - It can be used in each of three flavors, and progressively
+    enhanced when needed.
+- Using *CouchDB* to store and propagate configuration changes.
+  - *CouchDB* is a key-value store where values are arbitrary JSON
+    documents. It uses documents versions, it can be scaled and
+    replicated easily.
+  - It exposed a *REST* *HTTP* interface, with or without
+    authentication so integration with it is pretty straightforward.
