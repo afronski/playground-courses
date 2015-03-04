@@ -121,3 +121,13 @@
     replicated easily.
   - It exposed a *REST* *HTTP* interface, with or without
     authentication so integration with it is pretty straightforward.
+  - By using *follow* module you can achieve easy node synchronization
+    after main repository updates. *Follow* will track changes on the
+    *CouchDB* side and updates its internal singleton configuration
+    module. Also it can emit events, that everyone interested in
+    changes can subscribe as well.
+  - Drawbacks:
+    - Single point of failure, you need to manage your *CouchDB*
+      instance.
+- Propagating configuration changes using Conflict-free Replicated
+  Data Types (*CRDTs*).
