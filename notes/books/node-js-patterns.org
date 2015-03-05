@@ -159,3 +159,9 @@
     - How to stream JSON? Use *json-dulpex-stream* module and object
       mode for streams. Each *new line* will be interpreted as a new
       JSON object which can be properly decoded as a whole.
+  - Remote Emitter pattern.
+    - Module: *duplex-emitter*.
+    - Using `EventEmitter` but remotely, over the network.
+    - Handling re-connections - again *reconnect-net*.
+      - It implements *exponential back-off* algorithm for
+        reconnecting.
