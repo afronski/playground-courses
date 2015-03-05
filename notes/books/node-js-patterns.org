@@ -140,3 +140,22 @@
     overhead in clusters with many nodes).
 
 ** Networking Patterns
+
+- Usage of web frameworks have some benefits and drawbacks.
+  - It is easier to create and start an application.
+  - But it is also easier to build a *monolithic application*.
+  - With Node.js you can easily build distributed applications,
+    separate your concerns and isolate services (which has certain
+    benefits related with structure and scaling), but also you can use
+    web frameworks to get up to speed.
+- Networking Patterns:
+  - Plain sockets.
+    - Just after each `error` event it will appear a `close` event.
+    - All implementations based on handling events does not support
+      any kind of back-pressure *out of the box*. Instead implementing
+      it manually in most cases it is easier to write a custom
+      *Stream* prototype implementation.
+  - Streaming services.
+    - How to stream JSON? Use *json-dulpex-stream* module and object
+      mode for streams. Each *new line* will be interpreted as a new
+      JSON object which can be properly decoded as a whole.
