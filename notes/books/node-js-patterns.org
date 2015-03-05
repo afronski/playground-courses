@@ -131,3 +131,12 @@
       instance.
 - Propagating configuration changes using Conflict-free Replicated
   Data Types (*CRDTs*).
+  - Has all benefits of previous solution, but eliminates *single
+    point of failure*. It is based on proper data structures (*CRDT*)
+    and gossiping between nodes about configuration state.
+  - Modules: *dominictarr/crdt*, *reconnect-net*.
+    - Secured from *reconnect storm* after node or network failure.
+  - Topology: plain ring, full mesh (this introduces additional
+    overhead in clusters with many nodes).
+
+** Networking Patterns
