@@ -288,3 +288,7 @@
       - Modules: *amqplib*.
       - Standard approach, nothing new (*ACK* a message when
         consumption ready and succeeded).
+
+** Database Patterns
+
+- *TODO*
