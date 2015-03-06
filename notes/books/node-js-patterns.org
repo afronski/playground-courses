@@ -165,3 +165,64 @@
     - Handling re-connections - again *reconnect-net*.
       - It implements *exponential back-off* algorithm for
         reconnecting.
+  - Multiplexing streams.
+    - Module: *mux-demux*.
+    - on the server-side, multiplex multiple streams into one.
+    - on the client-side, demultiplex one stream into many.
+    - It allows sending multiple types of events via one connection.
+  - RPC (*Remote Procedure Call*).
+    - Module: *dnode*.
+    - If you already have streaming in your server, you can multiplex
+      as well one of the channels related with *RPC*.
+  - Encrypting the communication.
+    - Creating *CA* (Certification Authority) with which we will
+      create and sign further client and server certificates:
+      - Private key:
+        - `openssl genrsa -out private-key.pem 2048`
+      - Public certificate signed with previous private key:
+        - `openssl req -x509 -new -nodes -key private-key.pem -days 1024
+                       -out certificate.pem
+                       -subj "/C=PL/ST=Silesia/L=Gliwice/O=Me/CN=abcd.com"`
+    - Server side certificate:
+      - New private key: `openssl genrsa -out private-key.pem 2048`
+      - *CSR* (Certificate Signing Request):
+        - `openssl req -new -key private-key.pem -out csr.pem`
+      - Self-signing the new server certificate with previously
+        created CA (valid 500 next days):
+        - `openssl x509 -req -in csr.pem
+                        -CA ../certificate.pem -CAkey ../private-key.pem
+                        -CAcreateserial -out certificate.pem -days 500`
+    - Node.js `tls.createServer(options)` will emit two events
+      `connect` and `secureConnection`. The first one *DOES NOT*
+      provide an encrypted socket.
+      - Option `rejectUnauthorized` set to `true` verifies the server
+        authority from the client's perspective. In order to do that
+        you need to supply the *CA* public certificate.
+    - You can easily authenticate the client from the server points of
+      view by setting up new certificate:
+      - New private key for client:
+        - `openssl genrsa -out private-key.pem 2048`
+      - New *CSR* for client:
+        - `openssl req -new -key private-key.pem -out csr.pem`
+      - Public certificate signed with previous private key:
+        - `openssl x509 -req -in csr.pem -CA ../root/certificate.pem
+                        -CAkey ../root/private-key.pem
+                        -CAcreateserial -out certificate.pem -days 500`
+      - Then you need to add `key` and `cert` to your client and
+        enforce verification of client's certificate on server side
+        by:
+        - Option `requestCert` set to `true`.
+        - Option `rejectUnauthorized` set to `true` (which verifies
+          the authenticity of the client's certificate).
+      - Both server and client should share the same *CA*.
+      - Once signed, certificate is valid forever - in order
+        invalidate that you need to keep a white-list around the
+        server and verify *CN* after each new connection to the
+        server:
+        - `connection.getPeerCertificate().subject.CN`
+        - Instead, you can use *CRL* (Certificates Revocation List) and
+          provide it to the server.
+        - Remember that both solutions requires a server's restart,
+          you can implement *gossiping* protocol which updates all
+          nodes when something change automatically, as stated in
+          [[Configuration Patterns]].
