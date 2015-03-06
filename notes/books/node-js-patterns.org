@@ -226,3 +226,7 @@
           you can implement *gossiping* protocol which updates all
           nodes when something change automatically, as stated in
           [[Configuration Patterns]].
+
+** Work Queue Patterns
+
+- *TODO*
