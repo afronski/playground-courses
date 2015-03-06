@@ -229,4 +229,28 @@
 
 ** Work Queue Patterns
 
-- *TODO*
+- In most use cases related with web applications, queues are
+  off-loading main *HTTP* request-response cycle. But this is not the
+  only case.
+  - The main case in all approaches is to decouple work *producer*
+    from *consumers*. You can distribute your actions, load through
+    time and space (nodes).
+- Main features of work queues:
+  - Isolation (faults and 3rd party service providers from the
+    application logic).
+  - Retry (idempotent actions can be retried without any problem, also
+    you are decoupling the main logic from your retries).
+    - Even non-idempotent actions can benefit from being off-loaded to
+      the work queue - by identifying them uniquely you can decide
+      about retrying such operation or not.
+  - Scaling (decoupling increases the ability to scale components
+    individually, also such infrastructure can handle load peaks).
+  - Survive crashes, deployments, reboots.
+- Use Cases:
+  - *In-memory Work Queue*.
+    - Modules: *async* (`async.queue`) and *backoff*.
+    - Introducing work concurrency at level 1 and implementing
+      back-off algorithm for reconnection you can easily implement
+      your own in-memory queue implementation.
+    - Remember about `queue.drain` event when disconnecting.
+  - *Persisted Local Work Queue*.
