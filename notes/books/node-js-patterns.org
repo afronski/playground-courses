@@ -382,3 +382,24 @@
     need to create an *indexed view* (it won't let you perform a slow
     query).
     - Views are *map-reduce* transformations written in JavaScript.
+    - Each view is represented with something called *design doc*.
+    - Before using a view, you need to create it by putting the
+      prepared design document (JavaScript file) into proper REST API
+      endpoint.
+    - Beware: views are *materialized views* it means that they are
+      created upfront. On big data sets each view change can freeze
+      your database, it may become unresponsive.
+    - Paginating views - do not specify *limit* and *offset* (CouchDB
+      stores internally records as *B-Trees* so by specifying
+      pagination like this it needs to scan skipped elements).
+      - Instead you should specify the *limit* and the *startKey* with
+        which it should starts looking.
+    - *Changes feed*.
+      - We already used that mechanism inside the configuration
+        module, described in [[Configuration Patterns]].
+        - Modules: *follow*.
+      - How to store information that certain change was already applied?
+        - You can store it inside the docs, or use the *database
+          sequences* mechanism to store it.
+        - Remember that sequences for multiple workers have to be
+          synchronized and agreed across all workers.
