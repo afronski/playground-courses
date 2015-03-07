@@ -23,6 +23,15 @@ one direction.
     +----------------------------------------------------+
 #+END_SRC
 
+#+header: :exports results
+#+BEGIN_SRC plantuml :file images/uml.png
+  USER -> ACTIONS
+  ACTIONS -> DISPATCHER : (an event scheduled to be dispatched)
+  DISPATCHER ->> STORE : (dispatching an event to proper storage)
+  STORE -> VIEW : (drawing results)
+  VIEW ->> ACTIONS : (invokes an action in result)
+#+END_SRC
+
 ** Structure
 
 Multiple views depends on single source of truth - *store*. Whole

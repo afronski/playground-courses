@@ -1,0 +1,2 @@
+# Ignoring generated HTML exports from org-mode:
+/notes/knowledge-base/*.html
