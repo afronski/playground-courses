@@ -291,4 +291,16 @@
 
 ** Database Patterns
 
-- *TODO*
+- LevelDB - small, key-value, embedded database.
+  - `put`, `get`, `delete`, atomic batch operations.
+  - Multiple encoding types for keys and values.
+  - Streaming and using ranges or limits.
+  - Partitioning keys by hand (and using `\xFF` when searching via
+    range) or using module *level-sublevel* to do it on the logical
+    level.
+    - *level-sublevel* lets you update with batch operations
+      atomically on many levels.
+    - This modules has also hooks for e.g. invoked before each
+      operation on specific sub-level will start.
+- Redis - Key-value, in-memory and persistent database.
+- CouchDB - Key-value, distributed with conflict resolution.
