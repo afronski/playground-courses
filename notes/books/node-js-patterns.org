@@ -354,3 +354,31 @@
 *** CouchDB
 
 - *CouchDB* - Key-value, distributed storage with conflict resolution.
+  - Each value is a JSON document, each has revision and unique
+    identifier. It has fully RESTful API to communicate with it.
+    - You can enforce your own identifier, if not - it will chosen for
+      you by database.
+  - Module: *nano* (it provides really small, but for most cases
+    complete wrapper for REST API).
+    - Remember to tune up the `http.globalAgent.maxSockets` value.
+  - Structure - documents are stored with a key, inside a database.
+    - If we try to store a document with the same ID, but passing
+      different revision number, we will receive `409` error and
+      client need to resolve conflict on its side.
+  - Even if the there is no enforced schema, you can prepare one and
+    you can enforce it where you want, but on the client-side.
+    - Module: *joi*.
+    - Now you have got problems with different error
+      representations. If you consider to server your API over HTTP
+      anyway, please look at this module, which unifies the errors (by
+      wrapping them, not replacing) under the common representation
+      close to the HTTP.
+      - Module: *boom*.
+  - Doing conflict resolution on the client-side can be tricky. There
+    are many different scenarios (full override, partial override,
+    restricting some fields, merging two documents).
+    - Module: *object-versions*.
+  - In CouchDB if you want to query something different than ID, you
+    need to create an *indexed view* (it won't let you perform a slow
+    query).
+    - Views are *map-reduce* transformations written in JavaScript.
