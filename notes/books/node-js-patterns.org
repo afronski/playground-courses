@@ -291,7 +291,9 @@
 
 ** Database Patterns
 
-- LevelDB - small, key-value, embedded database.
+*** LevelDB
+
+- *LevelDB* - small, key-value, embedded database.
   - `put`, `get`, `delete`, atomic batch operations.
   - Multiple encoding types for keys and values.
   - Streaming and using ranges or limits.
@@ -302,5 +304,53 @@
       atomically on many levels.
     - This modules has also hooks for e.g. invoked before each
       operation on specific sub-level will start.
-- Redis - Key-value, in-memory and persistent database.
-- CouchDB - Key-value, distributed with conflict resolution.
+
+*** Redis
+
+- *Redis* - Key-value, in-memory and persistent database.
+  - It has more than strings stored as a value e.g. sets, lists, TTL
+    for keys etc.
+  - `redis.multi()` is an approach to do transactions. *multi* starts
+    a transaction, *exec* ends it.
+  - *multi* does not provide atomic operations, because classic
+    *get-set* is still vulnerable to the multiple clients updates.
+    - In order to do that, you have to do *multi* with *watch*.
+    - You are starting to observe a key by *watch*, invokes *get*, in
+      the callback you should start *multi* with a *set*. If any
+      conflict will be detected you can react properly. Obviously you
+      should clean-up after by doing *unwatch*.
+    - Another way to provide transactions is to use *Lua scripts* and
+      invoke them in the database.
+      - `redis.eval()` for the rescue. If you would like to cache, use
+        `redis.evalsha()` and send this script hashed with use of
+        *SHA1*. But remember - in order to use hash, you need to first
+        evaluate script once (it should be in database memory).
+  - Use Cases:
+    - Using counters with *TTL* in order to implement API usage
+      limits. You can use many atomic operations on integers inside
+      the commands list e.g. *INCR*, *DECR*, *INCRBY* and so on.
+    - You can store under single key a *hash* (dictionary).
+    - You can store under single key a *list*.
+      - On top of it you can implement of course lists, but also
+        stacks and queues (there are commands for doing push and pops
+        from both sides).
+      - It has even more complicated commands like *BRPOPLPUSH* which
+        pops and element from one list and atomically pushes it to
+        another.
+    - Redis also has *sets* - storage for unsorted, multiple
+      values. By definition it will not hold the repeated values.
+      - This data type has quick membership and intersection tests.
+      - What if you would like to have sorted sets? Use *Z-prefixed*
+        commands on sets, which creates and uses standard sets, but
+        each element has also a *score* (natural integer) which is a
+        sorting key.
+  - Besides data types, Redis has also *publish-subscribe* mechanism,
+    which can be use in e.g. inter-process communication
+    - You can implement on top of that *distributed EventEmitter* for
+      Node.js.
+    - It is not a persistent queue! Each subscriber will receive only
+      messages that were send after particular subscription happened.
+
+*** CouchDB
+
+- *CouchDB* - Key-value, distributed storage with conflict resolution.
