@@ -9,3 +9,87 @@
   - Internal (Employees, Stakeholders, Board, Investors).
 - Presentation is a communication tool for these people from inside
   and outside of company.
+
+*** Know Your Tools
+
+- Too many words on slide.
+  - Listening and Reading cannot be combined in a successful way.
+  - Listening and Visuals can be successfully combined.
+  - You should choose what activity should be appropriate for you
+    document, and if it is more appropriate to have many words on the
+    slides and reading with analysis and understanding is more
+    crucial, maybe you should prepare document instead.
+    - If you planned presentation, cancel it and schedule an analysis
+      meeting and send aforementioned document before the meeting.
+  - More than 75 words on a slide -> It is a document!
+  - More than 50 words on a slide -> It is a prompter!
+    - Often a way of presenting if you are not properly prepared.
+  - Visuals FTW!
+    - But preparing them requires bigger amount of time.
+    - Simplicity! *Less is more*.
+    - It should amplify the transfer, not clutter it.
+
+** Presentation as a Ecosystem
+
+- Three legs: Transfer, Visuals, Implementation.
+  - Narration is the key! You should not only focus on the knowledge,
+    but also tell a story.
+- *Transfer*
+  - Audience
+  - Structure and Engagement
+  - Scenario, Story
+  - Adaptation
+  - Question the authorities and *status quo*.
+- *Visuals*
+  - Thinking in images
+  - Diagrams, Hierarchies
+  - *Less is more*
+  - Choose palette, backgrounds, fonts
+  - Plan the dynamics, plot, flow and aims
+  - Check how the eyes are flowing through the slides
+  - Branding
+  - Adjust visuals
+- *Implementation*
+  - Practice make permanent! Do it often.
+  - Use paper stuff when necessary
+  - Vocals, Voice and Intensity
+  - Eye contacts and Gestures
+
+** Good presentation requires attention, focus and time
+
+- Time spent on preparations should be proportional to the stake.
+  - 6-20 hours spent on researches, digging through internet and
+    sources.
+  - 1 hour spent on preparing audience expectations map.
+  - 2 hours spent on saving ideas (ideally on small cards).
+  - 1 hour spent on cleaning up and ordering the ideas.
+  - 1 hour spent on critique and distilling the feedback from
+    coworkers.
+  - 2 hours spent on planning plot and scenario.
+  - 20 - 60 hours spent on preparing slides and graphics.
+  - 3 hours spent on practicing and training the presentation flow,
+    voice levels, narration (trials).
+- Summary: *36 - 90 hours*.
+
+** Managing Audience Expectations
+
+- Who they are?
+  - Infer their fears, doubts.
+  - Propose solutions and exact description how to avoid these
+    feelings.
+- Who you want to be?
+  - Hero? Mentor? Fan?
+  - You are for the audience, not the other way.
+  - Audience is looking not for you, but for the results and knowledge
+    that you can deliver.
+- Audience Analysis:
+  - Types of people, personalities.
+  - Why they come? Benefits? Free choice or enforced?
+  - Fears and Doubts.
+  - Offer a *solution*. How you can help them?
+  - What they should do? Offer an *exact plan*.
+  - Why and how they can resist the change?
+  - The most effective way of reaching them.
+- Prepare personas, just before slides and graphic content
+  preparation. Use it as a slide inside your presentation as a cheat
+  sheet, when preparation is finished - remove it.
