@@ -93,3 +93,23 @@ When client will send the *retained* message, broker will store it and
 *QoS*. Each new message will override the last known state. If you
 want to delete it, you just send the retained message with empty
 payload.
+** Last Will and Testament
+
+This is a feature which helps detect and inform other subscribers that
+client abruptly closed connection. When connecting to the broker,
+client can defined *Last Will and Testament* message (LWT), which will
+be send this message to the subscribers of this topic, when it will
+terminate unsuccessfully. Only when client successfully send
+*DISCONNECT* message, *LWT* will be discarded. You can specify *LWT*
+values with *CONNECT* message (topic, QoS and message).
+
+When broker will send *LWT*:
+
+- An I/O error or network failure is detected by the server.
+- The client fails to communicate within the *Keep Alive* time.
+- The client closes the network connection without sending a
+  *DISCONNECT* packet first.
+- The server closes the network connection because of a protocol
+  error.
+
+** Keep Alive
