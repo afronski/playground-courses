@@ -217,3 +217,33 @@ category CxD.
 
 Composition is associative and it has an identity, so it is a category
 as well.
+
+*** Function Types
+
+Function type *a->b* is more than simple type: it's a set of morphisms
+between objects *a* and *b*. A set of morphisms between two objects in
+any category is called a *hom-set*. It just so happens that in the
+category *Set* every *hom-set* is itself an object in the same
+category - because it is, after all, a set.
+
+It's the self-referential nature of the category *Set* that makes
+function types special. But there is a way, at least in some
+categories, to construct objects that represent *hom-sets*. Such objects
+are called *internal hom-sets*.
+
+Function application (or evaluation) connects three types (argument
+type, function type and result type) in a set.
+
+A function object from *a* to *b* is an object *a->b* together with
+the morphism *eval :: ((a->b) x a) -> b* such that for any other
+object *z* with a morphism:
+
+  *g :: z x a -> b*
+
+There is a unique morphism.
+
+  *h :: z -> (a->b)*
+
+That factors g through eval:
+
+  *g = eval . (h x id)*
