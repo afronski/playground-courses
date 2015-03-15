@@ -1,0 +1,34 @@
+* Riak
+
+Riak is an open-source, distributed key/value database for high
+availability, fault-tolerance, and near-linear scalability. In short,
+Riak has remarkably high uptime and grows with you.
+
+** Basic Concepts
+
+Riak has flat structure - keys have to be unique across *bucket*,
+database can have multiple buckets, with unique names across
+database. Under certain key you are storing value (which can be a
+*JSON*, blob etc.).
+
+Distributing data across several nodes is how Riak is able to remain
+highly available, tolerating outages and network partitions.
+
+*** Replication
+
+Replication is the act of duplicating data across multiple
+servers. Riak replicates by default.
+
+*** Partition
+
+A partition is how we divide a set of keys onto separate physical
+servers. Rather than duplicate values, we pick one server to
+exclusively host a range of keys, and the other servers to host
+remaining non-overlapping ranges.
+
+** Ring
+
+Riak follows the consistent hashing technique, that conceptually maps
+objects to the edge of a circle or ring. It has the benefit of
+reducing the amount of data that must be rebalanced when a node goes
+down.
