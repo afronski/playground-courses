@@ -4,7 +4,7 @@ Riak is an open-source, distributed key/value database for high
 availability, fault-tolerance, and near-linear scalability. In short,
 Riak has remarkably high uptime and grows with you.
 
-** Basic Concepts
+** Concepts
 
 Riak has flat structure - keys have to be unique across *bucket*,
 database can have multiple buckets, with unique names across
@@ -26,9 +26,52 @@ servers. Rather than duplicate values, we pick one server to
 exclusively host a range of keys, and the other servers to host
 remaining non-overlapping ranges.
 
-** Ring
+*** Ring
 
 Riak follows the consistent hashing technique, that conceptually maps
 objects to the edge of a circle or ring. It has the benefit of
 reducing the amount of data that must be rebalanced when a node goes
 down.
+
+Default amount of nodes in Riak cluster is 5, but *hash ring* is
+divided to 64 partitions. It means that each physical node can have
+multiple partitions, which Riak calls *vnode* (virtual node).
+
+At first it calculates *SHA-1* of key value, then save it to the
+corresponding physical node that contains that partition, and
+replicate to the selected amount of other nodes (*N* is by default set
+to 3 in 5 nodes cluster). It selects nearest *vnodes* because they are
+located on different physical nodes. That is the key of *Riak*
+high-availability.
+
+**** N/R/W
+
+In order to tune all possible models and parameters (and still be
+compliant with CAP Theorem), Riak uses three values *N/R/W*, where *N*
+means into how many *vnode* partitions value should be replicated. *R*
+means how many replicas should be read and agreed about last value
+(based on *vector clocks*) before we return result of the query. *W*
+means how many replicas have to be successfully written before we
+return to the user when saving new object. It means that you can tune
+how much *A* or *C* you have from CAP theorem.
+
+*** Vector Clocks
+
+It is a way of tracking modifications, where each instance beside
+value stores the amount of modifications performed by one node. So it
+means that if two values diverges from one vector clock, conflict
+needs to be solved manually, and *vector clock* should be updated in
+order to mirror the actual merge.
+
+*** BASE vs. ACID
+
+Relational Databases are sharing ACID features (*Atomic*,
+*Consistent*, *Isolated*, *Durable*). But it can be applied only to
+the single server, whole cluster cannot be ACID, because it violates
+the CAP theorem, which is applicable as well to the cluster of
+relational databases.
+
+*NoSQL* databases and Riak are sharing BASE features instead
+ (*basically available*, *soft state*, *eventually
+ consistent*). Thanks to that whole clusters can have certain features
+ and still would not violate CAP theorem.
