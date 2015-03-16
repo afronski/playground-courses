@@ -113,3 +113,46 @@ When broker will send *LWT*:
   error.
 
 ** Keep Alive
+
+It can happen that one of the communicating parties gets out of sync
+with the other, often due to a crash of one side or because of
+transmission errors. This state is called a *half-open
+connection*. The important point is that the still functioning end is
+not notified about the failure of the other side and is still trying
+to send messages and wait for acknowledgments.
+
+It amplifies on high-latency networks like mobile or satellite
+links. It’s quite possible for a TCP session to *black hole*, i.e. it
+appears to be open still, but in fact is just dumping anything you
+write to it onto the floor.
+
+The *keep alive* functionality assures that the connection is still
+open and both broker and client are connected to one
+another. Therefore the client specifies a time interval in seconds and
+communicates it to the broker during the establishment of the
+connection. The interval is the longest possible period of time, which
+broker and client can endure without sending a message.
+
+It is a client responsibility to be sure that connection is alive. In
+the absence of sending any other control packets in that time
+interval, the client *must* send a *PINGREQ* packet. It will receive
+*PINGRESP* as a response to that message. Both packets does not have
+any payload or additional meta data.
+
+If broker will not receive any *PINGREQ* packet during that interval
+it will close the connection and will use *last will and testament*
+messages.
+
+The maximum keep alive is 18h 12min 15 sec. If the keep alive interval
+is set to 0, the keep alive mechanism is deactivated.
+
+*** Client Take-Over
+
+A disconnected client will most likely try to connect again. It could
+be the case that the broker still has an *half-open connection* for the
+same client. In this scenario the *MQTT* will perform a so-called *client
+take-over*. The broker will close the previous connection to the same
+client (determined by the same client identifier) and establishes the
+connection with the newly connected client. This behavior makes sure
+that half-open connection won’t stand in the way of a new connection
+establishment of the same client.
