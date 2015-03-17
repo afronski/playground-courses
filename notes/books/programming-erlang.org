@@ -1,3 +1,23 @@
 * Programming Erlang, 2nd Edition (Joe Armstrong)
 
 ** Part I
+
+*** Concurrency =/= Parallelism
+
+*Concurrency* is a imitation of doing multiple things simultaneously.
+You can do stuff concurrently having just one physical processor - by
+time sharing.
+
+*Parallelism* is a feature of doing multiple things truly
+simultaneously, but it requires to do them on multiple execution units
+e.g. multiple physical cores or processors
+
+** Part II
+
+*** Erlang Shell
+
+- Shortcuts are the same as the default keys in Emacs (editing mode).
+- Quit? Double *CTRL-C*, *q().*, *init:stop()* or *halt*.
+
+*** Syntax and Basic Types
+*** Basic Concepts and Structures
