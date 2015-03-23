@@ -156,3 +156,10 @@ client (determined by the same client identifier) and establishes the
 connection with the newly connected client. This behavior makes sure
 that half-open connection won’t stand in the way of a new connection
 establishment of the same client.
+
+** MQTT over Web Sockets
+
+Until it won't be possible to open *raw socket* from the browser
+directly (http://www.w3.org/TR/raw-sockets/) we need to wrap MQTT
+message into WebSocket frames. Every single feature of MQTT can be
+simulated with use of WebSockets transport.
