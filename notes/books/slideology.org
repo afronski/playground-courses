@@ -122,3 +122,13 @@
   not on the required level.
 
 ** Diagrams
+
+- Types:
+  - Abstract - sequential, structural, sets, directional.
+    - Linear, cyclic, trees, arrays, layers etc.
+  - Concrete - data visualization, spatial, imagery.
+    - Comparison, trends, 3D, 2D, flow, influence etc.
+    - Visualizations and signs.
+- *One image is worth a thousand words*.
+
+** Data presentations
