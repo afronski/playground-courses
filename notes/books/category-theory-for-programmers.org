@@ -247,3 +247,29 @@ There is a unique morphism.
 That factors g through eval:
 
   *g = eval . (h x id)*
+
+*** Natural Transformations
+
+We talked about functors as mappings between categories that preserve
+their structure. A functor *embeds* one category in another. It may
+collapse multiple things into one, but it never breaks
+connections. One way of thinking about it is that with a functor we
+are modeling one category inside another. The source category serves
+as a model, a blueprint, for some structure that’s part of the target
+category.
+
+A natural transformation is a selection of morphisms: for every object
+`a`, it picks one morphism from `F a` to `G a`. If we call the natural
+transformation `alfa`, this morphism is called the component of `alfa`
+at `a`, or `alfa_a`.
+
+  `alfa_a :: F a -> G a`
+
+In Haskell, a polymorphic function must be defined uniformly for all
+types. One formula must work across all types. This is called
+*parametric polymorphism*.
+
+Functors may be looked upon as objects in the functor category. As
+such, they become sources and targets of morphisms: *natural
+transformations*. A natural transformation is a special type of
+polymorphic function.
