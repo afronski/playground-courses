@@ -273,3 +273,24 @@ Functors may be looked upon as objects in the functor category. As
 such, they become sources and targets of morphisms: *natural
 transformations*. A natural transformation is a special type of
 polymorphic function.
+*** Category Theory and Declarative Programming
+
+Difference between declarative and imperative composition. First looks
+like this:
+
+`h = g . f`
+
+Second:
+
+`h x = let y = f x in g y`
+
+Imperative version is a sequence of actions, declarative how to
+compose things, and language / compiler etc. can execute them lazily.
+
+In other words you can say that declarative programming can be
+deferred in time, any optimization related with time or laziness can
+be applied to it. It is harder to do it in imperative programming,
+because of way how the parts are composed / combined.
+
+And as it comes with physical duality, category theory encourages a
+global approach and therefore supports declarative programming.
