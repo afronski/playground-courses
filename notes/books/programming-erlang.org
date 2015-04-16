@@ -21,3 +21,20 @@ e.g. multiple physical cores or processors
 
 *** Syntax and Basic Types
 *** Basic Concepts and Structures
+*** Rest of Sequential Erlang
+
+**** Dynamic Code Reloading
+
+- At most two versions of a module can run at any one time.
+  - Old version and new version, code which runs the oldest version
+    will be killed. It works like a *shift register* - the last part
+    is thrown away.
+  - Fully qualified calls (`Mod:func(Arg1, ... , ArgN)`) will always
+    use the newest version. Implicit calls internal to the module will
+    use older version, until some execution flow will not call that
+    function in a fully qualified way.
+
+**** Preprocessor
+
+- You can save output of preprocessor's work by command:
+  - `erlc -P some_module.erl`
