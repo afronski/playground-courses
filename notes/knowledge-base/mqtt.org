@@ -163,3 +163,19 @@ Until it won't be possible to open *raw socket* from the browser
 directly (http://www.w3.org/TR/raw-sockets/) we need to wrap MQTT
 message into WebSocket frames. Every single feature of MQTT can be
 simulated with use of WebSockets transport.
+
+** Security
+
+*** Authentication
+
+Authentication is part of the transport and application level security
+in MQTT. On the transport level TLS can guarantee authentication of
+the client to the server using client certificates and of the server
+to the client validating the server certificate. On the application
+level the MQTT protocol provides username and password for
+authentication.
+
+Message `CONNECT` contains username and password headers, you will
+receive with `CONNACK` an error code if credentials are not passed or
+invalid. The only way to guarantee a completely secure transmission of
+username and password is to use transport encryption.
