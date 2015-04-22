@@ -159,7 +159,13 @@
         you can provide system messages support inside your loop.
         - [[http://www.erlang.org/doc/design_principles/spec_proc.html][More details]]
     - Why they're 2 application master per application?
-      - ???
+      - There are not 2 masters, but a different process structure
+        represented [[https://github.com/erlang/otp/blob/maint/lib/kernel/src/application_master.erl#L83][here]]. Mostly it is related with a synchronous
+        `application:start/2`, application master which is a *group
+        leader* and using I/O during the start phase. In order to
+        avoid deadlocks there is a different, intermediate "invisible"
+        process which handles the starting phase, which is linked with
+        *application master*.
     - Should we test applications and supervisors? Is it practical?
       - It should be pragmatic, you shouldn't overdo and test in
         isolation you applications or supervisors, because it is not
