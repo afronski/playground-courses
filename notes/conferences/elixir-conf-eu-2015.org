@@ -1,0 +1,170 @@
+* Elixir Conf EU - 2015
+
+** Training - OTP and Elixir (22.04.2015)
+
+- At a time that *Ericsson* developed *Erlang* there were notion of
+  design patterns.
+  - Expertise knowledge needed for reading documentation.
+  - Elixir brings tooling and fixed conventions, which is good.
+- Features of *telecom systems* are present in today web applications,
+  e.g. WhatsApp is scaling to 1M per box, peaks 3M per box.
+  - Interesting: hot code swap is not so important today as it is was
+    in the past regarding production systems, hardware and
+    infrastructure is cheaper and easier to manage.
+    - But in development mode is an awesome thing, it shortens the
+      feedback loop.
+- *OTP* - Bigger picture, system design principles.
+  - *BOS* is a basic operating system, built-in OTP.
+  - One, standard way to do a thing, e.g. applications, releases.
+  - On the top we have *release*, which is:
+    - *ERTS* (Erlang Run-Time System) built-in.
+    - A set of *OTP* applications that work together.
+    - Standardized way of starting, stopping and managing
+      applications.
+    - It is an downgrade / upgrade unit.
+  - A *release* consists of *applications*, which is:
+    - Logical unit of processes and modules grouped together to
+      perform a given task.
+    - We have two types of processes:
+      - *Supervisors* which supervises other processes (workers or
+        supervisors) which are trapping other exit signals.
+        - Supervisor shouldn't do meaningful work, even the
+          initialization should be moved to the workers.
+        - Only the first start state will be applied and passed to the
+          children, supervisor itself does not have any callback which
+          is executed on each children restart.
+      - *Workers* which does meaningful work and exit (abnormally or
+        normally).
+  - All patterns are applied by *behaviors*, formalization of design
+    pattern.
+    - Often `Module:start/1` is called in different context and spawns
+      new process.
+    - Behavior splits specific and generic elements, specific will be
+      implemented by end user. Less code to develop, less bug, better
+      tests, free built-in features, but it affects performance and
+      has steep learning curve.
+  - *Elixir* its own behavior's implementation of:
+    - GenServer
+    - GenEvent
+    - Supervisor
+  - In all cases you are receiving the "sensible" defaults thanks to the
+    meta-programming. It is a problem "implicit" vs. "explicit".
+      - Specific details:
+        - `start_link` implementation is synchronous and atomic.
+        - Try to avoid spending too much time in `init/1`. Everyone
+          will wait on your `init/1`, when `start_link` functions are
+          executing. It is a synchronous call, so maybe boot sequence
+          can be your critical section in terms of performance.
+        - Remember about `start_link` also in the context of clean
+          termination, not only escalating erroneous case.
+        - You can do multiple `handle_call` in parallel, by spawning
+          background job and referring (using reference) to the request
+          from that. On the client side it will look like a blocking call,
+          but *GenServer* can handle rest synchronous calls either way.
+        - You can register your behavior globally (for whole cluster),
+          by passing `{:global, name}` to the options.
+        - For *Supervisor* we have similar semantics for
+          `start_link`. It is synchronous and atomic.
+          - In the `Mod:init/1` we return supervisor specification. It
+            consists of:
+            - Supervision strategy - `:one_for_one`, `:one_for_all`,
+              `:rest_for_one` (left to right direction, order in the
+              children list matter, latter elements are older and
+              dependent on the earlier) and `:simple_one_for_one`
+              (which is the same as `:one_for_one`, but all children
+              shares the way of starting, they are same type and
+              amount of them is dynamic, lots of them).
+            - Maximum number of restarts and maximum time for that
+              restarts. If the maximum amount of restarts in that time
+              is hit, supervisor will be terminated. Crashes propagate
+              among supervisors.
+            - Children specification - Name, Start function (*MFA*
+              triple), Restart type (`:permanent`, `:transient` or
+              `:temporary`), shutdown time, process type, modules
+              (list of modules for release handlers, necessary for hot
+              code swap).
+        - Application Controller manages the Application Master (each
+          application has two processes for master), which contains
+          application supervision trees.
+          - Application master will kick in the top level supervisors.
+        - Applications can be distributed, you can define main node,
+          and its fail-over (when master fails) or takeover nodes
+          (when master returns after a fail), in the Erlang
+          cluster. It will not preserve state, but you will receive
+          information if it is takeover of fail-over.
+  - Distributed Erlang and Elixir.
+    - `iex --sname foo` - `sname` here means *short name*.
+    - `iex --name foo` - `name` here means *full name* (it means that
+      host is a *FQDN* (Fully Qualified Domain Name) and uses *DNS*).
+      - Then you can spawn processes, send messages across the cluster.
+    - Cookies are not the security mechanism, more rather a logical
+      partitioning of the cluster.
+      - If there is no cookie passed in command line, it will be
+        generated for you and stored in the `~/.erlang.cookie`.
+    - You are passing explicitly node name or use `:global`
+      registered names, which have to be unique across cluster.
+    - Technically it is a full mesh of *TCP/IP*, explicitly setup by
+      the run-time. It will be build with first call between groups
+      of nodes. You can hide node from the cluster perspective, it
+      is not a part of cluster, only for doing an observations.
+      - Biggest *Erlang* cluster consists of 70 nodes, and was built
+        for *DemonWare* for *Call of Duty* messaging.
+      - *EPMD* (Erlang Port Mapper Daemon, by default 4369) is
+        responsible for opening and managing ports for *TCP/IP*
+        connections.
+  - Some of naming conventions are nice to follow e.g. naming start
+    methods after `GenServer.start_link/3`.
+    - Tools for enforcing naming conventions - it may be done by
+      `inaka/elvis` (*CTA*: check that).
+    - Not following the conventions can be painful e.g. I've spent 15
+      minutes investigating why my supervision tree was not starting,
+      and I found out that I forgot implement
+      `AbacusServer.start_link/0` in my module. Explicitness is not
+      bad, *Elixir* hides many things, but decrease also your
+      awareness.
+  - You can apply `timeout` for your `handle_*` callbacks, and after
+    no message will hit mailbox during that timeout process will
+    receive `handle_info`. But you need to encode additional
+    information from where it comes.
+  - *BIF* (Built-In Functions, supported by *Ericsson*) and *NIF*
+    (Native Implementation Functions, API managed by *Ericsson* but
+    you are writing the C code). But by using *NIF* you can mess the
+    *Erlang* scheduler (because if your *NIF* took more reductions
+    than claimed it will starve other processes, each equal priority
+    process has constant amount of reductions per round).
+  - *Ports* are external OS processes which are treated as an *Erlang*
+    process. It can be a part of the supervision tree etc.
+  - Release management in *Elixir* - use `exrm` tool. But it is an
+    additional dependency.
+  - Tools:
+    - Wombat OAM can check overall health of the *Erlang* system with
+      a specific interval (e.g. invoking `erlang:process_info/1` for each
+      process).
+    - Also amazing tool from Fred Hebert - `recon`.
+  - Shell and Libraries:
+    - `{:ok, pid} = v(1)` - `v(N)` is a function which returns value
+      of expression in *Nth* line of shell.
+    - `:application.which_applications` - list of all started
+      applications.
+    - `:sys.log(pid, flag)` enables logging for OTP compliant process.
+      - The same applies for `:sys.trace` and `:sys.statistics`.
+  - Questions:
+    - Why Elixir uses prefix in the module names on the Erlang side?
+      - Because you can name Erlang modules with an upper case (a
+        proper escaped atom). And it in that way is avoiding clashes.
+    - What adds the `:proc_lib` for us? What is the benefit of using it?
+      - ???
+    - Why they're 2 application master per application?
+      - ???
+    - Should we test applications and supervisors? Is it practical?
+      - It should be pragmatic, you shouldn't overdo and test in
+        isolation you applications or supervisors, because it is not
+        practical.
+    - How the fully connected mesh will behave during network split?
+      - Once node is connected, is known to the others, so node
+        monitor will receive notification if some nodes will go up and
+        down, and restore automatically mesh when network split
+        disappear.
+
+** Talks - 1st Day (23.04.2015)
+** Talks - 2nd Day (24.04.2015)
