@@ -153,7 +153,11 @@
       - Because you can name Erlang modules with an upper case (a
         proper escaped atom). And it in that way is avoiding clashes.
     - What adds the `:proc_lib` for us? What is the benefit of using it?
-      - ???
+      - You can fit the custom process into your OTP application
+        supervision tree, provide a true synchronous, acknowledged
+        `start_link` function, add the debugging facilities and also
+        you can provide system messages support inside your loop.
+        - [[http://www.erlang.org/doc/design_principles/spec_proc.html][More details]]
     - Why they're 2 application master per application?
       - ???
     - Should we test applications and supervisors? Is it practical?
