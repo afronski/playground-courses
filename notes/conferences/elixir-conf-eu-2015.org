@@ -177,4 +177,182 @@
         disappear.
 
 ** Talks - 1st Day (23.04.2015)
+
+*** Joe Armstrong - 23.5 days with Elixir
+
+- Actual talk shortens to the ~10 days with Elixir ;).
+- Good new stuff in *Elixir*:
+  - UTF8, Sigils, Macros, "Open" design process, Book/Language
+    co-design.
+- But it will be interesting seeing how the ecosystem will look in
+  future, so Joe used the *dr. Who* help and moved to the 2018.
+  - 4 things that have been added to Elixir since 2015:
+    - Forms are now (finally) expressions.
+      - Note: *form* is e.g. function definitions or directives.
+      - Cannot be done in Erlang, because of backward compatibility.
+    - Processes and protocols have names.
+      - Protocol in terms of way of communicating.
+      - But, nice *DSL* can be created with use of *Elixir*.
+    - Full introspection of everything.
+      - Pull things apart and reconstruct them again.
+      - It would be nice to have a *reflection* mechanism inside the
+        language. Having e.g. `module_to_list/1` will be a way to have
+        a *homoiconicity* in the language.
+    - Bang Bang "the beloved" is introduced.
+      - `X !! Y`
+      - Send a message and wait for a reply.
+      - Key for conceptual integrity in Erlang is define that
+        everything is a process, and define what it means to send a
+        message to not a *PID*.
+- If the *Elixir* will be highly popular, there won't be place for a
+  change. Now is a time for any possible changes!
+
+*** Sasha Juric - High Availability
+
+- *Erlang/Elixir is a hammer for that particular nail*.
+  - Quote about highly available systems.
+  - But it is a tool, use it responsibly with full awareness.
+- *Fault Tolerance* + *Scalability* + *Responsiveness* equals *High
+  Availability*
+  - Introductory talk to the *Erlang* building blocks related with
+    concurrency and high availability.
+  - Very nice case study and approach to the `riak_core` framework.
+    - Also look at the `gen_leader` library, also *Erlang* / *OTP* has
+      leader election algorithms built-in (but they're *chatty*).
+  - Very nice evolution process from purely sequential work-flow, to
+    the fully distributed system in the online betting domain.
+
+*** Torben Hoffmann - Building LEGO robots with Elixir
+
+- Syntax is irrelevant, but language is everything.
+  - Visual programming is not something good.
+  - Instead blocks, use *Elixir* with LEGO Mindstorm.
+- Linux on LEGO Mindstorm - http://ev3dev.org
+  - Install *Erlang* via `apt-get` and unzip pre-compiled *Elixir* and
+    you are ready to go.
+  - Nice use cases - macros for defining properties, built-in support
+    for state machines, support for binaries and bits level pattern
+    matching and so on.
+  - Library: https://github.com/lehoff/ev3
+- Line follower build on top of LEGO Mindstorm, *EV3* where robot code
+  is written in the *Elixir*.
+- Put the protection of hardware, because software is doing strange,
+  not real from the physical world perspective, things.
+- Teaching Programming:
+  - http://beamster.org/jb
+  - What if we take the good environment (lke *Scratch*) and build
+    with it a nice, visual, declarative and intuitive language for
+    kids? Where you can open boxes, and see what is inside of it.
+
+*** Thomas Arts - QuickCheck for Elixir - Generate Tests Automatically
+
+- Instead of making up the data for the test, think about properties
+  of the module / function / model.
+  - Example:
+    ```
+    defmodule Simple do
+      use ExUnit.Case
+      use EQC.ExUnit
+
+      property "Erlang Sequence" do
+        forall {m, n} <- {int, int} do
+          equals(:lists.seq(m, n), Enum.to_list(m .. n))
+        end
+      end
+    end
+    ```
+  - Nice integration with `mix`.
+- How to come up with properties?
+  - Use mathematics - *idempotency*, *reversibility* etc.
+  - `String.upcase` and `String.downcase` - UTF-8 characters example.
+- Stateful tests - generating test cases, instead of generating data.
+  - Ticket dispenser example.
+  - Writing a *QuickCheck* model (state machine).
+    - Investment put into the model implementation.
+  - It shines when it comes to the concurrent models.
+    - You can generate concurrent test cases as well.
+  - Nice case study (*Elixir*):
+    - https://github.com/processone/ejabberd
+- You should not reimplement your approach creating the model, it
+  should be different, in order to be sure that tests are good and
+  converge to the same results.
+  - You can do the same mistake twice!
+
+*** Francesco Cesarini, Viktoria Fordos - Scale, Manage and Prevent!
+
+- How to manage and develop systems that never fail and are highly
+  concurrent?
+  - Note: nine nines came from press release made by British Telecom
+    and it is related with an initial phase of the project (!).
+    - With every legend, there is a small grain of truth, but only a
+      grain.
+  - Five nines are much more achievable and real.
+  - Ruby vs. Erlang - Asterisk wrappers (PBX on the commodity
+    hardware).
+    - 10 calls/s in *Ruby* vs. 10000 calls/s in *Erlang*.
+  - Case study: Chicago Boss framework optimization, typical problem
+    and visualization of Amdahl's Law (single, sequential bottleneck).
+- How to tackle highly concurrent and scalable platforms?
+  - Visibility, debugging and introspection.
+    - Pre-emptive support.
+    - Post-mortem debugging.
+  - Predictability - latency, system behavior, what happen when errors
+    will creep in?
+- Case Study: MongooseIM cluster debugging with use of Wombat OAM.
+- Case Study: Release project debugging with Wombat OAM.
+  - It is not intrusive (< 1.5% overhead).
+
+*** Marco Herbst, Milos Mosic - One project rebuilt 4 times: .NET, Ruby, Node and Elixir
+
+- Justified decisions for movement between technologies.
+  - Business justifications (moving to Open Source world) and
+    technical ones (certain platform limitations).
+    - *.NET* is not open source, business model changed.
+    - *Ruby* - too slow, and not adjustable for systems which are I/O
+      intensive. Community is great.
+    - *Node.js* - good use case, but it is unreliable and
+      unstable. Community is not mature enough.
+    - *Elixir* - good from both worlds? ;)
+  -
+
+*** Claudio Ortolina - Rewriting Ruby application in Elixir
+
+-
+
+*** Jose Valim - What's ahead for Elixir?
+
+-
+
 ** Talks - 2nd Day (24.04.2015)
+
+*** Chris McCord - Phoenix Takes Flight
+
+-
+
+*** Josh Adams - Collaborative Web-based Tetris with Phoenix
+
+-
+
+*** Martin Kavalar, Martin Schurrer - Fast Continuous Deployment of an Elixir Gameserver and Phoenix Web App using Hot-Code-Upgrades
+
+-
+
+*** Jeff Weiss - Chat Bot: A Practical Walktrough of the powerful features Elixir/Erlang/OTP
+
+-
+
+*** Michael Schaefermeyer - Individualised Content at Web-scale
+
+-
+
+*** Michał Ślaski - Lessons from Erlang VM
+
+-
+
+*** Eric Meadows-Jonsson - Ecto
+
+-
+
+*** Lightning Talks
+
+-
