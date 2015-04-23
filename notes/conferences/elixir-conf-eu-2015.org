@@ -345,7 +345,54 @@
 
 *** Jose Valim - What's ahead for Elixir?
 
--
+- Polish weather, especially winter aura, helps developing Open Source
+  software. ;)
+- *Elixir* is a general purpose language.
+  - Since beginning focused on the extensibility.
+    - Not only web, but video, embedded systems, GUIs etc.
+- New features:
+  - Protocol consolidation (it is present even before *1.0*).
+    - Build Embedded (get rid of siblings when set to *true*).
+    - Last obstacle from having releases more integrated with *Elixir*
+      core.
+  - Start Permanent (shuts down the node when application crashes).
+  - *Elixir v1.1*
+    - Removing *Access* protocol (using *Dict* look-up instead).
+      - Because of internal protocol dispatch implementation *Access*
+        protocol can be a bottleneck in your applications.
+    - More utilities in *Enum* and *Dict*.
+    - *MapSet* (faster than *HashSet*).
+    - Better `mix` and `rebar` integration.
+    - Improving archive and scripts integration.
+      - `mix archive.install git_repo/hex`
+      - `mix escript.install git_repo/hex`
+  - *Elixir v1.2*
+    - Catching up with the improvements from *Erlang 18*.
+    - `GenServer.stop/1`
+    - Official support for large maps (soft deprecation of
+      *HashDict*).
+    - Variables in maps (`%{ key: value }`).
+  - *Elixir v1.3*
+    - Collections (*enumerable*, *collectable*) + Laziness based on
+      *Haskell iteratees* implementation, but they are purely
+      functional, what means that we can use side effects on our side.
+      - How without that implement effectively these ones:
+        - `Stream.merge/2`, `Stream.amb/2` ...
+          - *Connectable* protocol - specifying how to connect and
+            messages schema for communication. It enables routing and
+            pipeline parallelism.
+            - `Stream.async/1`
+            - `GenRouter` behavior (with different strategies -
+              *broadcast*, *round-robin*, *sharding*, *random* etc.).
+  - Next step after pipeline parallelism: data parallelism and taking
+    into consideration a distribution and cluster.
+    - Still, plenty of questions are open - what about *back
+      pressure*? Isn't a *GenRouter* became a single point of failure?
+      What about *skel* project? What about other idea - moving
+      computation to the data, instead of transferring terabytes of
+      data over the wires?
+    - It is an another tool in your toolbox (if laziness is enough,
+      stop on that).
 
 ** Talks - 2nd Day (24.04.2015)
 
