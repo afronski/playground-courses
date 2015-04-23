@@ -313,11 +313,35 @@
     - *Node.js* - good use case, but it is unreliable and
       unstable. Community is not mature enough.
     - *Elixir* - good from both worlds? ;)
-  -
+  - Integrating *Elixir* and *Ruby* with a *Sidekiq*.
+  - Replacing long running jobs, background jobs, web sockets handling
+    and rest with *Elixir*.
+    - Using *Ansible* on the *Elixir* side to deploy whole server
+      architecture.
+- Bad things:
+  - *Erlang* basic knowledge required.
+- Good things:
+  - *Phoenix* has really good upgrade guides.
 
 *** Claudio Ortolina - Rewriting Ruby application in Elixir
 
--
+- Lessons from putting the first *Elixir* application in production
+  for mostly *Ruby*-based shop.
+  - Improving image transformation and streaming service based on
+    *Ruby* and *Dragonfly* gem.
+  - Various optimization techniques - not touching the disk, using
+    caching in front of S3 buckets, cache transformation (internally -
+    in memory or on the other server) etc.
+    - Because of performance and constraints (Heroku etc.).
+- *Elixir* fits that particular need, but no direct comparison to the
+  *Ruby*.
+- Pain points:
+  - Heroku constraints (custom build packs, external caching layer,
+    resources, no SSH access).
+  - Libraries and developer tools (no official New Relic client, some
+    libraries are very minimal, young and immature ecosystem).
+  - Learning curve coming from *OOP* world.
+- Source code: https://github.com/cloud8421/dragonfly-server
 
 *** Jose Valim - What's ahead for Elixir?
 
