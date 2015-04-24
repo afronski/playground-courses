@@ -398,11 +398,52 @@
 
 *** Chris McCord - Phoenix Takes Flight
 
--
+- Quick sum up of past 7 months since *ElixirConf 2014*.
+  - No massive changes on the road to *v1.0*.
+- What's there and what's coming?
+  - Easy install with huge *URL*.
+    - Even easier install will come with *Elixir v1.1*.
+      - `mix archive.install hex phoenix`
+  - *Router pipeline*, it is a logical grouping for routes, which have
+    similar concerns.
+  - *Generators* - scaffolding etc.
+    - `mix phoenix.gen.html Post posts body:text user_id:integer`
+  - Assets management with *Brunch*.
+    - Optional dependency.
+    - ES6 support.
+  - Pretty error pages, live reload, fast development mode and other
+    various developer friendly improvements.
+  - Channels protocols unification and various transports for
+    backward compatibility.
+    - *iOS*, *Android*, *CoAP*, *XMPP*, *WebSockets* and *Long
+      Polling* for browsers and many, many more.
+    - Channels are finally compatible with `GenServer` API and has
+      `handle_info`.
+- *Phoenix v1.1* - possible road-map:
+  - i18n (via `gettext`).
+  - Channel replay and `last-message-id`.
+  - Channel presence protocol (?).
+  - Nested associations.
+  - Phoenix.Flux (?) - nice prototype in 100 lines of JS
+    with `GenServer`-like API.
+  - Generic cache store.
+- Lessons Learned:
+  - Avoid monolithic designs.
+  - Provide seams and extension points.
+  - Listen to the feedback.
+  - Top-down design can work well, as long as you iterate.
+- Community:
+  - Be nice, be welcoming - it pays off.
 
 *** Josh Adams - Collaborative Web-based Tetris with Phoenix
 
--
+- Moving through git repository commits and building
+  multi-player game with Phoenix.
+  - Source code: https://github.com/knewter/elixirconfeu_tetris
+    - Gradual transformation from dead simple Phoenix template to
+      the more *Erlang*-like application.
+    - Explanation about various issues e.g. with randomization and
+      seeds in the same process.
 
 *** Martin Kavalar, Martin Schurrer - Fast Continuous Deployment of an Elixir Gameserver and Phoenix Web App using Hot-Code-Upgrades
 
