@@ -497,7 +497,16 @@
 
 *** Eric Meadows-Jonsson - Ecto
 
--
+- *Ecto* is inspired by *LINQ*, but it is better.
+  - It is macro based, so there is no need to extend language grammar.
+  - Pagination, offsets and other goodies (e.g. fragments - using SQL
+    elements with safety of the language, because you can check type
+    when you are expanding the macro).
+  - `Queryable` protocol.
+    - Just one method - `to_query/1`.
+    - Simple `%Query{}` struct.
+  - It uses `poolboy` underneath.
+  - Support for *MySQL*, *PostgreSQL* and *MS SQL*.
 
 *** Lightning Talks
 
