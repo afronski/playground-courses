@@ -510,4 +510,5 @@
 
 *** Lightning Talks
 
--
+- Nice and awesome short presentations about various things.
+  - e.g. 3D printed *Elixir* gem from the software for fins modeling.
