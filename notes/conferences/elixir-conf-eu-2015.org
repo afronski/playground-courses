@@ -468,15 +468,32 @@
 
 *** Jeff Weiss - Chat Bot: A Practical Walktrough of the powerful features Elixir/Erlang/OTP
 
--
+- Chat bot written in Elixir.
+  - Source code: https://github.com/jeffweiss/ohaibot
+    - It uses *Markov Chain* as a *brain*.
 
 *** Michael Schaefermeyer - Individualised Content at Web-scale
 
--
+- *Elixir* case study in the *Bleacher Report* company.
+  - Content serving for individual devices and browsers.
+  - Lots of devices, lots of requests.
+    - Status Quo: lots of caches, *Ruby on Rails*,
+      small amount of *Node.js*.
+      - Why avoid caching?
+        - Cache Invalidation :(
+    - In that use case it is highly unlike that
+      combinations of caching will be effective.
+- Hurdles:
+  - Immature and small ecosystem.
+    - Fear of doing everything by myself?
+  - No official support yet there (e.g. *Docker* images).
+  - Lack of monitoring, profiling etc.
+- All hurdles are *easy* to overcome.
+  - Monitoring? *Exometer*, *StatsD* etc.
 
 *** Michał Ślaski - Lessons from Erlang VM
 
--
+- Similar talk as at the *Lambda Days 2015*.
 
 *** Eric Meadows-Jonsson - Ecto
 
