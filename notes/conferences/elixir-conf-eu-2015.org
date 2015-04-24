@@ -447,7 +447,24 @@
 
 *** Martin Kavalar, Martin Schurrer - Fast Continuous Deployment of an Elixir Gameserver and Phoenix Web App using Hot-Code-Upgrades
 
--
+- Talk about OTP releases, hot code upgrades and case
+  study from *PSPDFkit* company.
+  - OTP releases in *Elixir* - https://github.com/bitwalker/exrm
+    - Additional tasks added to the `mix`.
+    - Task `mix release` will automatically produce an
+      upgrade and downgrade scripts (*appup*,
+      *relup* etc.).
+  - Power of `code_change/3`.
+- Not all problems are solved by tools:
+  - Multiple servers deployment.
+  - Available releases archive.
+  - Release management.
+- Another tool which can solve problems described above: `edeliver`
+  - It uses *Bash*, *Capistrano* and *S3* underneath (it supports
+    *scp* as a storage delivery mechanism as well).
+  - Source code:
+    - https://github.com/boldpoker/edeliver
+  - It has hooks e.g. for continuous delivery etc.
 
 *** Jeff Weiss - Chat Bot: A Practical Walktrough of the powerful features Elixir/Erlang/OTP
 
