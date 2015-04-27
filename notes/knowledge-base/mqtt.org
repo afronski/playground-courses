@@ -179,3 +179,18 @@ Message `CONNECT` contains username and password headers, you will
 receive with `CONNACK` an error code if credentials are not passed or
 invalid. The only way to guarantee a completely secure transmission of
 username and password is to use transport encryption.
+
+*** Authentication with other parameters
+
+Beside *username* and *password* `MQTT` provides additional ways of
+authenticate client. Each client has *unique client identifier* - it
+is a 36 character long unique identifier, good practice is use a
+*GUID* here or a *device serial number*, *MAC address*. By
+white-listing client identifiers you can provide another way of
+authentication.
+
+Another form of authentication can be provided by a *X.509* client
+certificate. It can be presented during *TLS* handshake, one layer
+lower than actual *MQTT* protocol. If you are controlling all devices
+and its provisioning it is a very good way to providing
+authentication.
