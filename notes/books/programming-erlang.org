@@ -65,3 +65,9 @@ e.g. multiple physical cores or processors
   - And then go with browser to `http://localhost:8888`.
 
 ** Part III
+
+*** Real-World Concurrency
+*** Concurrent Programming
+*** Errors in Concurrent Programs
+*** Distributed Programming
+** Part IV
