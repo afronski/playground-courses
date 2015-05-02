@@ -38,3 +38,30 @@ e.g. multiple physical cores or processors
 
 - You can save output of preprocessor's work by command:
   - `erlc -P some_module.erl`
+
+*** Types
+
+- `typer` - Tool which shows the inferred types.
+- `dialyzer` - Tool which infers problems related with type system.
+  - Both tools are using *success typing* model.
+  - Remember - type system is not sufficient for proving
+    correctness. It may help with certain classes of problems.
+
+*** Compiling and Running your program
+
+- `.erlang` is a file which will be loaded when you start *Erlang
+  shell* in that directory.
+  - Loading order:
+    - First it will load file from local directory, then from your
+      $HOME directory.
+- `code:clash().` shows an errors related with naming clashes.
+- You can run code normally:
+  - `erlc hello.erl`
+  - `erl -noshell -s hello start -s init stop`
+- Or by an escript:
+  - `#!/usr/bin/env escript`
+- Analyzing an *Erlang crash dump*?
+  - `crashdump_viewer:start().`
+  - And then go with browser to `http://localhost:8888`.
+
+** Part III
