@@ -194,3 +194,23 @@ certificate. It can be presented during *TLS* handshake, one layer
 lower than actual *MQTT* protocol. If you are controlling all devices
 and its provisioning it is a very good way to providing
 authentication.
+
+*** Authorization
+
+- *Authorization* is the function of specifying access rights to a certain resource.
+  - There are two ways - *ACL* (*Access Control List*, like *UNIX* file
+    permissions) or *RBAC* (*Role Based Access Control*, like ActiveDirectory,
+    PostgreSQL, SELinux etc.).
+- Topic permissions must be implemented on the broker side.
+  - A topic permission could for example look like the following:
+    - Allowed topic (exact *topic* or *wildcard topic*).
+    - Allowed operation (*publish*, *subscribe*, *both*).
+    - Allowed quality of service level (*0*, *1*, *2*, *all*).
+- The current `MQTT 3.1.1` specification does not define a broker-independent
+  way to inform clients about the unauthorized publish, except disconnecting the
+  client, which may be improved in upcoming `MQTT` versions.
+- If the client has no right to subscribe a specific topic, the broker can
+  notify the client that the subscription was denied.
+  - A commonly used best practice is to include the client id of the publishing
+    client in the permission. So the client is restricted to only publishing to
+    topics, where it’s client id is upfront.
