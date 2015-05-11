@@ -214,3 +214,57 @@ authentication.
   - A commonly used best practice is to include the client id of the publishing
     client in the permission. So the client is restricted to only publishing to
     topics, where it’s client id is upfront.
+
+*** TLS / SSL
+
+- *TLS (Transport Layer Security)* and *SSL (Secure Sockets Layer)* provide a
+  secure communication channel between a client and a server. At its core, *TLS*
+  and *SSL* are cryptographic protocols which use a handshake mechanism to
+  negotiate various parameters to create a secure connection between the client
+  and the server.
+  - *MQTT* relies on *TCP* as transport protocol, which means by default the
+    connection does not use an encrypted communication. To encrypt the whole
+    MQTT communication, most many *MQTT* brokers to use *TLS* instead of plain
+    *TCP*. If you are using the username and password fields of the *MQTT*
+    `CONNECT` packet for authentication and authorization mechanisms, you should
+    strongly consider using *TLS*.
+    - Port `8883` is standardized for a secured *MQTT* connection. The
+      standardized name at IANA is *secure-mqtt* and port 8883 is exclusively
+      reserved for MQTT over TLS.
+- The communication overhead of the *TLS* Handshake can be significant if the
+  *MQTT* client connections are expected to be short-lived. While it depends on
+  many factors how much bandwidth the *TLS* handshake needs, some measurements
+  showed, that establishing a new *TLS* connection can take up to a few kilobytes
+  of bandwidth.
+  - So if you are using long-living *TCP* connections with *MQTT*, the *TLS*
+    overhead, especially the *TLS* Handshake overhead may be negligible.
+  - *TLS* session resumption techniques allow to reuse an already negotiated
+    *TLS* session after reconnecting to the server, so the client and server
+    don’t need to do the full *TLS* handshake again. There are two methods to
+    resume a session:
+    - *Session ID* - The server stores the secret state together with the
+      Session ID. When the client reconnects, it provides the Session ID and the
+      session can be resumed.
+    - *Session Ticket* - The servers secret state is transmitted to the client
+      and is encrypted with a secret key only the server knows. The client sends
+      this ticket back to the server when reconnecting. If the server can
+      decrypt the contents again, the session is resumed with the state
+      contained in the secret ticket.
+- If *TLS* is not possible with your devices, you should think about using
+  payload encryption for your `PUBLISH` messages and you should at least hash or
+  encrypt the password in the `CONNECT` message of your client.
+  - It may also be an option to look into *TLS-PSK* cipher suites, since they
+    avoid the CPU intensive public key operations.
+- If you can afford the overhead in CPU and bandwidth, then a secure
+  communication channel is invaluable. If TLS is implemented properly on the
+  client and server side, you make sure that no eavesdropper can intercept your
+  communication and you get that additional layer of security that is important
+  for application-level authentication and authorization.
+- Best practices:
+  - Always use *TLS* / *SSL* if possible.
+  - Use the highest available *TLS* version.
+  - Don't use *SSLv3*.
+  - Validate *X509* certificate chain.
+  - Use certificates from trusted *CAs*.
+  - Use other security mechanisms.
+  - Use only secure cipher suites.
