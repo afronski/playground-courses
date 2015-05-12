@@ -71,3 +71,5 @@ e.g. multiple physical cores or processors
 *** Errors in Concurrent Programs
 *** Distributed Programming
 ** Part IV
+
+*** Interfacing techniques
