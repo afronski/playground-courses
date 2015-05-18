@@ -268,3 +268,41 @@ authentication.
   - Use certificates from trusted *CAs*.
   - Use other security mechanisms.
   - Use only secure cipher suites.
+
+*** X509 Certificates
+
+- What for are `X509` for the clients?
+  - The server is then able to verify the identity of the client and can abort the
+    handshake if the verification of the client certificate fails. So essentially
+    this allows to authenticate the client before a secure connection is
+    established.
+  - It allows:
+    - Verification of the identity of `MQTT` clients.
+    - Authentication of `MQTT` clients at transport level.
+    - Lock out invalid `MQTT` clients before `MQTT` *CONNECT* messages are sent.
+- There are *hidden costs* of that solution:
+  - The `MQTT` client provisioning is more complex with client certificates and a
+    certificate revocation mechanism is needed.
+    - If you can control all your `MQTT` clients and can provide the certificate
+      e.g. as part of your device firmware update process, then using *X509* client
+      certificates can be a good option.
+    - If the `MQTT` clients are not in your control (e.g. if your `MQTT` client
+      is a mobile device you don’t know beforehand), then you may be out of
+      luck, since provisioning can be very hard.
+  - Also, solid *PKI* infrastructure needs to be deployed upfront, otherwise
+    managing thousand of clients certificates will be painful and error prone.
+  - Another problem is related with revoked certificates (e.g. because of
+    disclosure or blocking just certain devices).
+    - One option is to use *Certificate Revocation Lists* (*CRLs*). *CRLs* are
+      simply said a list of all invalid certificates. *CRLs* are a good way if
+      you have only a few certificates deployed to `MQTT` clients but can be
+      big headache if you are dealing with thousands or hundreds of thousands
+      of certificates.
+    - Another possibility to revoke invalid certificates is *Online Certificate
+      Status Protocol* (*OCSP*). *OCSP* uses a service for asking for revocation
+      information for specific client certificates. If you plan to use `CUSP`,
+      you need an `OCSP` responder, which is essentially a HTTP server which
+      responds to revocation-check requests. This has an significant advantage,
+      if you have a huge amount of certificates which are revoked, since you
+      don’t have to distribute the *CRLs* to the `MQTT` brokers. *OCSP*
+      responders can be tricky to setup, though.
