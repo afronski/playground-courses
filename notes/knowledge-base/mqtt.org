@@ -306,3 +306,65 @@ authentication.
       if you have a huge amount of certificates which are revoked, since you
       don’t have to distribute the *CRLs* to the `MQTT` brokers. *OCSP*
       responders can be tricky to setup, though.
+
+*** OAuth 2.0
+
+- *OAuth 2.0* is an authorization framework, that allows a third party to access a
+  resource owned by a resource owner without giving unencrypted credentials to
+  the third party.
+
+#+header: :exports results
+#+BEGIN_SRC plantuml :file images/oauth2.png
+  Resource Owner -> Client : Start application
+  Client -> Authorization Server : I need an access token
+  Authorization Server -> Resource Owner : Please log in
+  Resource Owner -> Authorization Server : Login credentials
+  Authorization Server -> Client : Access Token
+  Client -> Resource Server : Get resource with Access Token
+#+END_SRC
+
+- *OAuth 2.0* commonly uses *JSON Web Tokens* (`JWT`), which are `JSON` objects
+  with *base64* encoding. A `JWT` contains header, payload and signature.
+- *OAuth 2.0* uses two different types of JWTs: Access Tokens and Refresh
+  Tokens. 
+  - An access token is a rather short-living token, which grants access to a
+    certain resource. The expire date is commonly between one hour and one day.
+  - A refresh token can not be used to access a resource, but it is needed to
+    get a new access token from the server, when the previous one is
+    expired. Refresh tokens have rather long expiration dates compared to access
+    tokens.
+- Four different flows:
+  - Authorization Code - designed for trusted clients (web application), where
+    the web browser of the user should never see the access token.
+  - Implicit - this flow is meant for public clients, where the trust only comes
+    from the interaction of the resource owner with the authorization server.
+  - Resource Owner Credentials - the resource owner enters his credentials
+    directly into the client application and then the client requests an access
+    token and a refresh token from the authorization server.
+  - Client Credentials - the client has to authenticate with username password
+    or any other method and receives an access token as response.
+- *OAuth 2.0* specification clearly states: "This specification is designed for
+  use with HTTP. The use of OAuth over any protocol other than HTTP is out of
+  scope".
+  - Also only the Client Credential flow makes sense without human interaction
+    which is common in constrained environment e.g. *IoT*.
+    - In this case client must hold the credentials, so it means that everything
+      is dependent on the use case and environment - how you are provisioning
+      clients, into which devices user has access, how we can store the keys.
+
+#+header: :exports results
+#+BEGIN_SRC plantuml :file images/oauth2_with_mqtt.png
+  MQTT Client -> Authorization Server : Credentials or Auth information
+  Authorization Server -> MQTT Client : Access Token
+  MQTT Client -> MQTT Broker : CONNECT(Access Token)
+#+END_SRC
+
+- When the broker gets the token it can do different types of validations:
+  - Check the validity of the signature from the token.
+  - Check if the expiration date of the token has already passed.
+  - Check on the authorization server if the token was revoked.
+- Additionally when publishing or subscribing, the broker needs to authorize the
+  client. This can be done in two different ways:
+  - The token has the authorization for the client included in the scope claim.
+  - The broker has a third party source, for example a database or `LDAP` to look
+    up the authorizations for the client.
