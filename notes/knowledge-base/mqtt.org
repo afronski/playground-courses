@@ -368,3 +368,46 @@ authentication.
   - The token has the authorization for the client included in the scope claim.
   - The broker has a third party source, for example a database or `LDAP` to look
     up the authorizations for the client.
+
+*** Payload Encryption
+
+- `MQTT` payload encryption is the encryption of application specific data
+  (typically the `MQTT` `PUBLISH` packet payload or the `CONNECT LWT` payload)
+  on the application level. This approach allows *end-to-end* encryption for
+  application data even for untrusted environments. While the message *metadata*
+  like the `MQTT` topic stays intact, the payload of the message gets
+  encrypted. This type of encryption is not defined in the `MQTT` specification
+  and is completely application specific.
+  - `MQTT` payloads are always binary, it’s not needed to encode the encrypted
+    message to an textual representation, like `base64`.
+  - `MQTT` `PUBLISH` metadata stays intact and only the payload of the message
+    is encrypted.
+  - This ensures, that there is no custom mechanism needed on the broker side
+    for *decrypting* the data in order to route the `MQTT` message to the
+    subscribers.
+- Encryption scenarions:
+  - *End-to-End (E2E) encryption*
+    - This kind of encryption is broker implementation independent and can be
+      applied to any topic by any `MQTT` client
+  - *Client-to-Broker*
+    - The payload of the message is encrypted in the communication between one
+      client and the broker.
+- Encryption mechanisms:
+  - *Asymmetric encryption (public / private key encryption)*
+    - For `MQTT` payload encryption, this approach is perfect if you only have a
+      few trusted subscribers (which have access to the private key) and there
+      are many publishers (which are possibly untrusted). The public key is not
+      a secret and everyone is allowed to encrypt messages with that key. The
+      important thing is, that only trusted clients can decrypt the message
+      again.
+      - When using this approach, it is a best practice that each MQTT topic
+        gets its own public / private key pair.
+  - *Symmetric encryption*
+    - Can be used in the trusted environments, it is recommended to use password
+      per topic, in order to narrow down scope when the password is lost.
+- Both mechanisms - *TLS* and *Payload Encryption* can be used in
+  conjunction. Moreover it is recommended to use encryption if you can't use
+  *TLS* on the network layer.
+  - Remember that it can be expensive on constrained devices, also secure
+    provisioning of MQTT clients needs to be implemented and that encryption
+    without *TLS* it is vulnerable on *MITM* and *replay attacks*.
