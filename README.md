@@ -8,3 +8,8 @@
 - HTML5 Game Development (Udacity)
 - Machine Learning (Coursera)
 - Principles of Reactive Programming (Coursera)
+
+### In progress:
+
+- Introduction to Big Data with Apache Spark (edX)
+- Scalable Machine Learning (edX)
