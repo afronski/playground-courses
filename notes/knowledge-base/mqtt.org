@@ -411,3 +411,27 @@ authentication.
   - Remember that it can be expensive on constrained devices, also secure
     provisioning of MQTT clients needs to be implemented and that encryption
     without *TLS* it is vulnerable on *MITM* and *replay attacks*.
+
+*** Data Integrity
+
+- Using data integrity verification mechanisms is very important in the
+  untrusted environment, especially without *TLS/SSL*, because in such place you
+  do not have 100% knowledge if someone does not tamper your payload.
+  - In the `MQTT` packets *PUBLISH* can contain a calculated stamp associated
+    with any field (except *Message ID* and *Quality of Service*), especially
+    with payload.
+  - Usually such stamp is placed at the beginning of the value. Client or broker
+    after receiving such message can recalculate the stamp and verify if message
+    was or wasn't tampered by a third parties.
+  - Supported algorithms:
+    - *Checksum* / Hash Algorithms (e.g. *MD5*, *CRC*, *SHA1* etc.) - provides
+      only data integrity verification. If you are using *TLS* it is sufficient.
+    - *MAC* (e.g. *HMAC*, *CBC-MAC* etc.) - symmetric but provides data
+      integrity verification and authentication.
+    - *Digital Signatures* - asymmetric, so it is safe (only the owner of the
+      private key can create such stamp). It provides data integrity validation
+      and authentication as well.
+- If you have *TLS* deployed, described methods won't add much more security. If
+  not, and you are dealing with unsafe environment (hard to provision with
+  proper PKI keys) or constrained devices (low computing power) you should at
+  least use a *MAC*-like verification (e.g. *HMAC*).
