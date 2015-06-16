@@ -435,3 +435,14 @@ authentication.
   not, and you are dealing with unsafe environment (hard to provision with
   proper PKI keys) or constrained devices (low computing power) you should at
   least use a *MAC*-like verification (e.g. *HMAC*).
+
+*** Securing System
+
+- Firewall - ports `1883`, `8883` are used for `MQTT`. Also if you can define IP
+  range, you should *whitelist* it. You should also have *DMZ* for your broker,
+  if it is exposed in the unsafe environment.
+- Load Balancer - prevent from overloading the broker. Also you should prepare
+  throttling mechanism, ideally for specific clients in order to avoid bandwidth
+  saturation.
+- Limit message size, because maximum message size limited by a specification is
+  256 MB. In most cases you don't need such high number.
