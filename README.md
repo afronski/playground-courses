@@ -5,7 +5,7 @@
 - Web intelligence and Big Data (*Coursera*)
 - Functional Programming Principles in Scala (*Coursera*)
 - Algorithms, part I (*Coursera*)
-- HTML5 Game Development (Udacity)
+- HTML5 Game Development (*Udacity*)
 - Machine Learning (*Coursera*)
 - Principles of Reactive Programming (*Coursera*)
 - Introduction to Big Data with Apache Spark (*edX*)
@@ -13,4 +13,4 @@
 
 ### In progress:
 
-- Scalable Machine Learning (edX)
+- Scalable Machine Learning (*edX*)
