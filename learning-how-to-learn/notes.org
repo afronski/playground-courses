@@ -96,3 +96,112 @@
   sleep with keys in the hands when you will fly away keys will hit the ground
   and noise will wake you up, and for a while you will be able to have ideas
   from subconscious sleep about your problems).
+
+** Chunks
+
+*** What is chunk?
+
+- Small part of material, new stuff, which fits a hole in the foreground as a
+  working memory slot. They're bound by the meaning and use. After practicing,
+  under that simple chunk will appear a very complex net of information.
+
+*** Forming chunks
+
+- Knowing the material better will help forming chunks.
+- It is like a listening or watching someone playing on guitar and trying to
+  identify only certain chords, which repeated and put together after persisting
+  them in memory, and practicing them.
+- Focus on connections, but also about why certain steps are here, in particular
+  order.
+- Focus on the problem with uninterrupted attention.
+- Then try to understand basic idea, a concept.
+- In other words try to switch between focused and diffused mode.
+- Connections are important, because context is a king.
+- Only doing can create underlying patterns and nerve connections.
+
+*** Learning Modes
+
+- Chunking is applicable for bottom up learning, don't use it for everything.
+- Big picture is a top down learning approach.
+- They've meet in context, both are necessary for getting mastery in a topic.
+- It is like a solving a puzzle - you look first at a big picture, then you
+  build a frame - bit by bit, then you are filling more and more details.
+- In other words: chunking is for learning how to use a certain problem-solving
+  technique, context means learning when to apply it and when not.
+
+*** Illusions of Competence
+
+- Recall is important. You should after reading a piece of material recall as
+  much as you can, then re-read it and recall again. Retrieving information
+  helps building chunks and enhance learning process. Recall should precede also
+  concept or mind mapping, because it won't help if there were no manageable
+  chunks in your working memory.
+- Illusion of competence is related with "knowing how it is done" without
+  practicing it. If you won't have it in your working memory, if you didn't work
+  with the solution by yourself, you can merely say that you know how to
+  reproduce it. 
+- Highlighting and marking text it is not equal with doing it, what is even more
+  important doing it mindlessly can be harmful, because you can mark invalid
+  things. Try to skim / grasp paper before you will start to mark important
+  pieces. Prepare chunks in your memory first, then start to highlight it.
+- From the other hand, notes on margins (*side notes*) which are paraphrasing
+  or synthesizing a key idea are great thing.
+- You should make mistakes. In that way you will know what you don't know, you
+  will try to recall missing fragments and more importantly - you will learn
+  what to avoid.
+- Changing environment when learning and recalling process will help you adjust
+  to new places when you will do the same work (e.g. taking a test). You will
+  avoid binding to certain location details, when you will do a recall.
+
+*** Library of Chunks
+
+- *Transfer* is a method of connecting together chunks from different domains
+  into higher level concepts.
+- The more chunks you have, more options and solutions you can fit and adhere in
+  future. You will start with focused thinking, than diffuse mode will appear
+  and it can lead you to a different chunk stored in some different place, that
+  will be here helpful.
+- In two types of solutions - sequential (*focused mode*) and holistic (*diffuse
+  mode*) both are valuable, but the later should be carefully verified, because
+  it is based on intuition. From the other hand, harder concepts are easier to
+  learn in that mode than in *focused mode*.
+- When you are overwhelmed by something, you need to try to do it. The more you
+  will store in your mental library, it will be easier to recall that in future.
+
+*** Problems during chunk creation and learning
+
+- Overlearning has its place regarding automation or practicing the material to
+  speak up (*professional speakers*). It increases confidence, especially in the
+  nervousness situation.
+- But doing too much practice during one session can be a waste of
+  time. Repeating should be done frequently, in isolated time space, not in a
+  one session. Also repeating something you already know is easy and it can
+  provide an illusion of competence. You should change difficulty levels during
+  studies it is called *deliberate practice*.
+- *Einstellung* is a situation when an initial idea or over-learned and
+  over-practiced neural patterns are preventing you from finding new, better
+  solutions to a specific problems. You are fixating only on a one specific
+  solution. You should sometimes *unlearn* your previous ideas when learning a
+  new ones.
+- You should *interleave* your learning process when you already know something
+  about that particular topic.
+- Chunks are important for learning process, but they're are not sufficient to
+  being a master of the topic. You need to be flexible, have a full context and
+  have a big picture. You can only obtain those skills by switching and
+  interleaving your learning process.
+
+** Motivation (Chemical Side)
+
+- Three substances which are important to learning and creating new neuropaths
+  in the brain.
+  - Acetylcholine - focused learning and attention, creating new long term
+    memory, unconscious mind.
+  - Dopamine - reward learning (*basal ganglia*). It is related when unexpected
+    reward happened. It is signaling pathways. Lack of that types of neurons
+    causes *anhedonia* - a lost interest when something will give you pleasure.
+  - Serotonine - social life related. It is related with risk taking activities
+    as well.
+- Emotions are influencing learning, they're intertwined with consciousness
+  mind. Your brain is not working properly when you are unhappy or angry. Your
+  effectiveness will be the best when you are calm, happy and have head free out
+  of the problems.
