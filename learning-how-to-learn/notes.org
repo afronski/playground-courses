@@ -205,3 +205,77 @@
   mind. Your brain is not working properly when you are unhappy or angry. Your
   effectiveness will be the best when you are calm, happy and have head free out
   of the problems.
+
+** Procrastination
+
+*** Procrastination
+
+- It is similar to addiction mechanism.
+- By introducing it often and often, you will grow an temporal immunity of its
+  side-effects, but in the long-term damage will be huge.
+- Effectively it is a habit - a bad one.
+  - You are developing habits in order to preserve energy, you can do a
+    particular thing in a semiautomatic fashion, if your habit is good enough.
+
+**** Habit
+
+- The cue - trigger, something which starts the habit. It can be a text message,
+  notification or seeing an item on a TODO list.
+- The routine - this is a semiautomatic way of doing things, it can be good,
+  harmless or harmful. You will move to that state, when your brain sees cue.
+- The reward - every habit develops and continuous because of
+  that. Procrastination is easy to develop, because of that.
+- The belief - Power of the habit. If you want to change your habit, you need to
+  change the underlying belief.
+
+*** Dealing with Procrastination
+
+- *Pomodoro Technique* - 25 minutes of focused work, 5 minute relaxation.
+- *Focus on the process, not a product* - Thinking about result of the
+  particular task will release a pain in your brain (*from insular
+  cortex*). Instead you should focus on a process of learning (like in
+  *Pomodoro*, I'll do only 25 minutes of work). It helps your internal zombies
+  (*a habits*) to march mindlessly through tasks, they don't like the outcome
+  and results because they're too hard for them.
+- You should develop a skill which helps you overcome the negative feeling when
+  you start learning. It is inevitable, so try to let it go, don't dwell on it,
+  focus on the process instead.
+- You should not waste your will power, because it is very resource consuming
+  thing.
+- The only place when you should use your will power is when you try to develop
+  a new habit or rewire an existing one, you need to recognize the cue first,
+  than use all of your will power to overcome that feeling and try to get into
+  routine.
+- Plan your quitting time as well as the work time. The same applies to the
+  breaks.
+- Also, you should focus on the weekly plan list, and also - writing up a list
+  of tasks an evening day before. Because it may evolve during the week. And
+  weekly plan should focus only on the bigger assignments.
+- Eat your biggest and ugliest frog as a first thing in the morning.
+- Commit to certain tasks and routines every day, it helps developing a habit.
+- Gain trust in the new system, build a belief that you can make it!
+- Try with new environments, change surroundings with less amount of cues and
+  interruptions.
+
+** Memory - Deeper Investigation
+
+- You should build your long-term memory by repetition, feedback is inevitable
+  to learn new things.
+- Interleaving concepts between themselves will help memorize things.
+- Index Cards helps recalling and testing your ability to retrieve information
+  and ensure that a particular connection is made, and it is durable.
+- In order to remember something deeply and recall that you should involve as
+  much senses and representations as you can (e.g. *sound*, *taste*, *image*,
+  *spatial* and *environmental*).
+- *Hippocampus* is a key element in process called memory consolidation (whole
+  process can take several years). Without that part of the brain it is
+  impossible to create new memories in *cortex*. *Astrocythes* are playing
+  important role in learning, providing neutrients to neurons, keeping ion
+  balance and repairing injuries in brain.
+- By creating meaningful groups and grouping connected topics by a meaningful
+  term eases remembering and recalling that, also you can practice that learning
+  method and will be easier and easier afterwards.
+- There is also something called memory palace, which connects remembering and
+  memorizing stuff with spatial arrangements of e.g. your flat plan.
+- Building wild and creative connections helps and enhances abilities of your
+  diffuse mode.
