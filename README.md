@@ -10,7 +10,4 @@
 - Principles of Reactive Programming (*Coursera*)
 - Introduction to Big Data with Apache Spark (*edX*)
 - Scalable Machine Learning (*edX*)
-
-### In progress:
-
 - Learning How to Learn (*Coursera*)
