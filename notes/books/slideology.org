@@ -284,5 +284,38 @@
 - Animations and dynamics can simulate nice and clear metaphors.
 
 *** Templates
+
+- Invest your time (or your company time) into creating a template and base for
+  further presentations.
+- Prepare logotypes, fonts, stylistic and layout, color palettes, grids, style
+  for graphical elements.
+- Adjust content, flow and dynamic.
+- Proper and time-proof template will be ... kind of predictable for your
+  audience, they'll know what to expect, where to look etc.
+- Prepare a image library as well!
+- Prepare guidelines how to use a template.
+
 *** Presentation
+
+- Reduce amount of information on slides and notes.
+  - Use photos, metaphors and *mental palace method*.
+  - Focus on the key words, instead of putting whole sentences on slides.
+  - Limit time and choose amount of material wisely.
+- Record your trials, and listen to them in order to learn and detect failures.
+- Repeat! Several times, do trials at least two weeks before presentation.
+- "10/20/30" Rule - 10 slides, at most 20 minutes, at least font size 30 pt.
+  - But if you will do it well, you can use 200 slides in 8 minutes.
+  - You should as many as it is necessary, but every slide need to provide an
+    element of your topic or story.
+- Adjust your medium to the audience.
+  - E.g. use props, add more text to the presentation which will be use on
+    webcast etc.
+- Build a relationship with an audience!
+
 *** Manifest
+
+- Audience is a king!
+- Spread the idea and move people!
+- Let them see, you are describing!
+- Design, do not decorate!
+- Build relations!
