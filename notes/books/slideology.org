@@ -132,3 +132,53 @@
 - *One image is worth a thousand words*.
 
 ** Data presentations
+
+- Present meaning and conclusions, not raw data per se.
+- Highlight the key information on the charts.
+- Less is more - simpler design, no decorations.
+- Present theme and emotions graphically instead of pure numbers.
+- Do not provide redundant information e.g. table and chart.
+- Stick to the unified color palette and legends.
+- If legend is not necessary, put it on the chart directly.
+- Use designer way of presenting statistics e.g. instead of pie chart with 100%
+  put 100 dots on the slide and prepare animation between them in order to
+  highlight the particular percentage or use a photo which is good for a
+  corresponding topic and present raw number instead of bar chart with
+  comparison.
+
+** Designer's Way of Thinking
+
+- You are communicating via presentation yourself and your company.
+- If you are leader of fast growing, dynamic company - design should represent
+  that, because it won't be reliable to the viewers.
+- Take care about design. It is not important to build something pretty, but
+  real and natural.
+- Design studies can be helpful, but they're not necessary.
+
+*** Place
+
+- Contrast - it is very useful - it may be contrast by color, tone, shape,
+  distance etc. It doesn't matter - often using this technique is much more
+  subtle than using anything else to visualize and highlight the value of slide.
+- Place - Center is more important, left and right side may symbolize
+  contradictory arguments.
+- Hierarchy - use it with logic, from top to bottom, from left to right, use
+  shapes and sizes properly. Do not mix it!
+- Arrangement.
+  - Order / Disorder (*chaos*)
+  - Unity / Groups
+  - And other similar - use them with logic, according to the topic and theme.
+- Use blank space with mind!
+  - It is your normal tool, do not crowd the slides with information, split them
+    into couple if they contain a lot of information.
+  - Each slide should have one main focus point and at most two subsequent, less
+    important points.
+  - Good measure is to have *one idea, concept per slide*.
+- Less is more - like a *zen garden*, simple plants, simple decorations - couple
+  of stones, attention to detail. And that's it.
+
+*** Graphics
+
+- 
+
+*** Dynamics
