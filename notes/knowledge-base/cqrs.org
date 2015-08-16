@@ -1,0 +1,52 @@
+* Command-Query Responsibility Segragation
+
+** Theory
+
+- It should be applied to highly collaborative domains.
+  - Due to very intense operations, it may queue up writes and block all
+    possible connections, which will affect clients which are only reading.
+    - In order to avoid that, CQRS applied as a pattern often separates read
+      side from writes.
+    - How to synchronise both? By a service bus or queue. Changes on the read
+      side will be applied asynchronously.
+- It is all about contention and locking.
+  - By eliminating contention, you are often moving it into a different problem. 
+  - Imagine a ticketing system, where people may select sits.
+    - For a very popular event read side and write side will be so
+      desynchronized, that each time user selects the hottest place, it will
+      result in error, that this place is taken. But user on read side will see
+      free place.
+  - BTW. *We often test our systems with scenario that every user will use /
+    modify / change different row. We don't test scenario which has one, very
+    popular record / document, which is modified by many, concurrent users*.
+  - It is not related with type of the database - SQL and NoSQL are vulnerable
+    to this - SQL will block on row, NoSQL will block on document. It is only
+    related with granularity.
+- This is described by Udi Dahan:
+  - http://devtalk.pl/2015/04/14-cqrs-with-udi-dahan/
+  - https://vimeo.com/131199089
+
+*** CQRS as a Pattern
+
+- As stated above, blindly chosen won't help - it will change blocking database
+  to the desynchronized read and write sides. It won't be helpful for the
+  end-user, you can scale this to the infinity - but from business point of
+  view - it is useless.
+- Often it is related with DDD, service bus or queue, commands, queries and
+  asynchronous updates. It is a good practice, but not always the best choice.
+
+*** CQRS as an Approach
+
+- Often requires change in a business model.
+- In example above - instead of having ability to select a specific place, maybe
+  we can split all seats to zones (cheaper / more expensive), and user will
+  select zone and how much places you want.
+  - Application will select places and arrange them, which will easily schedule
+    everything.
+  - Also instead of applying *ORM* or two databases, maybe you can use one
+    database, but that which is suitable to your use case.
+   - E.g. Riak has atomic, non-blocking and asynchronous increments / decrements
+     inside document. Increments / decrements are commutative, so it is very
+     good use case for quantity and inventory management.
+  - This specialized database is often a better choice than service bus and two
+    distinct places for reads and writes.
