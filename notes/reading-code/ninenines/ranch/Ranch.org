@@ -94,15 +94,32 @@ Both examples are described [[https://github.com/ninenines/ranch/blob/master/doc
     conflicts on one node.
 - Main supervisor is also non-surprising, it creates the *ETS* table for
   `ranch_server` module and starts the server itself.
+  - Why an *ETS* table? In order to preserve settings if any of the main
+    processes will crash and restart (it needs to be preserved).
 
 **** `ranch_acceptor` and `ranch_acceptor_sup`
 
--
+- Acceptor job is pretty simplistic - it uses provided transport to accept an
+  incoming connection and then it transfers ownership of that socket to the
+  `ranch_cons_sup` supervisor. When it succeeds, it spawns new protocol handler
+  delivered by the library users.
+- Supervisor for the acceptors only spawns a certain amount of them and manages
+  the settings.
 
 **** `ranch_listener_sup` and `ranch_cons_sup`
 
--
+- When the incoming connection is successfully accepted, and socket ownership
+  transfer is finished, `ranch_acceptor_sup` does the heavy lifting.
+  - It is a `proc_lib` implementation (it is not a `gen_server` probably because
+    of overhead).
+  - By heavy lifting I mean all kind of stuff related with monitoring and
+    spawning protocol handlers.
+- `ranch_listener_sup` is only an intermediate supervisor which controls
+  acceptors and connections supervisors.
 
 **** Protocols - `ranch_tcp`, `ranch_ssl` and `ranch_transport` behavior
 
--
+- Main purpose of the `ranch_transport` is to deliver a *behavior* for the other
+  transports and fallback for `file:sendfile/5` if an OS does not support one.
+  - Both implementations of that behavior are rather thin wrappers for both
+    protocols, when it comes to receiving and sending data back-and-worth.
