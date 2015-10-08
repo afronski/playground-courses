@@ -1,0 +1,108 @@
+* Ranch
+
+https://github.com/ninenines/ranch
+
+** What? Who?
+
+- *Author*: Loïc Hoguin
+- *What*: Socket acceptor pool for *TCP* protocols.
+  - What is a *acceptor pool*?
+    - According to http://www.erlangpatterns.org/acceptor-pool.html it is an
+      application facility pattern which is used to reduce the latency of
+      inbound connections.
+    - Given collection of workers, it is started with the listening mechanism,
+      but after accepting data from it delegates processing of that to the
+      actual worker.
+
+** Architecture
+
+*** Overview and Structure
+
+**** Listener
+
+A listener is a set of processes (acceptors and connections supervisor) whose
+role is to listen on a port for new connections.
+
+It manages a pool of acceptor processes, each of them indefinitely accepting
+connections. When it does, it starts a new process executing the protocol
+handler code. All the socket programming is abstracted through the user of
+transport handlers.
+
+The listener takes care of supervising all the acceptor and connection
+processes, allowing developers to focus on building their application.
+
+**** Acceptor
+
+Process which accepts incoming connection, and forwards the incoming data to the
+protocol process (transport instance).
+
+**** Transport
+
+Abstraction for a network layer (built-in - *SSL* and *TCP*). Implemented as a
+behavior. It is different than a protocol, which will be implemented by a client
+user code as an actual implementation, which receives the actual data unpacked
+from the networking code.
+
+**** Connection
+
+A protocol handler starts a connection process and defines the protocol logic
+executed in this process. It is rather a logical distinction - an acceptor together
+with transport, and protocol handler implementation is called a *connection*.
+
+***** Protocols
+
+There is one thing related with the design of a protocol handler. You have to
+implement just a `start_link/4` function. But under the hood it will spawn a
+linked process, with some initialization function, before you go to the main
+loop you have to acknowledge incoming connection:
+
+`ok = ranch:accept_ack(Ref).`
+
+It means that this design has a problem with `gen_*`-like processes. You can
+either use `handle_info/2` for a timeout invoked from `init/1` function or start
+your `gen_*` process with `proc_lib` and then use `gen_server:enter_loop/3`.
+Both examples are described [[https://github.com/ninenines/ranch/blob/master/doc/src/guide/protocols.asciidoc][here]].
+
+*** Supervision Hierarchy
+
+- In order to use one of the examples together with `observer:start().` I have
+  to add `runtime_tools, observer, wx` to the list of applications packaged by a `relx`.
+[[- ./Ranch.png]]
+  - First two processes are related with a `ranch` application behavior. Then we
+    have `ranch_sup` with two processes underneath. `0.47.0` is a
+    `ranch_acceptor_sup`, because each new connection causes a children creation
+    under that process.
+
+*** Modules
+**** Application
+
+- Pretty standard and simple usage of the `application` behavior. *Interesting
+  thing*: helpers are split from the main application behavior, the same applies
+  to the type specification definitions - both are defined in the `ranch` module.
+
+**** `ranch`
+
+- Helpers and types.
+
+**** `ranch_server` and `ranch_sup`
+
+- It is an implementation of `gen_server` which uses *ETS* for storing ranch
+  settings (like Transport `opts`, maximum number of connections, address and
+  port).
+  - It uses interesting naming convention - key name is a tuple, where the
+    second argument is an application name. It is a really nice way for avoiding
+    conflicts on one node.
+- Main supervisor is also non-surprising, it creates the *ETS* table for
+  `ranch_server` module and starts the server itself.
+
+**** `ranch_acceptor` and `ranch_acceptor_sup`
+
+-
+
+**** `ranch_listener_sup` and `ranch_cons_sup`
+
+-
+
+**** Protocols - `ranch_tcp`, `ranch_ssl` and `ranch_transport` behavior
+
+-
