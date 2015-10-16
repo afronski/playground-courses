@@ -1,0 +1,15 @@
+* MongooseIM
+
+- *Source code*: https://github.com/esl/MongooseIM
+- *Marketing page*: https://www.erlang-solutions.com/products/mongooseim-massively-scalable-ejabberd-platform
+
+** What? Who?
+
+- *Authors*:
+- *What*:
+
+** Architecture
+
+*** Overview and Structure
+*** Supervision Hierarchy
+*** Modules
