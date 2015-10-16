@@ -2,72 +2,75 @@
 
 ** Origin of this chapter
 
-*** Ruby Rouges (131)
+- Ruby Rouges (131)
+
 ** NOPS Trick
 
-*** Notice It
-*** Own It
-*** Push Into It
-*** Stay With It
+- Notice It
+- Own It
+- Push Into It
+- Stay With It
+
 ** Programming Experts
 
 *** Origin of Intuition
 
-Mostly it is a consequence of trying one rule in many, various contexts until you will
-run out of ideas how to apply it. And both responses will be available - success and
-failure. The most beneficial are failures, because you are learning then what
-went wrong and how to avoid it or how to properly apply the rule in other contexts.
+Mostly it is a consequence of trying one rule in many, various contexts until
+you will run out of ideas how to apply it. And both responses will be
+available - success and failure. The most beneficial are failures, because you
+are learning then what went wrong and how to avoid it or how to properly apply
+the rule in other contexts.
 
 *** Practice makes Permanent
 
-When you are trying to do one thing, and you are practicing it many times,
-how do you know that you are doing it properly? And how do you know that the
-learnt behaviours are correct and wired properly in your head. If you do it wrong,
-by practicing you can make it only permanent - not perfect.
+When you are trying to do one thing, and you are practicing it many times, how
+do you know that you are doing it properly? And how do you know that the learned
+behaviours are correct and wired properly in your head. If you do it wrong, by
+practicing you can make it only permanent - not perfect.
 
 *** Talent is not enough, Grit is necessary
 
-Discipline, grit, Pomodoro - call it whatever you want to.
-Try, try, try and do not give up.
+Discipline, grit, Pomodoro - call it whatever you want to. Try, try, try and do
+not give up.
 
 ** Books
 
 *** Mind Hacks
 
-http://shop.oreilly.com/product/9780596007799.do
+- http://shop.oreilly.com/product/9780596007799.do
 
 *** The 5 Elements of Effective Thinking
 
-http://www.amazon.com/gp/product/0691156662/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691156662&linkCode=as2&tag=chamaxwoo-20
+- http://www.amazon.com/gp/product/0691156662/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0691156662&linkCode=as2&tag=chamaxwoo-20
 
 *** Mastery
 
-http://www.amazon.com/gp/product/014312417X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=014312417X&linkCode=as2&tag=chamaxwoo-20
+- http://www.amazon.com/gp/product/014312417X/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=014312417X&linkCode=as2&tag=chamaxwoo-20
 
 ** How to start?
 
 *** 10000 hours myth
 
-10 000 hours is necessary to be an EXPERT in certain field, not to learn something.
-This amount is equal to 5 years of full-time job.
+10 000 hours is necessary to be an EXPERT in certain field, not to learn
+something. This amount is equal to 5 years of full-time job.
 
 *** First 20 hours
 
 https://www.youtube.com/watch?v=5MgBikgcWnY
 
 The first 20 hours of knowing something (from the ground zero) are most crucial.
-After that, with deliberate and organized practice without procrastination - just
-honest 20 hours - you can say that you are reasonable good at something.
+After that, with deliberate and organized practice without procrastination -
+just honest 20 hours - you can say that you are reasonable good at something.
 
 *** Talent is 'bullshit'
 
 Talent is not a necessity to be proficient at something. Moreover it is also not
-necessary for the expertise in any field. Deliberate practice, exercises, passion
-and determination will make you a better expert, than just pure talent.
+necessary for the expertise in any field. Deliberate practice, exercises,
+passion and determination will make you a better expert, than just pure talent.
 
 **** Types
 
-https://www.youtube.com/watch?v=rHLTltK1kss
+- https://www.youtube.com/watch?v=rHLTltK1kss
 
 ***** Drills
 
@@ -79,8 +82,8 @@ Following and shadowing better than us, masters.
 
 ***** Simulation
 
-Sparrings and trainings - in IT it can be a hackaton, playground - safe place for
-testing ideas without stakes.
+Sparrings and trainings - in IT it can be a hackaton, playground - safe place
+for testing ideas without stakes.
 
 ***** Case Studies
 
@@ -97,9 +100,12 @@ audience in order to feel and track the rythm, being familiar with it.
 
 *** Use a information retrieval bias
 
-Informations that are desperately searched, are treated as more valuable than these ones which are available and searched without hesitation.
+Informations that are desperately searched, are treated as more valuable than
+these ones which are available and searched without hesitation.
 
-You can trick it by preparing questions when you are reading what topics should be covered after you have read the book. Answers should be provided as a direct feedback and result of reading a book.
+You can trick it by preparing questions when you are reading what topics should
+be covered after you have read the book. Answers should be provided as a direct
+feedback and result of reading a book.
 
 ** Shallow/Deep Learning
 ** The Making of an Expert
