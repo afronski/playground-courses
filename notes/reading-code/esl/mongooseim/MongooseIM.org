@@ -5,8 +5,21 @@
 
 ** What? Who?
 
-- *Authors*:
-- *What*:
+- *Authors*: Erlang Solutions
+- *What*: It is an `ejabberd` fork, which has cleaner architecture (modular,
+  allows to integrate preexisting solutions into it), with additional features
+  and bug fixes.
+  - It is based and compliant with *XMPP* and additional *XEP* specifications
+    (like one for the group chats).
+  - It supports *web sockets*.
+- *Usage*: It is used in the wild with various clients - either from *IM domain*
+  or *Social Media*, like *Grindr*, *ooVoo*, *Whisper*. It is also used in the
+  *gaming* industry and in *telecom*.
+
+** XMPP
+
+*** Protocol Overview
+*** Protocol Extensions - XEP
 
 ** Architecture
 
