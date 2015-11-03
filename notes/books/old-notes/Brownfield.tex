@@ -1,0 +1,284 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{polski}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage[cp1250]{inputenc}
+\title{Brownfield application development in .NET (Baley, Belcham)}
+\author{Wojciech Gawronski (afronski@gmail.com)}
+
+\begin{document}
+\lstset{language=JavaScript}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Definitions}
+
+\textbf{Brownfield} - old, rusty and toxic application which must be developed and extended.
+\textbf{Greenfield} - new and fresh project which is clean, simple and nice.
+\textbf{Legacy Code} - code in which team fix only critical issues and makes no addition at all - only maintenance is important for this type of application.
+
+\textbf{Identifying pain points} - places where code, architecture and organisation are invalid/wrong/slows down team etc.
+\textbf{Identifying friction} - places inside application which are acceptable but should be improved in further steps to reduce team amount of time spent on fighting with this issues.
+
+\textbf{Challenge your assumptions} - challenge your knowledge about application, requirements and architecture inside.
+
+\textbf{Big rewrite} is in almost all cases wrong idea - only when system founds must be changes (e.g. switching from synchronous to asnychronous architecture) this approach should be applied. Focused refactoring, small ecosystem improvement and after hours fixes are much more reasonable. We refer to still actual Joel Spolsky's arcticle from 2000 titled "Things you should never do" about dangers of rewriting from scrach.
+
+\section{Challenges of brownfield application}
+\begin{itemize}
+    \item Technical
+    \item Political
+    \item Management morale
+    \item Client morale
+    \item Team morale
+\end{itemize}
+
+\subsection{Technical factors}
+These factors are the easy one (predictable, reasonable and not dependent on people and political situation). When you start looking at first you see many, many problems with technical side, but you must be focused. You cannot follow with syndrome "I'll-Just-Refactor-This-One-Piece-Of-Code-First". Inconsistency and big changes are harder to manage, analyse and maintain for the rest of developers.
+
+\subsection{Political factors}
+Politics plays a factor even in the smallest companies. Especially Brownfield application have their own history, nature and politics. Dealing with this is never an easy undertaking. The best ways to fight with this are subtlety and patience. Thread lighty at first.
+
+\subsection{Morale}
+\begin{itemize}
+	\item Team - team won't share your enthusiasm for fixing brownfield application (if you are treating this like a challenge). In fact they work hard on this projece but something went wrong. Their morale drops to a minimal level of involvement, so in fact it's hard to expect enthusiasm which follows with your attitude. Collective ownership is a keyword for changing attitude. Team must feel responsibility and collective ownership of this application. Team follows with challenges together, bug is a team's falut (not a one person fault). When project succeeds it's due to efforts whole team not one person or management department.
+	\item Client - clienta have simple concerns and requirements - they want to running, unbugged app with their features with the lowest possible cost. So morale goes down when application is shipped buggy, not working, without requested features and expensive. Involving a client is a good thing - it's all about shorter and invaluable feedback. Also it grows morale of client and it builds stronger connectivity and collective ownership with this application.
+	\item Management - like as above - low management's morale also influences on team. In fact even stronger than client's morale (which in many situations is separated from team by management department). Also the reasons are the same - cost and delivering working, unbuggy software at the time. Good thing for repairing their morale is keeping opened communication line all the time.
+\end{itemize}
+
+\subsection{Being an agent for change}
+\begin{itemize}
+	\item Embracing a change at personal level.
+	\item Dealing with skepticism.
+	\item Before starting any change be sure you can measure how successful it will be when you're done.
+	\item It's a better to beg forgiveness than to ask of permission - if this decision is easily reversible that's even better.
+	\item Talk with the people you need to talk and tell them only pertinent details.
+	\item Don't get emotionally involved - warrant shouldn't have melodramatic response at all (diplomacy is important in this case).
+	\item Deal with emotions and beware of assulting someone about this state of project.
+	\item Find people which want change like you - If you found them you'll whave a personal advocates of ideas worth to spread in team.
+\end{itemize}
+
+\subsection{Selling it to your boss}
+Sometimes (in fact - in most of times) idea of change must be sold to your management in tricky and smart way. If it isn't, there is a huge possibility of words "We'll do a refactor later but for time being just get it done". It's all about balance between technical debt and cost-benefit equations - both groups (managers and developers) have tendencies to forget how important this balance is. Justifing expense of large scale changes are hard, but some some informations about project are also invalid (like project's short life or "We used good design patterns").
+
+Exists at least one good way for convicing management and client for large scale changes - concrete results with clear business value. Attempt to convice them to let you try prototype or research some problems in small and controlled situation. These trials gives a good sour and balance between a loss and winning. Also mockups and proofs-of-concepts are invaluable in these situations (especially when it comes to the UI).
+
+\section{Ecosystem} 
+These are the parts of application on which you've influence. You can change it in your own way and you can easily made cons an advantage (with minimal energy consumption on this task).
+
+\begin{itemize}
+	\item VCS - important thing about working in team on one codebase. It should be easy to understand, clearly to communicate and cheap in resources. One of most important thing is branching (making a~fork and rejoining main codebase into many paths).
+	\item CI - Continous Integration is most important thing for delivering working and stable software. You have to use CI server and automate all things like building nightlies, testing and building whole application from scratch.
+	\item Tests - most important things is to difer integration tests from unit tests. Unit tests must have all dependencies mocked or stubbed. Integration should check whole system from attic to basement. Another type of testing are automated UI tests (which are important when GUI is more than view and had complicated logic inside specific for GUI).
+	\item Database management - You should use tools for database management, but you shouldn't be bounded only by your programming language or technology (RoR migration tool is neat and language agnostic).
+\end{itemize}
+
+\subsection{Tests}
+
+Pyramid of tests:
+\begin{itemize}
+	\item On top - automated UI tests - most expensive, solid but provides feedback which is near to end user's feedback.
+	\item Below we have integration tests - layering, wiring and testing overall features (without GUI). Maintenance cost is higher than unit tests but work is more robust than unit tests.
+	\item Most of tests in IT project should be an unit tests. They are lightweight, simple, testing only isolated piece of application.
+\end{itemize}
+
+Like in the pyramid, all level should have adequatly to it's width amount of tests.
+
+\subsection{Software metrics and code analysis}
+
+Metrics:
+\begin{itemize}
+	\item Code Coverage
+	\item Cyclomatic Complexity
+	\item Class coupling
+	\item Cohesion
+	\item Distance from main sequence
+	\item Depth of inheritance
+	\item Maintainability index
+\end{itemize}
+
+Pros and cons metrics and code analysis:
+\begin{itemize}
+	\item You cannot be crazy about for filling and fixing all possible metrics.
+	\item Sometimes people opinions are more important and valuable than metrics.
+	\item Favor face-to-face conversation than technical e-mails.
+\end{itemize}
+
+\subsection{Defect management}
+\begin{itemize}
+	\item Prioritized backlog and bugtracker.
+	\item Team and tasks switching (new features and bugs should be resolved by different people).
+	\item Code Collective Ownership - everybody should feel comfortable in every piece of production code.
+	\item Maintain momentum and monitor bug counters per module.
+	\item Defects and features go to the backlog - so discussions about type are often unnecessary.
+	\item Use numerically incremented priorities than descriptive states (better information about real prioties and urgency).
+\end{itemize}
+
+\section{The Code}
+
+\subsection{Better OO practices}
+Foundation:
+\begin{itemize}
+	\item Encapsulation
+	\item Inheritance
+	\item Abstraction
+	\item Polymorphism
+\end{itemize}
+
+Principles:
+\begin{itemize}
+	\item Favor composition over inheritance.
+	\item Single responsibility principle.
+	\item Open/Closed Principle - open for extensibility, but closed for modifications.
+	\item Principle of least knowledge (Law of Demeter, Talk onlu to your immediate friends).
+	\item Dependency inversion principle (Holywood law).
+	\item Interface-based designs.
+\end{itemize}
+
+Important note: naming in patterns can be a clutter up and unnecessary jargon, information for pattern, not class behavior.
+
+Introducting design principles to a team:
+\begin{itemize}
+	\item Code spikes and prototypes.
+	\item Lunch'n'learn aka casual classroom.
+	\item Mentoring.
+	\item Refactoring as you go.
+\end{itemize}
+
+Agile approaches:
+\begin{itemize}
+	\item KISS
+	\item YAGNI
+	\item DRY
+\end{itemize}
+
+\subsection{Relayering your application}
+
+Types of layers:
+\begin{itemize}
+	\item Horizontal layers.
+	\item Vertical layers (cross cutting concerns) - e.g. logging, performance counters, permissions etc.
+\end{itemize}
+
+Tips and tricks:
+\begin{itemize}
+	\item Layering should be dense and solid, but without unnecessary dependencies.
+	\item Many small independent layers are better than solid, one and kind of god-object things.
+	\item Vertical layers are good for AOP paradigm (\textit{Aspect Oriented Programming}).
+	\item Domain Centric Approach.
+\end{itemize}
+
+Refactoring:
+\begin{itemize}
+	\item Pick a starting point.
+	\item Make incremental improvements.
+	\item Refactor another screen.
+	\item Reorganize your advances.
+	\item Know when to stop.
+\end{itemize}
+
+\subsection{Loosen Up}
+
+\textit{Dependency inversion} principle: High-level modules shouldn't depend upon low-level. Both should depend upon abstractions. Abstractions shouldn't depend upon details. Details should depend upon abstractions.
+
+Adding IoC and DI into Brownfield project:
+\begin{itemize}
+	\item Testing for success.
+	\item Pick a jumping-off point.
+	\item Refactoring - only incremental, small controllable chunks.
+	\item Rely in new features only on interfaces.
+	\item Review and add unit tests.
+\end{itemize}
+
+\subsection{Cleaning up the UI}
+
+Pain points:
+\begin{itemize}
+	\item Code-behind for ASP.NET WebForms.
+	\item Large code base of screens and control events implementations.
+	\item Increased code duplication and decreased code reuse.
+	\item Fragile UI - adding new funcionality is difficult.
+\end{itemize}
+
+Solutions:
+\begin{itemize}
+	\item Separating the UIs layer concerns.
+	\item Use specialised sreen-specific classes (DTOs, \textit{Data Transfer Objects}) - separates DataAccess layer from GUI. Plumbing and maintenance for many version of this class can be done with tools (like AutoMapper).
+	\item Architectural Patterns - Passive View and Supervising Controller (both are variation of Model-View-Presenter) and Model-View-Controler.
+	\item Prefer event publication/subscription than direct reference for specified layer.
+	\item MVP in most cases is a better choice for a brownfield application than MVC.
+\end{itemize}
+
+Differences between MVP and MVC:
+\begin{itemize}
+	\item MVP - Better suited to the statefull application, MVC - stateless.
+	\item MVP - More communication between components, MVC - cleaner separation of concerns.
+	\item Easy to refactor brownfield application into MVP, in MVC is harder to retrofit from rusted code.
+\end{itemize}
+
+\subsection{Refactoring Data Access}
+
+Pain points:
+\begin{itemize}
+	\item Data access in wrong layer.
+	\item Too much separation between SQL and business logic (e.g. stored procedures and business logic, you do break something and you just don't know it until someone runs SQL procedure - run-time errors only).
+\end{itemize}
+
+Solutions:
+\begin{itemize}
+	\item Isolating data-access in one place.
+	\item DataSets, DataTables are evil.
+	\item Refactor CRUD with DRY principle.
+	\item Anticorruption layer (e.g. generic typed T IRepository interface and interfaces composition).
+	\item Command/Query Responsible Segregation - each method can be a command or query but not both, this architecture model is scalabe (queries can have cached data from replicated databases, commands are separated from cache and use publish/subscribe model for propagating changes).
+	\item Refactoring away from stored procedures.
+	\item Refactoring out of the data access layer.
+	\item Before refactoring add as many as possible integration tests for your DAL layer.
+	\item Prefer ORM libraries than hand-rolled engines.
+	\item Manage connection strings, prefer inline SQL than Stored Procedures and use database versioning.
+\end{itemize}
+
+Features of DAL:
+\begin{itemize}
+	\item Encapsulation
+	\item Lazy Loading
+	\item Caching
+	\item Change Management
+	\item Transactions (Unit-Of-Work pattern)
+	\item Persitance Ignorance - Entity objects have no knowledge about database infrastructure required to perform CRUD methods.
+	\item Persistance by Reachability - Entity objects have knowledge about relations and persistance structure (e.g. inserting, updateing, deleting cascades).
+\end{itemize}
+
+\subsection{External Dependencies}
+
+Pain points:
+\begin{itemize}
+	\item External systems.
+	\item Compile-time dependencies.
+	\item Runtime dependencies.
+\end{itemize}
+
+Solutions:
+\begin{itemize}
+	\item Design Patterns - Proxy, Facade, Remote Facade, Decorator, Adapter, Data Transfer Object.
+	\item Anticorruption layer - for all external dependencies (e.g Common Service Locator for IoC container).
+\end{itemize}
+
+\subsection{Keeping momentum}
+
+Solutions:
+\begin{itemize}
+	\item No "Spring Cleaning" iteratins - only a continous refactoring process.
+	\item Changing course and small steps change.
+	\item Danger - "Too much, too fast".
+	\item Scout principles.
+	\item Introducting and maintaining a culture of quality.
+\end{itemize}
+
+\end{document}
