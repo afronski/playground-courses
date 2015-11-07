@@ -1,0 +1,162 @@
+* Hashicorp
+
+** General overview
+
+#+CAPTION: Hashicorp tools overview.
+#+NAME:   fig:hashicorp-overview
+[[./images/hashicorp-overview.png]]
+
+** Vagrant
+
+It is a development tool which handles virtualization layer for managing your
+development environments easily, on top of VirtualBox, VMWare or Docker.
+
+** Packer
+
+It is a tool for building images for your virtualization or cloud / hosting
+provider layers, like e.g. *AMI* for AWS or VirtualBox images.
+
+** Serf
+
+It is a tool which provides scalable, fault-tolerant and proofed implementation
+of liveness and cluster management based on gossip-like protocols. It is
+powering *Consul* and *Nomad* tools.
+
+** Consul
+
+*** Details
+
+Service discovery and configuration management tool, with multi data center
+support which is distributed, highly available and DevOps friendly.
+
+https://consul.io/
+
+*** Features
+
+**** Highly Available
+
+- It is built on top of gossip protocols, which provide discoverability, proper
+  failure detection and liveness properties.
+  - It distinguishes service failure and machine liveness from deliberate
+    cluster left.
+- It is much lighter than Nagios, because it uses push method - so clients are
+  deciding what to send.
+  - Nagios does remote checks in pull manner, so basically for bigger clusters
+    you have bigger load.
+  - For Consul, checks are pushed from the edge when something change, liveness
+    and machine failures are handled by gossip pool protocol.
+
+**** Service Discovery
+
+- It provides standard protocols for service discovery:
+  - DNS - with all possibilities related with *blind round-robin*, *SRV* records
+    giving additional metadata.
+  - Rich HTTP API.
+
+**** Health-Check
+
+- It has built-in health-check mechanisms which are local to machine, so they
+  are not require any communication over SSH, when doing checks.
+  - Moreover, in that model if Consult will report that service is alive there
+    is no need to transfer additional data over the network. It can transfer
+    them only *when something change*, this is much easier and resilient e.g.
+    network errors and false positives because of that.
+
+**** Configuration Management
+
+- It has built-in key-value store accessible over built-in web UI and rich HTTP
+  API.
+- It can expose data over JSON or in the form of environment variables
+  (`envconsul`).
+- Moreover, thanks to the gossip protocol changes are spread through the cluster
+  very quickly (< 1s for ~1k nodes).
+- In multi data center scenario changes are exchanged in the WAN gossip ring
+  only between servers, and clients are forwarding queries to the servers.
+  - There are only 3 or 5 servers in the DC which are servers.
+  - They are handling synchronization with use of Raft consensus protocol.
+
+**** Multi Data Center Friendliness
+
+- In many data centers, there is no need for connecting all nodes with full mesh.
+  - We can connect only servers from all data centers in so called WAN gossip
+    ring. It requires at most 3 * N (or 5 * N - it depends of amount of servers
+    in DC) connections, where N is a number of DCs.
+  - Rest nodes (clients) thanks to ability of handing-over queries to server
+    does not have to know about all other nodes and changes in KV.
+
+**** DevOps Friendliness
+
+- It does not hide anything from you, you have standard UNIX mechanism (e.g.
+  environment variables) or richer APIs (e.g. HTTP) available to you.
+  - The only requirement is to parse JSON.
+- It easily integrates with existing services thanks to:
+  - `consul-templating` - ability to render any file with using KV and local
+    state.
+  - Watches and Events - with ability to filter them on the service / tag level.
+  - Remote Execution (over SSH) or specific commands.
+  - Using standard mechanisms for executing commands, UNIX signals for
+    restarting services and being good UNIX citizen at all.
+
+** Terraform
+
+It is a tool for building, changing, and versioning infrastructure safely
+and efficiently. Terraform can manage existing and popular service providers as
+well as custom in-house solutions.
+
+** Vault
+
+It secures, stores, and tightly controls access to tokens, passwords,
+certificates, API keys, and other secrets in modern computing. Vault handles
+leasing, key revocation, key rolling, and auditing.
+
+Vault presents a unified API to access multiple backends: *HSMs*, *AWS IAM*,
+*SQL databases*, raw key/value, and more.
+
+** Nomad
+
+It is a cluster management tool which is an optimistically concurrent resource
+scheduler. It is built on top of *Serf* and *Consul* and it can benefit from
+them as much as it can.
+
+Why optimistic? Because of certain architecture and flow of job and resource
+evaluation it can leverage multiple available servers, spread across data
+centers to do job of calculating how to spread the incoming tasks across
+multiple resources. Each server will take care of different scheduling
+algorithms, if one of the calculated plans will fail in some cases, we can do
+another round of scheduling and in optimistic case we will solve all potential
+issues.
+
+It is based on Google Borg, Google Omega and UC Berkley Sparrow solutions,
+documented by papers.
+
+** Otto
+
+It is an intelligent *Vagrant* successor, which bundles up all aforementioned
+tools into one, easy to learn and access smart meta-tool.
+
+It learns from your directory structure and files which type of project you are
+using, then it provides a dedicated virtualized development environment (under
+the hood it will use Vagrant). Then it can build dedicated image for your hosted
+solution provider (Nomad, Packer), setup an infrastructure on your cloud hosting
+environment (Packer, Terraform), manage all secrets (Vault) and orchestrate
+deployments and monitoring (Consul, Nomad).
+
+It uses crowd-sourced best practices, which can be written and prepared by the
+community, like setting up the most practical and state-of-the-art solution on
+e.g. DigitalOcean or AWS, with setting up public and private networks, load
+balancers and connecting them together in cluster management and scheduler
+solution powered by Nomad.
+
+Right now it is in version 0.1.2 and it already has nice things built-in.
+
+** Atlas
+
+#+CAPTION: Relation between Otto and Atlas solution.
+#+NAME:   fig:atlas-vs-otto
+[[./images/atlas-vs-otto.png]]
+
+It is a commercial product from Hashicorp which provides cooperation and UI
+layer for data center and devops tooling management.
+
+It Github-like model for managing infrastructure and data center oriented tools.
+Picture shows the relation between Otto and Atlas cloud solution.
