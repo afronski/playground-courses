@@ -20,3 +20,59 @@ broker (*brokerless* communication).
 *** ZeroMQ
 
 file:zeromq.org
+
+** Queues Theory
+
+*** Theory
+
+**** Closed Systems
+
+- They are systems where there is no buffer, producer can create one message
+  only when consumer is free and waiting for the message.
+  - Pretty easy to reason, math behind them is simple.
+  - Example of that systems:
+    - All unbounded queues.
+    - Terminal based applications.
+
+**** Open Systems
+
+- They are systems with one or multiple buffered queues, when producers are
+  piling up messages into FIFO like structure, and consumers are getting them
+  out of that structure. Both parties are working on their own pace.
+
+**** Exponential distribution
+
+- It is a distribution of uncorrelated events happening in time. For example,
+  the rate of incoming phone calls differs according to the time of day. But if
+  we focus on a time interval during which the rate is roughly constant, such as
+  from 2 to 4 p.m. during work days, the exponential distribution can be used as
+  a good approximate model for the time until the next phone call arrives.
+
+**** Unbounded queues are fundamentally broken
+
+- There is a fundamental flaw related with existence of unbounded queue, because
+  there is always an upper limit (e.g. memory, network, other resources). When
+  you hit that limit, process will fall over. During the piling up latency and
+  message queue length will increase.
+  - There is an interesting behavior related with amount of producers and
+    consumers in the system and dynamics of crash: assuming that there is an
+    equal amount of producers and consumers and unbounded queue in the system,
+    crash time is equal for all numbers, but the more processes are the more
+    rapid the crash will be, because eventually it will tip over from the same
+    reason, but with more processes it will be unexpected (with smaller amount
+    of processes you will start observing earlier other symptoms - like
+    increased latency).
+- Moreover, queues are not fixing overload.
+  - You need to either *drop messages* (sometimes it is sufficient), *reject*
+    (drop and inform produced that you dropped) or *pause* incoming message
+    stream.
+  - In other words, you have to apply some kind of *back pressure* when your
+    consumers are slowing down and cannot keep up with throughput. Keep in mind
+    that ideally you should have it in one place, and it should be consistent
+    across the system.
+
+**** Pursue to queues without buffers inside
+
+- Ideal situation is to convert open system to closed one, without buffer in the
+  middle.
+  - Like in the *ZeroMQ* case.
