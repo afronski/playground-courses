@@ -1,0 +1,131 @@
+* Real-Time Bidding (RTB)
+
+** Overview
+
+*** Static style of advertising
+
+You are buying a large, static block of impressions (in other words *eyeballs*
+which will look at that advertising space). You need to have big budget and you
+have to approach big companies e.g. newspapers.
+
+You are managing large relationships and that it is enough to run the company
+and earn money.
+
+*** Dynamic style of advertising
+
+When you have smaller budgets and you want to do it more dynamically, you will
+pay for individual impressions, it is more data driven, more direct. It started
+around 2009 - at that time first advertising exchanges appeared.
+
+Smaller budgets means more people that has to be served in order to make the
+same money as in static case, but moreover you don't care so much about long
+term relationships.
+
+It is purely technical things applied to advertising space, because you are
+designing real-time systems which are able to serve huge amount of requests with
+very strict time and latency limitations.
+
+**** Retargetting
+
+- It is all about data. You have to collect data from *pixels* scattered around
+  the web and then correlate them in your system in order to display ads to
+  people which might be interested to looking and clicking at them.
+- Exchanges are exposing slots, which are available for that particular user
+  which entered the page, during the <100 ms time bidders are fighting for that
+  slot, one wins and that back-end will serve the ad.
+- It happens during the page load.
+
+*** Participants
+
+**** Exchanges
+
+- NYTimes Web, Google, Twitter, Facebook etc. - they are exposing slots and
+  advertising space. They are running the ad auctions.
+- When user is loading web page there are several places when the ad will land,
+  there is no ad selected when user hit the endpoint, ads auctions are run
+  instead.
+  - Each auction has information about cookies, client's meta-data, slot
+    parameters.
+
+**** Auction
+
+- Event which lasts ~100ms - purpose is to sell / buy an ad for that place,
+  which has already associated meta-data.
+
+**** Bidders
+
+- Real-time systems which are bidding (fighting) in those auctions furiously to
+  display you their ads. In most cases they are companies which are managing
+  portfolios and budgets for the clients.
+  - So imagine that company A, has contract with shoes company - it has 100 USD
+    budget per week and it wants to spent it for certain type of customers. By
+    that criteria bidders are fighting for interesting auctions send by
+    exchanges in order to place those ads there.
+
+**** Ad Servers
+
+- Place from ads will be served, when bidder will won the auction. It can be
+  served immediately or in a deferred spot, so when bidder won such spot, it is
+  scheduled for future occasion (like certain type of client which will appear
+  after 4 PM).
+
+*** Terms
+
+**** Demand-side Platform (DSP)
+
+- A demand-side platform (DSP) is a system that allows buyers of digital
+  advertising inventory to manage multiple ad exchange and data exchange
+  accounts through one interface.
+  - It is a *bidder*.
+
+**** Supply-side Platform (SSP)
+
+- A supply-side platform or sell-side platform (SSP) is a technology platform to
+  enable web publishers to manage their advertising space inventory, fill it
+  with ads, and receive revenue.
+  - It is an *ad exchange*.
+
+**** Process overview
+
+Example: https://www.youtube.com/watch?v=-Glgi9RRuJs
+
+1. When user browse the web *pixels* are gathering data about behavior and
+   shopping carts.
+2. Then it is stored in the DSPs back-ends as a meta-data.
+3. When user hit a page with available slot, published server will send him a
+   place which will be filled with ad. Now the bidding process starts.
+4. SSP exposes information about auction for that particular impression and
+   meta-data delivered from the user agent.
+5. DSPs are evaluating impression and fighting by bidding (taking into account
+   matching with requirements, models, budget) into really small time.
+6. DSP which wins can expose afterwards the ad via its ad server infrastructure.
+
+** System type
+
+If we will divide real-time systems into three categories:
+
+- Soft Real-Time Systems - when you can miss some deadlines and nothing bad
+  happen, sometimes calculations of that missed deadlines are valuable.
+- Firm Real-Time Systems - when you can miss some deadlines and nothing bad
+  happen, but calculations result has no value at all.
+- Hard Real-Time Systems - when you can't miss any deadlines and if you miss
+  them, catastrophic failures can happen.
+
+All real-time bidding systems are those in the middle - classified as a *firm
+real-time systems*, because when you miss the deadline you can not spend / earn
+any money from that particular auction.
+
+Systems like that are *global* (24 hours / 7 days in a week) and *highly
+concurrent* (> 40B transactions per day - AdRoll 2014).
+
+** Tips and Guides
+
+- There is a project called *OpenRTB* and *rtbkit*.
+  - Details here: https://github.com/rtbkit/rtbkit/wiki/Architecture#bidding-agent
+- Monitoring is crucial.
+  - In Erlang ecosystem *exometer* is an amazing tool.
+  - Also VM itself is fully introspected, you can extract almost every kind of
+    metric without adding too much overhead.
+  - Tools:
+    - `etsy/statsd` - UDP based.
+    - `aphyr/riemann` - TCP based.
