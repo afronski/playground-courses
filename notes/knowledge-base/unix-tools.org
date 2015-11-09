@@ -1,0 +1,28 @@
+* UNIX Tools
+
+** `/proc` is your friend
+
+- `/proc` is a file descriptor representation of running processes on your
+  machine. You can access from there binary executable, command line program
+  name, memory usage etc.
+  - Getting executable related to that process:
+    - `# cat /proc/53165/exe > /tmp/executable-for-PID`
+- `ps` is also using that file structure:
+  - `ps -p 8909 --no-headers -o cmd`
+
+** Extracting memory from the running process
+
+- First invoke `gcore PID` it will save a core file.
+- Then do `strings COREFILE | less` and you can search across all strings which
+  were available in memory at that time.
+
+** Connecting to a running process with `gdb` and calling functions
+
+- You can connect to a process via *PID*, and you can pass a binary as an
+  argument. It is helpful in situation when the binary isn't available anymore
+  on the machine and it is only in the memory.
+  - `# gdb --pid 53165 /tmp/oldBash`
+  - After that you can easily call any exposed function:
+    - `(gdb) call write_history("/tmp/foo")`
+    - `(gdb) detach`
+    - `(gdb) q`
