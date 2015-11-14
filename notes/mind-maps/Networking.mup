@@ -8,248 +8,6 @@
     }
   },
   "ideas": {
-    "1": {
-      "title": "TCP (RFC 793)",
-      "id": 2,
-      "ideas": {
-        "1": {
-          "title": "HTTP",
-          "id": 3,
-          "ideas": {
-            "1": {
-              "title": "1.0 / 1.1",
-              "id": 19
-            },
-            "2": {
-              "title": "2.0",
-              "id": 20
-            }
-          }
-        },
-        "2": {
-          "title": "TLS / SSL",
-          "id": 14,
-          "ideas": {}
-        },
-        "3": {
-          "title": "Provides the abstraction of a reliable network running over an unreliable channel",
-          "id": 86,
-          "attr": {
-            "style": {
-              "background": "#FAFAD2"
-            }
-          },
-          "ideas": {
-            "1": {
-              "title": "TCP / IP connection between hosts with OSI layers",
-              "id": 149,
-              "attr": {
-                "icon": {
-                  "url": "internal:3/ff7e4f78-bfe4-a9af-a0f5-40edbd1969ca/",
-                  "width": 495,
-                  "height": 353,
-                  "position": "top"
-                },
-                "style": {
-                  "background": "#FAFAD2"
-                }
-              }
-            }
-          }
-        },
-        "4": {
-          "title": "CONNECTION",
-          "id": 95,
-          "ideas": {
-            "1": {
-              "title": "Three-way Handshake",
-              "id": 96,
-              "attr": {
-                "icon": {
-                  "url": "internal:2/ff7e4f78-bfe4-a9af-a0f5-40edbd1969ca/",
-                  "width": 600,
-                  "height": 332,
-                  "position": "bottom"
-                },
-                "style": {},
-                "collapsed": true
-              },
-              "ideas": {
-                "1": {
-                  "title": "It is required because server and client have to agree about common starting packet sequence number",
-                  "id": 97,
-                  "ideas": {
-                    "1": {
-                      "title": "Without that we cannot deliver guarantees related with ordering and completeness of the protocol",
-                      "id": 98
-                    }
-                  },
-                  "attr": {
-                    "collapsed": true,
-                    "style": {}
-                  }
-                },
-                "2": {
-                  "title": "Each new connection needs to begin with that handshake, which is a serious performance implication",
-                  "id": 99,
-                  "ideas": {
-                    "1": {
-                      "title": "It involves full roundtrip and it is highly latency aware because of that",
-                      "id": 100,
-                      "ideas": {},
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4E1"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "That is why we should reuse existing, established connections when we are using TCP",
-                      "id": 103,
-                      "ideas": {},
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4E1"
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "style": {
-                      "background": "#FFE4E1"
-                    },
-                    "collapsed": true
-                  }
-                },
-                "3": {
-                  "title": "TCP Fast Open (TFO)",
-                  "id": 104,
-                  "ideas": {
-                    "1": {
-                      "title": "It is an optimization for three-way handshake",
-                      "id": 105,
-                      "attr": {
-                        "style": {
-                          "background": "#EEE8AA"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "It sends the data initally with SYN packet - which is good, but because of payload size constraints you can send only a certain amount of data with that packet",
-                      "id": 106,
-                      "attr": {
-                        "style": {
-                          "background": "#EEE8AA"
-                        }
-                      }
-                    },
-                    "3": {
-                      "title": "Moreover it can be used only for repeat connections, because of cryptographic cookie requirements",
-                      "id": 107,
-                      "attr": {
-                        "style": {
-                          "background": "#EEE8AA"
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "style": {
-                      "background": "#EEE8AA"
-                    },
-                    "collapsed": true
-                  }
-                }
-              }
-            }
-          },
-          "attr": {
-            "collapsed": true,
-            "style": {}
-          }
-        },
-        "5": {
-          "title": "CONGESTION AVOIDANCE AND CONTROL",
-          "id": 111,
-          "ideas": {
-            "1": {
-              "title": "Congestion Collapse",
-              "id": 113,
-              "ideas": {
-                "1": {
-                  "title": "Happened when gateways connected networks of widely different bandwidth",
-                  "id": 117,
-                  "attr": {
-                    "style": {
-                      "background": "#8B0000"
-                    }
-                  }
-                },
-                "2": {
-                  "title": "When the RTT exceeded the maximum retransmission interval for any host, that host started to introduce more and more copies of the datagram to the net",
-                  "id": 118,
-                  "ideas": {
-                    "1": {
-                      "title": "Eventually network has a serious trouble, because all buffers are full and packets must be dropped",
-                      "id": 121,
-                      "ideas": {},
-                      "attr": {
-                        "style": {
-                          "background": "#8B0000"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "But even when hosts are sending each packet several times and some copy of each packet will arrive",
-                      "id": 123,
-                      "attr": {
-                        "style": {
-                          "background": "#8B0000"
-                        }
-                      }
-                    },
-                    "3": {
-                      "title": "Because of fairness of packets dropping algorithm this condition is stable, so when network is saturated it will operate in those conditions",
-                      "id": 124,
-                      "attr": {
-                        "style": {
-                          "background": "#8B0000"
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "collapsed": true,
-                    "style": {
-                      "background": "#8B0000"
-                    }
-                  }
-                }
-              },
-              "attr": {
-                "style": {
-                  "background": "#8B0000"
-                },
-                "collapsed": true
-              }
-            }
-          },
-          "attr": {
-            "collapsed": true,
-            "style": {}
-          }
-        },
-        "6": {
-          "title": "FLOW CONTROL",
-          "id": 112
-        }
-      },
-      "attr": {
-        "style": {
-          "background": "#5F9EA0"
-        }
-      }
-    },
     "2": {
       "title": "THEORY",
       "id": 21,
@@ -584,7 +342,7 @@
       "id": 129,
       "attr": {
         "style": {
-          "background": "#F5FFFA"
+          "background": "#000000"
         }
       },
       "ideas": {
@@ -695,59 +453,300 @@
         }
       }
     },
-    "-1": {
-      "title": "UDP",
-      "id": 10,
+    "-4": {
+      "title": "PROTOCOLS",
+      "id": 150,
       "ideas": {
-        "1": {
-          "title": "UDP",
-          "id": 12,
-          "ideas": {}
-        },
-        "2": {
-          "title": "DTLS",
-          "id": 17
-        },
-        "3": {
-          "title": "SYSLOG",
-          "id": 18
-        }
-      },
-      "attr": {
-        "style": {
-          "background": "#5F9EA0"
-        }
-      }
-    },
-    "-2": {
-      "title": "IP (RFC 791)",
-      "id": 79,
-      "ideas": {
-        "1": {
-          "title": "Provides the host-to-host routing and addressing",
-          "id": 81,
+        "4": {
+          "title": "TCP (RFC 793)",
+          "id": 2,
+          "ideas": {
+            "3": {
+              "title": "Provides the abstraction of a reliable network running over an unreliable channel",
+              "id": 86,
+              "attr": {
+                "style": {
+                  "background": "#FAFAD2"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "TCP / IP connection between hosts with OSI layers",
+                  "id": 149,
+                  "attr": {
+                    "icon": {
+                      "url": "internal:3/ff7e4f78-bfe4-a9af-a0f5-40edbd1969ca/",
+                      "width": 495,
+                      "height": 353,
+                      "position": "top"
+                    },
+                    "style": {
+                      "background": "#FAFAD2"
+                    }
+                  }
+                }
+              }
+            },
+            "4": {
+              "title": "CONNECTION",
+              "id": 95,
+              "ideas": {
+                "1": {
+                  "title": "Three-way Handshake",
+                  "id": 96,
+                  "attr": {
+                    "icon": {
+                      "url": "internal:2/ff7e4f78-bfe4-a9af-a0f5-40edbd1969ca/",
+                      "width": 600,
+                      "height": 332,
+                      "position": "bottom"
+                    },
+                    "style": {},
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "It is required because server and client have to agree about common starting packet sequence number",
+                      "id": 97,
+                      "ideas": {
+                        "1": {
+                          "title": "Without that we cannot deliver guarantees related with ordering and completeness of the protocol",
+                          "id": 98
+                        }
+                      },
+                      "attr": {
+                        "collapsed": true,
+                        "style": {}
+                      }
+                    },
+                    "2": {
+                      "title": "Each new connection needs to begin with that handshake, which is a serious performance implication",
+                      "id": 99,
+                      "ideas": {
+                        "1": {
+                          "title": "It involves full roundtrip and it is highly latency aware because of that",
+                          "id": 100,
+                          "ideas": {},
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4E1"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "That is why we should reuse existing, established connections when we are using TCP",
+                          "id": 103,
+                          "ideas": {},
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4E1"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4E1"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "3": {
+                      "title": "TCP Fast Open (TFO)",
+                      "id": 104,
+                      "ideas": {
+                        "1": {
+                          "title": "It is an optimization for three-way handshake",
+                          "id": 105,
+                          "attr": {
+                            "style": {
+                              "background": "#EEE8AA"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "It sends the data initally with SYN packet - which is good, but because of payload size constraints you can send only a certain amount of data with that packet",
+                          "id": 106,
+                          "attr": {
+                            "style": {
+                              "background": "#EEE8AA"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "Moreover it can be used only for repeat connections, because of cryptographic cookie requirements",
+                          "id": 107,
+                          "attr": {
+                            "style": {
+                              "background": "#EEE8AA"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#EEE8AA"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "collapsed": true,
+                "style": {}
+              }
+            },
+            "5": {
+              "title": "CONGESTION AVOIDANCE AND CONTROL",
+              "id": 111,
+              "ideas": {
+                "1": {
+                  "title": "Congestion Collapse",
+                  "id": 113,
+                  "ideas": {
+                    "1": {
+                      "title": "Happened when gateways connected networks of widely different bandwidth",
+                      "id": 117,
+                      "attr": {
+                        "style": {
+                          "background": "#8B0000"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "When the RTT exceeded the maximum retransmission interval for any host, that host started to introduce more and more copies of the datagram to the net",
+                      "id": 118,
+                      "ideas": {
+                        "1": {
+                          "title": "Eventually network has a serious trouble, because all buffers are full and packets must be dropped",
+                          "id": 121,
+                          "ideas": {},
+                          "attr": {
+                            "style": {
+                              "background": "#8B0000"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "But even when hosts are sending each packet several times and some copy of each packet will arrive",
+                          "id": 123,
+                          "attr": {
+                            "style": {
+                              "background": "#8B0000"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "Because of fairness of packets dropping algorithm this condition is stable, so when network is saturated it will operate in those conditions",
+                          "id": 124,
+                          "attr": {
+                            "style": {
+                              "background": "#8B0000"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "collapsed": true,
+                        "style": {
+                          "background": "#8B0000"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#8B0000"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "collapsed": true,
+                "style": {}
+              }
+            },
+            "6": {
+              "title": "FLOW CONTROL",
+              "id": 112
+            }
+          },
           "attr": {
             "style": {
-              "background": "#FFF8DC"
+              "background": "#5F9EA0"
             }
           }
         },
-        "2": {
-          "title": "There are two versions of that protocol",
-          "id": 88,
+        "5": {
+          "title": "TLS / SSL",
+          "id": 14,
+          "ideas": {},
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            }
+          }
+        },
+        "15": {
+          "title": "HTTP",
+          "id": 3,
           "ideas": {
             "1": {
-              "title": "v4",
-              "id": 89,
+              "title": "1.0 / 1.1",
+              "id": 19
+            },
+            "2": {
+              "title": "2.0",
+              "id": 20
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
+          }
+        },
+        "0.5": {
+          "title": "IP (RFC 791)",
+          "id": 79,
+          "ideas": {
+            "1": {
+              "title": "Provides the host-to-host routing and addressing",
+              "id": 81,
               "attr": {
                 "style": {
-                  "background": "#98FB98"
+                  "background": "#FFF8DC"
                 }
               }
             },
             "2": {
-              "title": "v6",
-              "id": 91,
+              "title": "There are two versions of that protocol",
+              "id": 88,
+              "ideas": {
+                "1": {
+                  "title": "v4",
+                  "id": 89,
+                  "attr": {
+                    "style": {
+                      "background": "#98FB98"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "v6",
+                  "id": 91,
+                  "attr": {
+                    "style": {
+                      "background": "#98FB98"
+                    }
+                  }
+                }
+              },
               "attr": {
                 "style": {
                   "background": "#98FB98"
@@ -757,14 +756,40 @@
           },
           "attr": {
             "style": {
-              "background": "#98FB98"
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
+          }
+        },
+        "4.5": {
+          "title": "UDP",
+          "id": 10,
+          "ideas": {
+            "1": {
+              "title": "UDP",
+              "id": 12,
+              "ideas": {}
+            },
+            "2": {
+              "title": "DTLS",
+              "id": 17
+            },
+            "3": {
+              "title": "SYSLOG",
+              "id": 18
             }
+          },
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
           }
         }
       },
       "attr": {
         "style": {
-          "background": "#5F9EA0"
+          "background": "#000000"
         }
       }
     }
