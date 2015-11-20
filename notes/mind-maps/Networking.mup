@@ -1067,6 +1067,84 @@
                     "collapsed": true
                   }
                 },
+                "5": {
+                  "title": "Bandwidth-Delay Product (BDP)",
+                  "id": 235,
+                  "ideas": {
+                    "1": {
+                      "title": "The optimal sender and receiver window sizes must vary based on the RTT and the target data rate between them.",
+                      "id": 237,
+                      "ideas": {
+                        "1": {
+                          "title": "If either the sender or receiver exceeds the maximum amount of unacknowledged data, then it must stop and wait for the other end to ACK some of the packets before proceeding",
+                          "id": 238,
+                          "ideas": {
+                            "1": {
+                              "title": " How long would it have to wait?",
+                              "id": 239,
+                              "ideas": {
+                                "1": {
+                                  "title": "That’s dictated by the RTT between the two!",
+                                  "id": 240,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#EEE8AA"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#EEE8AA"
+                                },
+                                "collapsed": true
+                              }
+                            },
+                            "2": {
+                              "title": "When sender have or receiver have to frequently wait for ACKs, it creates gaps in data flow",
+                              "id": 241,
+                              "ideas": {
+                                "1": {
+                                  "title": "In consequence it limits the throughput",
+                                  "id": 242,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#EEE8AA"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#EEE8AA"
+                                },
+                                "collapsed": true
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#EEE8AA"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#EEE8AA"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#EEE8AA"
+                    },
+                    "collapsed": true
+                  }
+                },
                 "3.5": {
                   "title": " Congestion Avoidance",
                   "id": 215,
@@ -1296,6 +1374,222 @@
               "attr": {
                 "style": {},
                 "collapsed": true
+              }
+            },
+            "7": {
+              "title": "RELIABILITY",
+              "id": 243,
+              "ideas": {
+                "1": {
+                  "title": "Head-of-Line Blocking",
+                  "id": 244,
+                  "ideas": {
+                    "1": {
+                      "title": "In case of losing one of packets from sequence, we need to wait for a missing predecessor, also for retransmissions and queued buffers",
+                      "id": 245,
+                      "ideas": {
+                        "1": {
+                          "title": "Because it is handled on the transport layer, it is visible for the application layer as a blocked socket from which you cannot read",
+                          "id": 246,
+                          "attr": {
+                            "style": {
+                              "background": "#FFF5EE"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFF5EE"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "2": {
+                      "title": "It is unpredictable latency variation in packet arrival times, commonly referred as jitter",
+                      "id": 247,
+                      "attr": {
+                        "style": {
+                          "background": "#FFF5EE"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFF5EE"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "collapsed": true,
+                "style": {}
+              }
+            },
+            "8": {
+              "title": "OPTIMIZATION",
+              "id": 248,
+              "ideas": {
+                "1": {
+                  "title": "AXIOMS",
+                  "id": 250,
+                  "ideas": {
+                    "1": {
+                      "title": "TCP Three-Way Handshake introduces a full RTT latency",
+                      "id": 251,
+                      "attr": {
+                        "style": {
+                          "background": "#008B8B"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "TCP slow-start is applied to every new connection",
+                      "id": 252,
+                      "attr": {
+                        "style": {
+                          "background": "#008B8B"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "TCP flow and congestion control regulate throughput of all connections",
+                      "id": 253,
+                      "attr": {
+                        "style": {
+                          "background": "#008B8B"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "TCP throughput is regulated by current congestion window size",
+                      "id": 254,
+                      "attr": {
+                        "style": {
+                          "background": "#008B8B"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#008B8B"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "GUIDELINES",
+                  "id": 255,
+                  "ideas": {
+                    "1": {
+                      "title": "Update kernel to the most recent version (Linux 3.2+)",
+                      "id": 256,
+                      "ideas": {},
+                      "attr": {
+                        "style": {
+                          "background": "#8B4513"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Increase TCP's initial congestion window",
+                      "id": 258,
+                      "attr": {
+                        "style": {
+                          "background": "#8B4513"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Disabling slow-start restart",
+                      "id": 259,
+                      "attr": {
+                        "style": {
+                          "background": "#8B4513"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Enabling window scaling (RFC 1323)",
+                      "id": 260,
+                      "attr": {
+                        "style": {
+                          "background": "#8B4513"
+                        }
+                      }
+                    },
+                    "5": {
+                      "title": "Enable in some cases TCP Fast Open",
+                      "id": 261,
+                      "attr": {
+                        "style": {
+                          "background": "#8B4513"
+                        }
+                      }
+                    },
+                    "6": {
+                      "title": "TCP Connection Reuse is crucial to improve performance",
+                      "id": 264,
+                      "attr": {
+                        "style": {
+                          "background": "#6495ED"
+                        }
+                      }
+                    },
+                    "7": {
+                      "title": "Send less data if you can",
+                      "id": 265,
+                      "attr": {
+                        "style": {
+                          "background": "#6495ED"
+                        }
+                      }
+                    },
+                    "8": {
+                      "title": "Move parties closer together (you can't change speed of light, but you can change the distance)",
+                      "id": 266,
+                      "attr": {
+                        "style": {
+                          "background": "#6495ED"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "3": {
+                  "title": "TOOLS",
+                  "id": 262,
+                  "ideas": {
+                    "1": {
+                      "title": "ss \n--options \n--extended \n--memory \n--processes \n--info",
+                      "id": 263,
+                      "attr": {
+                        "style": {
+                          "background": "#A9A9A9"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#A9A9A9"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "collapsed": true,
+                "style": {}
               }
             }
           },
