@@ -1,0 +1,395 @@
+{
+  "title": "DISTRIBUTED COMPUTING",
+  "id": 1,
+  "formatVersion": 2,
+  "attr": {
+    "style": {
+      "background": "#D3D3D3"
+    }
+  },
+  "ideas": {
+    "1": {
+      "title": "DEFINITION",
+      "id": 2,
+      "attr": {
+        "style": {
+          "background": "#ADFF2F"
+        }
+      },
+      "ideas": {
+        "1": {
+          "title": "It is a field of computer science that studies DISTRIBUTED SYSTEMS",
+          "id": 3,
+          "ideas": {
+            "1": {
+              "title": "It is a software system in which components located on networked computers communicate and coordinate their actions by passing messages",
+              "id": 4,
+              "ideas": {
+                "2": {
+                  "title": "The components interact with each other in order to achieve a common goal",
+                  "id": 30,
+                  "attr": {
+                    "style": {
+                      "background": "#ADFF2F"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "EXAMPLES",
+                      "id": 12,
+                      "ideas": {
+                        "1": {
+                          "title": "MMO Games",
+                          "id": 13,
+                          "ideas": {},
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "P2P Networks",
+                          "id": 25,
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "SOA-based Systems",
+                          "id": 26,
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            }
+                          }
+                        },
+                        "4": {
+                          "title": "Microservices-based Systems",
+                          "id": 27,
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#ADFF2F"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#ADFF2F"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "FEATURES",
+              "id": 6,
+              "ideas": {
+                "1": {
+                  "title": "Concurrent execution across components",
+                  "id": 7,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#ADFF2F"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Lack of a global clock",
+                  "id": 10,
+                  "attr": {
+                    "style": {
+                      "background": "#ADFF2F"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Independent failure of components",
+                  "id": 11,
+                  "attr": {
+                    "style": {
+                      "background": "#ADFF2F"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#ADFF2F"
+                },
+                "collapsed": true
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#ADFF2F"
+            },
+            "collapsed": true
+          }
+        }
+      }
+    },
+    "2": {
+      "title": "8 FALLACIES",
+      "id": 34,
+      "ideas": {
+        "1": {
+          "title": "1. THE NETWORK IS RELIABLE",
+          "id": 35,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        },
+        "2": {
+          "title": "2. LATENCY IS ZERO",
+          "id": 37,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        },
+        "3": {
+          "title": "3.  BANDWIDTH IS INFINITE",
+          "id": 38,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        },
+        "4": {
+          "title": "4. THE NETWORK IS SECURE",
+          "id": 39,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        },
+        "5": {
+          "title": "5. TOPOLOGY DOESN'T CHANGE",
+          "id": 40,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        },
+        "6": {
+          "title": "6. THERE IS ONE ADMINISTRATOR",
+          "id": 41,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        },
+        "7": {
+          "title": "7. TRANSPORT COST IS ZERO",
+          "id": 42,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        },
+        "8": {
+          "title": "8. THE NETWORK IS HOMOGENEOUS",
+          "id": 43,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#F0FFFF"
+        },
+        "collapsed": true
+      }
+    },
+    "-1": {
+      "title": "FAILURE MODES",
+      "id": 32,
+      "ideas": {
+        "7": {
+          "title": "TYPES",
+          "id": 50,
+          "ideas": {
+            "14": {
+              "title": "Ordering in types is from most severe to least one",
+              "id": 57,
+              "ideas": {
+                "1": {
+                  "title": "Ordering means also inclusiveness (e.g. byzantine failures includes performance ones)",
+                  "id": 51,
+                  "attr": {
+                    "style": {
+                      "background": "#FF0000"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "FAIL-STOP FAILURES",
+                      "id": 49,
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        }
+                      }
+                    },
+                    "0.5": {
+                      "title": "CRASH FAILURES",
+                      "id": 48,
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        }
+                      }
+                    },
+                    "0.25": {
+                      "title": "BYZANTINE OR ARBITRARY FAILURES",
+                      "id": 44,
+                      "attr": {
+                        "style": {
+                          "background": "#DEB887"
+                        }
+                      }
+                    },
+                    "0.375": {
+                      "title": "AUTHENTICATION DETECTABLE BYZANTINE FAILURES",
+                      "id": 45,
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        }
+                      }
+                    },
+                    "0.4375": {
+                      "title": "PERFORMANCE FAILURES",
+                      "id": 46,
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        }
+                      }
+                    },
+                    "0.46875": {
+                      "title": "OMISSION FAILURES",
+                      "id": 47,
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Byzantine failures are only one which affects values, rest affects timing",
+                  "id": 58,
+                  "attr": {
+                    "style": {
+                      "background": "#FF0000"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Orthogonal, we can have consistent failures and inconsistent ones ",
+                  "id": 59,
+                  "ideas": {
+                    "1": {
+                      "title": "It depends how users of the system perceive it",
+                      "id": 60,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FF0000"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FF0000"
+                },
+                "collapsed": true
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FFE4B5"
+            },
+            "collapsed": true
+          }
+        },
+        "8": {
+          "title": "FAILURE SEMANTIC",
+          "id": 61,
+          "attr": {
+            "style": {
+              "background": "#8FBC8F"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "A server exhibits a given failure semantic if the probability of failures modes which are not covered by the failure semantic is sufficiently low",
+              "id": 62,
+              "attr": {
+                "style": {
+                  "background": "#8FBC8F"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "It means that if server has crash failure semantics, then the possibility of having e.g. byzantine failure should be very low",
+                  "id": 63,
+                  "attr": {
+                    "style": {
+                      "background": "#8FBC8F"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#FFE4B5"
+        }
+      }
+    }
+  },
+  "links": []
+}
