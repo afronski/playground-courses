@@ -14,7 +14,8 @@
       "attr": {
         "style": {
           "background": "#ADFF2F"
-        }
+        },
+        "collapsed": true
       },
       "ideas": {
         "1": {
@@ -228,119 +229,251 @@
         "collapsed": true
       }
     },
-    "-1": {
-      "title": "FAILURE MODES",
-      "id": 32,
+    "3": {
+      "title": "PROPERTIES",
+      "id": 114,
       "ideas": {
-        "7": {
-          "title": "TYPES",
-          "id": 50,
+        "1": {
+          "title": "CONSENSUS",
+          "id": 115,
+          "attr": {
+            "style": {
+              "background": "#008B8B"
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#008B8B"
+        },
+        "collapsed": true
+      }
+    },
+    "-2": {
+      "title": "DIFFERENT MODELS",
+      "id": 64,
+      "ideas": {
+        "2": {
+          "title": "INTER-PROCESS COMMUNICATION",
+          "id": 80,
           "ideas": {
-            "14": {
-              "title": "Ordering in types is from most severe to least one",
-              "id": 57,
+            "1": {
+              "title": "MESSAGE PASSING",
+              "id": 81,
               "ideas": {
                 "1": {
-                  "title": "Ordering means also inclusiveness (e.g. byzantine failures includes performance ones)",
-                  "id": 51,
-                  "attr": {
-                    "style": {
-                      "background": "#FF0000"
-                    }
-                  },
+                  "title": "But still many things should be known",
+                  "id": 84,
                   "ideas": {
                     "1": {
-                      "title": "FAIL-STOP FAILURES",
-                      "id": 49,
+                      "title": "Are channels reliable or they are inventing new messages out of thin air?",
+                      "id": 85,
                       "attr": {
                         "style": {
-                          "background": "#FFE4B5"
+                          "background": "#C71585"
                         }
                       }
                     },
-                    "0.5": {
-                      "title": "CRASH FAILURES",
-                      "id": 48,
+                    "2": {
+                      "title": "Are channels delivering messages in order?",
+                      "id": 86,
                       "attr": {
                         "style": {
-                          "background": "#FFE4B5"
+                          "background": "#C71585"
                         }
                       }
                     },
-                    "0.25": {
-                      "title": "BYZANTINE OR ARBITRARY FAILURES",
-                      "id": 44,
+                    "3": {
+                      "title": "Are channel has FIFO/Random/LIFO characteristic?",
+                      "id": 88,
                       "attr": {
                         "style": {
-                          "background": "#DEB887"
-                        }
-                      }
-                    },
-                    "0.375": {
-                      "title": "AUTHENTICATION DETECTABLE BYZANTINE FAILURES",
-                      "id": 45,
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4B5"
-                        }
-                      }
-                    },
-                    "0.4375": {
-                      "title": "PERFORMANCE FAILURES",
-                      "id": 46,
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4B5"
-                        }
-                      }
-                    },
-                    "0.46875": {
-                      "title": "OMISSION FAILURES",
-                      "id": 47,
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4B5"
-                        }
-                      }
-                    }
-                  }
-                },
-                "2": {
-                  "title": "Byzantine failures are only one which affects values, rest affects timing",
-                  "id": 58,
-                  "attr": {
-                    "style": {
-                      "background": "#FF0000"
-                    }
-                  }
-                },
-                "3": {
-                  "title": "Orthogonal, we can have consistent failures and inconsistent ones ",
-                  "id": 59,
-                  "ideas": {
-                    "1": {
-                      "title": "It depends how users of the system perceive it",
-                      "id": 60,
-                      "attr": {
-                        "style": {
-                          "background": "#FF0000"
+                          "background": "#C71585"
                         }
                       }
                     }
                   },
                   "attr": {
                     "style": {
-                      "background": "#FF0000"
-                    },
-                    "collapsed": true
+                      "background": "#C71585"
+                    }
                   }
                 }
               },
               "attr": {
                 "style": {
-                  "background": "#FF0000"
-                },
-                "collapsed": true
+                  "background": "#7FFF00"
+                }
+              }
+            },
+            "2": {
+              "title": "SHARED MEMORY",
+              "id": 83,
+              "attr": {
+                "style": {
+                  "background": "#7FFF00"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#7FFF00"
+            },
+            "collapsed": true
+          }
+        },
+        "12": {
+          "title": "FAILURE MODES",
+          "id": 32,
+          "ideas": {
+            "7": {
+              "title": "TYPES",
+              "id": 50,
+              "ideas": {
+                "14": {
+                  "title": "Ordering in types is from most severe to least one",
+                  "id": 57,
+                  "ideas": {
+                    "1": {
+                      "title": "Ordering means also inclusiveness (e.g. byzantine failures includes performance ones)",
+                      "id": 51,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "CRASH-STOP FAILURES",
+                          "id": 49,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        },
+                        "0.5": {
+                          "title": "CRASH-RECOVERY FAILURES",
+                          "id": 48,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        },
+                        "0.25": {
+                          "title": "BYZANTINE OR ARBITRARY FAILURES",
+                          "id": 44,
+                          "attr": {
+                            "style": {
+                              "background": "#DEB887"
+                            }
+                          }
+                        },
+                        "0.375": {
+                          "title": "AUTHENTICATION DETECTABLE BYZANTINE FAILURES",
+                          "id": 45,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        },
+                        "0.4375": {
+                          "title": "PERFORMANCE FAILURES",
+                          "id": 46,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        },
+                        "0.46875": {
+                          "title": "OMISSION FAILURES",
+                          "id": 47,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Byzantine failures are only one which affects values, rest affects timing",
+                      "id": 58,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Orthogonal, we can have consistent failures and inconsistent ones ",
+                      "id": 59,
+                      "ideas": {
+                        "1": {
+                          "title": "It depends how users of the system perceive it",
+                          "id": 60,
+                          "attr": {
+                            "style": {
+                              "background": "#FF0000"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FF0000"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFE4B5"
+                }
+              }
+            },
+            "8": {
+              "title": "FAILURE SEMANTIC",
+              "id": 61,
+              "attr": {
+                "style": {
+                  "background": "#8FBC8F"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "A server exhibits a given failure semantic if the probability of failures modes which are not covered by the failure semantic is sufficiently low",
+                  "id": 62,
+                  "attr": {
+                    "style": {
+                      "background": "#8FBC8F"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "It means that if server has crash failure semantics, then the possibility of having e.g. byzantine failure should be very low",
+                      "id": 63,
+                      "attr": {
+                        "style": {
+                          "background": "#8FBC8F"
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },
@@ -351,33 +484,302 @@
             "collapsed": true
           }
         },
-        "8": {
-          "title": "FAILURE SEMANTIC",
-          "id": 61,
+        "13": {
+          "title": "LIVENESS AND SAFETY",
+          "id": 95,
+          "ideas": {
+            "1": {
+              "title": "SAFETY",
+              "id": 96,
+              "ideas": {
+                "1": {
+                  "title": "It is based on reliable channels",
+                  "id": 97,
+                  "ideas": {
+                    "1": {
+                      "title": "It means that it will not produce messages \"out of thin air\"",
+                      "id": 98,
+                      "attr": {
+                        "style": {
+                          "background": "#FA8072"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FA8072"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "It means that bad things in terms of delivery and messages order never happen",
+                  "id": 101,
+                  "attr": {
+                    "style": {
+                      "background": "#FA8072"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FA8072"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "LIVENESS",
+              "id": 99,
+              "ideas": {
+                "1": {
+                  "title": "A destination process eventually delivers the message",
+                  "id": 102,
+                  "attr": {
+                    "style": {
+                      "background": "#FA8072"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "It means that good things will happen eventually",
+                  "id": 103,
+                  "attr": {
+                    "style": {
+                      "background": "#FA8072"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FA8072"
+                },
+                "collapsed": true
+              }
+            }
+          },
           "attr": {
             "style": {
-              "background": "#8FBC8F"
+              "background": "#FA8072"
+            },
+            "collapsed": true
+          }
+        },
+        "0.5": {
+          "title": "TIMING MODELS",
+          "id": 65,
+          "attr": {
+            "style": {
+              "background": "#FFF5EE"
             },
             "collapsed": true
           },
           "ideas": {
             "1": {
-              "title": "A server exhibits a given failure semantic if the probability of failures modes which are not covered by the failure semantic is sufficiently low",
-              "id": 62,
+              "title": "SYNCHRONOUS",
+              "id": 66,
+              "ideas": {
+                "1": {
+                  "title": "With well-defined steps and duration of them, the same applies to message passing, scheduling etc.",
+                  "id": 68,
+                  "ideas": {
+                    "1": {
+                      "title": "You can detect failures!",
+                      "id": 69,
+                      "ideas": {
+                        "1": {
+                          "title": "Because you know that message have to travel 5 seconds to other node and no more",
+                          "id": 70,
+                          "attr": {
+                            "style": {
+                              "background": "#6495ED"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#6495ED"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#6495ED"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "It is a near to real-time  systems model",
+                  "id": 75,
+                  "attr": {
+                    "style": {
+                      "background": "#6495ED"
+                    }
+                  }
+                }
+              },
               "attr": {
                 "style": {
-                  "background": "#8FBC8F"
+                  "background": "#6495ED"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "ASYNCHRONOUS",
+              "id": 67,
+              "ideas": {
+                "1": {
+                  "title": "Livin' la vida loca!",
+                  "id": 71,
+                  "ideas": {
+                    "1": {
+                      "title": "Everything is possible, no guarantees for message delivery, scheduling, message passing and duration",
+                      "id": 72,
+                      "attr": {
+                        "style": {
+                          "background": "#CD5C5C"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#CD5C5C"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "It is most of real-world applications",
+                  "id": 77,
+                  "attr": {
+                    "style": {
+                      "background": "#CD5C5C"
+                    }
+                  }
                 }
+              },
+              "attr": {
+                "style": {
+                  "background": "#CD5C5C"
+                },
+                "collapsed": true
+              }
+            },
+            "3": {
+              "title": "SEMI-SYNCHRONOUS",
+              "id": 73,
+              "ideas": {
+                "1": {
+                  "title": "It is a mixed model, where some boundaries are defined and some not",
+                  "id": 79,
+                  "attr": {
+                    "style": {
+                      "background": "#FF7F50"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FF7F50"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#ADFF2F"
+        },
+        "collapsed": true
+      }
+    },
+    "-3": {
+      "title": "THEORY AND PAPERS",
+      "id": 104,
+      "ideas": {
+        "1": {
+          "title": "FLP",
+          "id": 105,
+          "attr": {
+            "style": {
+              "background": "#F0FFFF"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "It stands for Fischer, Lynch, Paterson",
+              "id": 106,
+              "attr": {
+                "style": {
+                  "background": "#F0FFFF"
+                }
+              },
+              "ideas": {}
+            },
+            "2": {
+              "title": "Impossibility of Distributed Consensus with One Faulty Process",
+              "id": 108,
+              "attr": {
+                "style": {
+                  "background": "#F0FFFF"
+                },
+                "collapsed": true
               },
               "ideas": {
                 "1": {
-                  "title": "It means that if server has crash failure semantics, then the possibility of having e.g. byzantine failure should be very low",
-                  "id": 63,
+                  "title": "\"In this paper, we show the surprising result that no completely asynchronous consensus protocol can tolerate even a single unannounced  process death.\" ",
+                  "id": 109,
                   "attr": {
                     "style": {
-                      "background": "#8FBC8F"
+                      "background": "#F0FFFF"
                     }
                   }
+                },
+                "2": {
+                  "title": "\"We do not consider Byzantine failures, and we assume that the message system is reliable - it delivers all messages correctly and exactly once.\"",
+                  "id": 110,
+                  "attr": {
+                    "style": {
+                      "background": "#F0FFFF"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "\"Nevertheless, even with the assumptions, the stopping of a single process at an inopportune time can cause any distributed commit protocol to fail to reach agreement.\"",
+                  "id": 112,
+                  "attr": {
+                    "style": {
+                      "background": "#F0FFFF"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "\"Thus, this important problem has no robust solution without further assumptions about computing environment or still greater restrictions on the kind of failures to be tolerated.\"",
+                  "id": 113,
+                  "attr": {
+                    "style": {
+                      "background": "#F0FFFF"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "In asynchronous systems there is no way to determine if process is dead and not replying or message is delayed",
+              "id": 111,
+              "attr": {
+                "style": {
+                  "background": "#F0FFFF"
                 }
               }
             }
@@ -386,8 +788,9 @@
       },
       "attr": {
         "style": {
-          "background": "#FFE4B5"
-        }
+          "background": "#F0FFFF"
+        },
+        "collapsed": true
       }
     }
   },
