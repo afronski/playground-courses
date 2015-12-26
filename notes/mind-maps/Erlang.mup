@@ -1,0 +1,86 @@
+{
+  "title": "ERLANG",
+  "id": 1,
+  "formatVersion": 2,
+  "attr": {
+    "style": {
+      "background": "#000000"
+    }
+  },
+  "ideas": {
+    "1": {
+      "title": "INTEROPERABILITY",
+      "id": 2,
+      "ideas": {
+        "3": {
+          "title": "JInterface (Java)",
+          "id": 5,
+          "attr": {
+            "style": {
+              "background": "#FFE4B5"
+            }
+          }
+        },
+        "4": {
+          "title": "Erlang Interface",
+          "id": 8,
+          "ideas": {
+            "1": {
+              "title": "PORTS",
+              "id": 6,
+              "attr": {
+                "style": {
+                  "background": "#FFE4B5"
+                }
+              },
+              "ideas": {}
+            },
+            "2": {
+              "title": "LINKED PORT DRIVER",
+              "id": 10,
+              "attr": {
+                "style": {
+                  "background": "#FFE4B5"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FFE4B5"
+            },
+            "collapsed": true
+          }
+        },
+        "14": {
+          "title": "NIF",
+          "id": 3,
+          "attr": {
+            "style": {
+              "background": "#FFE4B5"
+            },
+            "position": [
+              189,
+              206,
+              1
+            ]
+          }
+        },
+        "2.75": {
+          "title": "C-NODE (C)",
+          "id": 4,
+          "attr": {
+            "style": {
+              "background": "#FFE4B5"
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#FFE4B5"
+        }
+      }
+    }
+  }
+}
