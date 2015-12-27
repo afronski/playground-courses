@@ -8,7 +8,107 @@
     }
   },
   "ideas": {
-    "1": {
+    "-1": {
+      "title": "INTERNALS",
+      "id": 11,
+      "ideas": {
+        "1": {
+          "title": "VM",
+          "id": 25,
+          "ideas": {
+            "1": {
+              "title": "SCHEDULERS",
+              "id": 12,
+              "ideas": {}
+            }
+          }
+        },
+        "2": {
+          "title": "DATA STRUCTURES",
+          "id": 13,
+          "ideas": {
+            "1": {
+              "title": "LISTS",
+              "id": 14
+            },
+            "2": {
+              "title": "TUPLES",
+              "id": 15
+            },
+            "3": {
+              "title": "MAPS",
+              "id": 16
+            }
+          }
+        }
+      },
+      "attr": {
+        "position": [
+          96,
+          -198,
+          2
+        ],
+        "style": {}
+      }
+    },
+    "-2": {
+      "title": "LANGUAGE",
+      "id": 26,
+      "ideas": {
+        "1": {
+          "title": "SYNTAX",
+          "id": 27
+        },
+        "2": {
+          "title": "SEMANTICS",
+          "id": 28
+        }
+      }
+    },
+    "-3": {
+      "title": "LIBRARIES",
+      "id": 29,
+      "ideas": {
+        "1": {
+          "title": "ERTS",
+          "id": 17,
+          "ideas": {
+            "1": {
+              "title": "PITFALLS",
+              "id": 19
+            },
+            "2": {
+              "title": "OPTIMIZATIONS",
+              "id": 20
+            }
+          },
+          "attr": {
+            "style": {}
+          }
+        },
+        "2": {
+          "title": "OTP",
+          "id": 18,
+          "attr": {
+            "style": {}
+          },
+          "ideas": {
+            "1": {
+              "title": "PITFALLS",
+              "id": 21
+            },
+            "2": {
+              "title": "OPTIMIZATIONS",
+              "id": 22
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {}
+      }
+    },
+    "-13": {
       "title": "INTEROPERABILITY",
       "id": 2,
       "ideas": {
@@ -79,7 +179,13 @@
       "attr": {
         "style": {
           "background": "#FFE4B5"
-        }
+        },
+        "collapsed": true,
+        "position": [
+          96,
+          259,
+          1
+        ]
       }
     }
   }
