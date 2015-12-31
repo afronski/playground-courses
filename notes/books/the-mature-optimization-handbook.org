@@ -1,0 +1,26 @@
+* The Mature Optimization Handbook
+
+** Premature optimization is a root of all evil
+
+- This is an excerpt from longer statement, that programmers are often spending
+  too much time on focusing on wrong things (Knuth said that 97% of time). But
+  we have to focus and don't miss the opportunity to fix the critical 3%.
+  - As usual - citing is hard! ;)
+
+** Focus on right problems
+
+- Well defined problem, avoid under specification (*too slow* is too generic)
+  and false assumptions about place and importance of that piece.
+- Avoid referring to walltime (you've got multiple clocks in your hardware and
+  software).
+
+** Flying by Instruments
+
+- Software is complex, too complex to find out issues based on assumptions and
+  your understanding without support from measurements.
+
+** Wrong problem to fix
+** Thinking in systems
+** Visualization and Metrics
+** Samples and Storage
+** Tools and Measurement Errors
