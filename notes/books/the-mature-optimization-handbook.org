@@ -21,6 +21,46 @@
 
 ** Wrong problem to fix
 ** Thinking in systems
-** Visualization and Metrics
+** Instrumentation and Metrics
 ** Samples and Storage
 ** Tools and Measurement Errors
+** Naming and Units
+
+- Take care about proper and legible naming from the beginning.
+- The same applies to units.
+
+** Visualization
+
+- Average hides everything.
+  - Percentiles you idiot!
+- Histograms and distributions
+- Density graphs
+- Scatter plots
+
+** Monitoring and Diagnosis
+
+- Dashboards are for monitoring, not diagnosis.
+- Do not overload it with data and visualizations.
+- You need to have *heart rate*-like metrics there.
+  - Healthy human has heart rate between 60 and 100.
+
+** Wholesale Optimization
+
+- Do not automate process too fast.
+  - Automating bad process will result in a bad autopilot which will happily
+    crash you into mountains.
+
+** Feedback Loops
+
+- Theory of Control Systems is crucial.
+
+** Starting Over
+
+- NoSQL in SQL.
+
+** What's next?
+
+- Learn statistics!
+- Measurement for the win!
+- Focus on doing reproducible experiments.
+- Scientific Methods.
