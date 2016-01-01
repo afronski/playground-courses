@@ -129,3 +129,5 @@ concurrent* (> 40B transactions per day - AdRoll 2014).
   - Tools:
     - `etsy/statsd` - UDP based.
     - `aphyr/riemann` - TCP based.
+- Articles:
+  - http://ferd.ca/rtb-where-erlang-blooms.html
