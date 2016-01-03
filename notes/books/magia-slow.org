@@ -1,0 +1,14 @@
+* Magia Słów - Jak pisać teksty które porwą tłumy? (PL)
+
+** Details and Concretes
+
+- Semantic ladder - at the top is the abstraction, at the bottom details and
+  concretes. In the middle - office, daily language (boring!).
+- You should move up and down really fast, try to back-up all abstract concepts
+  with real, meaty examples.
+  - Everyone need examples.
+- Action and heroes matter. Names matter.
+- You should describe things only when you want to focus on them, like in the
+  movies.
+  - Constantly moving from background (abstraction and almost no details) to
+    foreground (a lot of details, focus, emphasis).
