@@ -12,3 +12,16 @@
   movies.
   - Constantly moving from background (abstraction and almost no details) to
     foreground (a lot of details, focus, emphasis).
+
+** Verbs
+
+- Active verbs.
+- Movement is life, it describes perfectly that something is vibrant, alive and
+- Active voice, passive only when needed, when you can't use active or you want
+  to emphasis drama or something else.
+- Subject and predicate - queen and king in sentence.
+  - Queen should be beautiful and eye-catching.
+  - King should do things.
+- Avoid modals (be sure, not conditional).
+  - Verbs and simple statements have more power and are more direct than more
+    convoluted statements, with passive voice and modals.
