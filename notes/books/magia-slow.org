@@ -25,3 +25,14 @@
 - Avoid modals (be sure, not conditional).
   - Verbs and simple statements have more power and are more direct than more
     convoluted statements, with passive voice and modals.
+
+** Lesson - Ian Flemming
+
+- Dynamic verbs.
+- Describing real and familiar feeling.
+- Luxury and description of it.
+- Unexpected events should be unexpected.
+- Manly talk needs details (dimensions, exact numbers, detailed description
+  without too many adjectives and small amount of adverbs - only for emphasis).
+- James Bond always did things - he didn't *think*, *could*, *would*, always *do*.
+  - Modals are for pussies!
