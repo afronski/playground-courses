@@ -1609,13 +1609,83 @@
           }
         },
         "5": {
-          "title": "TLS / SSL",
+          "title": "TLS (RFC 2246) / SSL",
           "id": 14,
-          "ideas": {},
+          "ideas": {
+            "1": {
+              "title": "Transport Layer Security",
+              "id": 365,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                }
+              }
+            },
+            "2": {
+              "title": "Secure Socket Layer",
+              "id": 367,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Not standardized version of TLS - after standardization IETF renamed SSL to TLS ",
+                  "id": 371,
+                  "attr": {
+                    "style": {
+                      "background": "#0000FF"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Many uses name interchangeably but \nprotocols are different - in terms of version and capabilities",
+                  "id": 373,
+                  "attr": {
+                    "style": {
+                      "background": "#0000FF"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "It is a protocol from Session layer",
+              "id": 369,
+              "ideas": {
+                "1": {
+                  "title": "Above transport layer (like TCP) and below application (like HTTP)",
+                  "id": 370,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Designed to work on top of reliable transport layer - like TCP",
+                  "id": 376,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          },
           "attr": {
             "style": {
               "background": "#5F9EA0"
-            }
+            },
+            "collapsed": true
           }
         },
         "15": {
@@ -2360,6 +2430,15 @@
               "attr": {
                 "style": {
                   "background": "#5F9EA0"
+                }
+              }
+            },
+            "2": {
+              "title": "TLS for UDP",
+              "id": 375,
+              "attr": {
+                "style": {
+                  "background": "#0000FF"
                 }
               }
             }
