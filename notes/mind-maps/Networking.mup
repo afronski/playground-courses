@@ -1809,19 +1809,243 @@
             },
             "16": {
               "title": "TLS Handshake",
-              "id": 386,
-              "ideas": {},
+              "id": 400,
+              "ideas": {
+                "1": {
+                  "title": "Steps",
+                  "id": 386,
+                  "ideas": {
+                    "1": {
+                      "title": "TLS Version Agreement",
+                      "id": 393,
+                      "ideas": {},
+                      "attr": {
+                        "style": {
+                          "background": "#FFF5EE"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Choosing ciphersuite",
+                      "id": 396,
+                      "attr": {
+                        "style": {
+                          "background": "#FFF5EE"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Verify certificates",
+                      "id": 398,
+                      "attr": {
+                        "style": {
+                          "background": "#FFF5EE"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFF5EE"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "Each step requires exchanging information between parties so it adds latency to all connections",
+                  "id": 402,
+                  "attr": {
+                    "style": {
+                      "background": "#FFF5EE"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Assuming fiber and fastest conditions between New York and London it adds at least 112 ms in RTT",
+                      "id": 407,
+                      "ideas": {},
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "This latency is added to each opened TCP connection",
+                      "id": 411,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Setting up new TLS connection requires two roundtrips for a full handshake",
+                  "id": 415,
+                  "ideas": {
+                    "1": {
+                      "title": "You should not forget about CPU resources to verify and compute parameters for ensuing session",
+                      "id": 416,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFAF0"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFFAF0"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "4": {
+                  "title": "OPTIMIZATIONS",
+                  "id": 412,
+                  "attr": {
+                    "style": {
+                      "background": "#008000"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Session Resumption",
+                      "id": 413,
+                      "attr": {
+                        "style": {
+                          "background": "#008000"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "If client already did a full handshake with TLS we can use an abbreviated handshake",
+                          "id": 417,
+                          "ideas": {
+                            "1": {
+                              "title": "It reduces CPU overhead and requires only one RTT",
+                              "id": 418,
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "False Start",
+                      "id": 414,
+                      "attr": {
+                        "style": {
+                          "background": "#008000"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Optional TLS protocol extension that allows the client and server to start transmitting encrypted application data when the handshake is only partially complete",
+                          "id": 420,
+                          "ideas": {
+                            "1": {
+                              "title": "It reduces new handshake overhead to one RTT",
+                              "id": 422,
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "1.5": {
+                  "title": "Before client and server can send information, secure and encrypted channel must be established",
+                  "id": 403,
+                  "attr": {
+                    "position": [
+                      20,
+                      -134.75,
+                      1
+                    ],
+                    "style": {
+                      "background": "#FFF5EE"
+                    }
+                  }
+                }
+              },
               "attr": {
                 "style": {
                   "background": "#FFF5EE"
+                },
+                "collapsed": true
+              }
+            },
+            "17": {
+              "title": "CIPHERS",
+              "id": 423,
+              "ideas": {
+                "1": {
+                  "title": "RSA",
+                  "id": 424,
+                  "attr": {
+                    "style": {
+                      "background": "#00008B"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Diffie-Hellman",
+                  "id": 425,
+                  "attr": {
+                    "style": {
+                      "background": "#00008B"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Forward Secrecy",
+                  "id": 426,
+                  "attr": {
+                    "style": {
+                      "background": "#00008B"
+                    }
+                  }
                 }
+              },
+              "attr": {
+                "style": {
+                  "background": "#00008B"
+                },
+                "collapsed": true
               }
             }
           },
           "attr": {
             "style": {
               "background": "#5F9EA0"
-            }
+            },
+            "collapsed": true
           }
         },
         "15": {
