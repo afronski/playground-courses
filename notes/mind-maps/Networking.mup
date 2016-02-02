@@ -2006,20 +2006,128 @@
               "id": 423,
               "ideas": {
                 "1": {
-                  "title": "RSA",
+                  "title": "RSA Key Exchange",
                   "id": 424,
                   "attr": {
                     "style": {
                       "background": "#00008B"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "The most popular handshake",
+                      "id": 428,
+                      "ideas": {
+                        "1": {
+                          "title": "With critical weakness - exposing server's private key compromises communication",
+                          "id": 432,
+                          "ideas": {
+                            "1": {
+                              "title": "Because the same pair is used to authenticate and encrypt session key",
+                              "id": 433,
+                              "attr": {
+                                "style": {
+                                  "background": "#FF0000"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "It is also sensitive on decrypting recorded traffic later",
+                              "id": 434,
+                              "attr": {
+                                "style": {
+                                  "background": "#FF0000"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FF0000"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Client generates the symmetric key, encrypts it with server's public key and sends it",
+                      "id": 429,
+                      "ideas": {
+                        "1": {
+                          "title": "In turn, server uses private key to decrypt the sent symmetric key and key-exchange is complete",
+                          "id": 430,
+                          "ideas": {
+                            "1": {
+                              "title": "Now and then, both uses negotiated symmetric client to encrypt sesssion",
+                              "id": 431,
+                              "attr": {
+                                "style": {
+                                  "background": "#00008B"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#00008B"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
                     }
                   }
                 },
                 "2": {
-                  "title": "Diffie-Hellman",
+                  "title": "Diffie-Hellman Key Exchange",
                   "id": 425,
                   "attr": {
                     "style": {
                       "background": "#00008B"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Client and server can negotiate a shared secret without explicitly communicating it in the handshake",
+                      "id": 435,
+                      "ideas": {
+                        "1": {
+                          "title": "Server's private key is used to sign and verify handshake, but established symmetric key never leaves either client or server",
+                          "id": 436,
+                          "ideas": {
+                            "1": {
+                              "title": "So it cannot be intercepted even if attacker compromises private key",
+                              "id": 437,
+                              "attr": {
+                                "style": {
+                                  "background": "#00008B"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#00008B"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
                     }
                   }
                 },
@@ -2029,6 +2137,134 @@
                   "attr": {
                     "style": {
                       "background": "#00008B"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "There is a way of providing so called \"forward secrecy\"",
+                      "id": 438,
+                      "ideas": {
+                        "1": {
+                          "title": "When you're generating ephemeral symmetric keys for each and every key exchange and you're discarding previous keys",
+                          "id": 439,
+                          "attr": {
+                            "style": {
+                              "background": "#00008B"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Using ephemeral keys and Diffie-Hellman key exchange allows you to have better security",
+                          "id": 440,
+                          "ideas": {
+                            "1": {
+                              "title": "Even if attackers compromise server's private key they're not able to passively listen in on the active session, nor can they decrypt previously recorded ones",
+                              "id": 441,
+                              "attr": {
+                                "style": {
+                                  "background": "#00008B"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#00008B"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
+                    }
+                  }
+                },
+                "4": {
+                  "title": "PERFORMANCE",
+                  "id": 442,
+                  "attr": {
+                    "style": {
+                      "background": "#008000"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Public key cryptography is much more computationally expensive",
+                      "id": 443,
+                      "ideas": {
+                        "3": {
+                          "title": "Everything depends on hardware, number of cores (CPU bound operations), TLS version, server configuration and other factors",
+                          "id": 448,
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            }
+                          }
+                        },
+                        "4": {
+                          "title": "Benchmarks in OpenSSL",
+                          "id": 449,
+                          "ideas": {
+                            "1": {
+                              "title": "openssl speed aes",
+                              "id": 446,
+                              "ideas": {
+                                "1": {
+                                  "title": "Advanced Encryption Standard (AES)",
+                                  "id": 447,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#008000"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "openssl speed ecdh",
+                              "id": 444,
+                              "ideas": {
+                                "1": {
+                                  "title": "Elliptic Curve Diffie-Hellman (ECDH)",
+                                  "id": 445,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#008000"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#ADFF2F"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#008000"
+                        },
+                        "collapsed": true
+                      }
                     }
                   }
                 }
@@ -2039,13 +2275,157 @@
                 },
                 "collapsed": true
               }
+            },
+            "18": {
+              "title": "ALPN",
+              "id": 450,
+              "ideas": {
+                "1": {
+                  "title": "Application Layer Protocol Negotiation",
+                  "id": 453,
+                  "ideas": {
+                    "1": {
+                      "title": "It is a way of negotiating protocol during the TLS handshake and bypassing Upgrade header in HTTP and avoiding additional roundtrip",
+                      "id": 454,
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Client requests a list of supported protocols in ClientHello message",
+                      "id": 455,
+                      "ideas": {
+                        "1": {
+                          "title": "Server provides one in ServerHello or none and in that case client can abort connection",
+                          "id": 456,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "3": {
+                      "title": "It ensures that application protocol negotiation over TLS is not any slower",
+                      "id": 457,
+                      "ideas": {
+                        "1": {
+                          "title": "It is not any faster than HTTP Upgrade, because TLS handshake still has to be performed",
+                          "id": 458,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFE4B5"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "NPN (Next Protocol Negotiation) is equivalent to this",
+                  "id": 459,
+                  "attr": {
+                    "style": {
+                      "background": "#FFE4B5"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFE4B5"
+                },
+                "collapsed": true
+              }
+            },
+            "19": {
+              "title": "SNI",
+              "id": 451,
+              "ideas": {
+                "1": {
+                  "title": "Server Name Indication",
+                  "id": 460,
+                  "ideas": {
+                    "1": {
+                      "title": "If server is hosting on the same IP various certificates and identities there is a way to inform and preselect which is interesting for the client",
+                      "id": 462,
+                      "ideas": {
+                        "1": {
+                          "title": "Client indicates the hostname during the TLS handshake, Server verifies it and selects appropriate certificate for the rest of the handshake process",
+                          "id": 464,
+                          "attr": {
+                            "style": {
+                              "background": "#FA8072"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FA8072"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FA8072"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FA8072"
+                },
+                "collapsed": true
+              }
+            },
+            "20": {
+              "title": "CERTIFICATES",
+              "id": 452,
+              "attr": {
+                "style": {
+                  "background": "#ADFF2F"
+                }
+              }
+            },
+            "19.5": {
+              "title": "TLS Session Resumption",
+              "id": 465,
+              "attr": {
+                "style": {}
+              }
             }
           },
           "attr": {
             "style": {
               "background": "#5F9EA0"
-            },
-            "collapsed": true
+            }
           }
         },
         "15": {
