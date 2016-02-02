@@ -1765,276 +1765,51 @@
                 "collapsed": true
               }
             },
-            "6": {
-              "title": "MAC",
-              "id": 388,
+            "22": {
+              "title": "BASICS",
+              "id": 481,
               "ideas": {
                 "1": {
-                  "title": "Message Authentication Code",
-                  "id": 389,
+                  "title": "CIPHERS",
+                  "id": 423,
                   "ideas": {
                     "1": {
-                      "title": "One-way cryptographic hash function (effectively a checksum)",
-                      "id": 391,
+                      "title": "RSA Key Exchange",
+                      "id": 424,
                       "attr": {
                         "style": {
-                          "background": "#FFE4B5"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "Used to the keys to which are negotiated by both connection peers",
-                      "id": 392,
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4B5"
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "style": {
-                      "background": "#FFE4B5"
-                    },
-                    "collapsed": true
-                  }
-                }
-              },
-              "attr": {
-                "style": {
-                  "background": "#FFE4B5"
-                },
-                "collapsed": true
-              }
-            },
-            "16": {
-              "title": "TLS Handshake",
-              "id": 400,
-              "ideas": {
-                "1": {
-                  "title": "Steps",
-                  "id": 386,
-                  "ideas": {
-                    "1": {
-                      "title": "TLS Version Agreement",
-                      "id": 393,
-                      "ideas": {},
-                      "attr": {
-                        "style": {
-                          "background": "#FFF5EE"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "Choosing ciphersuite",
-                      "id": 396,
-                      "attr": {
-                        "style": {
-                          "background": "#FFF5EE"
-                        }
-                      }
-                    },
-                    "3": {
-                      "title": "Verify certificates",
-                      "id": 398,
-                      "attr": {
-                        "style": {
-                          "background": "#FFF5EE"
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "style": {
-                      "background": "#FFF5EE"
-                    },
-                    "collapsed": true
-                  }
-                },
-                "2": {
-                  "title": "Each step requires exchanging information between parties so it adds latency to all connections",
-                  "id": 402,
-                  "attr": {
-                    "style": {
-                      "background": "#FFF5EE"
-                    },
-                    "collapsed": true
-                  },
-                  "ideas": {
-                    "1": {
-                      "title": "Assuming fiber and fastest conditions between New York and London it adds at least 112 ms in RTT",
-                      "id": 407,
-                      "ideas": {},
-                      "attr": {
-                        "style": {
-                          "background": "#FF0000"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "This latency is added to each opened TCP connection",
-                      "id": 411,
-                      "attr": {
-                        "style": {
-                          "background": "#FF0000"
-                        }
-                      }
-                    }
-                  }
-                },
-                "3": {
-                  "title": "Setting up new TLS connection requires two roundtrips for a full handshake",
-                  "id": 415,
-                  "ideas": {
-                    "1": {
-                      "title": "You should not forget about CPU resources to verify and compute parameters for ensuing session",
-                      "id": 416,
-                      "attr": {
-                        "style": {
-                          "background": "#FFFAF0"
-                        }
-                      }
-                    }
-                  },
-                  "attr": {
-                    "style": {
-                      "background": "#FFFAF0"
-                    },
-                    "collapsed": true
-                  }
-                },
-                "4": {
-                  "title": "OPTIMIZATIONS",
-                  "id": 412,
-                  "attr": {
-                    "style": {
-                      "background": "#008000"
-                    },
-                    "collapsed": true
-                  },
-                  "ideas": {
-                    "1": {
-                      "title": "Session Resumption",
-                      "id": 413,
-                      "attr": {
-                        "style": {
-                          "background": "#008000"
+                          "background": "#00008B"
                         },
                         "collapsed": true
                       },
                       "ideas": {
                         "1": {
-                          "title": "If client already did a full handshake with TLS we can use an abbreviated handshake",
-                          "id": 417,
+                          "title": "The most popular handshake",
+                          "id": 428,
                           "ideas": {
                             "1": {
-                              "title": "It reduces CPU overhead and requires only one RTT",
-                              "id": 418,
-                              "attr": {
-                                "style": {
-                                  "background": "#008000"
+                              "title": "With critical weakness - exposing server's private key compromises communication",
+                              "id": 432,
+                              "ideas": {
+                                "1": {
+                                  "title": "Because the same pair is used to authenticate and encrypt session key",
+                                  "id": 433,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FF0000"
+                                    }
+                                  }
+                                },
+                                "2": {
+                                  "title": "It is also sensitive on decrypting recorded traffic later",
+                                  "id": 434,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FF0000"
+                                    }
+                                  }
                                 }
-                              }
-                            }
-                          },
-                          "attr": {
-                            "style": {
-                              "background": "#008000"
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "False Start",
-                      "id": 414,
-                      "attr": {
-                        "style": {
-                          "background": "#008000"
-                        },
-                        "collapsed": true
-                      },
-                      "ideas": {
-                        "1": {
-                          "title": "Optional TLS protocol extension that allows the client and server to start transmitting encrypted application data when the handshake is only partially complete",
-                          "id": 420,
-                          "ideas": {
-                            "1": {
-                              "title": "It reduces new handshake overhead to one RTT",
-                              "id": 422,
-                              "attr": {
-                                "style": {
-                                  "background": "#008000"
-                                }
-                              }
-                            }
-                          },
-                          "attr": {
-                            "style": {
-                              "background": "#008000"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "1.5": {
-                  "title": "Before client and server can send information, secure and encrypted channel must be established",
-                  "id": 403,
-                  "attr": {
-                    "position": [
-                      20,
-                      -134.75,
-                      1
-                    ],
-                    "style": {
-                      "background": "#FFF5EE"
-                    }
-                  }
-                }
-              },
-              "attr": {
-                "style": {
-                  "background": "#FFF5EE"
-                },
-                "collapsed": true
-              }
-            },
-            "17": {
-              "title": "CIPHERS",
-              "id": 423,
-              "ideas": {
-                "1": {
-                  "title": "RSA Key Exchange",
-                  "id": 424,
-                  "attr": {
-                    "style": {
-                      "background": "#00008B"
-                    },
-                    "collapsed": true
-                  },
-                  "ideas": {
-                    "1": {
-                      "title": "The most popular handshake",
-                      "id": 428,
-                      "ideas": {
-                        "1": {
-                          "title": "With critical weakness - exposing server's private key compromises communication",
-                          "id": 432,
-                          "ideas": {
-                            "1": {
-                              "title": "Because the same pair is used to authenticate and encrypt session key",
-                              "id": 433,
-                              "attr": {
-                                "style": {
-                                  "background": "#FF0000"
-                                }
-                              }
-                            },
-                            "2": {
-                              "title": "It is also sensitive on decrypting recorded traffic later",
-                              "id": 434,
+                              },
                               "attr": {
                                 "style": {
                                   "background": "#FF0000"
@@ -2042,112 +1817,6 @@
                               }
                             }
                           },
-                          "attr": {
-                            "style": {
-                              "background": "#FF0000"
-                            }
-                          }
-                        }
-                      },
-                      "attr": {
-                        "style": {
-                          "background": "#00008B"
-                        }
-                      }
-                    },
-                    "2": {
-                      "title": "Client generates the symmetric key, encrypts it with server's public key and sends it",
-                      "id": 429,
-                      "ideas": {
-                        "1": {
-                          "title": "In turn, server uses private key to decrypt the sent symmetric key and key-exchange is complete",
-                          "id": 430,
-                          "ideas": {
-                            "1": {
-                              "title": "Now and then, both uses negotiated symmetric client to encrypt sesssion",
-                              "id": 431,
-                              "attr": {
-                                "style": {
-                                  "background": "#00008B"
-                                }
-                              }
-                            }
-                          },
-                          "attr": {
-                            "style": {
-                              "background": "#00008B"
-                            }
-                          }
-                        }
-                      },
-                      "attr": {
-                        "style": {
-                          "background": "#00008B"
-                        }
-                      }
-                    }
-                  }
-                },
-                "2": {
-                  "title": "Diffie-Hellman Key Exchange",
-                  "id": 425,
-                  "attr": {
-                    "style": {
-                      "background": "#00008B"
-                    },
-                    "collapsed": true
-                  },
-                  "ideas": {
-                    "1": {
-                      "title": "Client and server can negotiate a shared secret without explicitly communicating it in the handshake",
-                      "id": 435,
-                      "ideas": {
-                        "1": {
-                          "title": "Server's private key is used to sign and verify handshake, but established symmetric key never leaves either client or server",
-                          "id": 436,
-                          "ideas": {
-                            "1": {
-                              "title": "So it cannot be intercepted even if attacker compromises private key",
-                              "id": 437,
-                              "attr": {
-                                "style": {
-                                  "background": "#00008B"
-                                }
-                              }
-                            }
-                          },
-                          "attr": {
-                            "style": {
-                              "background": "#00008B"
-                            }
-                          }
-                        }
-                      },
-                      "attr": {
-                        "style": {
-                          "background": "#00008B"
-                        }
-                      }
-                    }
-                  }
-                },
-                "3": {
-                  "title": "Forward Secrecy",
-                  "id": 426,
-                  "attr": {
-                    "style": {
-                      "background": "#00008B"
-                    },
-                    "collapsed": true
-                  },
-                  "ideas": {
-                    "1": {
-                      "title": "There is a way of providing so called \"forward secrecy\"",
-                      "id": 438,
-                      "ideas": {
-                        "1": {
-                          "title": "When you're generating ephemeral symmetric keys for each and every key exchange and you're discarding previous keys",
-                          "id": 439,
                           "attr": {
                             "style": {
                               "background": "#00008B"
@@ -2155,12 +1824,23 @@
                           }
                         },
                         "2": {
-                          "title": "Using ephemeral keys and Diffie-Hellman key exchange allows you to have better security",
-                          "id": 440,
+                          "title": "Client generates the symmetric key, encrypts it with server's public key and sends it",
+                          "id": 429,
                           "ideas": {
                             "1": {
-                              "title": "Even if attackers compromise server's private key they're not able to passively listen in on the active session, nor can they decrypt previously recorded ones",
-                              "id": 441,
+                              "title": "In turn, server uses private key to decrypt the sent symmetric key and key-exchange is complete",
+                              "id": 430,
+                              "ideas": {
+                                "1": {
+                                  "title": "Now and then, both uses negotiated symmetric client to encrypt sesssion",
+                                  "id": 431,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#00008B"
+                                    }
+                                  }
+                                }
+                              },
                               "attr": {
                                 "style": {
                                   "background": "#00008B"
@@ -2174,86 +1854,533 @@
                             }
                           }
                         }
-                      },
+                      }
+                    },
+                    "2": {
+                      "title": "Diffie-Hellman Key Exchange",
+                      "id": 425,
                       "attr": {
                         "style": {
                           "background": "#00008B"
-                        }
-                      }
-                    }
-                  }
-                },
-                "4": {
-                  "title": "PERFORMANCE",
-                  "id": 442,
-                  "attr": {
-                    "style": {
-                      "background": "#008000"
-                    },
-                    "collapsed": true
-                  },
-                  "ideas": {
-                    "1": {
-                      "title": "Public key cryptography is much more computationally expensive",
-                      "id": 443,
-                      "ideas": {
-                        "3": {
-                          "title": "Everything depends on hardware, number of cores (CPU bound operations), TLS version, server configuration and other factors",
-                          "id": 448,
-                          "attr": {
-                            "style": {
-                              "background": "#008000"
-                            }
-                          }
                         },
-                        "4": {
-                          "title": "Benchmarks in OpenSSL",
-                          "id": 449,
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Client and server can negotiate a shared secret without explicitly communicating it in the handshake",
+                          "id": 435,
                           "ideas": {
                             "1": {
-                              "title": "openssl speed aes",
-                              "id": 446,
+                              "title": "Server's private key is used to sign and verify handshake, but established symmetric key never leaves either client or server",
+                              "id": 436,
                               "ideas": {
                                 "1": {
-                                  "title": "Advanced Encryption Standard (AES)",
-                                  "id": 447,
+                                  "title": "So it cannot be intercepted even if attacker compromises private key",
+                                  "id": 437,
                                   "attr": {
                                     "style": {
-                                      "background": "#008000"
+                                      "background": "#00008B"
                                     }
                                   }
                                 }
                               },
                               "attr": {
                                 "style": {
-                                  "background": "#008000"
-                                }
-                              }
-                            },
-                            "2": {
-                              "title": "openssl speed ecdh",
-                              "id": 444,
-                              "ideas": {
-                                "1": {
-                                  "title": "Elliptic Curve Diffie-Hellman (ECDH)",
-                                  "id": 445,
-                                  "attr": {
-                                    "style": {
-                                      "background": "#008000"
-                                    }
-                                  }
-                                }
-                              },
-                              "attr": {
-                                "style": {
-                                  "background": "#008000"
+                                  "background": "#00008B"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#ADFF2F"
+                              "background": "#00008B"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Forward Secrecy",
+                      "id": 426,
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "There is a way of providing so called \"forward secrecy\"",
+                          "id": 438,
+                          "ideas": {
+                            "1": {
+                              "title": "When you're generating ephemeral symmetric keys for each and every key exchange and you're discarding previous keys",
+                              "id": 439,
+                              "attr": {
+                                "style": {
+                                  "background": "#00008B"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "Using ephemeral keys and Diffie-Hellman key exchange allows you to have better security",
+                              "id": 440,
+                              "ideas": {
+                                "1": {
+                                  "title": "Even if attackers compromise server's private key they're not able to passively listen in on the active session, nor can they decrypt previously recorded ones",
+                                  "id": 441,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#00008B"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#00008B"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#00008B"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "PERFORMANCE",
+                      "id": 442,
+                      "attr": {
+                        "style": {
+                          "background": "#008000"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Public key cryptography is much more computationally expensive",
+                          "id": 443,
+                          "ideas": {
+                            "3": {
+                              "title": "Everything depends on hardware, number of cores (CPU bound operations), TLS version, server configuration and other factors",
+                              "id": 448,
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            },
+                            "4": {
+                              "title": "Benchmarks in OpenSSL",
+                              "id": 449,
+                              "ideas": {
+                                "1": {
+                                  "title": "openssl speed aes",
+                                  "id": 446,
+                                  "ideas": {
+                                    "1": {
+                                      "title": "Advanced Encryption Standard (AES)",
+                                      "id": 447,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#008000"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "attr": {
+                                    "style": {
+                                      "background": "#008000"
+                                    }
+                                  }
+                                },
+                                "2": {
+                                  "title": "openssl speed ecdh",
+                                  "id": 444,
+                                  "ideas": {
+                                    "1": {
+                                      "title": "Elliptic Curve Diffie-Hellman (ECDH)",
+                                      "id": 445,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#008000"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "attr": {
+                                    "style": {
+                                      "background": "#008000"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#ADFF2F"
+                                },
+                                "collapsed": true
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#00008B"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "CERTIFICATES",
+                  "id": 452,
+                  "attr": {
+                    "style": {
+                      "background": "#FFFF00"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Chain of Trust",
+                      "id": 478,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Certificate Authorities",
+                      "id": 479,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "0.5": {
+                  "title": "MAC",
+                  "id": 388,
+                  "ideas": {
+                    "1": {
+                      "title": "Message Authentication Code",
+                      "id": 389,
+                      "ideas": {
+                        "1": {
+                          "title": "One-way cryptographic hash function (effectively a checksum)",
+                          "id": 391,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Used to the keys to which are negotiated by both connection peers",
+                          "id": 392,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFE4B5"
+                    },
+                    "collapsed": true,
+                    "position": [
+                      41,
+                      -92,
+                      1
+                    ]
+                  }
+                },
+                "0.75": {
+                  "title": "TLS Handshake",
+                  "id": 400,
+                  "ideas": {
+                    "1": {
+                      "title": "Steps",
+                      "id": 386,
+                      "ideas": {
+                        "1": {
+                          "title": "TLS Version Agreement",
+                          "id": 393,
+                          "ideas": {},
+                          "attr": {
+                            "style": {
+                              "background": "#FFF5EE"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Choosing ciphersuite",
+                          "id": 396,
+                          "attr": {
+                            "style": {
+                              "background": "#FFF5EE"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "Verify certificates",
+                          "id": 398,
+                          "attr": {
+                            "style": {
+                              "background": "#FFF5EE"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFF5EE"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "2": {
+                      "title": "Each step requires exchanging information between parties so it adds latency to all connections",
+                      "id": 402,
+                      "attr": {
+                        "style": {
+                          "background": "#FFF5EE"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Assuming fiber and fastest conditions between New York and London it adds at least 112 ms in RTT",
+                          "id": 407,
+                          "ideas": {},
+                          "attr": {
+                            "style": {
+                              "background": "#FF0000"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "This latency is added to each opened TCP connection",
+                          "id": 411,
+                          "attr": {
+                            "style": {
+                              "background": "#FF0000"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Setting up new TLS connection requires two roundtrips for a full handshake",
+                      "id": 415,
+                      "ideas": {
+                        "1": {
+                          "title": "You should not forget about CPU resources to verify and compute parameters for ensuing session",
+                          "id": 416,
+                          "attr": {
+                            "style": {
+                              "background": "#FFFAF0"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFFAF0"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "4": {
+                      "title": "OPTIMIZATIONS",
+                      "id": 412,
+                      "attr": {
+                        "style": {
+                          "background": "#008000"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Session Resumption",
+                          "id": 413,
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "If client already did a full handshake with TLS we can use an abbreviated handshake",
+                              "id": 417,
+                              "ideas": {
+                                "1": {
+                                  "title": "It reduces CPU overhead and requires only one RTT",
+                                  "id": 418,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#008000"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "False Start",
+                          "id": 414,
+                          "attr": {
+                            "style": {
+                              "background": "#008000"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "Optional TLS protocol extension that allows the client and server to start transmitting encrypted application data when the handshake is only partially complete",
+                              "id": 420,
+                              "ideas": {
+                                "1": {
+                                  "title": "It reduces new handshake overhead to one RTT",
+                                  "id": 422,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#008000"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#008000"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "1.5": {
+                      "title": "Before client and server can send information, secure and encrypted channel must be established",
+                      "id": 403,
+                      "attr": {
+                        "position": [
+                          20,
+                          -134.75,
+                          1
+                        ],
+                        "style": {
+                          "background": "#FFF5EE"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFF5EE"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#228B22"
+                },
+                "collapsed": true
+              }
+            },
+            "32": {
+              "title": "EXTENSIONS",
+              "id": 480,
+              "ideas": {
+                "1": {
+                  "title": "TLS Session Resumption",
+                  "id": 465,
+                  "attr": {
+                    "style": {
+                      "background": "#8B4513"
+                    },
+                    "collapsed": true,
+                    "position": [
+                      110,
+                      -62.8125,
+                      3
+                    ]
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Session Identifiers \n(RFC 5246)",
+                      "id": 466,
+                      "ideas": {
+                        "1": {
+                          "title": "It is a way to reuse existing negotiated sessions",
+                          "id": 467,
+                          "ideas": {
+                            "1": {
+                              "title": "Server is responsible of storing those sessions, and providing Session Identifier in ServerHello message",
+                              "id": 468,
+                              "attr": {
+                                "style": {
+                                  "background": "#5F9EA0"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "If the client will attach identifier from previous session in ClientHello and server will be able to match it, it can reuse keys from previous handshake drastically reducing latency",
+                              "id": 469,
+                              "attr": {
+                                "style": {
+                                  "background": "#5F9EA0"
+                                }
+                              }
+                            },
+                            "3": {
+                              "title": "It allows to remove full roundtrip, but it is a trade-off it costs a lot of memory on server side when it comes to scale of tens of thousands or even millions connections",
+                              "id": 470,
+                              "attr": {
+                                "style": {
+                                  "background": "#5F9EA0"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -2261,124 +2388,112 @@
                       },
                       "attr": {
                         "style": {
-                          "background": "#008000"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
-                      }
-                    }
-                  }
-                }
-              },
-              "attr": {
-                "style": {
-                  "background": "#00008B"
-                },
-                "collapsed": true
-              }
-            },
-            "18": {
-              "title": "ALPN",
-              "id": 450,
-              "ideas": {
-                "1": {
-                  "title": "Application Layer Protocol Negotiation",
-                  "id": 453,
-                  "ideas": {
-                    "1": {
-                      "title": "It is a way of negotiating protocol during the TLS handshake and bypassing Upgrade header in HTTP and avoiding additional roundtrip",
-                      "id": 454,
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4B5"
-                        }
                       }
                     },
                     "2": {
-                      "title": "Client requests a list of supported protocols in ClientHello message",
-                      "id": 455,
+                      "title": "Session Tickets\n(RFC 5077)",
+                      "id": 471,
                       "ideas": {
                         "1": {
-                          "title": "Server provides one in ServerHello or none and in that case client can abort connection",
-                          "id": 456,
+                          "title": "It reduces memory usage on the server side and moves responsibility of managing state partially to client",
+                          "id": 472,
                           "attr": {
                             "style": {
-                              "background": "#FFE4B5"
+                              "background": "#5F9EA0"
                             }
+                          }
+                        },
+                        "2": {
+                          "title": "Client can store attached data from last keys exchange encrypted only by server's private key",
+                          "id": 473,
+                          "ideas": {
+                            "1": {
+                              "title": "Then it can be reattached in ClientHello message of a subsequent session",
+                              "id": 474,
+                              "attr": {
+                                "style": {
+                                  "background": "#5F9EA0"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "Even the tickets are stored on client, they're encrypted with server's private key",
+                              "id": 475,
+                              "attr": {
+                                "style": {
+                                  "background": "#5F9EA0"
+                                }
+                              }
+                            },
+                            "3": {
+                              "title": "Keep in mind that even that approach (called sometimes \"stateless\") requires at scale e.g. with load balancers careful planning",
+                              "id": 476,
+                              "ideas": {
+                                "1": {
+                                  "title": "E.g. you need to initialize them with the same session key",
+                                  "id": 477,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#5F9EA0"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#5F9EA0"
+                                },
+                                "collapsed": true
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#5F9EA0"
+                            },
+                            "collapsed": true
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#FFE4B5"
-                        },
-                        "collapsed": true
-                      }
-                    },
-                    "3": {
-                      "title": "It ensures that application protocol negotiation over TLS is not any slower",
-                      "id": 457,
-                      "ideas": {
-                        "1": {
-                          "title": "It is not any faster than HTTP Upgrade, because TLS handshake still has to be performed",
-                          "id": 458,
-                          "attr": {
-                            "style": {
-                              "background": "#FFE4B5"
-                            }
-                          }
-                        }
-                      },
-                      "attr": {
-                        "style": {
-                          "background": "#FFE4B5"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       }
                     }
-                  },
-                  "attr": {
-                    "style": {
-                      "background": "#FFE4B5"
-                    },
-                    "collapsed": true
                   }
                 },
-                "2": {
-                  "title": "NPN (Next Protocol Negotiation) is equivalent to this",
-                  "id": 459,
-                  "attr": {
-                    "style": {
-                      "background": "#FFE4B5"
-                    }
-                  }
-                }
-              },
-              "attr": {
-                "style": {
-                  "background": "#FFE4B5"
-                },
-                "collapsed": true
-              }
-            },
-            "19": {
-              "title": "SNI",
-              "id": 451,
-              "ideas": {
-                "1": {
-                  "title": "Server Name Indication",
-                  "id": 460,
+                "0.5": {
+                  "title": "SNI",
+                  "id": 451,
                   "ideas": {
                     "1": {
-                      "title": "If server is hosting on the same IP various certificates and identities there is a way to inform and preselect which is interesting for the client",
-                      "id": 462,
+                      "title": "Server Name Indication",
+                      "id": 460,
                       "ideas": {
                         "1": {
-                          "title": "Client indicates the hostname during the TLS handshake, Server verifies it and selects appropriate certificate for the rest of the handshake process",
-                          "id": 464,
+                          "title": "If server is hosting on the same IP various certificates and identities there is a way to inform and preselect which is interesting for the client",
+                          "id": 462,
+                          "ideas": {
+                            "1": {
+                              "title": "Client indicates the hostname during the TLS handshake, Server verifies it and selects appropriate certificate for the rest of the handshake process",
+                              "id": 464,
+                              "attr": {
+                                "style": {
+                                  "background": "#FA8072"
+                                }
+                              }
+                            }
+                          },
                           "attr": {
                             "style": {
                               "background": "#FA8072"
-                            }
+                            },
+                            "collapsed": true
                           }
                         }
                       },
@@ -2394,38 +2509,122 @@
                     "style": {
                       "background": "#FA8072"
                     },
-                    "collapsed": true
+                    "collapsed": true,
+                    "position": [
+                      102,
+                      -117,
+                      1
+                    ]
+                  }
+                },
+                "0.25": {
+                  "title": "ALPN",
+                  "id": 450,
+                  "ideas": {
+                    "1": {
+                      "title": "Application Layer Protocol Negotiation",
+                      "id": 453,
+                      "ideas": {
+                        "1": {
+                          "title": "It is a way of negotiating protocol during the TLS handshake and bypassing Upgrade header in HTTP and avoiding additional roundtrip",
+                          "id": 454,
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Client requests a list of supported protocols in ClientHello message",
+                          "id": 455,
+                          "ideas": {
+                            "1": {
+                              "title": "Server provides one in ServerHello or none and in that case client can abort connection",
+                              "id": 456,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFE4B5"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "3": {
+                          "title": "It ensures that application protocol negotiation over TLS is not any slower",
+                          "id": 457,
+                          "ideas": {
+                            "1": {
+                              "title": "It is not any faster than HTTP Upgrade, because TLS handshake still has to be performed",
+                              "id": 458,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFE4B5"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFE4B5"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "2": {
+                      "title": "NPN (Next Protocol Negotiation) is equivalent to this",
+                      "id": 459,
+                      "attr": {
+                        "style": {
+                          "background": "#FFE4B5"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFE4B5"
+                    },
+                    "collapsed": true,
+                    "position": [
+                      101,
+                      -171.25,
+                      2
+                    ]
                   }
                 }
               },
               "attr": {
+                "position": [
+                  107,
+                  355,
+                  1
+                ],
                 "style": {
-                  "background": "#FA8072"
+                  "background": "#FFD700"
                 },
                 "collapsed": true
-              }
-            },
-            "20": {
-              "title": "CERTIFICATES",
-              "id": 452,
-              "attr": {
-                "style": {
-                  "background": "#ADFF2F"
-                }
-              }
-            },
-            "19.5": {
-              "title": "TLS Session Resumption",
-              "id": 465,
-              "attr": {
-                "style": {}
               }
             }
           },
           "attr": {
             "style": {
               "background": "#5F9EA0"
-            }
+            },
+            "collapsed": true
           }
         },
         "15": {
