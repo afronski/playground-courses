@@ -3,6 +3,15 @@
   "id": 1,
   "formatVersion": 2,
   "ideas": {
+    "1": {
+      "title": "UNIX performance",
+      "id": 27,
+      "attr": {
+        "style": {
+          "background": "#FFA500"
+        }
+      }
+    },
     "-12": {
       "title": "CODE QUALITY",
       "id": 4,
@@ -20,7 +29,8 @@
       "attr": {
         "style": {
           "background": "#ADFF2F"
-        }
+        },
+        "collapsed": true
       }
     },
     "-22": {
@@ -169,6 +179,39 @@
       "attr": {
         "style": {
           "background": "#FFFF00"
+        },
+        "collapsed": true
+      }
+    },
+    "-6": {
+      "title": "CLI",
+      "id": 24,
+      "attr": {
+        "style": {
+          "background": "#008B8B"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "maybe",
+          "id": 25,
+          "attr": {
+            "style": {
+              "background": "#008B8B"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "Program which evaluates system calls and performs a dry-run with nice colored output what this program did during the dry-run and ask if the second run should be done",
+              "id": 26,
+              "attr": {
+                "style": {
+                  "background": "#008B8B"
+                }
+              }
+            }
+          }
         }
       }
     }
