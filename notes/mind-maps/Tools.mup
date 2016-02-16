@@ -3,15 +3,6 @@
   "id": 1,
   "formatVersion": 2,
   "ideas": {
-    "1": {
-      "title": "UNIX performance",
-      "id": 27,
-      "attr": {
-        "style": {
-          "background": "#FFA500"
-        }
-      }
-    },
     "-12": {
       "title": "CODE QUALITY",
       "id": 4,
@@ -199,7 +190,8 @@
           "attr": {
             "style": {
               "background": "#008B8B"
-            }
+            },
+            "collapsed": true
           },
           "ideas": {
             "1": {
@@ -212,8 +204,1100 @@
               }
             }
           }
+        },
+        "2": {
+          "title": "UNIX performance (CLI)",
+          "id": 27,
+          "attr": {
+            "style": {
+              "background": "#008B8B"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "13": {
+              "title": "METHODOLOGIES",
+              "id": 113,
+              "ideas": {
+                "1": {
+                  "title": "Streetlight Anti-Method",
+                  "id": 114,
+                  "ideas": {
+                    "1": {
+                      "title": "DO NOT USE IT",
+                      "id": 118,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Incomplete",
+                          "id": 122,
+                          "attr": {
+                            "style": {
+                              "background": "#FF0000"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Inefficient",
+                          "id": 124,
+                          "attr": {
+                            "style": {
+                              "background": "#FF0000"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "Tool-based approach",
+                          "id": 125,
+                          "attr": {
+                            "style": {
+                              "background": "#FF0000"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "1. Pick tools which are familiar or found randomly on the internet",
+                      "id": 119,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "2. Run them",
+                      "id": 120,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "3. Look for obvious issues",
+                      "id": 121,
+                      "attr": {
+                        "style": {
+                          "background": "#FF0000"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FF0000"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "Workload Characterization",
+                  "id": 115,
+                  "ideas": {
+                    "1": {
+                      "title": "1. Who is causing the load? PID, UID, IP ...",
+                      "id": 126,
+                      "attr": {
+                        "style": {
+                          "background": "#F0FFFF"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "2. Why is the load called? Code path ...",
+                      "id": 127,
+                      "attr": {
+                        "style": {
+                          "background": "#F0FFFF"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "3. What is the load? IOPS, tput, direction, type ...",
+                      "id": 128,
+                      "attr": {
+                        "style": {
+                          "background": "#F0FFFF"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "4. How is the load changing over time?",
+                      "id": 129,
+                      "attr": {
+                        "style": {
+                          "background": "#F0FFFF"
+                        }
+                      }
+                    },
+                    "5": {
+                      "title": "IT IS NOT IDEAL",
+                      "id": 130,
+                      "ideas": {
+                        "1": {
+                          "title": "Suitable for a one class of issues - Load",
+                          "id": 131,
+                          "attr": {
+                            "style": {
+                              "background": "#F0FFFF"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Time consuming and can be discouraging - most of examination will be missed",
+                          "id": 132,
+                          "attr": {
+                            "style": {
+                              "background": "#F0FFFF"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#F0FFFF"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#F0FFFF"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "3": {
+                  "title": "Drill-Down Analysis",
+                  "id": 116,
+                  "ideas": {
+                    "1": {
+                      "title": "1. Start at highest level",
+                      "id": 133,
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "2. Examine next-level details",
+                      "id": 135,
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "3. Pick most interesting breakdown",
+                      "id": 136,
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "4. If problem unsolved, go to 2nd point",
+                      "id": 137,
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        }
+                      }
+                    },
+                    "5": {
+                      "title": "IT IS TIME CONSUMING",
+                      "id": 138,
+                      "ideas": {
+                        "1": {
+                          "title": "But it will identify the root cause",
+                          "id": 139,
+                          "attr": {
+                            "style": {
+                              "background": "#00008B"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#00008B"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#00008B"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "4": {
+                  "title": "USE",
+                  "id": 117,
+                  "ideas": {
+                    "1": {
+                      "title": "For every resource check",
+                      "id": 140,
+                      "ideas": {
+                        "1": {
+                          "title": "1. Utilization - Time resource was busy or degree used",
+                          "id": 141,
+                          "attr": {
+                            "style": {
+                              "background": "#006400"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "2. Saturation - Degree of queued extra work",
+                          "id": 143,
+                          "attr": {
+                            "style": {
+                              "background": "#006400"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "3. Errors - If any errors happened",
+                          "id": 144,
+                          "attr": {
+                            "style": {
+                              "background": "#006400"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#006400"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "IT IS LIMITED TO A CLASS OF ISSUES",
+                      "id": 145,
+                      "attr": {
+                        "style": {
+                          "background": "#006400"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#006400"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                },
+                "collapsed": true
+              }
+            },
+            "14": {
+              "title": "TOOLS",
+              "id": 146,
+              "ideas": {
+                "1": {
+                  "title": "ADVANCED",
+                  "id": 92,
+                  "attr": {
+                    "style": {
+                      "background": "#4B0082"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "perf",
+                      "id": 93,
+                      "attr": {
+                        "style": {
+                          "background": "#4B0082"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Originally Performance Counters for Linux (PCL) focus put on CPU performance counter",
+                          "id": 96,
+                          "attr": {
+                            "style": {
+                              "background": "#4B0082"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Now it is a collection of profiling and tracing tools with numerous subcommands ",
+                          "id": 97,
+                          "ideas": {
+                            "1": {
+                              "title": "sched - For Kernel scheduler metrics",
+                              "id": 98,
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "lock - Analyze lock events",
+                              "id": 99,
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#4B0082"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "3": {
+                          "title": "sudo perf record \n-a -g -F 997 sleep 10",
+                          "id": 100,
+                          "ideas": {
+                            "1": {
+                              "title": "-a - all CPUs",
+                              "id": 101,
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "-g - call stacks",
+                              "id": 102,
+                              "ideas": {},
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              }
+                            },
+                            "3": {
+                              "title": "-F - Hertz",
+                              "id": 104,
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              }
+                            },
+                            "4": {
+                              "title": "It will profile CPU activity for that sample command (it uses here a dummy) and saves it to file",
+                              "id": 105,
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              },
+                              "ideas": {
+                                "1": {
+                                  "title": "sudo perf report --stdio",
+                                  "id": 107,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#4B0082"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#4B0082"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "dtrace",
+                      "id": 94,
+                      "attr": {
+                        "style": {
+                          "background": "#4B0082"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Programmable, real-time, dynamic and static tracing",
+                          "id": 108,
+                          "ideas": {
+                            "1": {
+                              "title": "Used on Solaris, illumos/SmartOS, Mac OS X, *BSD",
+                              "id": 109,
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "On Linux there are two ports, both are not production ready",
+                              "id": 110,
+                              "attr": {
+                                "style": {
+                                  "background": "#4B0082"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#4B0082"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "SystemTap",
+                      "id": 95,
+                      "attr": {
+                        "style": {
+                          "background": "#4B0082"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Alternative for no-dtrace-forlinux",
+                          "id": 111,
+                          "attr": {
+                            "style": {
+                              "background": "#4B0082"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Static and dynamic tracing, probes, tapsets, scripts and more",
+                          "id": 112,
+                          "attr": {
+                            "style": {
+                              "background": "#4B0082"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "0.5": {
+                  "title": "INTERMEDIATE",
+                  "id": 48,
+                  "ideas": {
+                    "1": {
+                      "title": "SYSTEM OVERVIEW",
+                      "id": 49,
+                      "ideas": {
+                        "1": {
+                          "title": "sar",
+                          "id": 50,
+                          "ideas": {
+                            "1": {
+                              "title": "Same statistics as shown by other tools (e.g. vmstat or iostat)",
+                              "id": 51,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "It is buggy, but it is universal - swiss army knife, one tool to rule them all",
+                              "id": 63,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "3": {
+                          "title": "pidstat",
+                          "id": 55,
+                          "ideas": {
+                            "1": {
+                              "title": "Statistics for certain PID",
+                              "id": 59,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "Works like a `mpstat` printing seconds one after another",
+                              "id": 62,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "4": {
+                          "title": "strace",
+                          "id": 56,
+                          "ideas": {
+                            "1": {
+                              "title": "System call tracer",
+                              "id": 57,
+                              "ideas": {
+                                "1": {
+                                  "title": "strace -tttT -p PID",
+                                  "id": 58,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FFA500"
+                                    }
+                                  }
+                                },
+                                "2": {
+                                  "title": "High latency in applications is caused by resource I/O and that is performed by system calls",
+                                  "id": 60,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FFA500"
+                                    }
+                                  }
+                                },
+                                "3": {
+                                  "title": "-c: print summary",
+                                  "id": 61,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FFA500"
+                                    }
+                                  }
+                                },
+                                "4": {
+                                  "title": "It introduces A LOT OF overhead to traced processes!",
+                                  "id": 68,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FFA500"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                },
+                                "collapsed": true
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "5": {
+                          "title": "slabtop",
+                          "id": 83,
+                          "ideas": {
+                            "1": {
+                              "title": "Kernel slab allocator usage top",
+                              "id": 84,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "sudo slabtop -sc",
+                              "id": 86,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "6": {
+                          "title": "sysctl",
+                          "id": 87,
+                          "ideas": {
+                            "1": {
+                              "title": "Showing and setting up system knobs",
+                              "id": 88,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "sudo sysctl -a",
+                              "id": 89,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "7": {
+                          "title": "/proc",
+                          "id": 90,
+                          "ideas": {
+                            "1": {
+                              "title": "Original source of statistics for almost any tool",
+                              "id": 91,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "2": {
+                      "title": "NETWORK",
+                      "id": 73,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "netstat",
+                          "id": 53,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "netstat -aepvt",
+                              "id": 66,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "For tracing network I/O and any activity related with TCP / UDP / socket style of communication",
+                              "id": 67,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "tcpdump",
+                          "id": 69,
+                          "ideas": {
+                            "1": {
+                              "title": "Sniffer, with ability to dump network traffic to the files",
+                              "id": 70,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "Dumps can be imported to other tools - like Wireshark",
+                              "id": 71,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "3": {
+                              "title": "CPU overhead and of course storage",
+                              "id": 72,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "I/O",
+                      "id": 74,
+                      "ideas": {
+                        "1": {
+                          "title": "blktrace",
+                          "id": 75,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "btrace /dev/sdb",
+                              "id": 77,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "Block device I/O tracing",
+                              "id": 78,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "iotop",
+                          "id": 80,
+                          "ideas": {
+                            "1": {
+                              "title": "The similar facility as `top`, but for disk I/O",
+                              "id": 81,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "IO it is a time thread was waiting on I/O",
+                              "id": 82,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "0.25": {
+                  "title": "BASIC",
+                  "id": 46,
+                  "ideas": {
+                    "1": {
+                      "title": "NETWORK ",
+                      "id": 42,
+                      "ideas": {
+                        "1": {
+                          "title": "ping",
+                          "id": 43,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "nicstat",
+                          "id": 44,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#8FBC8F"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "MEMORY",
+                      "id": 39,
+                      "ideas": {
+                        "1": {
+                          "title": "vmstat",
+                          "id": 40,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "free",
+                          "id": 41,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "dstat",
+                          "id": 45,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#8FBC8F"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "I/O",
+                      "id": 37,
+                      "ideas": {
+                        "1": {
+                          "title": "iostat",
+                          "id": 38,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#8FBC8F"
+                        }
+                      }
+                    },
+                    "0.5": {
+                      "title": "CPU",
+                      "id": 36,
+                      "ideas": {
+                        "2": {
+                          "title": "uptime",
+                          "id": 29,
+                          "ideas": {
+                            "1": {
+                              "title": "It has load averages \n(1 min, 5 min, 15 min)",
+                              "id": 31,
+                              "attr": {
+                                "style": {
+                                  "background": "#8FBC8F"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        },
+                        "12": {
+                          "title": "mpstat",
+                          "id": 34,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#8FBC8F"
+                        }
+                      }
+                    },
+                    "0.25": {
+                      "title": "SYSTEM OVERVIEW",
+                      "id": 35,
+                      "ideas": {
+                        "0.75": {
+                          "title": "top",
+                          "id": 30,
+                          "ideas": {
+                            "1": {
+                              "title": "%CPU - Interval sum for all CPUs",
+                              "id": 32,
+                              "attr": {
+                                "style": {
+                                  "background": "#8FBC8F"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          }
+                        },
+                        "0.875": {
+                          "title": "htop",
+                          "id": 33,
+                          "attr": {
+                            "style": {
+                              "background": "#8FBC8F"
+                            }
+                          },
+                          "ideas": {
+                            "1": {
+                              "title": "Very customizable, other features like `top`",
+                              "id": 52,
+                              "attr": {
+                                "style": {
+                                  "background": "#8FBC8F"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#8FBC8F"
+                        },
+                        "position": [
+                          71.5,
+                          -224,
+                          1
+                        ]
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#8FBC8F"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                },
+                "collapsed": true
+              }
+            }
+          }
         }
       }
     }
-  }
+  },
+  "attr": {
+    "style": {}
+  },
+  "links": []
 }
