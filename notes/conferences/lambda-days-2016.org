@@ -116,7 +116,64 @@
       - Akka Streams, Akka Persistence - everything for modeling workflow.
 
 *** Teaching functional programming to n00bs in mobs - Rob Martin
+
+    - It is about three topics:
+      - Juniors:
+        - It is easier to hire them and easier to train them (because Seniors
+          are not eager to learn sometimes).
+        - 10x delivers 10x value, not code.
+          - IMHO it is not true - how to measure a "value"?
+        - Use right patterns, write code which does only what it should do,
+          because it is specified.
+          - In other words - K.I.S.S.
+      - How and why to teach functional programming?
+        - It constraints us as a developers.
+          - Fewer choices, fewer abstractions.
+          - Easy to do it right, even without much experience.
+        - Immutability, identity as a collection of immutable values across
+          time.
+        - Elixir and Elm are good languages for juniors.
+          - Good thinking from the beginning.
+      - Mob Programming:
+        - It is fun, useful, produces simpler, more correct code, delivers
+          better value.
+          - The wisdom of mobs.
+          - Learning is contributing!
+          - Turn up the good.
+          - Everyone can ask, everyone should understand why.
+        - 5-10 people, one screen, one computer, one keyboard.
+          - Everyone participate, one driver.
+          - 2 to 8 hours each.
+          - Variety of people - juniors, mediums, seniors.
+          - Different languages, different minds, different approaches.
+        - Important:
+          - Imperative vs. declarative language.
+            - Difference between "Pick it" vs. "I feel a ...".
+          - Thinking out loud.
+          - It is like displaying someone from outside tech, how to do a tech
+            stuff on PC.
+          - It is hard to think when you type and struggle with syntax and
+            language features.
+          - Kindness, consideration and respect are way better than having
+            anyone in charge. "Yes and ..." is much better and goes further than
+            "No but".
+            - Improvised Comedy group, get going, take everything, be positive.
+          - It is like introducing *anarchy* to IT, and we do that anyway - e.g.
+            flat structure, no dress code for IT people.
+        - How to introduce hard topics to people?
+          - In *OC Tanner Company* every junior builds a full CQRS based
+            e-commerce platform on their second day at job.
+
 *** Elixir and Elm - the perfect couple - Tomasz Kowal
+
+    -
+
 *** Embracing change - how to introduce Clojure into your company technology stack seamlessly - Artur Skowroński
+
+    -
+
 *** Lightning talks
+**** A
+**** B
+**** C
 ** Day 2
