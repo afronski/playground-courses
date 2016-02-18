@@ -1,0 +1,122 @@
+* Lambda Days 2016
+** Day 1
+*** Propositions as Types - Philip Wadler
+
+    - Hilarious subject of computability theory:
+      - Main actors: Hilbert, Church, Turing, Godel.
+      - Problem: David Hilbert "Entscheidungsproblem" (1932)
+      - Contra 1: Kurt Godel, "This statement is not provable" (1935)
+      - Contra 2: Alonzo Church, "Lambda Calculus" (1936)
+        - Introduces three concepts: variables, abstraction, application.
+      - Contra 3: Alan Turing, "Turing Machine" (1936)
+        - Math is discovered - 3 independent papers about the same result
+    - Propositions as Types:
+      - Gentzen (1935) - Natural Deduction
+        - It is a *modus ponens*.
+      - Very intuitive syntax for constructive logic proofs.
+        - Invented for showing consistency and formalization of proofs in
+          constructive logic.
+      - "Typed lambda-calculus" (1940, Church)
+        - Macro-language for constructive logic. Unfortunately untyped version
+          has no guarantees about termination, so you can do roundabout proofs
+          and prove false.
+          - Turing shown that programs written in typed lambda calculus are
+            terminating.
+      - Curry-Howard isomorphism (correspondence) - in simple words
+        "constructive logic proofs are equal to the typed lambda calculus".
+        - Haskell Curry wrote that for a different branch of logic, Howard
+          translated to typed lambda calculus.
+          - Propositions === Types
+          - Proofs === Programs
+          - Normalisation of proofs === Evaluation of programs
+        - It is not a coincidence - similar correspondence:
+          - ML Type System <-> Type Schemes,
+          - Hindley-Milner Type System,
+          - Linear Logic <-> Session Types
+          - Classical-Intuitionistic Embedding <-> CPS
+        - Every interesting logic has corresponding "programming language
+          feature".
+          - It is so powerful that even Rusell's paradox (you cannot prove a
+            false thing) corresponds to the particular feature in programming
+            language (recursion, non-termination and ability to write any, even
+            not provable programs).
+          - Session types, linear logic and 20 years of discovering
+            correspondence between logic and language feature (send / receive,
+            read / write).
+      - Is *actor model* invented or discovered?
+        - Philip Wadler think that it is invented.
+      - Languages like Python, Java, C# are "invented".
+        - Haskell, Scheme, Lisp etc. are "discovered".
+      - Tools with dependent types and proofs:
+        - Coq
+        - Agda
+      - Paper:
+        - Philip Wadler, "Propositions as Types"
+          - Communications of ACM, 12.2015
+      - Q: Lambda calculus as a universal programming language?
+        - A: "No, it is too limiting".
+      - Q: What about having machine with different architecture than von Neumann for that?
+        - A: A lot of work done in that matter.
+
+*** Phoenix a web framework for the new web - José Valim
+
+    - Typical presentation about Phoenix and Elixir.
+      - Nice benchmarks, unfortunately no word about infrastructure, machine
+        size and so on.
+    - In Phoenix you don't have to choose productivity over performance, you can
+      be productive, in short and long term and also have good vertical and
+      horizontal scalability characteristics.
+    - Two key concepts:
+      - Phoenix Channels - an abstraction over transport protocol, assuming
+        nothing about clients, providing certain protocol for them. It can be
+        based on top of WebSocket, TCP, CoAP, MQTT and so on.
+      - Applications - help in terms of maintenance, introspection and
+        standardization of concepts, guides and so on.
+
+*** The Mysteries of Dropbox - John Hughes
+
+    - Similar approach to the Jepsen tool by @aphyr.
+    - Published also as a paper "Mysteries of Dropbox".
+    - They have prepared QuickCheck model which tests file synchronization
+      logic.
+      - Just a one file, multiple clients, reading and writing content.
+      - First - you have to debug your model.
+    - Standard introduction to the QuickCheck (example with queue implemented in
+      C).
+    - Synchronization is a hard problem.
+      - Timing (completely omitted in the model, assumptions about time and
+        assumptions about shrinking).
+      - Network - flawless network without any faults, build on top of multiple
+        virtual machines on a single laptop, all in the same network.
+      - State stabilization is hard in this case - you have to wait for all
+        clients, server to be idle and you can't wait too long.
+    - In server logic you have to build buffering, conflicts resolution,
+      specific business use cases and edge cases.
+    - On the meta-level it treats system of DropBox clients and server as a
+      black-box, it prepares state transitions and reports observations, than
+      assuming certain flow and logic it eliminates a lot of not valid paths in
+      a tree, as in the case of Jepsen and database linearizability tests.
+
+*** Testing scalability of Erlang OpenFlow controller - Szymon Mentel
+
+    - SDN - Software Defined Networking, decoupling data plane from control
+      plane. Applications can control network.
+      - Data plane sends messages to controller, which decides about routing,
+        rules, filtering etc.
+    - Erlang - distributed system test setup and controller plane
+      implementation.
+    - OpenFlow is a protocol, an API and application (configuration) layer for
+      SDN and programmable switches.
+
+*** Using an actor framework for scientific computing: opportunities and challenges - Krzysztof Borowski
+
+    - Actor model used as a representation of workflows, used in various cases
+      e.g. scientific computing.
+      - Example - Scalaflow (Scala, Akka, Cassandra).
+      - Akka Streams, Akka Persistence - everything for modeling workflow.
+
+*** Teaching functional programming to n00bs in mobs - Rob Martin
+*** Elixir and Elm - the perfect couple - Tomasz Kowal
+*** Embracing change - how to introduce Clojure into your company technology stack seamlessly - Artur Skowroński
+*** Lightning talks
+** Day 2
