@@ -166,14 +166,29 @@
 
 *** Elixir and Elm - the perfect couple - Tomasz Kowal
 
-    -
+    - Do not compare programming languages.
+      - Blub paradox, power continuum - Paul Graham essay referrals.
+    - Elm and Elixir basic introduction.
 
 *** Embracing change - how to introduce Clojure into your company technology stack seamlessly - Artur Skowroński
 
-    -
+    - Talk about migrating from Java EE to other technologies and how to
+      introduce it seamlessly.
+      - Duncan Davidson "Polyglot Stack" (Atmosphere).
+      - Derek Sivers "How to start a movement" (TED Talk).
+    - Guidelines how to be a good partner in change.
+      - Good docs, good on-boarding / introduction process.
+      - Good tooling, installation script.
+      - Don't forgot about the context of writing and using new technology in
+        your company.
+    - Think big, start small, learn fast.
+      - Build trust in organization first, when you loose your trust it will be
+        hard to fix it.
 
 *** Lightning talks
-**** A
-**** B
-**** C
+**** Developing Elixir with Atom
+**** Object-Oriented programming in Elixir
+**** How to introduce FP into OOP
+**** Quantum Math in 5 minutes - part 1
+**** Quantum Math in 5 minutes - part 2
 ** Day 2
