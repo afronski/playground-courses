@@ -231,7 +231,7 @@
     - On Erlang side it is a Cowboy web server with old school Bullet.
     - Demo - Distributed system with two PLCs simulating traffic lights system.
 
-*** Creating reactive components using ClojureScript React wrappers - Konrad Szydlo
+*** Scala macros - swiss army knife for building libraries - Bartosz Bąbol
 
     -
 
