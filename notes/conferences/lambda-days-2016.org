@@ -192,3 +192,50 @@
 **** Quantum Math in 5 minutes - part 1
 **** Quantum Math in 5 minutes - part 2
 ** Day 2
+*** Things that Matter - Bruce Tate
+
+    - Decisions that shaped the language design.
+    - Not a lot of technical admiration for Ruby, but they've created community
+      which is humble, diverse and vibrant. Primary motivation was to play and
+      make programming enjoyable again.
+    - Important principles:
+      - Your origins shape you.
+      - Know your community.
+        - Open Source and internet changed everything. Example of Elixir and
+          satellite projects is an amazing example of distributed community.
+        - MINSWAN - acronym: "Matz is nice so we are nice".
+          - Inspiration and attitude influences other people.
+        - Language have to be approachable, because without it won't get the
+          critical mass to start and evolve.
+      - Stands - each successful language have their own standpoints.
+        - Efficient Program Design === Efficient Language Design.
+      - Adapt or die.
+
+*** Elmrang Connect - Ultra Lightweight Connection between Elm and Erlang - Peer Stritzinger, Claudia Doppioslash
+
+    - Presentation about Erlang in automotive industry, PLC and other stuff -
+      low-level things.
+      - Erlang + RTEMS = GRISP (a kind of unikernel which runs on bare metal).
+      - Introduction into PLC and distributed PLC standard (IEC 61499).
+      - Intelligent factory systems - RFID, compiler from PLC language to BEAM
+        files.
+        - Whole factory runs on top of Erlang.
+    - Why Elm?
+      - You need to prepare GUI for people which are programming PLC, because
+        they're relying on this and they don't like other tools.
+      - Such GUI is a good use case for FRP and this language.
+    - Key problem - bidirectional communication over WebSockets (RFC 6455).
+      - Interesting fact - keys inside WebSocket protocol are not for security,
+        but for old proxies which can mess with the connection and treat it as a
+        HTTP which should be cached.
+    - On Erlang side it is a Cowboy web server with old school Bullet.
+    - Demo - Distributed system with two PLCs simulating traffic lights system.
+
+*** Creating reactive components using ClojureScript React wrappers - Konrad Szydlo
+
+    -
+
+*** Getting started with Frege - Lech Głowiak
+*** Practical demystification of CRDT - Dmitry Ivanov, Nami Naserazad
+*** Purely Functional Web Apps - Michał Płachta
+*** The Truth about Types - Bartosz Milewski
