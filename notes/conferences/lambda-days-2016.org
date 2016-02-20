@@ -233,9 +233,51 @@
 
 *** Scala macros - swiss army knife for building libraries - Bartosz Bąbol
 
-    -
+    - Experimental language feature
+    - dsl, static checks, code generation
+    - metaprogramming
+    - white and black box macros - latter follows the typedefs
 
 *** Getting started with Frege - Lech Głowiak
+
+- newest version produces better typed java
+- it compiles to java then uses javac
+- online repl
+- Nice interop between mutable jvm world and haskell purity
+- tooling as a first-class citizen
+
 *** Practical demystification of CRDT - Dmitry Ivanov, Nami Naserazad
+
+- offline, synchronizatio domain
+- algebra matches distributed systems problems
+- grow only counter is a vector clock
+- no reliable clock
+- or set, lww set, introducing new data types
+
 *** Purely Functional Web Apps - Michał Płachta
+
+- case study around gitlab integration
+- haskell servant - apis, http clients
+- IO - action, monad - but earlier is more comprehensive
+- elm architecture
+- generating docs from type
+- api is type
+
 *** The Truth about Types - Bartosz Milewski
+
+- cont. of opening keynote
+- curry-howard isomorphism
+- category theory
+- isomor. maps also into cat. theory - third guy lambek
+- nodes, morphisms, composition,
+- initial object, terminal object
+- referring to traditional definitions only to identify a concept
+- empty set, singleton set
+- product
+- it is the best candidate, if a morphism can be composed, it is not a best candidate - factorization rules
+- CCC cartesian closed categories is a correspondence of typed lambda calculus
+- intuitionistic logic is a equiv. of typed lambda calculus, here you cannot eliminate not not A, neither LEM
+- classical logic can be a subset of intuitionistic logic, can be embedded in intui.
+- cps transform
+- yonedas lemma
+- a lot of cross pollination, grand unified theory, hott
