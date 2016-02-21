@@ -233,51 +233,78 @@
 
 *** Scala macros - swiss army knife for building libraries - Bartosz Bąbol
 
-    - Experimental language feature
-    - dsl, static checks, code generation
-    - metaprogramming
-    - white and black box macros - latter follows the typedefs
+    - It is an experimental language feature.
+      - Suitable for DSL, static checks and code generation.
+    - Way of introducing meta-programming features to Scala.
+    - Difference between *white* and *black box* macros. Latter one follows the
+      type definitions.
 
 *** Getting started with Frege - Lech Głowiak
 
-- newest version produces better typed java
-- it compiles to java then uses javac
-- online repl
-- Nice interop between mutable jvm world and haskell purity
-- tooling as a first-class citizen
+    - Newest version of Frege produces better typed Java code.
+      - Yes, it compiles to Java then uses `javac`.
+    - Online REPL - http://try.frege-lang.org
+    - Nice interopability between mutable JVM world and Haskell purity.
+      - `Mutable` typeclass and way of freezing / unfreezing mutable variable to
+        immutable values, and vice versa.
+    - Tooling as a first-class citizen.
 
 *** Practical demystification of CRDT - Dmitry Ivanov, Nami Naserazad
 
-- offline, synchronizatio domain
-- algebra matches distributed systems problems
-- grow only counter is a vector clock
-- no reliable clock
-- or set, lww set, introducing new data types
+    - NavCloud - offline-first synchronization of navigation related data.
+    - CRDT - Convergent (Conflict-free) Replicated Data Types.
+      - Algebra matches to a lot distributed systems problems.
+    - You have to assume that there is no reliable clock.
+    - Examples:
+      - E.g. GCounter - grow-only counter is essentially a kind of a vector
+        clock.
+      - Or set, LWW (*Last Write Wins*) set, but you can also introduce new data
+        types on top of existing ones.
 
 *** Purely Functional Web Apps - Michał Płachta
 
-- case study around gitlab integration
-- haskell servant - apis, http clients
-- IO - action, monad - but earlier is more comprehensive
-- elm architecture
-- generating docs from type
-- api is type
+  - Haskell + Elm - case study around integration with Gitlab (consuming an API,
+    exposing API, UI).
+  - HTTP Servant - Haskell library for consuming and creating API (HTTP server
+    and client).
+    - Generating documentation or client from those type definitions.
+    - API endpoint is definied as a type definition.
+      - "Scalaz" (or Perl-like :P) domain specific language for that.
+  - Server-side:
+    - IO - presented as an *action*, side-effect not a monad - it is stil la
+      *monad*, but that way of describing is way more approachable.
+    - *EitherT* is a *Either* type wrapped with *IO* monad.
+  - Client-side:
+    - Another example of Elm architecture.
 
 *** The Truth about Types - Bartosz Milewski
 
-- cont. of opening keynote
-- curry-howard isomorphism
-- category theory
-- isomor. maps also into cat. theory - third guy lambek
-- nodes, morphisms, composition,
-- initial object, terminal object
-- referring to traditional definitions only to identify a concept
-- empty set, singleton set
-- product
-- it is the best candidate, if a morphism can be composed, it is not a best candidate - factorization rules
-- CCC cartesian closed categories is a correspondence of typed lambda calculus
-- intuitionistic logic is a equiv. of typed lambda calculus, here you cannot eliminate not not A, neither LEM
-- classical logic can be a subset of intuitionistic logic, can be embedded in intui.
-- cps transform
-- yonedas lemma
-- a lot of cross pollination, grand unified theory, hott
+   - Continuation of opening keynote.
+     - Curry-Howard isomporphism was expanded by guy named Lambek to the third
+       branch - *category theory*.
+       - Propositions are types, which are categories.
+   - Definitions:
+     - Nodes, morphisms and composition.
+     - *Initial object*, *Terminal object*.
+   - In other way - you can refer in category theory to traditional definitions
+     only to identify a concept. You cannot look into objects, it is an abstract
+     thing.
+     - Nodes and it's relations are identified by *morphisms* (ways how to
+       connect them together).
+   - So if we want to refer to something in *set theory* initial object will be
+     an example of empty set, and singleton set is a terminal object.
+   - Product is an essiential thing for showing an example of isomorphism
+     between those three branches.
+     - It is the best candidate only when it is a simplest way to define it.
+     - If a morphism can be composed, it is not a best candidate - because of
+       factorization rules.
+   - Cartesian closed categories (*CCC*) is a correspondence of typed lambda
+     calculus.
+   - Intuitionistic logic is an equivalent thing of typed lambda calculus, here
+     you cannot eliminate *not-not A*, *neither LEM*.
+   - Classical logic can be a subset of intuitionistic logic, can be embedded in
+     intuitionistic logic.
+   - CPS transforms, *Yoneda's lemma*.
+   - There is a lot of cross pollination between those branches, a grand unified
+     theory is around the corener?
+     - Maybe *Homotopy Type Theory* (HoTT) could be an answer?
