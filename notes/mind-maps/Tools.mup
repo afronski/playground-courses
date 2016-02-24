@@ -1294,6 +1294,385 @@
           }
         }
       }
+    },
+    "-32": {
+      "title": "AUTOMATION",
+      "id": 149,
+      "attr": {
+        "style": {
+          "background": "#8B0000"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "Ansible",
+          "id": 150,
+          "attr": {
+            "style": {
+              "background": "#FFA500"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "3": {
+              "title": "DESCRIPTION",
+              "id": 154,
+              "ideas": {
+                "1": {
+                  "title": "Simple IT automation platform and task execution engine",
+                  "id": 153,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Agentless - purely \nbased on SSH",
+                  "id": 155,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Automate in a language that approaches plain English (YAML files)",
+                  "id": 156,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                },
+                "collapsed": true
+              }
+            },
+            "13": {
+              "title": "What's new in v2.0?",
+              "id": 151,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              },
+              "ideas": {
+                "9": {
+                  "title": "FEATURES",
+                  "id": 182,
+                  "ideas": {
+                    "1": {
+                      "title": "EXECUTION-TIME EVALUATION OF INCLUDES",
+                      "id": 175,
+                      "ideas": {
+                        "1": {
+                          "title": "Now we can use loops, facts and variables set during execution time with includes!",
+                          "id": 176,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "0.5": {
+                      "title": "BLOCKS",
+                      "id": 157,
+                      "ideas": {
+                        "1": {
+                          "title": "Grouping of related tasks, provides a method for catching and handling errors during task execution (e.g. rollback)",
+                          "id": 158,
+                          "ideas": {
+                            "1": {
+                              "title": "Also introduces attributes inheritance for all tasks inside block",
+                              "id": 159,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "You can have nested blocks, inheritance pattern will be preserved",
+                              "id": 166,
+                              "attr": {
+                                "style": {
+                                  "background": "#FFA500"
+                                },
+                                "collapsed": true
+                              },
+                              "ideas": {
+                                "1": {
+                                  "title": "Scoped variables based on blocks",
+                                  "id": 168,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FFA500"
+                                    }
+                                  }
+                                },
+                                "2": {
+                                  "title": "Sections `rescue` (it is like a catch) and `always` (it is like a finally) are used as a rollback / always tasks execution sections ",
+                                  "id": 169,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#FFA500"
+                                    },
+                                    "collapsed": true
+                                  },
+                                  "ideas": {
+                                    "1": {
+                                      "title": "You can group hosts together and treat them together in terms of blocks / rescue / always sections",
+                                      "id": 170,
+                                      "attr": {
+                                        "style": {
+                                          "background": "#FFA500"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true,
+                        "position": [
+                          99.5,
+                          -119.6875,
+                          1
+                        ]
+                      }
+                    },
+                    "0.75": {
+                      "title": "IMPROVED \nERROR MESSAGES",
+                      "id": 171,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "0.875": {
+                      "title": "EXECUTION \nSTRATEGY PLUGINS",
+                      "id": 172,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Shipping with plugins linear (traditional Ansible) and free (each host processes tasks as fast as possible)",
+                          "id": 173,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "You can write your own!",
+                          "id": 174,
+                          "attr": {
+                            "style": {
+                              "background": "#FFA500"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "10": {
+                  "title": "BREAKING CHANGES",
+                  "id": 183,
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Unpredictable variable precedence",
+                      "id": 185,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Dynamic includes  are behaving differently",
+                      "id": 186,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Ugly idiomatic task declarations",
+                      "id": 187,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Templating engine retains types finally! ",
+                      "id": 188,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "5": {
+                      "title": "Empty variables and variables set to NULL in YAML will not be converted to empty strings",
+                      "id": 189,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "6": {
+                      "title": "YAML trailing lines handling changes",
+                      "id": 190,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "7": {
+                      "title": "Internal API changes and white-listing mechanism for callbacks in ansible.cfg",
+                      "id": 191,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    }
+                  }
+                },
+                "9.5": {
+                  "title": "INTERNALS",
+                  "id": 180,
+                  "ideas": {
+                    "1": {
+                      "title": "NEW MODULES AND PLUGINS",
+                      "id": 178,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "IMPROVED VARIABLE MANAGEMENT",
+                      "id": 177,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "BETTER OOP",
+                      "id": 179,
+                      "attr": {
+                        "style": {
+                          "background": "#FFA500"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#FFA500"
+                    },
+                    "collapsed": true
+                  }
+                }
+              }
+            },
+            "2.25": {
+              "title": "http://ansible.com",
+              "id": 164,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "Serverspec",
+          "id": 161,
+          "ideas": {
+            "1": {
+              "title": "Rspec tests for your servers configured by automation tools",
+              "id": 162,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            },
+            "0.5": {
+              "title": "http://serverspec.org",
+              "id": 163,
+              "attr": {
+                "style": {
+                  "background": "#FFA500"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FFA500"
+            },
+            "collapsed": true
+          }
+        }
+      }
     }
   },
   "attr": {
