@@ -272,9 +272,8 @@
       "id": 24,
       "attr": {
         "style": {
-          "background": "#008B8B"
-        },
-        "collapsed": true
+          "background": "#5F9EA0"
+        }
       },
       "ideas": {
         "1": {
@@ -282,8 +281,9 @@
           "id": 25,
           "attr": {
             "style": {
-              "background": "#008B8B"
-            }
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
           },
           "ideas": {
             "1": {
@@ -291,20 +291,218 @@
               "id": 26,
               "attr": {
                 "style": {
-                  "background": "#008B8B"
+                  "background": "#5F9EA0"
                 }
               }
             }
           }
         },
-        "2": {
+        "4": {
+          "title": "ssh-agent",
+          "id": 288,
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "It is a CLI tool for managing keys, authentication over SSH and session passwords",
+              "id": 290,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                }
+              }
+            },
+            "2": {
+              "title": "It is easy to setup a key-based authentication, even for a key secured with password",
+              "id": 291,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                }
+              }
+            },
+            "3": {
+              "title": "But it has very important advantage - keys are never leaving local agent!",
+              "id": 292,
+              "ideas": {
+                "1": {
+                  "title": "It uses keys only during the authentication mechanism, you don't have to add them to authorized_keys on the server",
+                  "id": 293,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "The final feature is agent forwarding which lets you use multiple SSH connections and during the authentication forward each exchange to the local agent, which means that you don't have to expose your keys",
+                      "id": 294,
+                      "attr": {
+                        "style": {
+                          "background": "#5F9EA0"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        },
+        "14": {
+          "title": "tmux",
+          "id": 287,
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "3": {
+              "title": "It is a terminal multiplexer",
+              "id": 299,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Long story short - it allows you to run multiple sessions in the same terminal",
+                  "id": 296,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Hierarchy",
+                  "id": 304,
+                  "ideas": {
+                    "1": {
+                      "title": "Server",
+                      "id": 300,
+                      "ideas": {
+                        "1": {
+                          "title": "1 or N sessions",
+                          "id": 301,
+                          "ideas": {
+                            "1": {
+                              "title": "1 or N windows",
+                              "id": 302,
+                              "ideas": {
+                                "1": {
+                                  "title": "1 or N panes",
+                                  "id": 303,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#5F9EA0"
+                                    }
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#5F9EA0"
+                                },
+                                "collapsed": true
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#5F9EA0"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#5F9EA0"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "4": {
+                  "title": "Why do I need it if I'm using tiling manager?",
+                  "id": 305,
+                  "ideas": {
+                    "1": {
+                      "title": "It is easier to restore your environment and really well prepared set of terminals",
+                      "id": 306,
+                      "attr": {
+                        "style": {
+                          "background": "#5F9EA0"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Show me your tiling  manager on the server ;)",
+                      "id": 307,
+                      "attr": {
+                        "style": {
+                          "background": "#5F9EA0"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "collapsed": true,
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                }
+              }
+            },
+            "13": {
+              "title": "Another program called tmuxinator lets you save configuration, layout, multiple sessions and restore it with one command",
+              "id": 298,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                }
+              }
+            }
+          }
+        },
+        "0.5": {
           "title": "UNIX performance (CLI)",
           "id": 27,
           "attr": {
             "style": {
-              "background": "#008B8B"
+              "background": "#5F9EA0"
             },
-            "collapsed": true
+            "collapsed": true,
+            "position": [
+              52.5,
+              -85.5,
+              1
+            ]
           },
           "ideas": {
             "13": {
@@ -320,7 +518,7 @@
                       "id": 118,
                       "attr": {
                         "style": {
-                          "background": "#FF0000"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       },
@@ -330,7 +528,7 @@
                           "id": 122,
                           "attr": {
                             "style": {
-                              "background": "#FF0000"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -339,7 +537,7 @@
                           "id": 124,
                           "attr": {
                             "style": {
-                              "background": "#FF0000"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -348,7 +546,7 @@
                           "id": 125,
                           "attr": {
                             "style": {
-                              "background": "#FF0000"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
@@ -359,7 +557,7 @@
                       "id": 119,
                       "attr": {
                         "style": {
-                          "background": "#FF0000"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -368,7 +566,7 @@
                       "id": 120,
                       "attr": {
                         "style": {
-                          "background": "#FF0000"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -377,14 +575,14 @@
                       "id": 121,
                       "attr": {
                         "style": {
-                          "background": "#FF0000"
+                          "background": "#5F9EA0"
                         }
                       }
                     }
                   },
                   "attr": {
                     "style": {
-                      "background": "#FF0000"
+                      "background": "#5F9EA0"
                     },
                     "collapsed": true
                   }
@@ -398,7 +596,7 @@
                       "id": 126,
                       "attr": {
                         "style": {
-                          "background": "#F0FFFF"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -407,7 +605,7 @@
                       "id": 127,
                       "attr": {
                         "style": {
-                          "background": "#F0FFFF"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -416,7 +614,7 @@
                       "id": 128,
                       "attr": {
                         "style": {
-                          "background": "#F0FFFF"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -425,7 +623,7 @@
                       "id": 129,
                       "attr": {
                         "style": {
-                          "background": "#F0FFFF"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -438,7 +636,7 @@
                           "id": 131,
                           "attr": {
                             "style": {
-                              "background": "#F0FFFF"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -447,14 +645,14 @@
                           "id": 132,
                           "attr": {
                             "style": {
-                              "background": "#F0FFFF"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#F0FFFF"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       }
@@ -462,7 +660,7 @@
                   },
                   "attr": {
                     "style": {
-                      "background": "#F0FFFF"
+                      "background": "#5F9EA0"
                     },
                     "collapsed": true
                   }
@@ -476,7 +674,7 @@
                       "id": 133,
                       "attr": {
                         "style": {
-                          "background": "#00008B"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -485,7 +683,7 @@
                       "id": 135,
                       "attr": {
                         "style": {
-                          "background": "#00008B"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -494,7 +692,7 @@
                       "id": 136,
                       "attr": {
                         "style": {
-                          "background": "#00008B"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -503,7 +701,7 @@
                       "id": 137,
                       "attr": {
                         "style": {
-                          "background": "#00008B"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -516,14 +714,14 @@
                           "id": 139,
                           "attr": {
                             "style": {
-                              "background": "#00008B"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#00008B"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       }
@@ -531,7 +729,7 @@
                   },
                   "attr": {
                     "style": {
-                      "background": "#00008B"
+                      "background": "#5F9EA0"
                     },
                     "collapsed": true
                   }
@@ -549,7 +747,7 @@
                           "id": 141,
                           "attr": {
                             "style": {
-                              "background": "#006400"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -558,7 +756,7 @@
                           "id": 143,
                           "attr": {
                             "style": {
-                              "background": "#006400"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -567,14 +765,14 @@
                           "id": 144,
                           "attr": {
                             "style": {
-                              "background": "#006400"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#006400"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -583,14 +781,14 @@
                       "id": 145,
                       "attr": {
                         "style": {
-                          "background": "#006400"
+                          "background": "#5F9EA0"
                         }
                       }
                     }
                   },
                   "attr": {
                     "style": {
-                      "background": "#006400"
+                      "background": "#5F9EA0"
                     },
                     "collapsed": true
                   }
@@ -598,7 +796,7 @@
               },
               "attr": {
                 "style": {
-                  "background": "#FFFF00"
+                  "background": "#5F9EA0"
                 },
                 "collapsed": true
               }
@@ -612,7 +810,7 @@
                   "id": 92,
                   "attr": {
                     "style": {
-                      "background": "#4B0082"
+                      "background": "#5F9EA0"
                     },
                     "collapsed": true
                   },
@@ -622,7 +820,7 @@
                       "id": 93,
                       "attr": {
                         "style": {
-                          "background": "#4B0082"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       },
@@ -632,7 +830,7 @@
                           "id": 96,
                           "attr": {
                             "style": {
-                              "background": "#4B0082"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -645,7 +843,7 @@
                               "id": 98,
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -654,14 +852,14 @@
                               "id": 99,
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#4B0082"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -675,7 +873,7 @@
                               "id": 101,
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -685,7 +883,7 @@
                               "ideas": {},
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -694,7 +892,7 @@
                               "id": 104,
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -703,7 +901,7 @@
                               "id": 105,
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               },
                               "ideas": {
@@ -712,7 +910,7 @@
                                   "id": 107,
                                   "attr": {
                                     "style": {
-                                      "background": "#4B0082"
+                                      "background": "#5F9EA0"
                                     }
                                   }
                                 }
@@ -721,7 +919,7 @@
                           },
                           "attr": {
                             "style": {
-                              "background": "#4B0082"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -733,7 +931,7 @@
                       "id": 94,
                       "attr": {
                         "style": {
-                          "background": "#4B0082"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       },
@@ -747,7 +945,7 @@
                               "id": 109,
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -756,14 +954,14 @@
                               "id": 110,
                               "attr": {
                                 "style": {
-                                  "background": "#4B0082"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#4B0082"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -775,7 +973,7 @@
                       "id": 95,
                       "attr": {
                         "style": {
-                          "background": "#4B0082"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       },
@@ -785,7 +983,7 @@
                           "id": 111,
                           "attr": {
                             "style": {
-                              "background": "#4B0082"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -794,7 +992,7 @@
                           "id": 112,
                           "attr": {
                             "style": {
-                              "background": "#4B0082"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
@@ -819,7 +1017,7 @@
                               "id": 51,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -828,14 +1026,14 @@
                               "id": 63,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -849,7 +1047,7 @@
                               "id": 59,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -858,14 +1056,14 @@
                               "id": 62,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -883,7 +1081,7 @@
                                   "id": 58,
                                   "attr": {
                                     "style": {
-                                      "background": "#FFA500"
+                                      "background": "#5F9EA0"
                                     }
                                   }
                                 },
@@ -892,7 +1090,7 @@
                                   "id": 60,
                                   "attr": {
                                     "style": {
-                                      "background": "#FFA500"
+                                      "background": "#5F9EA0"
                                     }
                                   }
                                 },
@@ -901,7 +1099,7 @@
                                   "id": 61,
                                   "attr": {
                                     "style": {
-                                      "background": "#FFA500"
+                                      "background": "#5F9EA0"
                                     }
                                   }
                                 },
@@ -910,14 +1108,14 @@
                                   "id": 68,
                                   "attr": {
                                     "style": {
-                                      "background": "#FFA500"
+                                      "background": "#5F9EA0"
                                     }
                                   }
                                 }
                               },
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 },
                                 "collapsed": true
                               }
@@ -925,7 +1123,7 @@
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -939,7 +1137,7 @@
                               "id": 84,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -948,14 +1146,14 @@
                               "id": 86,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -969,7 +1167,7 @@
                               "id": 88,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -978,14 +1176,14 @@
                               "id": 89,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -999,14 +1197,14 @@
                               "id": 91,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -1014,7 +1212,7 @@
                       },
                       "attr": {
                         "style": {
-                          "background": "#FFA500"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       }
@@ -1024,7 +1222,7 @@
                       "id": 73,
                       "attr": {
                         "style": {
-                          "background": "#FFA500"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       },
@@ -1034,7 +1232,7 @@
                           "id": 53,
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           },
@@ -1044,7 +1242,7 @@
                               "id": 66,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -1053,7 +1251,7 @@
                               "id": 67,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
@@ -1068,7 +1266,7 @@
                               "id": 70,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -1077,7 +1275,7 @@
                               "id": 71,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -1086,14 +1284,14 @@
                               "id": 72,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -1109,7 +1307,7 @@
                           "id": 75,
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           },
@@ -1119,7 +1317,7 @@
                               "id": 77,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -1128,7 +1326,7 @@
                               "id": 78,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
@@ -1143,7 +1341,7 @@
                               "id": 81,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             },
@@ -1152,14 +1350,14 @@
                               "id": 82,
                               "attr": {
                                 "style": {
-                                  "background": "#FFA500"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#FFA500"
+                              "background": "#5F9EA0"
                             },
                             "collapsed": true
                           }
@@ -1167,7 +1365,7 @@
                       },
                       "attr": {
                         "style": {
-                          "background": "#FFA500"
+                          "background": "#5F9EA0"
                         },
                         "collapsed": true
                       }
@@ -1175,7 +1373,7 @@
                   },
                   "attr": {
                     "style": {
-                      "background": "#FFA500"
+                      "background": "#5F9EA0"
                     },
                     "collapsed": true
                   }
@@ -1193,7 +1391,7 @@
                           "id": 43,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -1202,14 +1400,14 @@
                           "id": 44,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#8FBC8F"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -1222,7 +1420,7 @@
                           "id": 40,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -1231,7 +1429,7 @@
                           "id": 41,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -1240,14 +1438,14 @@
                           "id": 45,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#8FBC8F"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -1260,14 +1458,14 @@
                           "id": 38,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#8FBC8F"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -1284,14 +1482,14 @@
                               "id": 31,
                               "attr": {
                                 "style": {
-                                  "background": "#8FBC8F"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -1300,14 +1498,14 @@
                           "id": 34,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         }
                       },
                       "attr": {
                         "style": {
-                          "background": "#8FBC8F"
+                          "background": "#5F9EA0"
                         }
                       }
                     },
@@ -1324,14 +1522,14 @@
                               "id": 32,
                               "attr": {
                                 "style": {
-                                  "background": "#8FBC8F"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
                           },
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           }
                         },
@@ -1340,7 +1538,7 @@
                           "id": 33,
                           "attr": {
                             "style": {
-                              "background": "#8FBC8F"
+                              "background": "#5F9EA0"
                             }
                           },
                           "ideas": {
@@ -1349,7 +1547,7 @@
                               "id": 52,
                               "attr": {
                                 "style": {
-                                  "background": "#8FBC8F"
+                                  "background": "#5F9EA0"
                                 }
                               }
                             }
@@ -1358,7 +1556,7 @@
                       },
                       "attr": {
                         "style": {
-                          "background": "#8FBC8F"
+                          "background": "#5F9EA0"
                         },
                         "position": [
                           71.5,
@@ -1370,7 +1568,7 @@
                   },
                   "attr": {
                     "style": {
-                      "background": "#8FBC8F"
+                      "background": "#5F9EA0"
                     },
                     "collapsed": true
                   }
@@ -1378,7 +1576,7 @@
               },
               "attr": {
                 "style": {
-                  "background": "#FFFF00"
+                  "background": "#5F9EA0"
                 },
                 "collapsed": true
               }
