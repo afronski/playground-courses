@@ -1,28 +1,39 @@
 * MongooseIM
-
-- *Source code*: https://github.com/esl/MongooseIM
-- *Marketing page*: https://www.erlang-solutions.com/products/mongooseim-massively-scalable-ejabberd-platform
-
+  - *Source code*: https://github.com/esl/MongooseIM
+  - *Marketing page*: https://www.erlang-solutions.com/products/mongooseim-massively-scalable-ejabberd-platform
 ** What? Who?
-
-- *Authors*: Erlang Solutions
-- *What*: It is an `ejabberd` fork, which has cleaner architecture (modular,
-  allows to integrate preexisting solutions into it), with additional features
-  and bug fixes.
+  - *Authors*: Erlang Solutions
+  - *What*: It is an `ejabberd` fork, which has cleaner architecture (modular,
+    allows to integrate preexisting solutions into it), with additional features
+    and bug fixes.
   - It is based and compliant with *XMPP* and additional *XEP* specifications
     (like one for the group chats).
   - It supports *web sockets*.
-- *Usage*: It is used in the wild with various clients - either from *IM domain*
-  or *Social Media*, like *Grindr*, *ooVoo*, *Whisper*. It is also used in the
-  *gaming* industry and in *telecom*.
-
+  - *Usage*: It is used in the wild with various clients - either from *IM
+    domain* or *Social Media*, like *Grindr*, *ooVoo*, *Whisper*. It is also
+    used in the *gaming* industry and in *telecom*.
+** History
+  - History of this project started around 2005, when ESL started to do an heavy
+    ejabberd work (huge deployments for Polish social network called "Nasza
+    Klasa" - approximately 10M UQ).
+  - ESL team introduced a lot of small and bigger fixes for stability and
+    scalability. Then it introduced a whole lot of work related to OTP
+    compliance, moving from Strings to Binaries and rewritten BOSH (XMPP over
+    HTTP) support.
+  - Internal representation changed, those changes were not applied back to main
+    repository, because ProcessOne had a lot of deployments which couldn't be
+    updated in such backward incompatible manner.
+  - ESL rebranded project in 2014, then ejabberd people started to applying some
+    patches to the main repository, but still focus is different. Reported as a
+    referral XMPP server implementation (especially when it comes to server
+    federation) ejabberd is focused mostly on feature-wise and multiple plugins,
+    MongooseIM is focused on scalability and huge deployments, being operational
+    friendly (they even distribute it in form of various Linux packages for
+    different distributions).
 ** XMPP
-
 *** Protocol Overview
 *** Protocol Extensions - XEP
-
 ** Architecture
-
 *** Overview and Structure
 *** Supervision Hierarchy
 *** Modules
