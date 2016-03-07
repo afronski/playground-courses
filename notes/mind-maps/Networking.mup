@@ -3370,17 +3370,278 @@
             "collapsed": true
           }
         },
+        "10": {
+          "title": "BGP (RFC 4271)",
+          "id": 572,
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Border Gateway Protocol ",
+              "id": 574,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Often classified path vector protocol or distance-vector routing protocol",
+                  "id": 575,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "IBGP",
+              "id": 577,
+              "ideas": {
+                "1": {
+                  "title": "Interior Border Gateway Protocol",
+                  "id": 576,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              }
+            },
+            "4": {
+              "title": "Most Internet service providers must use BGP to establish routing between one another",
+              "id": 578,
+              "ideas": {
+                "1": {
+                  "title": "Especially if they are multihomed (connected to multiple networks)",
+                  "id": 579,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Very large private IP networks use BGP internally",
+                  "id": 580,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Very large private IP networks use BGP internally",
+                  "id": 581,
+                  "ideas": {
+                    "1": {
+                      "title": "Most Internet service providers must use BGP to establish routing between one another",
+                      "ideas": {
+                        "1": {
+                          "title": "Especially if they are multihomed (connected to multiple networks)",
+                          "id": 583,
+                          "attr": {
+                            "style": {
+                              "background": "#5F9EA0"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Very large private IP networks use BGP internally",
+                          "id": 584,
+                          "attr": {
+                            "style": {
+                              "background": "#5F9EA0"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "Among routing protocols, BGP is unique in using TCP as its transport protocol",
+                          "id": 585,
+                          "attr": {
+                            "style": {
+                              "background": "#5F9EA0"
+                            }
+                          }
+                        }
+                      },
+                      "id": 582,
+                      "attr": {
+                        "style": {
+                          "background": "#5F9EA0"
+                        },
+                        "collapsed": true
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    },
+                    "collapsed": true
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        },
         "15": {
-          "title": "HTTP",
+          "title": "HTTP (RFC 2616)",
           "id": 3,
           "ideas": {
             "1": {
-              "title": "1.0 / 1.1",
-              "id": 19
+              "title": "1.0 (RFC 1945)",
+              "id": 19,
+              "ideas": {
+                "1": {
+                  "title": "Informational RFC only",
+                  "id": 592,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Introduces more than just a request - version number, headers, payload",
+                  "id": 593,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              }
             },
             "2": {
-              "title": "2.0",
-              "id": 20
+              "title": "2.0 (RFC 7540)",
+              "id": 20,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Improvements to the protocol related to the newest requirements put to the web - video, streaming, real-time and long living connections, multiplexing, compressing headers and mobile devices",
+                  "id": 596,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                }
+              }
+            },
+            "0.5": {
+              "title": "0.9 (NO RFC)",
+              "id": 586,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Often referred as a one-line protocol, sometimes still supported",
+                  "id": 587,
+                  "ideas": {
+                    "1": {
+                      "title": "Only one line is necessary",
+                      "id": 588,
+                      "ideas": {
+                        "1": {
+                          "title": "telnet google.com 80 GET /about",
+                          "id": 589,
+                          "attr": {
+                            "style": {
+                              "background": "#5F9EA0"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#5F9EA0"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "2": {
+                  "title": "No RFC yet",
+                  "id": 590,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                }
+              }
+            },
+            "1.5": {
+              "title": "1.1 (RFC 2616)",
+              "id": 591,
+              "attr": {
+                "style": {
+                  "background": "#5F9EA0"
+                },
+                "collapsed": true
+              },
+              "ideas": {
+                "1": {
+                  "title": "Introduces key optimizations like keepalive connections, chunked encoding transfers, byte-range requests, additional caching mechanisms, transfer encodings, and request pipelining",
+                  "id": 594,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "First proper and \nofficial RFC",
+                  "id": 595,
+                  "attr": {
+                    "style": {
+                      "background": "#5F9EA0"
+                    }
+                  }
+                }
+              }
             }
           },
           "attr": {
