@@ -3651,6 +3651,564 @@
             "collapsed": true
           }
         },
+        "16": {
+          "title": "SNMP (RFC 3411)",
+          "id": 597,
+          "attr": {
+            "style": {
+              "background": "#5F9EA0"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "Application level specific protocol for collecting and organizing information about managed devices on IP networks",
+              "id": 599,
+              "ideas": {
+                "1": {
+                  "title": "Also for modifying them  in order to change device behavior",
+                  "id": 600,
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Also for monitoring network management systems",
+                  "id": 601,
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "SNMP systems exposes management data in the form of variables on the managed systems which describe the system configuration",
+                  "id": 602,
+                  "ideas": {
+                    "1": {
+                      "title": "Those variables can be queried and set by managing application",
+                      "id": 603
+                    }
+                  },
+                  "attr": {
+                    "collapsed": true,
+                    "style": {
+                      "background": "#7FFF00"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "It has three versions v1, v2c and v3",
+                  "id": 618,
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Sends UDP traffic on port 161",
+                  "id": 626,
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    }
+                  }
+                },
+                "6": {
+                  "title": "DTLS / TLS traffic on port 10162",
+                  "id": 635,
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    }
+                  }
+                },
+                "7": {
+                  "title": "Protocol is simple, and it suits its purpose well - it has one drawback - till version v3 there was no way to secure communication",
+                  "id": 645,
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    },
+                    "collapsed": true
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "In v3 it allows to use SSH or TLS as a tranport protocols",
+                      "id": 648,
+                      "attr": {
+                        "style": {
+                          "background": "#7FFF00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "5.5": {
+                  "title": "Receive traffic (InformRequest / Traps) on port 162",
+                  "id": 636,
+                  "attr": {
+                    "style": {
+                      "background": "#7FFF00"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#7FFF00"
+                },
+                "collapsed": true
+              }
+            },
+            "2": {
+              "title": "HIERARCHY",
+              "id": 604,
+              "ideas": {
+                "1": {
+                  "title": "Network Management Station (NMS)",
+                  "id": 605,
+                  "ideas": {
+                    "1": {
+                      "title": "Software which runs on the manager",
+                      "id": 608,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "It orchestrates, monitors and control all managed devices",
+                      "id": 613,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "One or more NMSes may exist on any managed network",
+                      "id": 614,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "collapsed": true,
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Agent",
+                  "id": 606,
+                  "ideas": {
+                    "1": {
+                      "title": "It runs on managed devices",
+                      "id": 607,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "It has knowledge only local for to the device",
+                      "id": 612,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "collapsed": true,
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Managed Device",
+                  "id": 609,
+                  "ideas": {
+                    "1": {
+                      "title": "Physical device or software managed or monitored via SNMP",
+                      "id": 610,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "It can allow unidirectional or bidirectional access to node-specific information",
+                      "id": 611,
+                      "attr": {
+                        "style": {
+                          "background": "#FFFF00"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "collapsed": true,
+                    "style": {
+                      "background": "#FFFF00"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#FFFF00"
+                },
+                "collapsed": true
+              }
+            },
+            "3": {
+              "title": "ELEMENTS",
+              "id": 615,
+              "ideas": {
+                "1": {
+                  "title": "Management Information Base (MIB)",
+                  "id": 616,
+                  "ideas": {
+                    "1": {
+                      "title": "Variables exposed by agents are organized in hierarchies which are stored together with description in the MIBs",
+                      "id": 637,
+                      "attr": {
+                        "style": {
+                          "background": "#DAA520"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "It uses hierarchical namespace containing OID (Object Identifiers)",
+                      "id": 638,
+                      "attr": {
+                        "style": {
+                          "background": "#DAA520"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "Example: OID variable with name `sysUpTime` looks like 1.3.6.1.2.1.1.3.0",
+                          "id": 642,
+                          "ideas": {
+                            "1": {
+                              "title": "It is an address in the MIB tree",
+                              "id": 643,
+                              "attr": {
+                                "style": {
+                                  "background": "#DAA520"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#DAA520"
+                            },
+                            "collapsed": true
+                          }
+                        },
+                        "2": {
+                          "title": "Another example: \n1.3.6.1.2.1 ",
+                          "id": 646,
+                          "ideas": {
+                            "1": {
+                              "title": "iso.org.dod.internet.\nmgmt.mib-2",
+                              "id": 647,
+                              "attr": {
+                                "style": {
+                                  "background": "#DAA520"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "collapsed": true,
+                            "style": {
+                              "background": "#DAA520"
+                            }
+                          }
+                        },
+                        "4": {
+                          "title": "The MIB structure is best understood as a top-down hierarchical tree",
+                          "id": 650,
+                          "ideas": {
+                            "1": {
+                              "title": "Each branch that forks off is labeled with both an identifying number (starting with 1) and an identifying string that are unique for that level of the hierarchy",
+                              "id": 649,
+                              "attr": {
+                                "style": {
+                                  "background": "#DAA520"
+                                },
+                                "collapsed": true
+                              },
+                              "ideas": {
+                                "1": {
+                                  "title": "You can use the strings and numbers interchangeably",
+                                  "id": 651,
+                                  "attr": {
+                                    "style": {
+                                      "background": "#DAA520"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "To refer to a specific node of the tree, you must trace the path from the unnamed root of the tree to the node in question",
+                              "id": 652,
+                              "ideas": {
+                                "1": {
+                                  "title": " The lineage of its parent IDs (numbers or strings) are strung together, starting with the most general, to form an address",
+                                  "id": 653,
+                                  "ideas": {
+                                    "1": {
+                                      "title": "Each junction in the hierarchy is represented by a dot in this notation, so that the address ends up being a series of ID strings or numbers separated by dots",
+                                      "id": 654,
+                                      "ideas": {
+                                        "1": {
+                                          "title": "This entire address is known as an object identifier - or OID",
+                                          "id": 655,
+                                          "attr": {
+                                            "style": {
+                                              "background": "#DAA520"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "attr": {
+                                        "style": {
+                                          "background": "#DAA520"
+                                        },
+                                        "collapsed": true
+                                      }
+                                    }
+                                  },
+                                  "attr": {
+                                    "style": {
+                                      "background": "#DAA520"
+                                    },
+                                    "collapsed": true
+                                  }
+                                }
+                              },
+                              "attr": {
+                                "style": {
+                                  "background": "#DAA520"
+                                },
+                                "collapsed": true
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#DAA520"
+                            },
+                            "collapsed": true
+                          }
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "It does not define what managed system should offer",
+                      "id": 639,
+                      "attr": {
+                        "style": {
+                          "background": "#DAA520"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Two data types - scalar and tabular",
+                      "id": 644,
+                      "attr": {
+                        "style": {
+                          "background": "#DAA520"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#DAA520"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#DAA520"
+                },
+                "collapsed": true
+              }
+            },
+            "4": {
+              "title": "DETAILS",
+              "id": 620,
+              "ideas": {
+                "4": {
+                  "title": "Protocol Data Unit (PDU)",
+                  "id": 627,
+                  "ideas": {
+                    "1": {
+                      "title": "NMS <-> Agent \n(Req-Res)",
+                      "id": 621,
+                      "attr": {
+                        "style": {
+                          "background": "#008B8B"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "GetRequest",
+                          "id": 628,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "SetRequest",
+                          "id": 629,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "GetNextRequest",
+                          "id": 630,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        },
+                        "4": {
+                          "title": "GetBulkRequest",
+                          "id": 631,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        },
+                        "5": {
+                          "title": "Response",
+                          "id": 632,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Agent -> NMS\n(Trap)",
+                      "id": 622,
+                      "ideas": {
+                        "1": {
+                          "title": "Asynchronous way of communicating certain events to the NMS",
+                          "id": 624,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "No guarantees \n(SNMP is UDP based)",
+                          "id": 625,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        },
+                        "3": {
+                          "title": "Trap",
+                          "id": 633,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#008B8B"
+                        },
+                        "collapsed": true
+                      }
+                    },
+                    "3": {
+                      "title": "NMS <-> NMS\n(Inform)",
+                      "id": 623,
+                      "attr": {
+                        "style": {
+                          "background": "#008B8B"
+                        },
+                        "collapsed": true
+                      },
+                      "ideas": {
+                        "1": {
+                          "title": "InformRequest",
+                          "id": 634,
+                          "attr": {
+                            "style": {
+                              "background": "#008B8B"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#008B8B"
+                    },
+                    "collapsed": true
+                  }
+                },
+                "5": {
+                  "title": "Communicates are built with use of ASN.1 standard",
+                  "id": 641,
+                  "attr": {
+                    "style": {
+                      "background": "#008B8B"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#008B8B"
+                },
+                "collapsed": true
+              }
+            }
+          }
+        },
         "0.5": {
           "title": "IP (RFC 791)",
           "id": 79,
