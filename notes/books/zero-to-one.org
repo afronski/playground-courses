@@ -143,6 +143,10 @@
   domains is the second thing. After a while and after observing such power
   users you will be able to provide at least a semi-automatic solution for that
   problem.
+- Examples - Palantir (mix of expert knowledge with automated system), PayPal
+  (fraud detection), LinkedIn, other companies that are using dashboards,
+  aggregation, ML and filtering engines for categorizing work, Facebook and Haxl
+  language for writing rules.
 ** Seeing green
 - Clean energy, energy 2.0 and caring about environment is an important thing,
   especially that it is a future, it affects all of us and we really need a lot
