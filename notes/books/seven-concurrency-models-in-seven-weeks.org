@@ -1,1 +1,9 @@
 * Seven Concurrency Models in Seven Weeks
+** Threads and Locks
+*** Threads and Intrinsic Locks - Lock, Mutex, Critical Section
+*** Beyond Shared State and Basic Abstractions
+*** Atomic Variables, Thread Pools
+** Functional Programming
+*** Immutability and Functional Approach
+*** Reducers and Functional Concurrency
+*** Functional Parallelism
