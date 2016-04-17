@@ -1,9 +1,14 @@
 * Seven Concurrency Models in Seven Weeks
-** Threads and Locks
+** Threads and Locks (Java)
 *** Threads and Intrinsic Locks - Lock, Mutex, Critical Section
-*** Beyond Shared State and Basic Abstractions
+*** Beyond Shared State and Basic Abstractions - Memory Model (JSR 133)
 *** Atomic Variables, Thread Pools
-** Functional Programming
+** Functional Programming (Clojure)
 *** Immutability and Functional Approach
 *** Reducers and Functional Concurrency
 *** Functional Parallelism
+** Separating identity from State (Clojure)
+** Actors (Elixir)
+** Communicating Sequential Processes (Clojure)
+** Data Parallelism (OpenCL, C)
+** The Lambda Architecture (Java)
