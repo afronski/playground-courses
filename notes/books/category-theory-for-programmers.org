@@ -1,7 +1,5 @@
 * Category Theory for Programmers
-
 ** Chapters
-
 *** Category
 
 A category consists of objects and arrows (morphisms). Arrows can be
@@ -201,6 +199,7 @@ F h = F g . F f
 Functors that map this category into itself are called
 *endofunctors*. Haskell's Maybe type it's only a type constructor, but
 we can turn it into a functor.
+
 *** Functoriality
 
 As with the functions, you can have functors with multiple arguments -
@@ -273,6 +272,7 @@ Functors may be looked upon as objects in the functor category. As
 such, they become sources and targets of morphisms: *natural
 transformations*. A natural transformation is a special type of
 polymorphic function.
+
 *** Category Theory and Declarative Programming
 
 Difference between declarative and imperative composition. First looks
@@ -294,3 +294,11 @@ because of way how the parts are composed / combined.
 
 And as it comes with physical duality, category theory encourages a
 global approach and therefore supports declarative programming.
+
+*** Limits and Colimits
+*** Free Monoids
+*** Representable Functors
+*** The Yoneda Lemma
+*** Yoneda Embedding
+*** It’s All About Morphisms
+*** Adjunctions
