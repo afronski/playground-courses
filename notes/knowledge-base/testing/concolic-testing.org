@@ -1,0 +1,14 @@
+* Concolic Testing
+** Definition
+   - It is a made up word - *Conc*rete + Symb*olic* = Concolic.
+   - It is a path coverage based testing tool, which analyses source code,
+     builds a path execution tree and then it can choose critical values and
+     evaluate which paths are available, which are not and which are dead.
+     - Thanks to that it can generate test cases much better than classic
+       property based testing tools, because it is more direct. Still, property
+       based testing has a lot of use cases e.g. generating test data and
+       finding *black swans*.
+   - In *Erlang* tool which does that is called *CutEr*.
+     - There are other tools like `jCUTE`, `SAGE` etc.
+   - Presentation:
+     - https://www.youtube.com/watch?v=XVOV0KQAf-8
