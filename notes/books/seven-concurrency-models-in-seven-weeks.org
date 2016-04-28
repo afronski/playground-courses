@@ -8,6 +8,16 @@
 *** Reducers and Functional Concurrency
 *** Functional Parallelism
 ** Separating identity from State (Clojure)
+*** Atoms
+**** Impure != Imperative
+**** Structure sharing is possible thanks to immutability
+*** Agents and Refs
+**** Agent != Actor
+**** References - coordination, Agents & Atoms - isolation
+**** Retries favors side-effect free functions
+*** STM (Software Transactional Memory)
+**** Transactions are not bad, support for "ACI" without "D"
+**** Retries favors side-effect free functions
 ** Actors (Elixir)
 ** Communicating Sequential Processes (Clojure)
 ** Data Parallelism (OpenCL, C)
