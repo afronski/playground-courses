@@ -19,6 +19,35 @@
 **** Transactions are not bad, support for "ACI" without "D"
 **** Retries favors side-effect free functions
 ** Actors (Elixir)
+*** Actors - Basics
+**** Mailboxes and PIDs.
+**** Asynchronous nature by default.
+**** Able to create synchronous nature easily.
+**** Groups are multi-threaded, single is single-threaded and linear.
+**** Encourages immutability (recursion) and encapsulation.
+**** More object-oriented than objects (true nature of OOP - words of Alan Kay).
+*** Fault Tolerance
+**** "Let it crash" philosophy.
+**** Supervisors, Links and Monitors.
+**** Error kernel concept.
+*** Distribution and OTP
+**** Actor model needs and eases standardization.
+**** Behaviors are the key.
+**** OTP means just OTP (like IBM means IBM only now).
+**** Referential transparency.
 ** Communicating Sequential Processes (Clojure)
+*** Channels, Go and Macros
+**** Un-buffered channels are the default.
+**** When buffered, need to provide a size (every queue has the size).
+**** Macros are solving other macros issues (`!!>` vs. `!>` and using second outside of `go`).
+*** Collections, Transducers and Patterns
+*** Roots and Design Rationale
+**** Tony Hoare - Creator, Author and Inventor.
+**** core.async - Rich Hickey's word: "Actor binds producer and consumer, and it contains queue inside. So queues are much more primitive asset."
 ** Data Parallelism (OpenCL, C)
+*** Pipelineing and Multiplication
+**** Different approach to the same thing.
+**** Current GPUs are using mixed approach (both at the same time).
+**** Kernel is the key piece of that puzzle.
+**** C / C++ are the official bindings to *OpenCL*, but it is possible to host it in different languages as well (presented in book regarding *Java*).
 ** The Lambda Architecture (Java)
