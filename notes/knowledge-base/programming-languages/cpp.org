@@ -1,5 +1,0 @@
-* C++
-** Questions
-*** In terms of C++11, C++14 and future standards - C++17 and C++20 - how relevant the Meyers' books (e.g. *Effective C++*) are?
-
-    - http://scottmeyers.blogspot.nl/2011/03/effective-c-in-c0x-c11-age.html
