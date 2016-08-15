@@ -1,4 +1,4 @@
-# playground-notes
+# playground-courses
 
 ### Finished Courses:
 
